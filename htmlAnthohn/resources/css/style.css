@@ -13,8 +13,18 @@ body{
 	background-repeat: no-repeat
 }
 
+.main{
+	overflow: auto;
+	width: 100%;
+}
+
+.gene{
+	float: left;
+	width: 20%;
+}
 
 .leftnav{
+	display: flex;
     position: fixed;
 	height: 100vh;
 	width: 232px;
@@ -47,4 +57,54 @@ body{
 #active {
 	color: White;
 	background-color: #5c5a55;
+}
+
+.espace{
+	margin-bottom: 50px;
+}
+
+.border{
+	border-top: 1px solid Gray;
+}
+
+footer{
+	float: left;
+	height: 100px;
+	width: 100%;
+	background-color: rgb(19, 19, 19);
+	color: gray;
+	bottom: 0;
+	position: fixed;
+}
+
+.leftFooter {	
+	margin-top: 6px;
+	height: 100%;
+	float: left;
+	width: 33%;
+}
+
+.leftFooter p{	
+	padding-left: 100px;
+}
+
+.leftFooter img{
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 0;
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+.midFooter{
+	height: 100%;
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+.rightFooter{
+	height: 100%;
+	float: left;
+	width: 33%;
+	text-align: center;
 }
