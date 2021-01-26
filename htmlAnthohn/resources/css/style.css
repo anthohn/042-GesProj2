@@ -1,43 +1,50 @@
 html{
 	height: 100%;
 	width: 100%;
-	
 }
 
 body{
 	font-family: Arial;
 	background: linear-gradient(to bottom right, Gray, Black);
 	margin: 0;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat
 }
 
+
 .leftnav{
-	height: 250px;
-	width: 250px;
+    position: fixed;
+	height: 100vh;
+	width: 232px;
 	background: Black;
+	padding-top : 60px;
 }
 
 .leftnav ul{
 	margin: 0;
 	margin-left: 7%;
 	list-style-type: none;
-	padding: 0;
+	padding-left: 0;
 	width: 200px;
-	background-color: #f1f1f1;
-	border-radius:10px;
+
 }
 
-.leftnav li a {	
-   display: block;
-   color: Gray;
-   padding: 8px 16px;
-   text-decoration: none;
+.leftnav ul li a {
+	border-radius:7px;
+	display: block;
+	color: Gray;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 .leftnav li a:hover {
-  color: white;
+	color: white;
 }
 
 #active {
 	color: White;
-    background-color: Gray;
+	background-color: #5c5a55;
 }
