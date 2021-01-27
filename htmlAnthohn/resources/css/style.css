@@ -18,11 +18,6 @@ body{
 	width: 100%;
 }
 
-.gene{
-	float: left;
-	width: 20%;
-}
-
 .leftnav{
 	display: flex;
     position: fixed;
@@ -84,7 +79,13 @@ footer{
 	width: 33%;
 }
 
+.LeftFooterTxt{
+	padding-top: 16px;
+}
+
+
 .leftFooter p{	
+	margin: 5px;
 	padding-left: 100px;
 }
 
@@ -108,3 +109,109 @@ footer{
 	width: 33%;
 	text-align: center;
 }
+
+/*******************************PLAYLISTS***********************************/
+
+.title{
+	margin-left: 232px;
+	padding-top: 10px;
+	padding-left: 52px;	
+}
+
+.title p {
+	color: White;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.mainBlock{
+	text-align: center;
+	margin-left: 232px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.block1{
+	border-radius:10px;
+	height: 350px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: Darkgray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+}
+.block1 img{
+	margin-top: 30px;
+	margin-bottom: 17px;
+	height: 200px;
+}
+
+.block1 p{
+	margin: 0;
+	font-weight: 800;
+	font-size: 30px;
+	color: rgb(31, 31, 31);
+	/*text-shadow: 1px 1px 2px #464646;*/
+}
+.block2{
+	height: 350px;
+	border-radius:10px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: Darkgray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+}
+.block3{
+	height: 350px;
+	border-radius:10px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: Darkgray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+}
+.block4{
+	height: 350px;
+	border-radius: 10px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: DarkGray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+}
+/* .block5{
+	height: 350px;
+	border-radius: 10px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: DarkGray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+}
+.block6{
+	height: 350px;
+	border-radius: 10px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: DarkGray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+}
+.block7{
+	height: 350px;
+	border-radius: 10px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: DarkGray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+}
+.block8{
+	height: 350px;
+	border-radius: 10px;
+	margin: 50px;
+	flex-basis: 290px;
+	background-color: DarkGray;
+	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+} */
+
+.block1:hover, .block2:hover, .block3:hover, .block4:hover{
+    box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+} 
+
+/*************************************************************************/
