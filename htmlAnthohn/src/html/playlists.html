@@ -2,10 +2,11 @@
 <!--ETML
 	Auteur : Anthony Höhn
 	Date : 25.01.2021
-	Description : Index site-->
+	Description : Page playist site-->
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Logo ongle-->
 		<link rel="icon" href="../../userContent/logoOnglet.png" />
@@ -14,16 +15,18 @@
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
 	</head>	
 	<body>	
-		<!-- header du site-->
-		<div class="leftnav">
-			<ul>
-				<li><a href="src/html/">Recherche</a></li>
-				<li><a href="../../index.html">Accueil</a></li>
-				<li class="espace"><a href="#">Bibliothèque</a></li>
-				<li class="border"><a href="#">Artistes</a></li>
-				<li><a id="active" href="src/html/library.html">Playlists</a></li>
-			</ul>
-		</div>	
+		<div class="main">
+			<!-- header du site-->
+			<div class="leftnav">
+				<ul>
+					<li><a href="recherche.html"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<li><a href="../../index.html"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li class="espace"><a href="#"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
+					<li class="border"><a href="#">Artistes</a></li>
+					<li><a id="active" href="playlists.html">Playlists</a></li>
+				</ul>
+			</div>	
+		</div>
 		
 		<div class="title">
 			<p>Playlists</p>
@@ -31,17 +34,52 @@
 
 		<div class="mainBlock">
 			<div class="block1">
-				<img src="../../userContent/img/paly1.jpg" alt="">
-				<p>Noice 2.0</p>
+				<div class="imgCover">
+					<img src="../../userContent/img/paly1.jpg" alt="">
+				</div>
+				<div class="blockTitle">
+					<p>Noice 2.0</p>
+				</div>
+				<div class="blockText">
+					<p>  dummy text of the printing and typesetting industry. Lorem since the 1500s, 
+					when an unknown printer</p>
+				</div>	
 			</div>
 			<div class="block2">
-				<p></p>
+				<div class="imgCover">
+					<img src="../../userContent/img/play2.jpg" alt="">
+				</div>
+				<div class="blockTitle">
+					<p>MORE Life</p>
+				</div>
+				<div class="blockText">
+					<p>is   text of the printing and typesetting industry. Lorem since the 1500s, 
+					when an unknown printer</p>
+				</div>
 			</div>
 			<div class="block3">
-				<p></p>
+				<div class="imgCover">
+					<img src="../../userContent/img/play3.jpg" alt="">
+				</div>
+				<div class="blockTitle">
+					<p>Flower Boy</p>
+				</div>
+				<div class="blockText">
+					<p>is simply dummy text of the   typesetting industry. Lorem since the 1500s, 
+					when an unknown printer</p>
+				</div>
 			</div>
 			<div class="block4">
-				<p></p>
+				<div class="imgCover">
+					<img src="../../userContent/img/play4.jpg" alt="">
+				</div>
+				<div class="blockTitle">
+					<p>Loin du monde</p>
+				</div>
+				<div class="blockText">
+					<p>is simply dummy text of the printing and typesetting industry 
+					when an unknown printer</p>
+				</div>
 			</div>
 		</div>
 		

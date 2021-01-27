@@ -23,7 +23,7 @@ body{
     position: fixed;
 	height: 100vh;
 	width: 232px;
-	background: Black;
+	background: black;
 	padding-top : 60px;
 }
 
@@ -36,13 +36,20 @@ body{
 
 }
 
+.leftnav ul img{
+	padding-right: 13px;
+}
+
 .leftnav ul li a {
+	padding-bottom: 5px;
 	border-radius:7px;
 	display: block;
 	color: Gray;
 	padding: 8px 16px;
 	text-decoration: none;
 	font-weight: bold;
+
+
 }
 
 .leftnav li a:hover {
@@ -110,7 +117,11 @@ footer{
 	text-align: center;
 }
 
-/*******************************PLAYLISTS***********************************/
+/******************************************RECHERCHE***********************************************/
+
+
+
+/*****************************************PLAYLISTS*********************************************/
 
 .title{
 	margin-left: 232px;
@@ -136,28 +147,44 @@ footer{
 	border-radius:10px;
 	height: 350px;
 	margin: 50px;
-	flex-basis: 290px;
-	background-color: Darkgray;
+	flex-basis: 260px;
+	background-color: darkgrey;
 	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
 }
-.block1 img{
+
+.imgCover img{
 	margin-top: 30px;
-	margin-bottom: 17px;
+	margin-bottom: 0;
 	height: 200px;
 }
-
-.block1 p{
-	margin: 0;
+.blockTitle p{
+	padding-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
 	font-weight: 800;
-	font-size: 30px;
-	color: rgb(31, 31, 31);
+	font-size: 25px;
+	color: rgb(56, 56, 56);
 	/*text-shadow: 1px 1px 2px #464646;*/
 }
+	
+.blockText{
+	padding-top: 7px;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.blockText p{
+	font-size: 13px;
+	margin: 0;
+}
+
 .block2{
 	height: 350px;
-	border-radius:10px;
+	border-radius: 10px;
 	margin: 50px;
-	flex-basis: 290px;
+	flex-basis: 260px;
 	background-color: Darkgray;
 	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
 }
@@ -165,7 +192,7 @@ footer{
 	height: 350px;
 	border-radius:10px;
 	margin: 50px;
-	flex-basis: 290px;
+	flex-basis: 260px;
 	background-color: Darkgray;
 	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
 }
@@ -173,45 +200,11 @@ footer{
 	height: 350px;
 	border-radius: 10px;
 	margin: 50px;
-	flex-basis: 290px;
+	flex-basis: 260px;
 	background-color: DarkGray;
 	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
 }
-/* .block5{
-	height: 350px;
-	border-radius: 10px;
-	margin: 50px;
-	flex-basis: 290px;
-	background-color: DarkGray;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
-}
-.block6{
-	height: 350px;
-	border-radius: 10px;
-	margin: 50px;
-	flex-basis: 290px;
-	background-color: DarkGray;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
-}
-.block7{
-	height: 350px;
-	border-radius: 10px;
-	margin: 50px;
-	flex-basis: 290px;
-	background-color: DarkGray;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
-}
-.block8{
-	height: 350px;
-	border-radius: 10px;
-	margin: 50px;
-	flex-basis: 290px;
-	background-color: DarkGray;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
-} */
 
 .block1:hover, .block2:hover, .block3:hover, .block4:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
-
-/*************************************************************************/
