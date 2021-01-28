@@ -68,6 +68,7 @@ body{
 }
 
 .border{
+	padding-top: 10px;
 	border-top: 1px solid Gray;
 }
 
@@ -119,9 +120,61 @@ footer{
 	text-align: center;
 }
 
-/******************************************RECHERCHE***********************************************/
+/******************************************Artistes***********************************************/
 
 
+.ARmainBlock{
+	text-align: center;
+	margin-left: 232px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.ARblock1, .ARblock2, .ARblock3, .ARblock4, .ARblock5, .ARblock6, .ARblock7, .ARblock8, .ARblock9 ,.ARblock10 ,.ARblock11 ,.ARblock12{
+	border-radius: 10px;
+	height: 240px;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+	flex-basis: 200px;
+	background-color: darkgrey;
+	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+}
+
+.ARblockTitle p{
+	padding-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(32, 32, 32);
+	text-shadow: 1px 1px 2px #606f99;
+}
+
+.ARimgCover img{
+	border-radius: 100px;
+	margin-top: 30px;
+	margin-bottom: 0;
+	height: 120px;
+}
+
+.ARblockText{
+	padding-top: 7px;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.ARblockText p{
+	font-size: 13px;
+	margin: 0;
+}
+
+.ARblock1:hover, .ARblock2:hover, .ARblock3:hover, .ARblock4:hover, .ARblock5:hover, .ARblock6:hover , .ARblock7:hover , .ARblock8:hover, .ARblock9:hover, .ARblock10:hover, .ARblock11:hover, .ARblock12:hover{
+    box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+} 
 
 /*****************************************PLAYLISTS*********************************************/
 
@@ -137,7 +190,7 @@ footer{
 	font-size: 30px;
 }
 
-.mainBlock{
+.PLmainBlock{
 	text-align: center;
 	margin-left: 232px;
 	display: flex;
@@ -145,7 +198,7 @@ footer{
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-.block1, .block2, .block3, .block4, .block5, .block6, .block7, .block8{
+.PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8{
 	border-radius:10px;
 	height: 350px;
 	margin: 50px;
@@ -154,7 +207,7 @@ footer{
 	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
 }
 
-.blockTitle p{
+.PLblockTitle p{
 	padding-top: 5px;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -166,23 +219,23 @@ footer{
 	text-shadow: 1px 1px 2px #606f99;
 }
 
-.imgCover img{
+.PLimgCover img{
 	margin-top: 30px;
 	margin-bottom: 0;
 	height: 200px;
 }
 
-.blockText{
+.PLblockText{
 	padding-top: 7px;
 	margin-left: 18px;
 	margin-right: 18px;
 }
 
-.blockText p{
+.PLblockText p{
 	font-size: 13px;
 	margin: 0;
 }
 
-.block1:hover, .block2:hover, .block3:hover, .block4:hover, .block5:hover, .block6:hover , .block7:hover , .block8:hover{
+.PLblock1:hover, .PLblock2:hover, .PLblock3:hover, .PLblock4:hover, .PLblock5:hover, .PLblock6:hover , .PLblock7:hover , .PLblock8:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 

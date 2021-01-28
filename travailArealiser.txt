@@ -6,7 +6,12 @@
 	B) Modéliser et créer la base de données, y importer les données collectées, 
 	   insérer quelques données de clients et factures
 
- 	   A fournir : Un MCD, MLD et MPD pour créer la bd. Le fichier d'export de la BD C) Créer les requêtes SQL spécifiques A fournir : Un ou'des scripts SQL qui contiennent les requêtes attendues. 
+ 	   A fournir : Un MCD, MLD et MPD pour créer la bd. Le fichier d'export de la BD 
+
+	C) Créer les requêtes SQL spécifiques 
+
+	A fournir : Un ou'des scripts SQL qui contiennent les requêtes attendues. 
+
 
 	D) Réaliser un site web pour répondre aux besoins du mandant 
 
