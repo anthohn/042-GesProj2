@@ -1,5 +1,7 @@
 html{
-	height: 100%;
+	/*height: 100%;*/
+	/* temporaire pour pouvoir scroll corecemment dans la page*/
+	height: 1400px; 
 	width: 100%;
 }
 
@@ -143,20 +145,15 @@ footer{
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-.block1{
+.block1, .block2, .block3, .block4, .block5, .block6, .block7, .block8{
 	border-radius:10px;
 	height: 350px;
 	margin: 50px;
 	flex-basis: 260px;
 	background-color: darkgrey;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
+	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
 }
 
-.imgCover img{
-	margin-top: 30px;
-	margin-bottom: 0;
-	height: 200px;
-}
 .blockTitle p{
 	padding-top: 5px;
 	margin-left: 10px;
@@ -165,10 +162,16 @@ footer{
 	margin-bottom: 0;
 	font-weight: 800;
 	font-size: 25px;
-	color: rgb(56, 56, 56);
-	/*text-shadow: 1px 1px 2px #464646;*/
+	color: rgb(32, 32, 32);
+	text-shadow: 1px 1px 2px #606f99;
 }
-	
+
+.imgCover img{
+	margin-top: 30px;
+	margin-bottom: 0;
+	height: 200px;
+}
+
 .blockText{
 	padding-top: 7px;
 	margin-left: 18px;
@@ -180,31 +183,6 @@ footer{
 	margin: 0;
 }
 
-.block2{
-	height: 350px;
-	border-radius: 10px;
-	margin: 50px;
-	flex-basis: 260px;
-	background-color: Darkgray;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
-}
-.block3{
-	height: 350px;
-	border-radius:10px;
-	margin: 50px;
-	flex-basis: 260px;
-	background-color: Darkgray;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
-}
-.block4{
-	height: 350px;
-	border-radius: 10px;
-	margin: 50px;
-	flex-basis: 260px;
-	background-color: DarkGray;
-	box-shadow: 0 7px 40px 0 rgba(92, 92, 92, 0.7);
-}
-
-.block1:hover, .block2:hover, .block3:hover, .block4:hover{
+.block1:hover, .block2:hover, .block3:hover, .block4:hover, .block5:hover, .block6:hover , .block7:hover , .block8:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
