@@ -156,7 +156,7 @@ footer{
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
-	text-shadow: 1px 1px 2px #606f99;
+	text-shadow: 4px 4px 5px #5c5c5c;
 }
 
 .ARimgCover img{
@@ -203,6 +203,41 @@ footer{
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
+
+.playlistcreation{	
+	flex-basis: 260px;
+	margin-top: 170px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 150px;
+	background-color: darkgrey;
+	border-radius: 30px;
+	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+
+}
+
+.playlistcreation p{
+	margin-bottom: 15px;
+	font-size: 25px;
+	font-weight: bold;
+	color: rgb(32, 32, 32);
+}
+
+.playlistcreationBoutton{
+	height: 45px;
+	border-radius: 30px;
+	margin-left: 108px;
+	margin-right: 108px;
+	background-color: rgb(43, 42, 42);
+
+}
+
+.playlistcreationBoutton a{
+	font-size: 40px;
+	color: white;
+	text-decoration: none;
+}
+
 .PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8{
 	border-radius:10px;
 	height: 350px;
@@ -221,7 +256,7 @@ footer{
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
-	text-shadow: 1px 1px 2px #606f99;
+	text-shadow: 4px 4px 5px #5c5c5c;
 }
 
 .PLimgCover img{
@@ -241,6 +276,6 @@ footer{
 	margin: 0;
 }
 
-.PLblock1:hover, .PLblock2:hover, .PLblock3:hover, .PLblock4:hover, .PLblock5:hover, .PLblock6:hover , .PLblock7:hover , .PLblock8:hover{
+.playlistcreation:hover, .PLblock1:hover, .PLblock2:hover, .PLblock3:hover, .PLblock4:hover, .PLblock5:hover, .PLblock6:hover , .PLblock7:hover , .PLblock8:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
