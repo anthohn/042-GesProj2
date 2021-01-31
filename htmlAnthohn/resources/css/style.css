@@ -1,3 +1,9 @@
+/*
+	///	Author      : Anthony Höhn
+	///	Date        : 25.02.2021
+	///	Description : Style page.
+*/
+
 html{
 	/*height: 100%;*/
 	/* temporaire pour pouvoir scroll corecemment dans la page*/
@@ -18,11 +24,30 @@ body{
 .main{
 	overflow: auto;
 	width: 100%;
+	position: absolute;
+}
+
+.toggleButton {
+	position: absolute;
+	margin-top: 30px;
+	left: 30px;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 50px;
+	height: 44px;
+}
+
+.bar {
+	height: 7px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
 }
 
 .leftnav{
 	display: flex;
-    position: fixed;
+    /* position: fixed; */
 	height: 100vh;
 	width: 232px;
 	background: black;
@@ -239,3 +264,33 @@ footer{
 .PLblock1:hover, .PLblock2:hover, .PLblock3:hover, .PLblock4:hover, .PLblock5:hover, .PLblock6:hover , .PLblock7:hover , .PLblock8:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
+
+
+/*Responsive Design*/
+
+@media only screen and (max-width: 600px)
+{
+	.toggleButton
+	{
+		display: flex;
+	}
+
+	.leftnav {
+		width: 200px;
+		padding-top: 85px;
+	}
+
+	.leftnav ul
+	{
+		display: none;
+		flex-direction: column;
+	}
+
+	.leftnav li {
+		width: 168px;
+	}
+
+	.navBarLink.active {
+		display: flex;
+	}
+}

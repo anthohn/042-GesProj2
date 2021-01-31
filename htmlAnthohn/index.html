@@ -1,8 +1,10 @@
 ﻿<!DOCTYPE html>
-<!--ETML
-	Auteur : Anthony Höhn
-	Date : 25.01.2021
-	Description : Index site-->
+<!--
+	// ETML
+	// Auteur : Anthony Höhn
+	// Date : 25.01.2021
+	// Description : Index site
+-->
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
@@ -13,12 +15,20 @@
 
 		<title>P042</title>
 		<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+		<script src="src/js/toggleMenu.js" defer></script>
 	</head>	
 	<body>	
 		<div class="main">
-			<!-- header du site-->
+			<!-- header du site -->
+			<!-- Hamburger menu -->
+			<a href="#" class="toggleButton" id="toggleButtonID">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</a>
+			<!-- Bar de navigation -->
 			<div class="leftnav">
-				<ul>
+				<ul class="navBarLink">
 					<li><a href="src/html/recherche.html"><img src="userContent/logo/search.svg" alt="">Recherche</a></li>
 					<li><a id="active" href="index.html"><img src="userContent/logo/home.svg" alt="">Accueil</a></li>
 					<li class="espace"><a href="#"><img src="userContent/logo/library.svg" alt="">Bibliothèque</a></li>
