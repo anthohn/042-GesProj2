@@ -61,7 +61,6 @@ body{
 	list-style-type: none;
 	padding-left: 0;
 	width: 200px;
-
 }
 
 .leftnav ul img{
@@ -148,7 +147,23 @@ footer{
 
 /********************************************Recherche************************************************/
 
+.searchBar {
+	margin: 0 0 0 232px;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+}
 
+#search {
+	width: 1000px;
+	height: 50px;
+	position: absolute;
+	border-radius: 10px;
+	border: 0;
+	font-size: 25px;
+	background-color: white;
+	padding: 0 0 0 15px;
+}
 
 
 /********************************************Artistes*************************************************/
@@ -317,7 +332,7 @@ footer{
 
 	.leftnav {
 		width: 200px;
-		padding-top: 85px;
+		padding-top: 100px;
 	}
 
 	.leftnav ul
