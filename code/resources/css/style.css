@@ -24,7 +24,6 @@ body{
 
 .main{
 	overflow: auto;
-	width: 100%;
 	position: absolute;
 }
 
@@ -46,10 +45,14 @@ body{
 	border-radius: 10px;
 }
 
+.leftnav h1{
+	color: white;
+}
+
 .leftnav{
 	display: flex;
     /* position: fixed; */
-	height: 100vh;
+	height: 150vh;
 	width: 232px;
 	background: black;
 	padding-top : 60px;
@@ -61,7 +64,6 @@ body{
 	list-style-type: none;
 	padding-left: 0;
 	width: 200px;
-
 }
 
 .leftnav ul img{
@@ -76,8 +78,6 @@ body{
 	padding: 8px 16px;
 	text-decoration: none;
 	font-weight: bold;
-
-
 }
 
 .leftnav li a:hover {
@@ -148,7 +148,23 @@ footer{
 
 /********************************************Recherche************************************************/
 
+.searchBar {
+	margin: 0 0 0 232px;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+}
 
+#search {
+	width: 1000px;
+	height: 50px;
+	position: absolute;
+	border-radius: 10px;
+	border: 0;
+	font-size: 25px;
+	background-color: white;
+	padding: 0 0 0 15px;
+}
 
 
 /********************************************Artistes*************************************************/
@@ -162,13 +178,13 @@ footer{
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-.ARblock1, .ARblock2, .ARblock3, .ARblock4, .ARblock5, .ARblock6, .ARblock7, .ARblock8, .ARblock9 ,.ARblock10 ,.ARblock11 ,.ARblock12{
+.ARblock1, .ARblock2, .ARblock3, .ARblock4, .ARblock5, .ARblock6, .ARblock7, .ARblock8, .ARblock9 ,.ARblock10{
 	border-radius: 10px;
 	height: 240px;
 	margin-top: 50px;
 	margin-left: 20px;
 	margin-right: 20px;
-	flex-basis: 200px;
+	flex-basis: 240px;
 	background-color: darkgrey;
 	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
 }
@@ -182,7 +198,7 @@ footer{
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
-	text-shadow: 4px 4px 5px #5c5c5c;
+	text-shadow: 4px 4px 7px #5c5c5c;
 }
 
 .ARimgCover img{
@@ -202,6 +218,34 @@ footer{
 	font-size: 13px;
 	margin: 0;
 }
+
+.plus{
+	background-color: rgb(88, 88, 88);
+	height: 22px;
+	width: 22px;
+	margin-left: 85%;
+	border-radius: 30px;
+	margin-top: -4%;
+}
+
+.plus a{
+	margin: 5px;
+	font-weight: 400;
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+
+.plus:hover a {
+	color: rgb(226, 226, 226);
+}
+
+
+
+
+
+
+
 
 .ARblock1:hover, .ARblock2:hover, .ARblock3:hover, .ARblock4:hover, .ARblock5:hover, .ARblock6:hover , .ARblock7:hover , .ARblock8:hover, .ARblock9:hover, .ARblock10:hover, .ARblock11:hover, .ARblock12:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
@@ -238,7 +282,7 @@ footer{
 	margin-bottom: 150px;
 	background-color: darkgrey;
 	border-radius: 30px;
-	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+	box-shadow: 0 7px 40px 0 rgba(88, 88, 88);
 }
 
 .playlistcreation p{
@@ -253,7 +297,7 @@ footer{
 	border-radius: 30px;
 	margin-left: 108px;
 	margin-right: 108px;
-	background-color: rgb(43, 42, 42);
+	background-color: rgb(88, 88, 88);
 
 }
 
@@ -261,6 +305,10 @@ footer{
 	font-size: 40px;
 	color: white;
 	text-decoration: none;
+}
+
+.playlistcreationBoutton:hover a {
+	color: rgb(226, 226, 226);
 }
 
 .PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8{
@@ -281,7 +329,7 @@ footer{
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
-	text-shadow: 4px 4px 5px #5c5c5c;
+	text-shadow: 4px 4px 7px #5c5c5c;
 }
 
 .PLimgCover img{
@@ -317,7 +365,7 @@ footer{
 
 	.leftnav {
 		width: 200px;
-		padding-top: 85px;
+		padding-top: 100px;
 	}
 
 	.leftnav ul
