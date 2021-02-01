@@ -1,0 +1,52 @@
+/******************************
+	Basic
+**********************************/
+
+body {
+    font-size: 14px;
+	background:url(../../test/images/back.jpg) no-repeat;
+    font-family: 'PT Sans', sans-serif;
+    height: 100%;
+	width:100%;
+}
+	
+.form input[type='password'],
+.form text,
+.form select,
+.form textarea,
+.form input[type='text'] {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 5px;
+    outline: none;
+    display: block;
+    resize:vertical;
+}
+.form input[type='submit'] {
+	margin-top:5px;
+    margin-bottom:5px;
+}
+
+/*****************************
+	Widgets
+******************************/
+
+.widget {
+    margin-bottom: 10px;
+	width:460px;	
+	margin-left:400px;
+	
+    background-color: #fff;
+}
+.widget .widget-heading {
+	background: #F9F7F7;
+	border: 1px solid #eee;
+	padding: 10px;
+	font-weight: bold;
+	text-align: justify;
+}
+.widget .widget-contents {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
