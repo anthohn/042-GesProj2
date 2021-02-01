@@ -186,7 +186,7 @@ footer{
 	margin-right: 20px;
 	flex-basis: 240px;
 	background-color: darkgrey;
-	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+	
 }
 
 .ARblockTitle p{
@@ -202,6 +202,7 @@ footer{
 }
 
 .ARimgCover img{
+	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 	border-radius: 100px;
 	margin-top: 30px;
 	margin-bottom: 0;

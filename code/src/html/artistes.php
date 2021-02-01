@@ -17,6 +17,32 @@
 		<script src="../js/toggleMenu.js" defer></script>
 	</head>	
 	<body>
+	
+	<?php
+	$user = "root";
+	$pass = "root";
+
+	try
+	{
+		$db = new PDO ("mysql:host=localhost;dbname=042-gesproj2;charset=utf8", $user, $pass);
+	} 
+	catch (PDOException $e)
+	{
+		echo "Erreur :" .$e->getMessage() . "<br/>";
+		die;
+	}
+
+	$requete = $db->query("SELECT * FROM t_artiste");
+	
+
+	$resultat = $requete->fetch();
+
+	// while($resultat = $requete->fetch())
+	// {
+	
+	// }
+	?>
+	
 		<div class="main">
 			<!-- Hamburger menu -->
 			<a href="#" class="toggleButton" id="toggleButtonID">
@@ -41,10 +67,10 @@
 		<div class="ARmainBlock">			
 			<div class="ARblock1">
 				<div class="ARimgCover">
-					<img src="../../userContent/img/artistes/ohmidz.jpg" alt="">
+					<img src="../../userContent/img/artistes/travis.jpg" alt="">
 				</div>
 				<div class="ARblockTitle">
-					<p>Ohmidz</p>
+					<p><?php echo $resultat["ArtNom"];?></p>
 				</div>
 				<div class="ARblockText">
 					<p>Artiste</p>
@@ -56,10 +82,10 @@
 		
 			<div class="ARblock2">
 				<div class="ARimgCover">
-					<img src="../../userContent/img/artistes/enoch.jpg" alt="">
+					<img src="../../userContent/img/artistes/drake.jpg" alt="">
 				</div>
 				<div class="ARblockTitle">
-					<p>Enoch</p>
+					<p>Drake</p>
 				</div>
 				<div class="ARblockText">
 					<p>Artiste</p>
@@ -70,10 +96,10 @@
 			</div>
 			<div class="ARblock3">
 				<div class="ARimgCover">
-					<img src="../../userContent/img/artistes/neighbourhood.jpg" alt="">
+					<img src="../../userContent/img/artistes/ohmidz.jpg" alt="">
 				</div>
 				<div class="ARblockTitle">
-					<p>Neighhood</p>
+					<p>ohmidz</p>
 				</div>
 				<div class="ARblockText">
 					<p>Artiste</p>
@@ -83,34 +109,6 @@
 				</div>
 			</div>
 			<div class="ARblock4">
-				<div class="ARimgCover">
-					<img src="../../userContent/img/artistes/plk.jpg" alt="">
-				</div>
-				<div class="ARblockTitle">
-					<p>PLK</p>
-				</div>
-				<div class="ARblockText">
-					<p>Artiste</p>
-				</div>
-				<div class="plus">
-					<a href="#">+</a>
-				</div>
-			</div>
-			<div class="ARblock5">
-				<div class="ARimgCover">
-					<img src="../../userContent/img/artistes/freeze.jpg" alt="">
-				</div>
-				<div class="ARblockTitle">
-					<p>Freeze</p>
-				</div>
-				<div class="ARblockText">
-					<p>Artiste</p>
-				</div>
-				<div class="plus">
-					<a href="#">+</a>
-				</div>
-			</div>
-			<div class="ARblock6">
 				<div class="ARimgCover">
 					<img src="../../userContent/img/artistes/oboy.jpg" alt="">
 				</div>
@@ -124,12 +122,40 @@
 					<a href="#">+</a>
 				</div>
 			</div>
-			<div class="ARblock7">
+			<div class="ARblock5">
 				<div class="ARimgCover">
-					<img src="../../userContent/img/coverPlaylists/play3.jpg" alt="">
+					<img src="../../userContent/img/artistes/josman.jpg" alt="">
 				</div>
 				<div class="ARblockTitle">
-					<p>Flower Boy</p>
+					<p>Josman</p>
+				</div>
+				<div class="ARblockText">
+					<p>Artiste</p>
+				</div>
+				<div class="plus">
+					<a href="#">+</a>
+				</div>
+			</div>
+			<div class="ARblock6">
+				<div class="ARimgCover">
+					<img src="../../userContent/img/artistes/tyler.jpg" alt="">
+				</div>
+				<div class="ARblockTitle">
+					<p>Tyler</p>
+				</div>
+				<div class="ARblockText">
+					<p>Artiste</p>
+				</div>
+				<div class="plus">
+					<a href="#">+</a>
+				</div>
+			</div>
+			<div class="ARblock7">
+				<div class="ARimgCover">
+					<img src="../../userContent/img/artistes/ateyaba.jpg" alt="">
+				</div>
+				<div class="ARblockTitle">
+					<p>Ateyaba</p>
 				</div>
 				<div class="ARblockText">
 					<p>Artiste</p>
@@ -140,10 +166,10 @@
 			</div>
 			<div class="ARblock8">
 				<div class="ARimgCover">
-					<img src="../../userContent/img/play3.jpg" alt="">
+					<img src="../../userContent/img/artistes/damso.jpg" alt="">
 				</div>
 				<div class="ARblockTitle">
-					<p>Flower Boy</p>
+					<p>Damso</p>
 				</div>
 				<div class="ARblockText">
 					<p>Artiste</p>
@@ -154,10 +180,10 @@
 			</div>
 			<div class="ARblock9">
 				<div class="ARimgCover">
-					<img src="../../userContent/img/play3.jpg" alt="">
+					<img src="../../userContent/img/artistes/zola.jpg" alt="">
 				</div>
 				<div class="ARblockTitle">
-					<p>Flower Boy</p>
+					<p>Zola</p>
 				</div>
 				<div class="ARblockText">
 					<p>Artiste</p>
@@ -168,10 +194,10 @@
 			</div>
 			<div class="ARblock10">
 				<div class="ARimgCover">
-					<img src="../../userContent/img/play3.jpg" alt="">
+					<img src="../../userContent/img/artistes/theweeknd.jpg" alt="">
 				</div>
 				<div class="ARblockTitle">
-					<p>Flower Boy</p>
+					<p>The Weeknd</p>
 				</div>
 				<div class="ARblockText">
 					<p>Artiste</p>
