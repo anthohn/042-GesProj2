@@ -4,7 +4,7 @@
 		<!--
 		ETML
 		Auteur      : Anthony Höhn
-		Date        : 26.01.2021
+		Date        : 02.02.2021
 		Description : Page bibliothèque site
 		-->
 		<meta charset="UTF-8">
@@ -12,7 +12,6 @@
 
 		<!-- Logo onglet-->
 		<link rel="icon" href="../../userContent/logoOnglet.png" />
-
 		<title>Recherche</title>
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
 		<script src="../js/toggleMenu.js" defer></script>
@@ -28,11 +27,11 @@
 			<!-- Navigation Bar --> 
 			<div class="leftnav">
 				<ul class="navBarLink">
-					<li><a href="recherche.html"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
-					<li><a href="../../index.html"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
-					<li class="espace"><a id="active" href="library.html"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
-					<li class="border"><a href="artistes.html">Artistes</a></li>
-					<li><a href="../html/playlists.html">Playlists</a></li>
+					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<li><a href="accueil.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li class="espace"><a id="active" href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
+					<li class="border"><a href="artistes.php">Artistes</a></li>
+					<li><a href="playlists.php">Playlists</a></li>
 				</ul>
 			</div>	
 		</div>			

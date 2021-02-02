@@ -3,17 +3,16 @@
 	<head>
 		<!--
 		ETML
-		Auteur      : Anthony Höhn
-		Date        : 26.01.2021
-		Description : Page recherche site
+		Auteur      : Julien Cartier
+		Date        : 01.02.2021
+		Description : Page à propos site
 		-->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Logo onglet-->
 		<link rel="icon" href="../../userContent/logoOnglet.png" />
-
-		<title>Recherche</title>
+		<title>À propos</title>
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
 		<script src="../js/toggleMenu.js" defer></script>
 	</head>	
@@ -28,11 +27,11 @@
 			<!-- Bar de navigation -->
 			<div class="leftnav">
 				<ul class="navBarLink">
-					<li><a id="active" href="recherche.html"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
-					<li><a href="../../index.html"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
-					<li class="espace"><a href="library.html"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
-					<li class="border"><a href="artistes.html">Artistes</a></li>
-					<li><a href="../html/playlists.html">Playlists</a></li>
+					<li><a id="active" href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<li><a href="accueil.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li class="espace"><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
+					<li class="border"><a href="artistes.php">Artistes</a></li>
+					<li><a href="apropos.php">Playlists</a></li>
 				</ul>
 			</div>	
 		</div>	

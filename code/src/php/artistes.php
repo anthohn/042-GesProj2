@@ -4,7 +4,7 @@
 		<!--
 		ETML
 		Auteur      : Anthony Höhn
-		Date        : 26.01.2021
+		Date        : 02.02.2021
 		Description : Page artistes site
 		-->
 		<meta charset="UTF-8">
@@ -24,7 +24,7 @@
 
 	try
 	{
-		$db = new PDO ("mysql:host=localhost;dbname=042-gesproj2;charset=utf8", $user, $pass);
+		$db = new PDO ("mysql:host=localhost;dbname=db_042main;charset=utf8", $user, $pass);
 	} 
 	catch (PDOException $e)
 	{
@@ -53,11 +53,11 @@
 			<!-- Bar de navigation -->
 			<div class="leftnav">
 				<ul class="navBarLink">
-					<li><a href="recherche.html"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
-					<li><a href="../../index.html"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
-					<li class="espace"><a href="library.html"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
-					<li class="border"><a id="active" href="artistes.html">Artistes</a></li>
-					<li><a href="../html/playlists.html">Playlists</a></li>
+					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<li><a href="../../index.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li class="espace"><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
+					<li class="border"><a id="active" href="artistes.php">Artistes</a></li>
+					<li><a href="playlists.php">Playlists</a></li>
 				</ul>
 			</div>	
 		</div>	

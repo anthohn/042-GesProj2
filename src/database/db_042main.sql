@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 01 fév. 2021 à 12:30
+-- Généré le : mar. 02 fév. 2021 à 18:01
 -- Version du serveur :  5.7.11
 -- Version de PHP : 8.0.1
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `042-gesproj2`
+-- Base de données : `db_042main`
 --
 
 -- --------------------------------------------------------
