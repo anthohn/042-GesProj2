@@ -38,7 +38,7 @@
 
 		<footer>
 			<div class="leftFooter">
-			<img src="userContent/img/vii.jpg" alt="">
+			<img src="../../userContent/img/vii.jpg" alt="">
 				<div class="LeftFooterTxt">
 					<p><b>La C</b></p>
 					<p>Koba LaD</p>				

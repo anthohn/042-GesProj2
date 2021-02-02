@@ -39,7 +39,7 @@
 
 	// while($resultat = $requete->fetch())
 	// {
-	
+		$requete = $db->query("SELECT * FROM t_artiste WHERE ArtNom = '1' ");
 	// }
 	?>
 	
@@ -54,13 +54,14 @@
 			<div class="leftnav">
 				<ul class="navBarLink">
 					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
-					<li><a href="../../index.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li><a href="accueil.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
 					<li class="espace"><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
 					<li class="border"><a id="active" href="artistes.php">Artistes</a></li>
 					<li><a href="playlists.php">Playlists</a></li>
 				</ul>
 			</div>	
 		</div>	
+		
 		<div class="title">
 			<p>Artistes</p>
 		</div>		
@@ -207,7 +208,7 @@
 				</div>
 			</div>			
 		</div>	
-
+		<script src="../js/artistes.js"></script>
 		<footer>
 		</footer>
 	</body>
