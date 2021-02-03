@@ -208,7 +208,7 @@
 				</div>
 			</div>			
 		</div>	
-		<script src="../js/artistes.js"></script>
+		<!-- <script src="../js/artistes.js"></script> -->
 		<footer>
 		</footer>
 	</body>
