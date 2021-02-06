@@ -1,25 +1,14 @@
--- phpMyAdmin SQL Dump
--- version 5.0.4
--- https://www.phpmyadmin.net/
---
--- Hôte : localhost
--- Généré le : mar. 02 fév. 2021 à 18:01
--- Version du serveur :  5.7.11
--- Version de PHP : 8.0.1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- ETML
+-- Auteur      : Anthony Höhn
+-- Date        : 05.02.2021
+-- Description : Base de données db_042main
 
 --
--- Base de données : `db_042main`
+-- Supression (si existe) de la table "db_market" puis création de la  table "db_market"
 --
+
+DROP DATABASE if EXISTS P_db_042main;
+CREATE DATABASE P_db_042main;
 
 -- --------------------------------------------------------
 
@@ -27,18 +16,18 @@ SET time_zone = "+00:00";
 -- Structure de la table `t_artiste`
 --
 
-CREATE TABLE `t_artiste` (
-  `idArtiste` int(11) NOT NULL,
-  `ArtNom` varchar(50) NOT NULL,
-  `ArtOrigin` char(50) NOT NULL,
-  `ArtNaissance` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE t_artiste (
+  idArtiste INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  ArtNom VARCHAR(50) NOT NULL,
+  ArtOrigin char(50) NOT NULL,
+  ArtNaissance date NOT NULL
+);
 
 --
 -- Déchargement des données de la table `t_artiste`
 --
 
-INSERT INTO `t_artiste` (`idArtiste`, `ArtNom`, `ArtOrigin`, `ArtNaissance`) VALUES
+INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
 (1, 'Travis Scott', 'Etats-Unis', '1992-04-30'),
 (2, 'Drake', 'Etats-Unis', '1986-10-24'),
 (3, 'Ohmidz', 'Suisse', '2002-03-04'),
@@ -48,7 +37,8 @@ INSERT INTO `t_artiste` (`idArtiste`, `ArtNom`, `ArtOrigin`, `ArtNaissance`) VAL
 (7, 'Ateyaba', 'France', '1989-10-27'),
 (8, 'Damso', 'Belgique', '1992-05-10'),
 (9, 'Zola', 'France', '1999-11-16'),
-(10, 'The Weeknd', 'Etats-unis', '1990-02-16');
+(10, 'The Weeknd', 'Etats-unis', '1990-02-16'
+);
 
 -- --------------------------------------------------------
 
@@ -56,42 +46,46 @@ INSERT INTO `t_artiste` (`idArtiste`, `ArtNom`, `ArtOrigin`, `ArtNaissance`) VAL
 -- Structure de la table `t_musique`
 --
 
-CREATE TABLE `t_musique` (
-  `idMusique` int(11) DEFAULT NULL,
-  `musNom` varchar(30) NOT NULL,
-  `musGenre` varchar(20) NOT NULL,
-  `musDuree` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE t_musique (
+  idMusique INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  musNom VARCHAR(50) NOT NULL,
+  musGenre VARCHAR(50) NOT NULL,
+  musDuree FLOAT NOT NULL
+);
 
 --
 -- Déchargement des données de la table `t_musique`
 --
 
-INSERT INTO `t_musique` (`idMusique`, `musNom`, `musGenre`, `musDuree`) VALUES
-(1, 'gossebumps', 'Hip-hop/Rap', 404),
-(2, 'STARGAZING', 'Hip-hop/Rap', 4.31);
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `t_artiste`
---
-ALTER TABLE `t_artiste`
-  ADD PRIMARY KEY (`idArtiste`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `t_artiste`
---
-ALTER TABLE `t_artiste`
-  MODIFY `idArtiste` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree) VALUES
+(1, 'gossebumps', 'Hip-hop/Rap', 4.04),
+(2, 'STARGAZING', 'Hip-hop/Rap', 4.31),
+(3, 'Antidote', 'Hip-hop/Rap', 4.23),
+(4, 'Passionfruit', 'Hip-hop/Rap', 4.59),
+(5, 'Controlla', 'Hip-hop/Rap', 4.05),
+(6, 'Feel No Ways', 'Hip-hop/Rap', 4.01),
+(7, 'Gelato', 'Hip-hop/Rap', 3.14),
+(8, ' ', ' ', 0.00),
+(9, ' ', ' ', 0.00),
+(10, 'Cabeza', 'Hip-hop/Rap', 2.28),
+(11, 'Avec Toi', 'Hip-hop/Rap', 3.14),
+(12, 'Rien à fêter', 'Rap', 2.45),
+(13, 'J`aime Bien!', 'Hip-hop/Rap', 3.12),
+(14, 'Au Bout', 'Hip-hop/Rap', 4.01),
+(15, 'XS', 'Hip-hop/Rap', 3.26),
+(16, 'EARFQUAKE', 'Hip-hop/Rap', 3.10),
+(17, 'See Yop Again', 'Hip-hop/Rap', 3.10),
+(18, 'BEST INTEREST', 'Hip-hop/Rap', 2.07),
+(19, 'Menace', 'Hip-hop/Rap', 3.12),
+(20, 'Venus', 'Hip-hop/Rap', 3.37),
+(21, 'Casino', 'Hip-hop/Rap', 4.50),
+(22, 'Θ. Macarena', 'Hip-hop/Rap', 3.26),
+(23, '911', 'Hip-hop/Rap', 2.52),
+(24, 'Amnésie', 'Hip-hop/Rap', 3.33),
+(25, 'Ouais Ouais', 'Hip-hop/Rap', 2.54),
+(26, 'Zolabeille', 'Hip-hop/Rap', 2.34),
+(27, 'California Girl', 'Hip-hop/Rap', 3.07),
+(28, 'Blinding Lights', 'Hip-hop/Rap', 3.20),
+(29, 'In your Eyes', 'Synth-pop', 3.58),
+(30, 'Starboy', 'RnB', 3.50
+);
