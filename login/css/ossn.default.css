@@ -4,7 +4,7 @@
 
 body {
     font-size: 14px;
-	background:url(../../test/images/back.jpg) no-repeat;
+    background: linear-gradient(to bottom right, gray, black);
     font-family: 'PT Sans', sans-serif;
     height: 100%;
 	width:100%;
@@ -33,14 +33,13 @@ body {
 ******************************/
 
 .widget {
-    margin-bottom: 10px;
-	width:460px;	
-	margin-left:400px;
-	
-    background-color: #fff;
+    margin-top: 300px;
+	width:500px;
+	margin-left:665px;
+    background-color: darkgrey;
 }
 .widget .widget-heading {
-	background: #F9F7F7;
+	background: #ffffff;
 	border: 1px solid #eee;
 	padding: 10px;
 	font-weight: bold;
@@ -50,3 +49,4 @@ body {
     padding: 10px;
     border-bottom: 1px solid #eee;
 }
+
