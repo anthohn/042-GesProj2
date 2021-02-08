@@ -51,42 +51,61 @@ CREATE TABLE t_musique (
   idMusique INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   musNom VARCHAR(50) NOT NULL,
   musGenre VARCHAR(50) NOT NULL,
-  musDuree FLOAT NOT NULL
+  musDuree FLOAT NOT NULL,
+  idxArtiste INT NOT NULL,
+  CONSTRAINT fk_t_musique_t_artiste_idArtiste FOREIGN KEY (idxArtiste) REFERENCES t_artiste(idArtiste)
 );
 
 --
 -- Déchargement des données de la table `t_musique`
 --
 
-INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree) VALUES
-(1, 'gossebumps', 'Hip-hop/Rap', 4.04),
-(2, 'STARGAZING', 'Hip-hop/Rap', 4.31),
-(3, 'Antidote', 'Hip-hop/Rap', 4.23),
-(4, 'Passionfruit', 'Hip-hop/Rap', 4.59),
-(5, 'Controlla', 'Hip-hop/Rap', 4.05),
-(6, 'Feel No Ways', 'Hip-hop/Rap', 4.01),
-(7, 'Gelato', 'Hip-hop/Rap', 3.14),
-(8, ' ', ' ', 0.00),
-(9, ' ', ' ', 0.00),
-(10, 'Cabeza', 'Hip-hop/Rap', 2.28),
-(11, 'Avec Toi', 'Hip-hop/Rap', 3.14),
-(12, 'Rien à fêter', 'Rap', 2.45),
-(13, 'J`aime Bien!', 'Hip-hop/Rap', 3.12),
-(14, 'Au Bout', 'Hip-hop/Rap', 4.01),
-(15, 'XS', 'Hip-hop/Rap', 3.26),
-(16, 'EARFQUAKE', 'Hip-hop/Rap', 3.10),
-(17, 'See Yop Again', 'Hip-hop/Rap', 3.10),
-(18, 'BEST INTEREST', 'Hip-hop/Rap', 2.07),
-(19, 'Menace', 'Hip-hop/Rap', 3.12),
-(20, 'Venus', 'Hip-hop/Rap', 3.37),
-(21, 'Casino', 'Hip-hop/Rap', 4.50),
-(22, 'Θ. Macarena', 'Hip-hop/Rap', 3.26),
-(23, '911', 'Hip-hop/Rap', 2.52),
-(24, 'Amnésie', 'Hip-hop/Rap', 3.33),
-(25, 'Ouais Ouais', 'Hip-hop/Rap', 2.54),
-(26, 'Zolabeille', 'Hip-hop/Rap', 2.34),
-(27, 'California Girl', 'Hip-hop/Rap', 3.07),
-(28, 'Blinding Lights', 'Hip-hop/Rap', 3.20),
-(29, 'In your Eyes', 'Synth-pop', 3.58),
-(30, 'Starboy', 'RnB', 3.50
+INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
+(1, 'gossebumps', 'Hip-hop/Rap', 4.04, 1),
+(2, 'STARGAZING', 'Hip-hop/Rap', 4.31, 1),
+(3, 'Antidote', 'Hip-hop/Rap', 4.23, 1),
+(4, 'Passionfruit', 'Hip-hop/Rap', 4.59, 2),
+(5, 'Controlla', 'Hip-hop/Rap', 4.05, 2),
+(6, 'Feel No Ways', 'Hip-hop/Rap', 4.01, 2),
+(7, 'Gelato', 'Hip-hop/Rap', 3.14, 3),
+(8, ' ', ' ', 0.00, 3),
+(9, ' ', ' ', 0.00, 3),
+(10, 'Cabeza', 'Hip-hop/Rap', 2.28, 4),
+(11, 'Avec Toi', 'Hip-hop/Rap', 3.14, 4),
+(12, 'Rien à fêter', 'Rap', 2.45, 4),
+(13, 'J`aime Bien!', 'Hip-hop/Rap', 3.12, 5),
+(14, 'Au Bout', 'Hip-hop/Rap', 4.01, 5),
+(15, 'XS', 'Hip-hop/Rap', 3.26, 5),
+(16, 'EARFQUAKE', 'Hip-hop/Rap', 3.10, 6),
+(17, 'See Yop Again', 'Hip-hop/Rap', 3.10, 6),
+(18, 'BEST INTEREST', 'Hip-hop/Rap', 2.07, 6),
+(19, 'Menace', 'Hip-hop/Rap', 3.12, 7),
+(20, 'Venus', 'Hip-hop/Rap', 3.37, 7),
+(21, 'Casino', 'Hip-hop/Rap', 4.50, 7),
+(22, 'Macarena', 'Hip-hop/Rap', 3.26, 8),
+(23, '911', 'Hip-hop/Rap', 2.52, 8),
+(24, 'Amnésie', 'Hip-hop/Rap', 3.33, 8),
+(25, 'Ouais Ouais', 'Hip-hop/Rap', 2.54, 9),
+(26, 'Zolabeille', 'Hip-hop/Rap', 2.34, 9),
+(27, 'California Girl', 'Hip-hop/Rap', 3.07, 9),
+(28, 'Blinding Lights', 'Hip-hop/Rap', 3.20, 10),
+(29, 'In your Eyes', 'Synth-pop', 3.58, 10),
+(30, 'Starboy', 'RnB', 3.50, 10
 );
+
+CREATE TABLE t_playlist (
+  idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  plaNom VARCHAR(255) NOT NULL,
+  plaCreationDate DATE NOT NULL,
+  idxMusique INT NOT NULL,
+  CONSTRAINT fk_t_playlist_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
+  )
+
+-- CREATE TABLE t_genre (
+--   idGenre INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--   idxMusique INT NOT NULL,
+--   CONSTRAINT fk_t_genre_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
+-- )
+
+-- créer la table genre, lien + type de lien
+
