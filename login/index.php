@@ -6,26 +6,26 @@
 <link rel="stylesheet" type="text/css" href="css/ossn.default.css" />
 
  
--->  
+
 </head>
 
 <body>
        <div class="widget ">
-	<div class="widget-heading">Login</div>
+	<div class="widget-heading">Connexion</div>
 	<div class="widget-contents">
 		<form id="login" action="login.php" class="form" method="post"  enctype='multipart/form-data'><fieldset>  
         <div>
-	<label>Username</label>
+	<label>Nom d'utilisateur</label>
     <input type="text" name="username" />
 </div>
 
 <div>
-	<label>Password</label>
+	<label>Mot de passe</label>
     <input type="password" name="password" />
 </div>
 
 <div>		
-    <input type="submit" value="Login" class="btn btn-primary"/>
+    <input type="submit" value="Connexion" class="btn btn-primary"/>
    	</div>
 </fieldset></form>	</div>
 </div>             
