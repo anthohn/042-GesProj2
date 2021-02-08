@@ -1,0 +1,13 @@
+body {
+    font-size: 14px;
+    background: linear-gradient(to bottom right, gray, black);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.texte {
+    color: white;
+    text-align: center;
+}
