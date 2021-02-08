@@ -19,8 +19,8 @@ CREATE DATABASE P_db_042main;
 CREATE TABLE t_artiste (
   idArtiste INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   ArtNom VARCHAR(50) NOT NULL,
-  ArtOrigin char(50) NOT NULL,
-  ArtNaissance date NOT NULL
+  ArtOrigin VARCHAR(50) NOT NULL,
+  ArtNaissance DATE NOT NULL
 );
 
 --
@@ -39,6 +39,7 @@ INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
 (9, 'Zola', 'France', '1999-11-16'),
 (10, 'The Weeknd', 'Etats-unis', '1990-02-16'
 );
+
 
 -- --------------------------------------------------------
 
