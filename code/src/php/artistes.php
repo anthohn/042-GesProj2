@@ -24,7 +24,7 @@
 
 	try
 	{
-		$db = new PDO ("mysql:host=localhost;dbname=db_042main;charset=utf8", $user, $pass);
+		$db = new PDO ("mysql:host=localhost;dbname=p_db_042main;charset=utf8", $user, $pass);
 	} 
 	catch (PDOException $e)
 	{
