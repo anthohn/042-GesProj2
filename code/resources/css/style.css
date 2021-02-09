@@ -156,7 +156,7 @@ footer{
 }
 
 #search {
-	width: 1000px;
+	width: 1000%;
 	height: 50px;
 	position: absolute;
 	border-radius: 10px;
@@ -164,6 +164,27 @@ footer{
 	font-size: 25px;
 	background-color: white;
 	padding: 0 0 0 15px;
+}
+
+.searchIcon {
+	position: absolute;
+	background-color: white;
+	height: 50px;
+	border-radius: 10px;
+	width: 60px;
+}
+
+#icon {
+	padding: 8px 0 0 0;
+	margin: 0 0 0 5px;
+}
+
+.icon {
+	background-color: white;
+	height: 50px;
+	border-radius: 10px;
+	width: 45px;
+    border: 0;
 }
 
 
