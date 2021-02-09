@@ -27,11 +27,13 @@
 			<!-- Navigation Bar --> 
 			<div class="leftnav">
 				<ul class="navBarLink">
-					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<li class="logo"><a href="accueil.php">Oto</a></li>
 					<li><a href="accueil.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
 					<li class="espace"><a id="active" href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
 					<li class="border"><a href="artistes.php">Artistes</a></li>
 					<li><a href="playlists.php">Playlists</a></li>
+					<li class="bottom"><a href="about.php">about</a></li>
 				</ul>
 			</div>	
 		</div>			

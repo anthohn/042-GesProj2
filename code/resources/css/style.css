@@ -55,7 +55,7 @@ body{
 	height: 150vh;
 	width: 232px;
 	background: black;
-	padding-top : 60px;
+	padding-top : 40px;
 }
 
 .leftnav ul{
@@ -88,6 +88,14 @@ body{
 	color: White;
 	background-color: #5c5a55;
 }
+#active2{
+	color: White;
+}
+
+.logo{
+	font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+	font-size: 40px;
+}
 
 .espace{
 	margin-bottom: 50px;
@@ -96,6 +104,56 @@ body{
 .border{
 	padding-top: 10px;
 	border-top: 1px solid Gray;
+}
+
+/******************************ACCUEIL******************************/
+.ACmainBlock{
+	text-align: center;
+	margin-left: 232px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.ACblock1, .ACblock2, .ACblock3, .ACblock4, .ACblock5{
+	height: 300px;
+	border-radius: 10px;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+	flex-basis: 240px;
+	background-color: darkgrey;
+	
+}
+
+.ACblockTitle p{
+	margin-left: 30px;
+	float: left;
+	padding-top: 5px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(32, 32, 32);
+	text-shadow: 4px 4px 7px #5c5c5c;
+}
+
+.ACimgCover img{
+	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	margin-top: 20px;
+	margin-bottom: 0;
+	height: 200px;
+}
+
+.ACblockText{
+	padding-top: 7px;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.ACblockText p{
+	font-size: 13px;
+	margin: 0;
 }
 
 footer{
@@ -262,13 +320,6 @@ footer{
 	color: rgb(226, 226, 226);
 }
 
-
-
-
-
-
-
-
 .ARblock1:hover, .ARblock2:hover, .ARblock3:hover, .ARblock4:hover, .ARblock5:hover, .ARblock6:hover , .ARblock7:hover , .ARblock8:hover, .ARblock9:hover, .ARblock10:hover, .ARblock11:hover, .ARblock12:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
@@ -278,10 +329,10 @@ footer{
 .title{
 	margin-left: 232px;
 	padding-top: 10px;
-	padding-left: 52px;	
+	padding-left: 70px;	
 }
 
-.title p {
+.title p{
 	color: White;
 	font-weight: bold;
 	font-size: 30px;
@@ -375,6 +426,67 @@ footer{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
 
+/*******************************************ABOUT***********************************************/
+
+.bottom{
+	padding-top: 450px;
+}
+
+
+
+.contenu{
+	width: 80%;
+	margin-left: 232px;
+	padding-top: 70px;
+}
+
+.contenutext{
+	width: 50%;
+	border-radius:10px;
+	height: 50%;
+	background-color: darkgrey;
+	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+	margin-left: 26%;
+}
+
+.contenutext p{
+	text-justify: auto;
+	padding-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(32, 32, 32);
+	text-shadow: 2px 4px 7px #5c5c5c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********************************************************************************************/
 
 /*Responsive Design*/
 

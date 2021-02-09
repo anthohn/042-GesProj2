@@ -27,14 +27,79 @@
 			<!-- Bar de navigation -->
 			<div class="leftnav">
 				<ul class="navBarLink">
-					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<li class="logo"><a href="accueil.php">Oto</a></li>
 					<li><a id="active" href="accueil.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
 					<li class="espace"><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
 					<li class="border"><a href="artistes.php">Artistes</a></li>
 					<li><a href="playlists.php">Playlists</a></li>
+					<li class="bottom"><a href="about.php">about</a></li>
 				</ul>
 			</div>
 		</div>
+		<div class="title">
+			<p>Écoutés récemment</p>
+		</div>	
+		<div class="ACmainBlock">			
+			<div class="ACblock1">
+				<div class="ACimgCover">
+					<img src="../../userContent/img/coverPlaylists/recent.jpg" alt="">
+				</div>
+				<div class="ACblockTitle">
+					<p>track1</p>
+				</div>
+				<div class="plus">
+					<a href="#"><img src="../../userContent/logo/play.svg" alt=""></a>
+				</div>
+			</div>
+		
+			<div class="ACblock1">
+				<div class="ACimgCover">
+					<img src="../../userContent/img/artistes/travis.jpg" alt="">
+				</div>
+				<div class="ACblockTitle">
+					<p>test</p>
+				</div>
+				<div class="plus">
+					<a href="#">+</a>
+				</div>
+			</div>
+			<div class="ACblock1">
+				<div class="ACimgCover">
+					<img src="../../userContent/img/artistes/travis.jpg" alt="">
+				</div>
+				<div class="ACblockTitle">
+					<p>test</p>
+				</div>
+				<div class="plus">
+					<a href="#">+</a>
+				</div>
+			</div>
+			<div class="ACblock1">
+				<div class="ACimgCover">
+					<img src="../../userContent/img/artistes/travis.jpg" alt="">
+				</div>
+				<div class="ACblockTitle">
+					<p>test</p>
+				</div>
+				<div class="plus">
+					<a href="#">+</a>
+				</div>
+			</div>
+			<div class="ACblock1">
+				<div class="ACimgCover">
+					<img src="../../userContent/img/artistes/travis.jpg" alt="">
+				</div>
+				<div class="ACblockTitle">
+					<p>test</p>
+				</div>
+				<div class="plus">
+					<a href="#">+</a>
+				</div>
+			</div>	
+		</div>	
+
+
 
 		<footer>
 			<div class="leftFooter">
