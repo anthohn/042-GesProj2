@@ -1,6 +1,6 @@
 -- ETML
 -- Auteur      : Anthony Höhn
--- Date        : 05.02.2021
+-- Date        : 08.02.2021
 -- Description : Base de données db_042main
 
 --
@@ -13,7 +13,7 @@ CREATE DATABASE P_db_042main;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_artiste`
+-- Structure de la table "t_artiste"
 --
 
 CREATE TABLE t_artiste (
@@ -24,7 +24,7 @@ CREATE TABLE t_artiste (
 );
 
 --
--- Déchargement des données de la table `t_artiste`
+-- Déchargement des données de la table "t_artiste"
 --
 
 INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
@@ -44,7 +44,7 @@ INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_musique`
+-- Structure de la table "t_musique"
 --
 
 CREATE TABLE t_musique (
@@ -57,9 +57,8 @@ CREATE TABLE t_musique (
 );
 
 --
--- Déchargement des données de la table `t_musique`
+-- Déchargement des données de la table "t_musique"
 --
-
 INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
 (1, 'gossebumps', 'Hip-hop/Rap', 4.04, 1),
 (2, 'STARGAZING', 'Hip-hop/Rap', 4.31, 1),
@@ -93,19 +92,53 @@ INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
 (30, 'Starboy', 'RnB', 3.50, 10
 );
 
+
+--
+-- Structure de la table "t_playlist"
+--
 CREATE TABLE t_playlist (
   idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plaNom VARCHAR(255) NOT NULL,
   plaCreationDate DATE NOT NULL,
   idxMusique INT NOT NULL,
   CONSTRAINT fk_t_playlist_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
-  )
+  );
 
--- CREATE TABLE t_genre (
---   idGenre INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
---   idxMusique INT NOT NULL,
---   CONSTRAINT fk_t_genre_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
--- )
+--
+-- Structure de la table "t_genre"
+--
+CREATE TABLE t_genre (
+  idGenre INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  GenreNom VARCHAR(255),
+  idxMusique INT NOT NULL,
+  CONSTRAINT fk_t_genre_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
+);
 
--- créer la table genre, lien + type de lien
+--
+-- Déchargement des données de la table "t_genre"
+--
+INSERT INTO t_genre (idGenre, GenreNom, idxMusique) VALUES
+(1, "Hip-hop/Rap", 1), -- DONT KNOW WHAT TO PUT IN "idxMusique" -> ask to JONATHANNNNNNE
+(2, "Rap", 1),
+(3, "Synth-pop", 1),
+(4, "RnB" ,1
+);
 
+-- 
+-- Structure de la table "t_lien"
+--
+CREATE TABLE t_lien (
+  idLien INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  lieLien VARCHAR(255),
+  idxMusique INT NOT NULL,
+  CONSTRAINT fk_t_lien_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
+);
+
+--
+-- Structure de la table "t_typeLien"
+--
+CREATE TABLE t_typeLien (
+  idTypeLien INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idxLien INT NOT NULL,
+  CONSTRAINT fk_t_typeLien_t_lien_idLien FOREIGN KEY (idxLien) REFERENCES t_lien(idLien)
+);
