@@ -334,20 +334,27 @@ footer{
 	font-size: 80px;
 }
 
+.ARPtitle p{
+	margin-left: 10%;
+	position: fixed;
+	z-index: -1;
+}
+
 .ARPtitle img{
 	float: left;
-	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
 	border-radius: 100px;
 	margin-top: 60px;
 	margin-bottom: 0;
 	height: 120px;
-	margin-right: 30px;
+	position: fixed;
+	z-index: -1;
 }
 
 .ARPmainBlock{
 	background: linear-gradient(to bottom right, rgb(49, 0, 0), rgb(0, 53, 7));
-	padding-bottom: 100%;
-	margin-top: 200px;
+	padding-bottom: 40%;
+	margin-top: 400px;
 	text-align: center;
 	margin-left: 232px;
 	display: flex;
@@ -356,7 +363,7 @@ footer{
 	justify-content: space-evenly;
 }
 .ARPblock1, .ARPblock2, .ARPblock3{
-	height: 70px;
+	height: 80px;
 	border-radius: 5px;
 	margin-top: 40px;
 	margin-left: 20px;
@@ -377,12 +384,9 @@ footer{
 
 .ARPblock1 img, .ARPblock2 img, .ARPblock3 img{
 	float: left;
-	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
-	margin-left: 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	border-radius: 5px;
-	height: 60px;
+	margin: 7px 0 0 7px;
+	border-radius: 7px;
+	height: 65px;
 }
 
 .ARPblock1 a, .ARPblock2 a, .ARPblock3 a{

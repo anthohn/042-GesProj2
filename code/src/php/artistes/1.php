@@ -61,12 +61,14 @@
 				<p>STARGAZING</p>
 				<p>-</p>
 				<p>04:31</p>
+				<a href="#">. . .</a>
 			</div>
 			<div class="ARPblock3">
 				<img src="../../../userContent/img/coverPlaylists/rodeo.jpg" alt="">
 				<p>Antidote</p>
 				<p>-</p>
 				<p>04:23</p>
+				<a href="#">. . .</a> 
 			</div>
 
 
