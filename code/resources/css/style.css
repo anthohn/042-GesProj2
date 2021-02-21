@@ -10,10 +10,10 @@ html{
 	/* temporaire pour pouvoir scroll corecemment dans la page*/
 	height: 1400px; 
 	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-	font-family: Arial;
 	background: linear-gradient(to bottom right, Gray, Black);
 	margin: 0;
 	background-position: center;
@@ -51,7 +51,8 @@ body{
 
 .leftnav{
 	display: flex;
-    /* position: fixed; */
+	/* sorry yene */
+    position: fixed;
 	height: 150vh;
 	width: 232px;
 	background: black;
@@ -323,6 +324,104 @@ footer{
 .ARblock1:hover, .ARblock2:hover, .ARblock3:hover, .ARblock4:hover, .ARblock5:hover, .ARblock6:hover , .ARblock7:hover , .ARblock8:hover, .ARblock9:hover, .ARblock10:hover, .ARblock11:hover, .ARblock12:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
+/*******************************************ARTISTES PERSO***********************************************/
+.ARPtitle{
+	margin-left: 232px;
+	padding-top: 10px;
+	padding-left: 70px;		
+	color: White;
+	font-weight: bold;
+	font-size: 80px;
+}
+
+.ARPtitle img{
+	float: left;
+	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	border-radius: 100px;
+	margin-top: 60px;
+	margin-bottom: 0;
+	height: 120px;
+	margin-right: 30px;
+}
+
+.ARPmainBlock{
+	background: linear-gradient(to bottom right, rgb(49, 0, 0), rgb(0, 53, 7));
+	padding-bottom: 100%;
+	margin-top: 200px;
+	text-align: center;
+	margin-left: 232px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.ARPblock1, .ARPblock2, .ARPblock3{
+	height: 70px;
+	border-radius: 5px;
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: rgb(10, 10, 10);
+	/* box-shadow: 0 7px 40px 0 rgba(85, 85, 85, 0.7);	 */
+}
+
+.ARPblock1 p, .ARPblock2 p, .ARPblock3 p{
+	margin-left: 3%;
+	float: left;
+	margin-top: 25px;
+	margin-bottom: 0;
+	font-size: 18px;
+	color: rgb(180, 180, 180);
+	/* text-shadow: 4px 4px 7px #5c5c5c; */
+}
+
+.ARPblock1 img, .ARPblock2 img, .ARPblock3 img{
+	float: left;
+	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	height: 60px;
+}
+
+.ARPblock1 a, .ARPblock2 a, .ARPblock3 a{
+	margin-top: 15px;
+	margin-right: 25px;
+	float: right;
+	font-weight: 800;
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+
+/* 
+.ARPblockText p{
+	font-size: 13px;
+	margin: 0;
+} */
+
+.ARPplus {
+	float: left;
+
+	background-color: rgb(88, 88, 88);
+	height: 22px;
+	width: 22px;
+	border-radius: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*******************************************PLAYLISTS***********************************************/
 

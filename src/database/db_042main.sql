@@ -17,7 +17,7 @@ CREATE DATABASE P_db_042main;
 --
 
 CREATE TABLE t_artiste (
-  idArtiste INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idArtiste INT NOT NULL PRIMARY KEY,
   ArtNom VARCHAR(50) NOT NULL,
   ArtOrigin VARCHAR(50) NOT NULL,
   ArtNaissance DATE NOT NULL
@@ -48,7 +48,7 @@ INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
 --
 
 CREATE TABLE t_musique (
-  idMusique INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idMusique INT NOT NULL PRIMARY KEY,
   musNom VARCHAR(50) NOT NULL,
   musGenre VARCHAR(50) NOT NULL,
   musDuree FLOAT NOT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE t_genre (
 -- Déchargement des données de la table "t_genre"
 --
 INSERT INTO t_genre (idGenre, GenreNom, idxMusique) VALUES
-(1, "Hip-hop/Rap", 1), -- DONT KNOW WHAT TO PUT IN "idxMusique" -> ask to JONATHANNNNNNE
+(1, "Hip-hop/Rap", 1), -- DONT KNOW WHAT TO PUT IN "idxMusique"
 (2, "Rap", 1),
 (3, "Synth-pop", 1),
 (4, "RnB" ,1
