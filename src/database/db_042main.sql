@@ -16,28 +16,51 @@ CREATE DATABASE P_db_042main;
 -- Structure de la table "t_artiste"
 --
 
+
+CREATE TABLE t_pays (
+  idPays INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  payPays VARCHAR(50) NOT NULL
+);
+
+INSERT INTO t_pays (idPays, payPays) VALUES
+(1, 'Etats-Unis'),
+(2, 'Suisse'),
+(3, 'France'),
+(4, 'Belgique'),
+(5, 'Espagne'),
+(6, 'Portugal'),
+(7, 'Bulgarie'),
+(8, 'Maroc'),
+(9, 'Apropos'),
+(10, 'Allemagne'
+);
+
+
+
 CREATE TABLE t_artiste (
   idArtiste INT NOT NULL PRIMARY KEY,
   ArtNom VARCHAR(50) NOT NULL,
-  ArtOrigin VARCHAR(50) NOT NULL,
-  ArtNaissance DATE NOT NULL
+  ArtNaissance DATE NOT NULL,
+  idxPays INT NOT NULL,
+  CONSTRAINT fk_t_artiste_t_pays_idPays FOREIGN KEY (idxPays) REFERENCES t_pays(idPays)
 );
+
 
 --
 -- Déchargement des données de la table "t_artiste"
 --
 
-INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
-(1, 'Travis Scott', 'Etats-Unis', '1992-04-30'),
-(2, 'Drake', 'Etats-Unis', '1986-10-24'),
-(3, 'Ohmidz', 'Suisse', '2002-03-04'),
-(4, 'Oboy', 'France', '1997-01-06'),
-(5, 'Josman', 'France', '1995-04-15'),
-(6, 'Tyler', 'Etats-unis', '1991-03-06'),
-(7, 'Ateyaba', 'France', '1989-10-27'),
-(8, 'Damso', 'Belgique', '1992-05-10'),
-(9, 'Zola', 'France', '1999-11-16'),
-(10, 'The Weeknd', 'Etats-unis', '1990-02-16'
+INSERT INTO t_artiste (idArtiste, ArtNom, idxPays, ArtNaissance) VALUES
+(1, 'Travis Scott', 1, '1992-04-30'),
+(2, 'Drake', 1, '1986-10-24'),
+(3, 'Ohmidz', 2, '2002-03-04'),
+(4, 'Oboy', 3, '1997-01-06'),
+(5, 'Josman', 3, '1995-04-15'),
+(6, 'Tyler', 1, '1991-03-06'),
+(7, 'Ateyaba', 3, '1989-10-27'),
+(8, 'Damso', 4, '1992-05-10'),
+(9, 'Zola', 3, '1999-11-16'),
+(10, 'The Weeknd', 1, '1990-02-16'
 );
 
 
@@ -46,9 +69,8 @@ INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
 --
 -- Structure de la table "t_musique"
 --
-
 CREATE TABLE t_musique (
-  idMusique INT NOT NULL PRIMARY KEY,
+  idMusique INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   musNom VARCHAR(50) NOT NULL,
   musGenre VARCHAR(50) NOT NULL,
   musDuree FLOAT NOT NULL,
@@ -99,10 +121,18 @@ INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
 CREATE TABLE t_playlist (
   idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plaNom VARCHAR(255) NOT NULL,
-  plaCreationDate DATE NOT NULL,
+  plaCreationDate DATE NOT NULL
+);
+
+-- Structure de la table "t_ajouter"
+--
+CREATE TABLE t_ajouter (
   idxMusique INT NOT NULL,
-  CONSTRAINT fk_t_playlist_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
-  );
+  idxPlaylist INT NOT NULL,
+  ajoOrder INT NOT NULL,
+  CONSTRAINT fk_t_ajouter_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique),
+  CONSTRAINT fk_t_ajouter_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist)
+);
 
 --
 -- Structure de la table "t_genre"
@@ -142,3 +172,73 @@ CREATE TABLE t_typeLien (
   idxLien INT NOT NULL,
   CONSTRAINT fk_t_typeLien_t_lien_idLien FOREIGN KEY (idxLien) REFERENCES t_lien(idLien)
 );
+
+
+-- KILLIAN (Vérifie avant de compiler pas sur a 100% que ca fonctionne) 
+
+--
+-- TABLE DE LOGIN 
+-- 
+-- Killian Good
+-- version 01.03.2021
+-- 
+--
+-- Host: 127.0.0.1 (local)
+-- Temps de generation : Oct 09, 2017 at 06:09 AM
+-- Version du serveur : 10.1.10-MariaDB
+-- Version PHP : 8.0.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de donnée: `login`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(111) NOT NULL,
+  `username` varchar(111) NOT NULL,
+  `password` varchar(111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data pour la table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(2, 'admin', 'pass');
+
+--
+-- Indexes pour les tables 'dumped'
+--
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

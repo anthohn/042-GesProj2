@@ -93,7 +93,7 @@
 					<p>Artiste</p>
 				</div>
 				<div class="plus">
-					<a href="#">+</a>
+					<a href="artistes/1.php">+</a>
 				</div>
 			</div>
 			<div class="ARblock3">
