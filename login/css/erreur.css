@@ -19,7 +19,7 @@ body {
 .form textarea,
 .form input[type='text'] {
     width: 100%;
-    border: 1px solid #eee;
+    border: 1px solid tomato;
     padding: 10px;
     margin-bottom: 5px;
     outline: none;
@@ -35,7 +35,7 @@ body {
     margin-top: 300px;
 	width:500px;
 	margin-left:665px;
-    background-color: darkgrey;
+    background-color: darkgrey; 
 }
 .widget .widget-heading {
 	background: #282828;
@@ -60,4 +60,6 @@ body {
 .btn-primary:hover{
     background: #282828;
 }
+
+
 
