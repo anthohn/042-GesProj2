@@ -99,10 +99,17 @@ INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
 CREATE TABLE t_playlist (
   idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plaNom VARCHAR(255) NOT NULL,
-  plaCreationDate DATE NOT NULL,
+  plaCreationDate DATE NOT NULL
+);
+
+-- Structure de la table "t_ajouter"
+--
+CREATE TABLE t_ajouter (
   idxMusique INT NOT NULL,
-  CONSTRAINT fk_t_playlist_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
-  );
+  idxPlaylist INT NOT NULL,
+  CONSTRAINT fk_t_ajouter_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique),
+  CONSTRAINT fk_t_ajouter_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist)
+);
 
 --
 -- Structure de la table "t_genre"
