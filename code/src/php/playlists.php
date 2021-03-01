@@ -47,7 +47,7 @@
 			<div class="playlistcreation">
 				<p>Créer une playlist</p>
 				<div class="playlistcreationBoutton">
-					<a href="#">+</a>
+					<a href="artistes.php">+</a>
 				</div>
 
 			</div>
