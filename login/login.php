@@ -15,7 +15,7 @@ session_start();
 		
       if((mysqli_num_rows($result) == 1)) {
 		  $results = mysqli_fetch_array($result);
-   		         header("location: welcome.php");
+   		         header("location: ../code/index.html");
      	  }
 		  else {
          echo"Invalid Username OR Password";
