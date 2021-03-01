@@ -14,6 +14,12 @@
 		<link rel="icon" href="../../userContent/logoOnglet.png" />
 		<title>Recherche</title>
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
+
+		<link href="../../resources/css/bootstrap.bundle.min" rel="stylesheet" type="text/css" />
+		<link href="../../resources/css/bootstrap.min" rel="stylesheet" type="text/css" />
+		<link href="../../resources/css/font-awesome.min" rel="stylesheet" type="text/css" />
+		<link href="../../resources/css/jquery-3.3.1.slim.min" rel="stylesheet" type="text/css" />
+
 		<script src="../js/toggleMenu.js" defer></script>
 	</head>	
 	<body>	
@@ -39,12 +45,12 @@
 		</div>	
 		<!-- barre de recherche-->
 		<div class="searchBar">
-			<div class="seachForm">
+			<div class="searchForm">
 				<form method="GET" action="">
 					<div class="searchIcon">
 						<button class="icon" type="submit"><svg id="icon" viewBox="0 0 24 24" fill="grey" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
 						
-						<input type="search" name="search" id="search" placeholder="Recherche . . ."/>
+						<input type="text" name="search" id="search" placeholder="Recherche . . ." autocomplete="off"/>
 					</div>
 				</form>
 			</div>

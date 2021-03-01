@@ -209,9 +209,12 @@ footer{
 
 .searchBar {
 	margin: 0 0 0 232px;
+	top: 11%;
 	position: absolute;
-	left: 10%;
-	top: 10%;
+}
+
+.searchForm {
+	margin: 0 0 0 150px;
 }
 
 #search {
@@ -240,10 +243,19 @@ footer{
 
 .icon {
 	background-color: white;
-	height: 50px;
 	border-radius: 10px;
-	width: 45px;
+	width: 42px;
     border: 0;
+	outline: none;
+}
+
+.icon:hover {
+	cursor: pointer;
+}
+
+#search:focus
+{
+	outline: none;
 }
 
 
@@ -617,5 +629,22 @@ footer{
 
 	.navBarLink.active {
 		display: flex;
+	}
+
+	/*Search*/
+
+	#search {
+		/* width: 250px;
+		height: 50px;	
+		font-size: 20px;
+		padding: 0 0 0 15px; */
+	}
+
+	.searchBar {
+		margin: 0 0 0 200px;
+	}
+	
+	.searchForm {
+		margin: 0 0 0 15px;
 	}
 }
