@@ -16,28 +16,51 @@ CREATE DATABASE P_db_042main;
 -- Structure de la table "t_artiste"
 --
 
+
+CREATE TABLE t_pays (
+  idPays INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  payPays VARCHAR(50) NOT NULL
+);
+
+INSERT INTO t_pays (idPays, payPays) VALUES
+(1, 'Etats-Unis'),
+(2, 'Suisse'),
+(3, 'France'),
+(4, 'Belgique'),
+(5, 'Espagne'),
+(6, 'Portugal'),
+(7, 'Bulgarie'),
+(8, 'Maroc'),
+(9, 'Apropos'),
+(10, 'Allemagne'
+);
+
+
+
 CREATE TABLE t_artiste (
   idArtiste INT NOT NULL PRIMARY KEY,
   ArtNom VARCHAR(50) NOT NULL,
-  ArtOrigin VARCHAR(50) NOT NULL,
-  ArtNaissance DATE NOT NULL
+  ArtNaissance DATE NOT NULL,
+  idxPays INT NOT NULL,
+  CONSTRAINT fk_t_artiste_t_pays_idPays FOREIGN KEY (idxPays) REFERENCES t_pays(idPays)
 );
+
 
 --
 -- Déchargement des données de la table "t_artiste"
 --
 
-INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
-(1, 'Travis Scott', 'Etats-Unis', '1992-04-30'),
-(2, 'Drake', 'Etats-Unis', '1986-10-24'),
-(3, 'Ohmidz', 'Suisse', '2002-03-04'),
-(4, 'Oboy', 'France', '1997-01-06'),
-(5, 'Josman', 'France', '1995-04-15'),
-(6, 'Tyler', 'Etats-unis', '1991-03-06'),
-(7, 'Ateyaba', 'France', '1989-10-27'),
-(8, 'Damso', 'Belgique', '1992-05-10'),
-(9, 'Zola', 'France', '1999-11-16'),
-(10, 'The Weeknd', 'Etats-unis', '1990-02-16'
+INSERT INTO t_artiste (idArtiste, ArtNom, idxPays, ArtNaissance) VALUES
+(1, 'Travis Scott', 1, '1992-04-30'),
+(2, 'Drake', 1, '1986-10-24'),
+(3, 'Ohmidz', 2, '2002-03-04'),
+(4, 'Oboy', 3, '1997-01-06'),
+(5, 'Josman', 3, '1995-04-15'),
+(6, 'Tyler', 1, '1991-03-06'),
+(7, 'Ateyaba', 3, '1989-10-27'),
+(8, 'Damso', 4, '1992-05-10'),
+(9, 'Zola', 3, '1999-11-16'),
+(10, 'The Weeknd', 1, '1990-02-16'
 );
 
 
@@ -46,9 +69,8 @@ INSERT INTO t_artiste (idArtiste, ArtNom, ArtOrigin, ArtNaissance) VALUES
 --
 -- Structure de la table "t_musique"
 --
-
 CREATE TABLE t_musique (
-  idMusique INT NOT NULL PRIMARY KEY,
+  idMusique INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   musNom VARCHAR(50) NOT NULL,
   musGenre VARCHAR(50) NOT NULL,
   musDuree FLOAT NOT NULL,
@@ -107,6 +129,7 @@ CREATE TABLE t_playlist (
 CREATE TABLE t_ajouter (
   idxMusique INT NOT NULL,
   idxPlaylist INT NOT NULL,
+  ajoOrder INT NOT NULL,
   CONSTRAINT fk_t_ajouter_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique),
   CONSTRAINT fk_t_ajouter_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist)
 );

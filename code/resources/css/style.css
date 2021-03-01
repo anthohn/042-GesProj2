@@ -52,7 +52,7 @@ body{
 .leftnav{
 	display: flex;
 	/* sorry yene */
-    position: fixed;
+	position: fixed;
 	height: 150vh;
 	width: 232px;
 	background: black;
@@ -327,8 +327,7 @@ footer{
 /*******************************************ARTISTES PERSO***********************************************/
 .ARPtitle{
 	margin-left: 232px;
-	padding-top: 10px;
-	padding-left: 70px;		
+	padding: 30px 0 0 70px;
 	color: White;
 	font-weight: bold;
 	font-size: 80px;
@@ -344,8 +343,7 @@ footer{
 	float: left;
 	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
 	border-radius: 100px;
-	margin-top: 60px;
-	margin-bottom: 0;
+	margin: 70px 0 0 0;
 	height: 120px;
 	position: fixed;
 	z-index: -1;
@@ -354,29 +352,25 @@ footer{
 .ARPmainBlock{
 	background: linear-gradient(to bottom right, rgb(49, 0, 0), rgb(0, 53, 7));
 	padding-bottom: 40%;
-	margin-top: 400px;
+	margin: 400px 0 0 232px;
 	text-align: center;
-	margin-left: 232px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
+
 .ARPblock1, .ARPblock2, .ARPblock3{
 	height: 80px;
 	border-radius: 5px;
-	margin-top: 40px;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin: 30px 20px 20px 20px;
 	background-color: rgb(10, 10, 10);
 	/* box-shadow: 0 7px 40px 0 rgba(85, 85, 85, 0.7);	 */
 }
 
 .ARPblock1 p, .ARPblock2 p, .ARPblock3 p{
-	margin-left: 3%;
 	float: left;
-	margin-top: 25px;
-	margin-bottom: 0;
+	margin: 30px 0 0 3%;
 	font-size: 18px;
 	color: rgb(180, 180, 180);
 	/* text-shadow: 4px 4px 7px #5c5c5c; */
@@ -389,43 +383,54 @@ footer{
 	height: 65px;
 }
 
-.ARPblock1 a, .ARPblock2 a, .ARPblock3 a{
-	margin-top: 15px;
-	margin-right: 25px;
+svg.like{
 	float: right;
-	font-weight: 800;
-	font-size: 20px;
+	margin: 25px 50px 0 0;
+	fill: White;
+}
+
+svg.like:active{
+	fill: rgb(54, 184, 54);
+}
+
+.dropbtn {
+	margin : 25px 14px 0 0;
+	border-radius: 10px;
+	background-color: rgb(136, 136, 136);
 	color: white;
+	padding: 5px 10px 0 10px;
+	font-size: 18px;
+	font-weight: 800;
+	border: none;
+	cursor: pointer;
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	border-radius: 10px;
+	display: none;
+	position: absolute;
+	right: 0;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
 	text-decoration: none;
-}
-
-/* 
-.ARPblockText p{
-	font-size: 13px;
-	margin: 0;
-} */
-
-.ARPplus {
-	float: left;
-
-	background-color: rgb(88, 88, 88);
-	height: 22px;
-	width: 22px;
-	border-radius: 30px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+	display: block;
+  }
+  
+  /* .dropdown-content a:hover {background-color: #757575;} */
+  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropbtn {background-color: rgb(177, 177, 177);}
 
 /*******************************************PLAYLISTS***********************************************/
 
@@ -474,7 +479,6 @@ footer{
 	margin-left: 108px;
 	margin-right: 108px;
 	background-color: rgb(88, 88, 88);
-
 }
 
 .playlistcreationBoutton a{
@@ -535,8 +539,6 @@ footer{
 	padding-top: 450px;
 }
 
-
-
 .contenu{
 	width: 80%;
 	margin-left: 232px;
@@ -559,34 +561,11 @@ footer{
 	margin-right: 10px;
 	margin-top: 0;
 	margin-bottom: 0;
-	font-weight: 800;
+	font-weight: 600;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
 	text-shadow: 2px 4px 7px #5c5c5c;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /***********************************************************************************************/
