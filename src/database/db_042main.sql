@@ -151,7 +151,7 @@ CREATE TABLE t_typeLien (
 );
 
 
-------------------------------------------------------------------------- KILLIAN (Vérifie avant de compiler pas sur a 100% que ca fonctionne) 
+-- KILLIAN (Vérifie avant de compiler pas sur a 100% que ca fonctionne) 
 
 --
 -- TABLE DE LOGIN 
