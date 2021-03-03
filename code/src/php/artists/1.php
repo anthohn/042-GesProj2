@@ -20,7 +20,7 @@
 	<body>	
 		<style>
 			body {
-			background-image: url('../../../userContent/img/artistes/travis2.jpg');
+			background-image: url('../../../userContent/img/artists/travis2.jpg');
 			}
 		</style>
 		<div class="main">

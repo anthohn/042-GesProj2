@@ -12,16 +12,14 @@
 
 		<!-- Logo onglet-->
 		<link rel="icon" href="../../userContent/logoOnglet.png" />
-		<title>Aritistes</title>
+		<title>Artistes</title>
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
 		<script src="../js/toggleMenu.js" defer></script>
 	</head>	
 	<body>
-	
 	<?php
 	$user = "root";
 	$pass = "root";
-
 	try
 	{
 		$db = new PDO ("mysql:host=localhost;dbname=p_db_042main;charset=utf8", $user, $pass);
