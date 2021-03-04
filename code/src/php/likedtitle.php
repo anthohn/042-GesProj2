@@ -1,3 +1,9 @@
+<!--
+ETML
+Auteur      : Anthony Höhn
+Date        : 04.03.2021
+Description : tkt
+-->
 <?php require "_header.php";
 if(isset($_GET["id"])){
     $musique = $DB->query("SELECT id FROM t_musique WHERE id=:id", array("id" => $_GET["id"]));

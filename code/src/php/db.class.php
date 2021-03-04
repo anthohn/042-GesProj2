@@ -1,3 +1,9 @@
+<!--
+ETML
+Auteur      : Anthony Höhn
+Date        : 04.03.2021
+Description : tkt
+-->
 <?php
 class DB{
     //Déclaration des variables de connection
@@ -6,7 +12,6 @@ class DB{
     private $password = "root";
     private $database = "p_db_042main";
     private $db;
-
 
     public function __construct($host = null, $username = null, $password = null, $database = null){
         if($host != null ){

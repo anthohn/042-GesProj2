@@ -1,4 +1,10 @@
-﻿<?php require "header.php" ?>
+﻿<!--
+ETML
+Auteur      : Anthony Höhn
+Date        : 04.03.2021
+Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
+-->
+<?php require "header.php" ?>
 <div class="alltitle">
 	<p>Tous les titres</p>
 </div>	
