@@ -338,7 +338,7 @@ footer{
 } 
 
 /*******************************************Titres likés*************************************************/
-.likedtitle{
+.alltitle{
 	margin-left: 232px;
 	padding: 30px 0 0 70px;
 	color: White;
@@ -346,12 +346,12 @@ footer{
 	font-size: 80px;
 }
 
-.likedtitle p{
+.alltitle p{
 	margin-left: 5%;
 	position: absolute;
 }
 
-.likedtitle img{
+.alltitle img{
 	float: left;
 	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
 	border-radius: 100px;
@@ -361,7 +361,7 @@ footer{
 	z-index: -1;
 }
 
-.likedmainBlock{
+.alltitlemainBlock{
 	background: linear-gradient(to bottom right, rgb(4, 56, 11), rgb(58, 58, 58));
 	padding-bottom: 40%;
 	margin: 200px 0 0 232px;
@@ -585,7 +585,7 @@ svg.like:hover{
 /*******************************************ABOUT***********************************************/
 
 .bottom{
-	padding-top: 450px;
+	padding-top: 400px;
 }
 
 .contenu{

@@ -33,7 +33,8 @@
 					<li class="espace"><a id="active" href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
 					<li class="border"><a href="artists.php">Artistes</a></li>
 					<li><a href="playlists.php">Playlists</a></li>
-					<li><a href="liked.php">Titres likés</a></li>
+					<li><a href="alltitle.php">Tous les titres</a></li>
+					<li><a href="likedtitle.php">Titres likés</a></li>
 					<li class="bottom"><a href="about.php">about</a></li>
 				</ul>
 			</div>	

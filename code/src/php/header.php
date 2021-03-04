@@ -1,8 +1,5 @@
 <?php
-require "db.class.php";
-require "like.class.php";
-$DB = new DB ();
-// $like = new like ();
+require "_header.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,7 +16,7 @@ $DB = new DB ();
 
 		<!-- Logo onglet-->
 		<link rel="icon" href="../../userContent/logoOnglet.png" />
-		<title>Oto - Travis scott</title>
+		<title>Oto</title>
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
 		<script src="../js/toggleMenu.js" defer></script>
 	</head>	
@@ -35,13 +32,14 @@ $DB = new DB ();
 			<!-- Bar de navigation -->
 			<div class="leftnav">
 				<ul class="navBarLink">
-					<li class="logo"><a href="../home.php">Oto</a></li>
+					<li class="logo"><a href="home.php">Oto</a></li>
 					<li><a href="home.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
 					<li><a href="research.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
 					<li class="espace"><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
-					<li class="border"><a href="../artists.php">Artistes</a></li>
+					<li class="border"><a href="artists.php">Artistes</a></li>
 					<li><a href="playlists.php">Playlists</a></li>
-					<li><a id="active" href="liked.php">Titres likés</a></li>
+					<li><a href="alltitle.php">Tous les titres</a></li>
+					<li><a href="likedtitle.php">Titres likés</a></li>
 					<li class="bottom"><a href="about.php">about</a></li>
 				</ul>
 			</div>
