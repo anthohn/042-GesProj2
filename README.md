@@ -1,5 +1,6 @@
-"# 042-GesProj2" 
-Création d'un site internet de musique 
+# 042-GesProj2
+
+### Création d'un site internet de musique 
 
 7.3 Travail à réaliser au sein de chaque groupe 
 					
