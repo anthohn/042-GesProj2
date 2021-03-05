@@ -35,3 +35,5 @@ Création d'un site internet de musique
 
 	G) Journal de travail 
 	   A fournir : un journal de travail personnel et individuel .
+
+![hippo](https://f.hellowork.com/blogdumoderateur/2013/02/gif-anime.gif)
