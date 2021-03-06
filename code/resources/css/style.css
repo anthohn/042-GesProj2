@@ -587,6 +587,7 @@ svg.like:hover{
 .formulaire{
 	position: absolute;
 	margin-left: 232px;
+	padding-left: 40px;
 	margin-top: 20px;
 
 }

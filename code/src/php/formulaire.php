@@ -1,44 +1,67 @@
 <?php
+
+
 require "header.php";
-$pdo = null;
-// $pdo->query("SET NAMES UTF8"); // encode en  UTF8
 
-if(isset($_POST["submit"])){     //si le bouton a été enclenché
-    if(isset($_POST["nom"], $_POST["genre"], $_POST["duree"])){
+$bddPDO = new PDO("mysql:host=localhost;dbname=p_db_042main", "root", "root");
 
-        $nom = $_POST["nom"];
-        $genre = $_POST["genre"];
-        $duree = $_POST["duree"];
 
-        $insertion = "INSERT INTO t_musique (musNom, musGenre, musDuree) VALUES($nom, $genre, $duree)";
 
-        $execute = $pdo->query($insertion); //
+if(isset($_POST["submit"])){
+    $id = $_POST["id"];
+    $nom = $_POST["nom"];
+    $genre = $_POST["genre"];
+    $duree = $_POST["duree"];
+    // $idx = $_POST["idx"];
 
-        if ($execute == true){
-            $msgSuccess = "Information enregistrées avec succès";
-        } else {
-            $msgError = "L'enregistrement n'a pas pu être été éffectuà";
+    if(!empty($id) && !empty($nom) && !empty($genre) && !empty($duree)){
+        $requete = $bddPDO->prepare("INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree) VALUES(:id, :nom, :genre, :duree)");
+
+        $requete->bindvalue(":id", $id);
+        $requete->bindvalue(":nom", $nom);
+        $requete->bindvalue(":genre", $genre);
+        $requete->bindvalue(":duree", $duree);
+        // $requete->bindvalue(":idx", $idx);
+
+
+        $requete->execute();
+
+        if(!$result){
+            echo "<h1>Erreur lors de l'insertion</h1>";
         }
-    }
+        else{
+            echo "<h1>Tous les champs sont requis</h1>";
+        }
+    }else
+    {
+        echo "Tous les champs sont recquis";
+    }    
 }
 ?>
-<div>
-    <?php
-        if(isset($msgError)){
-            echo $msgError;
-            
-        } elseif(isset($msgSuccess)) {
-            echo $msgSuccess;
-        }
-    ?>
-</div>
-
 <!-- formulaire -->
 <div class="formulaire">
-    <form action="formulaire.php" method="POST">
-        <input type="text" name="nom" placeholder="Nom de la musique"><br> 
-        <input type="text" name="genre" placeholder="Genre"><br>
-        <input type="text" name="duree" placeholder="Durée de la musique"><br>
-        <button type="submit" id="submit">Valider</boutton>
+    <h1>Ajouter une musique</h1>
+    <form action="formulaire.php" method="post">
+       <p>
+            <label for="id">id</label>
+            <input id="id" type="text" name="id">
+        </p>
+        <p>
+            <label for="nom">Nom</label>
+            <input id="nom" type="text" name="nom">
+        </p>
+        <p>
+            <label for="genre">Genre</label>
+            <input id="genre" type="text" name="genre">
+        </p>
+        <p>
+            <label for="duree">Durée</label>
+            <input id="duree" type="text" name="duree">
+        </p>  
+        <!-- <p>
+            <label for="idx">idx</label>
+            <input id="idx" type="text" name="idx">
+        </p>       -->
+        <button type="submit" id="submit" name="submit">Enregistrer</boutton>
     </form>
 </div>
