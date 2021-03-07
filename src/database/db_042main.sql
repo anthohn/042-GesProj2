@@ -18,7 +18,7 @@ CREATE DATABASE P_db_042main;
 
 
 CREATE TABLE t_pays (
-  idPays INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  idPays INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   payPays VARCHAR(50) NOT NULL
 );
 
@@ -35,13 +35,25 @@ INSERT INTO t_pays (idPays, payPays) VALUES
 (10, 'Allemagne'
 );
 
+CREATE TABLE t_imageArtiste (
+  idImageArtiste INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  imaNom VARCHAR(100) NOT NULL,
+  imaLien TEXT NOT NULL
+  -- imaType VARCHAR(20) NOT NULL,
+  -- imaBin LONGBLOB NOT NULL
+);
 
+INSERT INTO t_imageArtiste (idImageArtiste, imaNom, imaLien) VALUES
+(1, "test", "../../code/userContent/img/artists/neighbourhood.jpg"
+);
 
 CREATE TABLE t_artiste (
   idArtiste INT NOT NULL PRIMARY KEY,
   ArtNom VARCHAR(50) NOT NULL,
   ArtNaissance DATE NOT NULL,
   idxPays INT NOT NULL,
+  idxImageArtiste INT NOT NULL,
+  CONSTRAINT fk_t_artiste_t_imageArtiste_idImageArtiste FOREIGN KEY (idxImageArtiste) REFERENCES t_imageArtiste (idImageArtiste),
   CONSTRAINT fk_t_artiste_t_pays_idPays FOREIGN KEY (idxPays) REFERENCES t_pays(idPays)
 );
 
@@ -50,17 +62,17 @@ CREATE TABLE t_artiste (
 -- Déchargement des données de la table "t_artiste"
 --
 
-INSERT INTO t_artiste (idArtiste, ArtNom, idxPays, ArtNaissance) VALUES
-(1, 'Travis Scott', 1, '1992-04-30'),
-(2, 'Drake', 1, '1986-10-24'),
-(3, 'Ohmidz', 2, '2002-03-04'),
-(4, 'Oboy', 3, '1997-01-06'),
-(5, 'Josman', 3, '1995-04-15'),
-(6, 'Tyler', 1, '1991-03-06'),
-(7, 'Ateyaba', 3, '1989-10-27'),
-(8, 'Damso', 4, '1992-05-10'),
-(9, 'Zola', 3, '1999-11-16'),
-(10, 'The Weeknd', 1, '1990-02-16'
+INSERT INTO t_artiste (idArtiste, ArtNom, ArtNaissance, idxPays, idxImageArtiste) VALUES
+(1, 'Travis Scott', '1992-04-30', 1 , 1),
+(2, 'Drake', '1986-10-24', 1, 1),
+(3, 'Ohmidz', '2002-03-04', 2, 1),
+(4, 'Oboy', '1997-01-06', 3,  1),
+(5, 'Josman', '1995-04-15', 3, 1),
+(6, 'Tyler', '1991-03-06', 1, 1),
+(7, 'Ateyaba', '1989-10-27', 3, 1),
+(8, 'Damso', '1992-05-10', 4, 1),
+(9, 'Zola', '1999-11-16', 3, 1),
+(10, 'The Weeknd', '1990-02-16', 1, 1
 );
 
 
@@ -113,7 +125,6 @@ INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
 (29, 'In your Eyes', 'Synth-pop', 3.58, 10),
 (30, 'Starboy', 'RnB', 3.50, 10
 );
-
 
 --
 -- Structure de la table "t_playlist"
@@ -172,7 +183,6 @@ CREATE TABLE t_typeLien (
   idxLien INT NOT NULL,
   CONSTRAINT fk_t_typeLien_t_lien_idLien FOREIGN KEY (idxLien) REFERENCES t_lien(idLien)
 );
-
 
 -- KILLIAN (Vérifie avant de compiler pas sur a 100% que ca fonctionne) 
 
