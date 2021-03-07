@@ -1,10 +1,10 @@
 -- ETML
 -- Auteur      : Anthony Höhn, Killian Good
--- Date        : 01.03.2021
--- Description : Base de données db_042main
+-- Date        : 07.03.2021
+-- Description : Base de données P_db_042main
 
 --
--- Supression (si existe) de la table "db_market" puis création de la  table "db_market"
+-- Supression (si existe) de la table "P_db_042main" puis création de la  table "P_db_042main"
 --
 
 DROP DATABASE if EXISTS P_db_042main;
@@ -42,6 +42,7 @@ CREATE TABLE t_imageArtiste (
   -- imaType VARCHAR(20) NOT NULL,
   -- imaBin LONGBLOB NOT NULL
 );
+
 
 INSERT INTO t_imageArtiste (idImageArtiste, imaNom, imaLien) VALUES
 (1, "test", "../../code/userContent/img/artists/neighbourhood.jpg"
