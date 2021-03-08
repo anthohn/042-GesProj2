@@ -111,7 +111,7 @@ INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
 (14, 'Au Bout', 'Hip-hop/Rap', 4.01, 5),
 (15, 'XS', 'Hip-hop/Rap', 3.26, 5),
 (16, 'EARFQUAKE', 'Hip-hop/Rap', 3.10, 6),
-(17, 'See Yop Again', 'Hip-hop/Rap', 3.10, 6),
+(17, 'See You Again', 'Hip-hop/Rap', 3.10, 6),
 (18, 'BEST INTEREST', 'Hip-hop/Rap', 2.07, 6),
 (19, 'Menace', 'Hip-hop/Rap', 3.12, 7),
 (20, 'Venus', 'Hip-hop/Rap', 3.37, 7),

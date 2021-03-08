@@ -16,6 +16,7 @@ Description : Erreur dans le login
 		<div class="widget-contents">
 			<form id="login" action="login.php" class="form" method="post"  enctype='multipart/form-data'><fieldset>  
         <div>
+		<div class="form">
 			<label>Nom d'utilisateur</label>
     		<input type="text" name="username" 
             placeholder="Veuillez entrer un nom valide">

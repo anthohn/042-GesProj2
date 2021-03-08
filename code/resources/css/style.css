@@ -1,3 +1,704 @@
+<<<<<<< HEAD
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 01.02.2021
+* Description : style du html
+**/
+
+html{
+	height: 100%;
+	/* temporaire pour pouvoir scroll corecemment dans la page*/
+	/* height: 1400px;  */
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+	background: linear-gradient(to bottom right, Gray, Black);
+	margin: 0;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat
+}
+
+.main{
+	overflow: auto;
+	position: absolute;
+}
+
+.toggleButton {
+	position: absolute;
+	margin-top: 30px;
+	left: 30px;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 50px;
+	height: 44px;
+}
+
+.bar {
+	height: 7px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.leftnav h1{
+	color: white;
+}
+
+.leftnav{
+	display: flex;
+	/* sorry yene */
+	position: fixed;
+	height: 150vh;
+	width: 232px;
+	background: black;
+	padding-top : 40px;
+}
+
+.leftnav ul{
+	margin: 0;
+	margin-left: 7%;
+	list-style-type: none;
+	padding-left: 0;
+	width: 200px;
+}
+
+.leftnav ul img{
+	padding-right: 13px;
+}
+
+.leftnav ul li a {
+	padding-bottom: 5px;
+	border-radius:7px;
+	display: block;
+	color: Gray;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.leftnav li a:hover {
+	color: white;
+}
+
+#active {
+	color: White;
+	background-color: #5c5a55;
+}
+#active2{
+	color: White;
+}
+
+.logo{
+	font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+	font-size: 40px;
+}
+
+.espace{
+	margin-bottom: 50px;
+}
+
+.border{
+	padding-top: 10px;
+	border-top: 1px solid Gray;
+}
+
+/******************************ACCUEIL******************************/
+.ACmainBlock{
+	text-align: center;
+	margin-left: 232px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.ACblock1, .ACblock2, .ACblock3, .ACblock4, .ACblock5{
+	height: 300px;
+	border-radius: 10px;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+	flex-basis: 240px;
+	background-color: darkgrey;
+	
+}
+
+.ACblockTitle p{
+	margin-left: 30px;
+	float: left;
+	padding-top: 5px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(32, 32, 32);
+	text-shadow: 4px 4px 7px #5c5c5c;
+}
+
+.ACimgCover img{
+	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	margin-top: 20px;
+	margin-bottom: 0;
+	height: 200px;
+}
+
+.ACblockText{
+	padding-top: 7px;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.ACblockText p{
+	font-size: 13px;
+	margin: 0;
+}
+
+/*************************Footer****************************************/
+
+footer{
+	float: left;
+	height: 100px;
+	width: 100%;
+	background-color: rgb(19, 19, 19);
+	color: gray;
+	bottom: 0;
+	position: fixed;
+}
+
+.leftFooter {	
+	margin-top: 6px;
+	height: 100%;
+	float: left;
+	width: 33%;
+}
+
+.LeftFooterTxt{
+	padding-top: 16px;
+}
+
+
+.leftFooter p{	
+	margin: 5px;
+	padding-left: 100px;
+}
+
+.leftFooter img{
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 0;
+	float: left;
+	width: 60px;
+	height: 60px;
+}
+.midFooter{
+	height: 100%;
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+.rightFooter{
+	height: 100%;
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+
+/********************************************Recherche************************************************/
+
+.searchBar {
+	margin: auto;
+	position: relative;
+	max-width: 60%;
+    height: 50px;
+	padding: 90px 0 0 232px;
+}
+
+.searchBarInputContainer {
+	flex-wrap: nowrap;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	border-radius: 10px;
+}
+
+.searchIcon {
+	height: 50px;
+	margin: auto;
+}
+
+.icon {
+	background-color: transparent;
+	height: 95%;
+	border: 0;
+	outline: none;
+}
+
+#icon {
+	margin: 5px 0 0 0;
+}
+
+.icon:hover {
+	cursor: pointer;
+}
+
+#search {
+	width: 95%;
+	height: 40px;
+	font-size: 25px;
+	border: 0;
+	background-color: white;
+	outline:none;
+}
+
+.searchBarInput {
+	width: 100%;
+	margin: auto;
+	background-color: white;
+	border-radius: 10px;
+}
+
+
+/********************************************Artistes*************************************************/
+
+
+.ARmainBlock{
+	text-align: center;
+	margin-left: 232px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.ARblock1, .ARblock2, .ARblock3, .ARblock4, .ARblock5, .ARblock6, .ARblock7, .ARblock8, .ARblock9 ,.ARblock10{
+	border-radius: 10px;
+	height: 240px;
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+	flex-basis: 240px;
+	background-color: darkgrey;
+	
+}
+
+.ARblockTitle p{
+	padding-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(32, 32, 32);
+	text-shadow: 4px 4px 7px #5c5c5c;
+}
+
+.ARimgCover img{
+	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	border-radius: 100px;
+	margin-top: 30px;
+	margin-bottom: 0;
+	height: 120px;
+}
+
+.ARblockText{
+	padding-top: 7px;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.ARblockText p{
+	font-size: 13px;
+	margin: 0;
+}
+
+.plus{
+	background-color: rgb(88, 88, 88);
+	height: 22px;
+	width: 22px;
+	margin-left: 85%;
+	border-radius: 30px;
+	margin-top: -4%;
+}
+
+.plus a{
+	margin: 5px;
+	font-weight: 400;
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+}
+
+.plus:hover a {
+	color: rgb(226, 226, 226);
+}
+
+.ARblock1:hover, .ARblock2:hover, .ARblock3:hover, .ARblock4:hover, .ARblock5:hover, .ARblock6:hover , .ARblock7:hover , .ARblock8:hover, .ARblock9:hover, .ARblock10:hover, .ARblock11:hover, .ARblock12:hover{
+    box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+} 
+
+/*******************************************Titres likés*************************************************/
+.alltitle{
+	margin-left: 232px;
+	padding: 30px 0 0 70px;
+	color: White;
+	font-weight: bold;
+	font-size: 80px;
+}
+
+.alltitle p{
+	margin-left: 5%;
+	position: absolute;
+}
+
+.alltitle img{
+	float: left;
+	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
+	border-radius: 100px;
+	margin: 70px 0 0 0;
+	height: 120px;
+	position: fixed;
+	z-index: -1;
+}
+
+.alltitlemainBlock{
+	background: linear-gradient(to bottom right, rgb(4, 56, 11), rgb(58, 58, 58));
+	padding-bottom: 40%;
+	margin: 200px 0 0 232px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+
+/*******************************************ARTISTES PERSO***********************************************/
+.ARPtitle{
+	margin-left: 232px;
+	padding: 30px 0 0 70px;
+	color: White;
+	font-weight: bold;
+	font-size: 80px;
+}
+
+.ARPtitle p{
+	margin-left: 10%;
+	position: fixed;
+	z-index: -1;
+}
+
+.ARPtitle img{
+	float: left;
+	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
+	border-radius: 100px;
+	margin: 70px 0 0 0;
+	height: 120px;
+	position: fixed;
+	z-index: -1;
+}
+
+.ARPmainBlock{
+	background: linear-gradient(to bottom right, rgb(49, 0, 0), rgb(0, 53, 7));
+	padding-bottom: 40%;
+	margin: 400px 0 0 232px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.ARPblock1, .ARPblock2, .ARPblock3{
+	height: 80px;
+	border-radius: 5px;
+	margin: 30px 20px 20px 20px;
+	background-color: rgb(10, 10, 10);
+	/* box-shadow: 0 7px 40px 0 rgba(85, 85, 85, 0.7);	 */
+}
+
+.ARPblock1 p, .ARPblock2 p, .ARPblock3 p{
+	float: left;
+	margin: 30px 0 0 3%;
+	font-size: 18px;
+	color: rgb(180, 180, 180);
+	/* text-shadow: 4px 4px 7px #5c5c5c; */
+}
+
+.ARPblock1 img, .ARPblock2 img, .ARPblock3 img{
+	float: left;
+	margin: 7px 0 0 7px;
+	border-radius: 7px;
+	height: 65px;
+}
+
+svg.like{
+	float: right;
+	margin: 25px 50px 0 0;
+	fill: White;
+}
+
+svg.like:hover{
+	fill: rgb(54, 184, 54);
+}
+
+.dropbtn {
+	margin : 25px 14px 0 0;
+	border-radius: 10px;
+	background-color: rgb(136, 136, 136);
+	color: white;
+	padding: 5px 10px 0 10px;
+	font-size: 18px;
+	font-weight: 800;
+	border: none;
+	cursor: pointer;
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	border-radius: 10px;
+	display: none;
+	position: absolute;
+	right: 0;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* .dropdown-content a:hover {background-color: #757575;} */
+  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropbtn {background-color: rgb(177, 177, 177);}
+
+/*******************************************PLAYLISTS***********************************************/
+
+.title{
+	margin-left: 232px;
+	padding-top: 10px;
+	padding-left: 70px;	
+}
+
+.title p{
+	color: White;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.PLmainBlock{
+	text-align: center;
+	margin-left: 232px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.playlistcreation{	
+	flex-basis: 260px;
+	margin-top: 170px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 150px;
+	background-color: darkgrey;
+	border-radius: 30px;
+	box-shadow: 0 7px 40px 0 rgba(88, 88, 88);
+}
+
+.playlistcreation p{
+	margin-bottom: 15px;
+	font-size: 25px;
+	font-weight: bold;
+	color: rgb(32, 32, 32);
+}
+
+.playlistcreationBoutton{
+	height: 45px;
+	border-radius: 30px;
+	margin-left: 108px;
+	margin-right: 108px;
+	background-color: rgb(88, 88, 88);
+}
+
+.playlistcreationBoutton a{
+	font-size: 40px;
+	color: white;
+	text-decoration: none;
+}
+
+.playlistcreationBoutton:hover a {
+	color: rgb(226, 226, 226);
+}
+
+.PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8{
+	border-radius:10px;
+	height: 350px;
+	margin: 50px;
+	flex-basis: 260px;
+	background-color: darkgrey;
+	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+}
+
+.PLblockTitle p{
+	padding-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(32, 32, 32);
+	text-shadow: 4px 4px 7px #5c5c5c;
+}
+
+.PLimgCover img{
+	margin-top: 30px;
+	margin-bottom: 0;
+	height: 200px;
+}
+
+.PLblockText{
+	padding-top: 7px;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.PLblockText p{
+	font-size: 13px;
+	margin: 0;
+}
+
+.playlistcreation:hover, .PLblock1:hover, .PLblock2:hover, .PLblock3:hover, .PLblock4:hover, .PLblock5:hover, .PLblock6:hover , .PLblock7:hover , .PLblock8:hover{
+    box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+} 
+
+/******************************************Formulaire*******************************************/
+
+.formulaire{
+	position: absolute;
+	margin-left: 232px;
+	padding-left: 40px;
+	margin-top: 20px;
+
+}
+
+/*******************************************ABOUT***********************************************/
+
+.bottom{
+	padding-top: 450px;
+}
+
+
+
+.contenu{
+	width: 80%;
+	margin-left: 232px;
+	padding-top: 70px;
+}
+
+.contenutext{
+	width: 50%;
+	border-radius:10px;
+	height: 50%;
+	background-color: rgb(169, 169, 169);
+	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+	margin-left: 26%;
+}
+
+.contenutext p{
+	text-align: center;
+	padding-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(32, 32, 32);
+	text-shadow: 2px 4px 7px #8f8686;
+}
+
+.resContenu p{
+	text-align: center;
+	padding-top: 210px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 23px;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(150, 150, 150);
+	text-shadow: 2px 4px 7px #000000;
+}
+
+.resSVG{
+	padding-left: 43%;
+}
+
+
+/***********************************************************************************************/
+
+/*Responsive Design*/
+
+@media only screen and (max-width: 600px)
+{
+	.toggleButton
+	{
+		display: flex;
+	}
+
+	.leftnav {
+		width: 200px;
+		padding-top: 100px;
+	}
+
+	.leftnav ul
+	{
+		display: none;
+		flex-direction: column;
+	}
+
+	.leftnav li {
+		width: 168px;
+	}
+
+	.navBarLink.active {
+		display: flex;
+	}
+
+	/*Search*/
+
+	/* #search {
+		width: 250px;
+		height: 50px;	
+		font-size: 20px;
+		padding: 0 0 0 15px;
+	} */
+
+	.searchBar {
+		margin: 0 0 0 200px;
+	}
+	
+	.searchForm {
+		margin: 0 0 0 15px;
+	}
+=======
 /**
 * ETML
 * Auteur      : Anthony Höhn
@@ -645,6 +1346,13 @@ svg.like:hover{
 	padding-left: 43%;
 }
 
+.resSVGTwitter{
+	padding-left: 3%;
+}
+
+.resSVGYTB{
+	padding-left: 2%;
+}
 
 /***********************************************************************************************/
 
@@ -692,4 +1400,5 @@ svg.like:hover{
 	.searchForm {
 		margin: 0 0 0 15px;
 	}
+>>>>>>> 4d978650a8199b9aee90109ebf484fb377e40171
 }
