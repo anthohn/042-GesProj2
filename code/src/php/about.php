@@ -1,42 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<!--
-		ETML
-		Auteur      : Anthony Höhn
-		Date        : 02.02.2021
-		Description : Page à propos
-		-->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<!-- Logo onglet-->
-		<link rel="icon" href="../../userContent/logoOnglet.png" />
-		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
-		<title>À propos</title>
-		<script src="../js/toggleMenu.js" defer></script>
-	</head>	
-	<body>	
-		<div class="main">
-			<!-- Hamburger menu -->
-			<a href="#" class="toggleButton" id="toggleButtonID">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</a>
-			<!-- Bar de navigation -->
-			<div class="leftnav">
-				<ul class="navBarLink">	
-					<li class="logo"><a href="accueil.php">Oto</a></li>				
-					<li><a href="accueil.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
-					<li><a href="recherche.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
-					<li class="espace"><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
-					<li class="border"><a href="artistes.php">Artistes</a></li>
-					<li><a href="playlists.php">Playlists</a></li>
-					<li class="bottom"><a id="active2" href="about.php">À propos</a></li>
-				</ul>
-			</div>
-		</div>
+﻿<?php require "header.php"; ?>
 		<style>
 			body {
 			background-image: url(' ../../userContent/about/image.png');
@@ -55,7 +17,9 @@
 		<div class="resContenu">
 		<p>Nos réseaux sociaux :</p>
 		</div>
-		<a class="resSVG" href=https://instagram.com><img src="../../userContent/logo/insta.svg" alt="Insta" target="_blank"></a>
+		<a class="resSVG" href=https://www.instagram.com/oto_playlists/ target="_blank"><img src="../../userContent/logo/insta.svg" alt="Insta"></a>
+		<a class="resSVGTwitter" href=https://twitter.com/Oto_playlists target="_blank"><img src="../../userContent/logo/twitter.svg" alt="Twitter"></a>
+		<a class="resSVGYTB" href=https://www.youtube.com/channel/UCxPrDkjqFcYtpTLKbUUs22g target="_blank"><img src="../../userContent/logo/youtube.svg" alt="Youtube"></a>
 		<footer>
 		</footer>
 	</body>
