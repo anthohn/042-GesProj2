@@ -14,7 +14,7 @@ Description : Tous les artistes de la base de données rescencé ici grâce à u
 	<?php foreach ( $artistes as $artiste): ?>			
 		<div class="ARblock1">
 			<div class="ARimgCover">
-				<img src="../../userContent/img/artists/logo/<?php echo $artiste->idArtiste ?>.jpg" alt="">
+				<img src="../../userContent/img/artists/logo/<?php echo $artiste->idArtiste?>.jpg" alt="">
 			</div>
 			<div class="ARblockTitle">
 				<p><?php echo $artiste->ArtNom; ?></p>

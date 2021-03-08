@@ -14,4 +14,8 @@ class like {
             $_SESSION["liked"] = array(); //création d'un tableau vide (ou sera stocké les musique likées)
         }
     }
+
+    public function add($liked_id){
+        $_SESSION["panier"][$liked_id] = 1;
+    }
 }
