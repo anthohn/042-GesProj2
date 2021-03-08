@@ -36,6 +36,7 @@ body {
 	width:500px;
 	margin-left:665px;
     background-color: darkgrey; 
+    
 }
 .widget .widget-heading {
 	background: #282828;
@@ -48,6 +49,7 @@ body {
 .widget .widget-contents {
     padding: 10px;
     border-bottom: 1px solid #eee;
+
     
 }
 
@@ -60,6 +62,7 @@ body {
 .btn-primary:hover{
     background: #282828;
 }
+
 
 
 
