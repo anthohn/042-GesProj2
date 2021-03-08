@@ -595,8 +595,10 @@ svg.like:hover{
 /*******************************************ABOUT***********************************************/
 
 .bottom{
-	padding-top: 400px;
+	padding-top: 450px;
 }
+
+
 
 .contenu{
 	width: 80%;
@@ -608,22 +610,39 @@ svg.like:hover{
 	width: 50%;
 	border-radius:10px;
 	height: 50%;
-	background-color: darkgrey;
+	background-color: rgb(169, 169, 169);
 	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
 	margin-left: 26%;
 }
 
 .contenutext p{
-	text-justify: auto;
+	text-align: center;
 	padding-top: 5px;
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-top: 0;
 	margin-bottom: 0;
-	font-weight: 600;
+	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
-	text-shadow: 2px 4px 7px #5c5c5c;
+	text-shadow: 2px 4px 7px #8f8686;
+}
+
+.resContenu p{
+	text-align: center;
+	padding-top: 210px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0;
+	margin-bottom: 23px;
+	font-weight: 800;
+	font-size: 25px;
+	color: rgb(150, 150, 150);
+	text-shadow: 2px 4px 7px #000000;
+}
+
+.resSVG{
+	padding-left: 43%;
 }
 
 
