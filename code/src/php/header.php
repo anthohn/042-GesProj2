@@ -1,9 +1,3 @@
-<!--
-ETML
-Auteur      : Anthony Höhn
-Date        : 04.03.2021
-Description : tkt
--->
 <?php
 require "_header.php";
 ?>

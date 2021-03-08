@@ -20,7 +20,7 @@ class DB{
             $this->password = $password;
             $this->database = $database;
         }
-        //Essaye de se connecter à la vase de données en utilisant les variables crées plus haut
+        //Essaye de se connecter à la base de données en utilisant les variables crées plus haut
         try{
           $this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->database, $this->username, $this->password);
         //Si la connexion n'est pas établie un messaye d'erreur s'affiche
