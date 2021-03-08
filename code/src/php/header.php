@@ -10,12 +10,6 @@ require "_header.php";
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<!--
-		ETML
-		Auteur      : Anthony Höhn
-		Date        : 02.02.2021
-		Description : Header de potentielemment toute les page par la suite MVC
-		-->
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -46,7 +40,7 @@ require "_header.php";
 					<li><a href="playlists.php">Playlists</a></li>
 					<li><a href="alltitle.php">Tous les titres</a></li>
 					<li><a href="likedtitle.php">Titres likés</a></li>
-					<li class="bottom"><a href="about.php">about</a></li>
+					<li class="bottom"><a href="about.php">À propos</a></li>
 				</ul>
 			</div>
 		</div>
