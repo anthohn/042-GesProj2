@@ -18,5 +18,5 @@ Site Web is simply dummy text of the printing and typesetting industry. Lorem Ip
 #### Contributeurs :
 * Anthony Höhn [GitHub](https://github.com/anthohn) [Linkdeln](https://www.linkedin.com/in/anthony-höhn-674320206)
 * Killian Good [GitHub](https://github.com/KillianGood) [Linkdeln](https://www.linkedin.com/in/killian-good-89032a1b8)
-* Younes Sayeh [GitHub](https://github.com/yousayeh) [Linkdeln]()
+* Younes Sayeh [GitHub](https://github.com/yousayeh) [Linkdeln](https://www.linkedin.com/in/julien-cartier-9aa734208)
 * Julien Cartier [GitHub](https://github.com/YaZOUU) [Linkdeln]()
