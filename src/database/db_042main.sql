@@ -35,45 +35,30 @@ INSERT INTO t_pays (idPays, payPays) VALUES
 (10, 'Allemagne'
 );
 
-CREATE TABLE t_imageArtiste (
-  idImageArtiste INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  imaNom VARCHAR(100) NOT NULL,
-  imaLien TEXT NOT NULL
-  -- imaType VARCHAR(20) NOT NULL,
-  -- imaBin LONGBLOB NOT NULL
-);
-
-
-INSERT INTO t_imageArtiste (idImageArtiste, imaNom, imaLien) VALUES
-(1, "test", "../../code/userContent/img/artists/neighbourhood.jpg"
-);
 
 CREATE TABLE t_artiste (
   idArtiste INT NOT NULL PRIMARY KEY,
   ArtNom VARCHAR(50) NOT NULL,
   ArtNaissance DATE NOT NULL,
   idxPays INT NOT NULL,
-  idxImageArtiste INT NOT NULL,
-  CONSTRAINT fk_t_artiste_t_imageArtiste_idImageArtiste FOREIGN KEY (idxImageArtiste) REFERENCES t_imageArtiste (idImageArtiste),
   CONSTRAINT fk_t_artiste_t_pays_idPays FOREIGN KEY (idxPays) REFERENCES t_pays(idPays)
 );
-
 
 --
 -- Déchargement des données de la table "t_artiste"
 --
 
-INSERT INTO t_artiste (idArtiste, ArtNom, ArtNaissance, idxPays, idxImageArtiste) VALUES
-(1, 'Travis Scott', '1992-04-30', 1 , 1),
-(2, 'Drake', '1986-10-24', 1, 1),
-(3, 'Ohmidz', '2002-03-04', 2, 1),
-(4, 'Oboy', '1997-01-06', 3,  1),
-(5, 'Josman', '1995-04-15', 3, 1),
-(6, 'Tyler', '1991-03-06', 1, 1),
-(7, 'Ateyaba', '1989-10-27', 3, 1),
-(8, 'Damso', '1992-05-10', 4, 1),
-(9, 'Zola', '1999-11-16', 3, 1),
-(10, 'The Weeknd', '1990-02-16', 1, 1
+INSERT INTO t_artiste (idArtiste, ArtNom, ArtNaissance, idxPays) VALUES
+(1, 'Travis Scott', '1992-04-30', 1),
+(2, 'Drake', '1986-10-24', 1),
+(3, 'Ohmidz', '2002-03-04', 2),
+(4, 'Oboy', '1997-01-06', 3),
+(5, 'Josman', '1995-04-15', 3),
+(6, 'Tyler', '1991-03-06', 1),
+(7, 'Ateyaba', '1989-10-27', 3),
+(8, 'Damso', '1992-05-10', 4),
+(9, 'Zola', '1999-11-16', 3),
+(10, 'The Weeknd', '1990-02-16', 1
 );
 
 
