@@ -20,7 +20,7 @@
 	<body>	
 		<style>
 			body {
-			background-image: url('../../../userContent/img/artists/travis2.jpg');
+			background-image: url('../../../userContent/img/artists/background/1.jpg');
 			}
 		</style>
 		<div class="main">
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="ARPtitle">
-			<img src="../../../userContent/img/artists/travis.jpg" alt="">
+			<img src="../../../userContent/img/artists/logo/1.jpg" alt="">
 			<p>Travis scott</p>
 		</div>	
 		<div class="ARPmainBlock">

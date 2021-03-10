@@ -278,20 +278,15 @@ footer{
 .ARblock1{
 	border-radius: 10px;
 	height: 240px;
-	margin-top: 50px;
-	margin-left: 20px;
-	margin-right: 20px;
-	flex-basis: 240px;
+	margin: 50px 20px 0 20px;
+	flex-basis: 260px;
 	background-color: darkgrey;
 	
 }
 
 .ARblockTitle p{
 	padding-top: 5px;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 10px 0 10px;
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);

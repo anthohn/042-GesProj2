@@ -9,17 +9,17 @@ Description : Tous les titres de la base de données rescencé ici grace à un f
 	<p>Tous les titres</p>
 </div>	
 <div class="alltitlemainBlock">
-	<?php $musiques = $DB->query("SELECT idMusique, musNom, musDuree, ArtNom, payPays FROM t_musique JOIN t_artiste ON idxArtiste = idArtiste JOIN t_pays ON idPays = idxPays");?>
+	<?php $musiques = $DB->query("SELECT idMusique, musNom, musDuree, ArtNom, GenreNom FROM t_musique JOIN t_artiste ON idxArtiste = idArtiste JOIN t_genre ON idxMusique = idGenre;");?>
 	<?php foreach ( $musiques as $musique):?>
 		<div class="ARPblock1">
 			<<img src="../../userContent/img/music/<?php echo $musique->idMusique ?>.jpg" alt="">
 			<p><?php echo $musique->musNom; ?></p>
+			<p>-</p>			
+			<p><?php echo $musique->ArtNom; ?></p>
 			<p>-</p>
 			<p><?php echo $musique->musDuree; ?></p>
 			<p>-</p>
-			<p><?php echo $musique->ArtNom; ?></p>
-			<p>-</p>
-			<p><?php echo $musique->payPays; ?></p>
+			<p><?php echo $musique->GenreNom; ?></p>
 			<div class="dropdown" style="float:right;">
 				<a href=""><button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button></a>
 				<div class="dropdown-content">
