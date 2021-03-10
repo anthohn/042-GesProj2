@@ -1,8 +1,11 @@
 ﻿<?php require "header.php"; ?>
 <div class="title">
+	<p>EN CONSTRUCTION</p>
+</div>
+<!-- <div class="title">
 	<p>Écoutés récemment</p>
-</div>	
-<div class="ACmainBlock">			
+</div>	 -->
+<!-- <div class="ACmainBlock">			
 	<div class="ACblock1">
 		<div class="ACimgCover">
 			<img src="../../userContent/img/coverPlaylists/recent.jpg" alt="">
@@ -59,5 +62,5 @@
 			<a href="#">+</a>
 		</div>
 	</div>	
-</div>	
+</div>	 -->
 <?php require "footer.php" ?>

@@ -87,10 +87,6 @@ body{
 
 #active {
 	color: White;
-	background-color: #5c5a55;
-}
-#active2{
-	color: White;
 }
 
 .logo{
@@ -277,7 +273,7 @@ footer{
 }
 .ARblock1{
 	border-radius: 10px;
-	height: 240px;
+	height: 270px;
 	margin: 50px 20px 0 20px;
 	flex-basis: 260px;
 	background-color: darkgrey;
@@ -336,19 +332,19 @@ footer{
 .ARblock1:hover{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
-
-/*******************************************Titres likés*************************************************/
+/*******************************************TOUS LES TITRES**********************************************/
 .alltitle{
 	margin-left: 232px;
-	padding: 30px 0 0 70px;
+	padding: 30px 0 0 0;
 	color: White;
 	font-weight: bold;
 	font-size: 80px;
 }
 
 .alltitle p{
-	margin-left: 5%;
-	position: absolute;
+	margin-left: 2%;
+	position: fixed;
+	z-index: -1;
 }
 
 .alltitle img{
@@ -362,15 +358,45 @@ footer{
 }
 
 .alltitlemainBlock{
-	background: linear-gradient(to bottom right, rgb(61, 41, 11), rgb(58, 58, 58));
+	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
 	padding-bottom: 40%;
-	margin: 200px 0 0 232px;
+	margin: 370px 0 0 232px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
+/*******************************************Titres likés*************************************************/
+/* .alltitle{
+	margin-left: 232px;
+	padding: 30px 0 0 0;
+	color: White;
+	font-weight: bold;
+	font-size: 80px;
+}
+
+
+.alltitle img{
+	float: left;
+	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
+	border-radius: 100px;
+	margin: 70px 0 0 0;
+	height: 120px;
+	position: fixed;
+	z-index: -1;
+}
+
+.alltitlemainBlock{
+	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
+	padding-bottom: 40%;
+	margin: 350px 0 0 232px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+} */
 
 
 /*******************************************ARTISTES PERSO***********************************************/
@@ -409,7 +435,7 @@ footer{
 	justify-content: space-evenly;
 }
 
-.ARPblock1, .ARPblock2, .ARPblock3{
+.ARPblock1{
 	height: 80px;
 	border-radius: 5px;
 	margin: 30px 20px 20px 20px;
@@ -417,7 +443,7 @@ footer{
 	/* box-shadow: 0 7px 40px 0 rgba(85, 85, 85, 0.7);	 */
 }
 
-.ARPblock1 p, .ARPblock2 p, .ARPblock3 p{
+.ARPblock1 p{
 	float: left;
 	margin: 30px 0 0 3%;
 	font-size: 18px;
@@ -425,7 +451,7 @@ footer{
 	/* text-shadow: 4px 4px 7px #5c5c5c; */
 }
 
-.ARPblock1 img, .ARPblock2 img, .ARPblock3 img{
+.ARPblock1 img{
 	float: left;
 	margin: 7px 0 0 7px;
 	border-radius: 7px;
@@ -652,13 +678,22 @@ svg.like:hover{
 
 @media only screen and (max-width: 600px)
 {
+
+	.title{
+		margin-left: 50px;
+	}
+
+	.ARmainBlock{
+		margin-left: 0;
+	}
+
 	.toggleButton
 	{
 		display: flex;
 	}
 
 	.leftnav {
-		width: 200px;
+		width: 0;
 		padding-top: 100px;
 	}
 
@@ -686,7 +721,7 @@ svg.like:hover{
 	} */
 
 	.searchBar {
-		margin: 0 0 0 200px;
+		margin: 0 0 0 0;
 	}
 	
 	.searchForm {

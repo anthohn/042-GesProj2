@@ -1,6 +1,9 @@
 ﻿<?php require "header.php"; ?>	
-		<div class="title">
+		<!-- <div class="title">
 			<p>Playlists</p>
+		</div> -->
+		<div class="title">
+			<p>EN CONSTRUCTION</p>
 		</div>
 		<div class="PLmainBlock">
 

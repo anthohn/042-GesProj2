@@ -5,6 +5,13 @@ Date        : 04.03.2021
 Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
 -->
 <?php require "header.php"; ?>
+<style>
+	body {
+	background-image: url('../../userContent/img/artists/background/4.jpg');
+	background-size: 1950px 400px;
+	background-position: top;
+	}
+</style>
 <div class="alltitle">
 	<p>Tous les titres</p>
 </div>	
@@ -12,7 +19,7 @@ Description : Tous les titres de la base de données rescencé ici grace à un f
 	<?php $musiques = $DB->query("SELECT idMusique, musNom, musDuree, ArtNom, GenreNom FROM t_musique JOIN t_artiste ON idxArtiste = idArtiste JOIN t_genre ON idxMusique = idGenre;");?>
 	<?php foreach ( $musiques as $musique):?>
 		<div class="ARPblock1">
-			<<img src="../../userContent/img/music/<?php echo $musique->idMusique ?>.jpg" alt="">
+			<img src="../../userContent/img/music/<?php echo $musique->idMusique ?>.jpg" alt="">
 			<p><?php echo $musique->musNom; ?></p>
 			<p>-</p>			
 			<p><?php echo $musique->ArtNom; ?></p>
