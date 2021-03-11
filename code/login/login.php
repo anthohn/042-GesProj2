@@ -15,7 +15,7 @@ session_start();
 		
       if((mysqli_num_rows($result) == 1)) {
 		  $results = mysqli_fetch_array($result);
-   		         header("location: ../code/src/php/home.php");
+   		         header("location: ../src/php/home.php");
      	  }
 		  else {
          header("location: erreur.php");
