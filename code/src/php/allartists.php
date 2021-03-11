@@ -10,20 +10,20 @@ Description : Tous les artistes de la base de données rescencé ici grâce à u
 	<p>Artistes</p>
 </div>		
 <div class="ARmainBlock">
-	<?php $artistes = $DB->query("SELECT idArtiste, ArtNom, ArtNaissance, payPays FROM t_artiste JOIN t_pays ON idxPays = idPays"); ?>
-	<?php foreach ( $artistes as $artiste): ?>			
+	<?php $artists = $DB->query("SELECT idArtist, artName, artBirth, couCountry FROM t_artist JOIN t_country ON idxCountry = idCountry"); ?>
+	<?php foreach ( $artists as $artist): ?>			
 		<div class="ARblock1">
 			<div class="ARimgCover">
-				<img src="../../userContent/img/artists/logo/<?php echo $artiste->idArtiste?>.jpg" alt="">
+				<img src="../../userContent/img/artists/logo/<?php echo $artist->idArtist?>.jpg" alt="">
 			</div>
 			<div class="ARblockTitle">
-				<p><?php echo $artiste->ArtNom; ?></p>
+				<p><?php echo $artist->artName; ?></p>
 			</div>
 			<div class="ARblockText">
-				<p><?php echo $artiste->ArtNaissance; ?></p>
+				<p><?php echo $artist->artBirth; ?></p>
 			</div>
 			<div class="ARblockText">
-				<p><?php echo $artiste->payPays; ?></p>
+				<p><?php echo $artist->couCountry; ?></p>
 			</div>
 			<div class="plus">
 				<a href="1.php">+</a>

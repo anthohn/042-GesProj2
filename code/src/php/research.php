@@ -6,10 +6,10 @@ Description : Tous les titres de la base de données rescencé ici grace à un f
 -->
 <?php require "header.php" ?>
 <?php
-$allartists = $DB->query("SELECT * FROM t_artiste"); 
+$allartists = $DB->query("SELECT * FROM t_artist"); 
 if(isset($_GET["s"]) && !empty($_GET["s"])){
 	$search = htmlspecialchars($_GET["s"]);
-	$allartists = $DB->query("SELECT ArtNom FROM t_artiste WHERE ArtNom = '$search'"
+	$allartists = $DB->query("SELECT artName FROM t_artist WHERE artName = '$search'"
 );
 }
 ?>
@@ -31,16 +31,12 @@ if(isset($_GET["s"]) && !empty($_GET["s"])){
 
 		if($allartists->rowCount() > 0){
 			while($artists = $allartists->fetch()){
-				echo $artists["ArtNom"];
+				echo $artists["artName"];
 			}
 		}else{
 			echo "<h1>Aucun artiste trouvé</h1>";
 		}
 		?>
 	</div>
-
-
-
-
-	</div>
+</div>
 <?php require "footer.php"; ?>

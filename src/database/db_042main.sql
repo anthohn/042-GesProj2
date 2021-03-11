@@ -17,12 +17,12 @@ CREATE DATABASE P_db_042main;
 --
 
 
-CREATE TABLE t_pays (
-  idPays INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  payPays VARCHAR(50) NOT NULL
+CREATE TABLE t_country (
+  idCountry INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  couCountry VARCHAR(50) NOT NULL
 );
 
-INSERT INTO t_pays (idPays, payPays) VALUES
+INSERT INTO t_country (idCountry, couCountry) VALUES
 (1, 'Etats-Unis'),
 (2, 'Suisse'),
 (3, 'France'),
@@ -36,19 +36,19 @@ INSERT INTO t_pays (idPays, payPays) VALUES
 );
 
 
-CREATE TABLE t_artiste (
-  idArtiste INT NOT NULL PRIMARY KEY,
-  ArtNom VARCHAR(50) NOT NULL,
-  ArtNaissance DATE NOT NULL,
-  idxPays INT NOT NULL,
-  CONSTRAINT fk_t_artiste_t_pays_idPays FOREIGN KEY (idxPays) REFERENCES t_pays(idPays)
+CREATE TABLE t_artist (
+  idArtist INT NOT NULL PRIMARY KEY,
+  artName VARCHAR(50) NOT NULL,
+  artBirth DATE NOT NULL,
+  idxCountry INT NOT NULL,
+  CONSTRAINT fk_t_artist_t_country_idCountry FOREIGN KEY (idxCountry) REFERENCES t_country(idCountry)
 );
 
 --
 -- Déchargement des données de la table "t_artiste"
 --
 
-INSERT INTO t_artiste (idArtiste, ArtNom, ArtNaissance, idxPays) VALUES
+INSERT INTO t_artist (idArtist, artName, artBirth, idxCountry) VALUES
 (1, 'Travis Scott', '1992-04-30', 1),
 (2, 'Drake', '1986-10-24', 1),
 (3, 'Ohmidz', '2002-03-04', 2),
@@ -67,19 +67,19 @@ INSERT INTO t_artiste (idArtiste, ArtNom, ArtNaissance, idxPays) VALUES
 --
 -- Structure de la table "t_musique"
 --
-CREATE TABLE t_musique (
-  idMusique INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
-  musNom VARCHAR(50) NOT NULL,
-  musGenre VARCHAR(50) NOT NULL,
-  musDuree FLOAT NOT NULL,
-  idxArtiste INT NOT NULL,
-  CONSTRAINT fk_t_musique_t_artiste_idArtiste FOREIGN KEY (idxArtiste) REFERENCES t_artiste(idArtiste)
+CREATE TABLE t_music (
+  idMusic INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  musName VARCHAR(50) NOT NULL,
+  musType VARCHAR(50) NOT NULL,
+  musDuration FLOAT NOT NULL,
+  idxArtist INT NOT NULL,
+  CONSTRAINT fk_t_music_t_artist_idArtist FOREIGN KEY (idxArtist) REFERENCES t_artist(idArtist)
 );
 
 --
 -- Déchargement des données de la table "t_musique"
 --
-INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
+INSERT INTO t_music (idMusic, musName, musType, musDuration, idxArtist) VALUES
 (1, 'gossebumps', 'Hip-hop/Rap', 4.04, 1),
 (2, 'STARGAZING', 'Hip-hop/Rap', 4.31, 1),
 (3, 'Antidote', 'Hip-hop/Rap', 4.23, 1),
@@ -117,34 +117,34 @@ INSERT INTO t_musique (idMusique, musNom, musGenre, musDuree, idxArtiste) VALUES
 --
 CREATE TABLE t_playlist (
   idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  plaNom VARCHAR(255) NOT NULL,
+  plaName VARCHAR(255) NOT NULL,
   plaCreationDate DATE NOT NULL
 );
 
 -- Structure de la table "t_ajouter"
 --
-CREATE TABLE t_ajouter (
-  idxMusique INT NOT NULL,
+CREATE TABLE t_add (
+  idxMusic INT NOT NULL,
   idxPlaylist INT NOT NULL,
   ajoOrder INT NOT NULL,
-  CONSTRAINT fk_t_ajouter_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique),
-  CONSTRAINT fk_t_ajouter_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist)
+  CONSTRAINT fk_t_add_t_musix_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic),
+  CONSTRAINT fk_t_add_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist)
 );
 
 --
 -- Structure de la table "t_genre"
 --
-CREATE TABLE t_genre (
-  idGenre INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  GenreNom VARCHAR(255),
-  idxMusique INT NOT NULL,
-  CONSTRAINT fk_t_genre_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
+CREATE TABLE t_type (
+  idType INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  typeName VARCHAR(255),
+  idxMusic INT NOT NULL,
+  CONSTRAINT fk_t_type_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic)
 );
 
 --
 -- Déchargement des données de la table "t_genre"
 --
-INSERT INTO t_genre (idGenre, GenreNom, idxMusique) VALUES
+INSERT INTO t_type (idType, typeName, idxMusic) VALUES
 (1, "Hip-hop/Rap", 1), -- DONT KNOW WHAT TO PUT IN "idxMusique"
 (2, "Rap", 1),
 (3, "Synth-pop", 1),
@@ -154,20 +154,20 @@ INSERT INTO t_genre (idGenre, GenreNom, idxMusique) VALUES
 -- 
 -- Structure de la table "t_lien"
 --
-CREATE TABLE t_lien (
-  idLien INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  lieLien VARCHAR(255),
-  idxMusique INT NOT NULL,
-  CONSTRAINT fk_t_lien_t_musique_idMusique FOREIGN KEY (idxMusique) REFERENCES t_musique(idMusique)
+CREATE TABLE t_link (
+  idLink INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  linLink VARCHAR(255),
+  idxMusic INT NOT NULL,
+  CONSTRAINT fk_t_link_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic)
 );
 
 --
 -- Structure de la table "t_typeLien"
 --
-CREATE TABLE t_typeLien (
-  idTypeLien INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  idxLien INT NOT NULL,
-  CONSTRAINT fk_t_typeLien_t_lien_idLien FOREIGN KEY (idxLien) REFERENCES t_lien(idLien)
+CREATE TABLE t_typeLink (
+  idTypeLink INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idxLink INT NOT NULL,
+  CONSTRAINT fk_t_typeLink_t_link_idLink FOREIGN KEY (idxLink) REFERENCES t_link(idLink)
 );
 
 -- KILLIAN (Vérifie avant de compiler pas sur a 100% que ca fonctionne) 

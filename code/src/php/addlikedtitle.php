@@ -5,12 +5,12 @@ Date        : 04.03.2021
 Description : tkt
 -->
 <?php require "_header.php";
-if(isset($_GET["idMusique"])){
-    $liked = $DB->query("SELECT idMusique FROM t_musique WHERE idMusique=:idMusique", array("idMusique" => $_GET["idMusique"]));
+if(isset($_GET["idMusic"])){
+    $liked = $DB->query("SELECT idMusic FROM t_music WHERE idMusic=:idMusic", array("idMusic" => $_GET["idMusic"]));
     if(empty($liked)){
         die("Cette musique n'existe pas sur notre catalogue.");
     }
-    $like->add($liked[0]->idMusique);
+    $like->add($liked[0]->idMusic);
     var_dump($liked);    
 }else {
     echo "<h1>fuck</h1>";
