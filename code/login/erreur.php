@@ -14,7 +14,7 @@ Description : Erreur dans le login
 		<div class="widget ">
 		<div class="widget-heading">Réessayer</div>
 		<div class="widget-contents">
-			<form id="login" action="login.php" class="form" method="post"  enctype='multipart/form-data'><fieldset>  
+			<form id="authenticate" action="authenticate.php" class="form" method="post"  enctype='multipart/form-data'><fieldset>  
         <div>
 		<div class="form">
 			<label>Nom d'utilisateur</label>
