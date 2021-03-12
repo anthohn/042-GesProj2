@@ -16,7 +16,7 @@ Description : Tous les titres de la base de données rescencé ici grace à un f
 	<p>Tous les titres</p>
 </div>	
 <div class="alltitlemainBlock">
-	<?php $musics = $DB->query("SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxMusic = idType;");?>
+	<?php $musics = $DB->query("SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType;");?>
 	<?php foreach ( $musics as $music):?>
 		<div class="ARPblock1">
 			<img src="../../userContent/img/music/<?php echo $music->idMusic ?>.jpg" alt="">

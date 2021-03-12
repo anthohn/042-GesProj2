@@ -47,13 +47,13 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
       else 
       {
          // Incorrect password
-         echo 'Incorrect username and/or password!';
+         echo '<h1>Nom d\'utilisateur ou mot de passe incorect !</h1>';
       }
    } 
    else 
    {
       // Incorrect username
-      echo 'Incorrect username and/or password!';
+      echo '<h1>Nom d\'utilisateur ou mot de passe incorect !</h1>';
    }
 	$stmt->close();
 }
