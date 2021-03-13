@@ -6,22 +6,22 @@
 --
 -- Supression (si existe) de la table "P_db_042main" puis création de la  table "P_db_042main"
 --
-
 DROP DATABASE if EXISTS P_db_042main;
 CREATE DATABASE P_db_042main;
-
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table "t_artiste"
+-- Structure de la table "t_country"
 --
-
 CREATE TABLE t_country (
   idCountry INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   couCountry VARCHAR(50) NOT NULL
 );
 
+--
+-- Déchargement des données de la table "t_country"
+--
 INSERT INTO t_country (couCountry) VALUES
 ('Etats-Unis'),
 ('Suisse'),
@@ -36,7 +36,7 @@ INSERT INTO t_country (couCountry) VALUES
 );
 
 --
--- Structure de la table "t_genre"
+-- Structure de la table "t_type"
 --
 CREATE TABLE t_type (
   idType INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -44,7 +44,7 @@ CREATE TABLE t_type (
 );
 
 --
--- Déchargement des données de la table "t_genre"
+-- Déchargement des données de la table "typeName"
 --
 INSERT INTO t_type (typeName) VALUES
 ("Hip-hop/Rap"),
@@ -53,6 +53,9 @@ INSERT INTO t_type (typeName) VALUES
 ("RnB"
 );
 
+--
+-- Structure de la table "t_artist"
+--
 CREATE TABLE t_artist (
   idArtist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   artName VARCHAR(50) NOT NULL,
@@ -62,9 +65,8 @@ CREATE TABLE t_artist (
 );
 
 --
--- Déchargement des données de la table "t_artiste"
+-- Déchargement des données de la table "t_artist"
 --
-
 INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES
 ('Travis Scott', '1992-04-30', 1),
 ('Drake', '1986-10-24', 1),
@@ -78,10 +80,8 @@ INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES
 ('The Weeknd', '1990-02-16', 1
 );
 
--- --------------------------------------------------------
-
 --
--- Structure de la table "t_musique"
+-- Structure de la table "t_music"
 --
 CREATE TABLE t_music (
   idMusic INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
@@ -94,7 +94,7 @@ CREATE TABLE t_music (
 );
 
 --
--- Déchargement des données de la table "t_musique"
+-- Déchargement des données de la table "t_music"
 --
 INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES
 ('gossebumps', 4.04, 1, 1),
@@ -138,7 +138,8 @@ CREATE TABLE t_playlist (
   plaCreationDate DATE NOT NULL
 );
 
--- Structure de la table "t_ajouter"
+--
+-- Structure de la table "t_add"
 --
 CREATE TABLE t_add (
   idxMusic INT NOT NULL,
@@ -149,7 +150,7 @@ CREATE TABLE t_add (
 );
 
 -- 
--- Structure de la table "t_lien"
+-- Structure de la table "t_link"
 --
 CREATE TABLE t_link (
   idLink INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -159,7 +160,7 @@ CREATE TABLE t_link (
 );
 
 --
--- Structure de la table "t_typeLien"
+-- Structure de la table "t_typeLink"
 --
 CREATE TABLE t_typeLink (
   idTypeLink INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -171,12 +172,12 @@ CREATE TABLE t_typeLink (
 --
 -- TABLE DE LOGIN 
 --
-CREATE TABLE IF NOT EXISTS `accounts` (
+CREATE TABLE `accounts` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
-  	`username` varchar(50) NOT NULL,
-  	`password` varchar(255) NOT NULL,
-  	`email` varchar(100) NOT NULL,
-    PRIMARY KEY (`id`)
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'test', '$2y$10$SfhYIDtn.iOuCW7zfoFLuuZHX6lja4lF4XA4JqNmpiH/.P3zB8JCa', 'test@test.com')
