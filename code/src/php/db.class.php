@@ -29,6 +29,18 @@ class DB{
         }
     }
 
+
+    //CA MARCHE <333333333333 je call bientot mvc
+    //fonction pour pouvoir récuperer un artist (anthony)
+    public function getArtist(){
+        $query = "SELECT * FROM t_artist WHERE idArtist =" . $_GET["idArtist"];
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
     public function query($sql, $data = array()){
         $req =$this->db->prepare($sql);
         $req->execute($data);
@@ -52,7 +64,6 @@ class DB{
     }
 
     public function getAllArtists(){
-
         $query = 'SELECT * FROM t_artist ORDER BY idArtist DESC';
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);

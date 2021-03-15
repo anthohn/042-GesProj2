@@ -22,6 +22,17 @@ body{
 	background-repeat: no-repeat
 }
 
+.maintest{
+	font-size: 20px;
+	padding: 1% 0 0 0;
+	margin-left: 10%;
+	width: 80%;
+}
+
+.error{
+	text-align: center;
+}
+
 .main{
 	overflow: auto;
 	position: absolute;
