@@ -1,16 +1,16 @@
 <!--
 ETML
 Auteur      : Anthony Höhn
-Date        : 04.03.2021
-Description : tkt
+Date        : 15.03.2021
+Description : controller
 -->
 <?php
 class DB{
     //Déclaration des variables de connection
-    private $host = "localhost";
-    private $username = "root";
-    private $password = "root";
-    private $database = "p_db_042main";
+    private $host = "";
+    private $username = "";
+    private $password = "";
+    private $database = "";
     private $db;
 
     public function __construct($host = null, $username = null, $password = null, $database = null){
