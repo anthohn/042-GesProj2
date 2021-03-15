@@ -621,7 +621,9 @@ svg.like:hover{
 /*******************************************ABOUT***********************************************/
 
 .bottom{
-	padding-top: 380px;
+	border-radius: 5px;
+	background-color: rgb(17, 17, 17);
+	margin-top: 350px;
 }
 
 
