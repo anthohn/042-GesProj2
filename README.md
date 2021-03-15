@@ -3,7 +3,7 @@
 ## Site web de gestion de musiques 
 
 ### Description : 
-Site Web is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+Oto is a website developed by a small team of apprentice ETML computer scientists. It allows in particular, thanks to database, to be able to manage different playlists as well as to add or delete artists. On this site, you can easily list the different songs of your favorite artists, in order to put your favorite sounds in order!
 
 #### languages utilisés :
 <code><img height="40" src="https://fofsoft.com/images/illustration/html_css_js.png"></code>
