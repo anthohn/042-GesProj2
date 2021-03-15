@@ -34,4 +34,30 @@ class DB{
         $req->execute($data);
         return $req->fetchAll(PDO::FETCH_OBJ);
     }
+
+    private function queryExecute($query){
+        $req = $this->db->query($query);
+        return $req;
+    }
+
+    private function formatData($req){
+
+        $result = $req->fetchALL(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    private function unsetData($req){
+
+        $req->closeCursor();
+    }
+
+    public function getAllArtists(){
+
+        $query = 'SELECT * FROM t_artist ORDER BY idArtist DESC';
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
 }
