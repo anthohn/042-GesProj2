@@ -1,26 +1,16 @@
-<html>
-	<head> 
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/ossn.default.css" />
-	</head>
+<?php 
+  session_start(); 
 
-	<body>
-		<div class="widget ">
-		<div class="widget-heading">Connexion</div>
-		<div class="widget-contents">
-			<form id="authenticate" action="authenticate.php" class="form" method="post"  enctype='multipart/form-data'><fieldset>  
-        <div>
-			<label>Nom d'utilisateur</label>
-    		<input type="text" name="username" />
-		</div>
-		<div>
-			<label>Mot de passe</label>
-    		<input type="password" name="password" />
-		</div>
-		<div>		
-    		<input type="submit" value="Connexion" class="btn btn-primary"/>
-   		</div>
-		</fieldset></form>	</div>
-		</div>             
-	</body>
-</html>
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+
+  header('Location: ../../code/src/php/home.php');
+
+?>
