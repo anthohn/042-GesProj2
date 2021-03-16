@@ -26,7 +26,7 @@ Description : Tous les artistes de la base de données rescencé ici grâce à u
 				<p><?php echo $artist->couCountry; ?></p>
 			</div>
 			<div class="plus">
-				<a href="1.php">+</a>
+				<a href="artist.php?idArtist=<?= $artist->idArtist; ?>">+</a>
 			</div>
 		</div>
 	<?php endforeach ?>			

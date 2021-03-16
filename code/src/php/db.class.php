@@ -1,16 +1,16 @@
 <!--
 ETML
 Auteur      : Anthony Höhn
-Date        : 04.03.2021
-Description : tkt
+Date        : 15.03.2021
+Description : controller
 -->
 <?php
 class DB{
     //Déclaration des variables de connection
-    private $host = "localhost";
-    private $username = "root";
-    private $password = "root";
-    private $database = "p_db_042main";
+    private $host = "";
+    private $username = "";
+    private $password = "";
+    private $database = "";
     private $db;
 
     public function __construct($host = null, $username = null, $password = null, $database = null){
@@ -27,6 +27,18 @@ class DB{
         }catch(PDOException $e){
             die("<h1>Impossible de se connecter à la base de données</h1>"); 
         }
+    }
+
+
+    //CA MARCHE <333333333333 je call bientot mvc
+    //fonction pour pouvoir récuperer un artist (anthony)
+    public function getArtist(){
+        $query = "SELECT * FROM t_artist WHERE idArtist =" . $_GET["idArtist"];
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+
+        $this->unsetData($reqExecuted);
+        return $results;
     }
 
     public function query($sql, $data = array()){
@@ -52,8 +64,12 @@ class DB{
     }
 
     public function getAllArtists(){
+<<<<<<< HEAD
 
         $query = 'SELECT * FROM t_artist';
+=======
+        $query = 'SELECT * FROM t_artist ORDER BY idArtist DESC';
+>>>>>>> b33e35fe7716f9c34ab640d41c75dde91d634007
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
 

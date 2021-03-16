@@ -1,18 +1,22 @@
-<?php require "header.php"; ?>
-		<style>
+<?php
+require "header.php";
+$artists = $DB->getArtist();
+print_r($artists);
+?>
+<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
+		 <style>
 			body {
 			background-image: url('../../userContent/img/artists/background/1.jpg');
 			}
 		</style>
 		<div class="ARPtitle">
 			<img src="../../userContent/img/artists/logo/1.jpg" alt="">
-			<p>Travis scott</p>
+			<p></p>
 		</div>	
 		<div class="ARPmainBlock">
-			<!-- 1	-->
 			<div class="ARPblock1">
 				<img src="../../../userContent/img/coverPlaylists/travisScott.jpg" alt="">
-				<p>goosebumps</p>
+				<p><?php echo $artist["artName"]; ?></p>
 				<p>-</p>
 				<p>04:04</p>
 				<div class="dropdown" style="float:right;">

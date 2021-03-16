@@ -20,7 +20,4 @@
 		<a class="resSVG" href=https://www.instagram.com/oto_playlists/ target="_blank"><img src="../../userContent/logo/insta.svg" alt="Insta"></a>
 		<a class="resSVGTwitter" href=https://twitter.com/Oto_playlists target="_blank"><img src="../../userContent/logo/twitter.svg" alt="Twitter"></a>
 		<a class="resSVGYTB" href=https://www.youtube.com/channel/UCxPrDkjqFcYtpTLKbUUs22g target="_blank"><img src="../../userContent/logo/youtube.svg" alt="Youtube"></a>
-		<footer>
-		</footer>
-	</body>
-</html>
+<?php require "footer.php"; ?>
