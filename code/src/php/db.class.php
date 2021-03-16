@@ -7,10 +7,10 @@ Description : controller
 <?php
 class DB{
     //Déclaration des variables de connection
-    private $host = "";
-    private $username = "";
-    private $password = "";
-    private $database = "";
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "root";
+    private $database = "P_db_042main";
     private $db;
 
     public function __construct($host = null, $username = null, $password = null, $database = null){
@@ -64,12 +64,7 @@ class DB{
     }
 
     public function getAllArtists(){
-<<<<<<< HEAD
-
         $query = 'SELECT * FROM t_artist';
-=======
-        $query = 'SELECT * FROM t_artist ORDER BY idArtist DESC';
->>>>>>> b33e35fe7716f9c34ab640d41c75dde91d634007
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
 
