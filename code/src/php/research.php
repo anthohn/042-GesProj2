@@ -4,8 +4,8 @@ Auteur      : Younes Sayeh / Anthony Höhn
 Date        : 11.03.2021
 Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
 -->
-<?php require "header.php"
-$bdd = new PDO('mysql:host=localhost;dbname=p_db_042main;', 'root', 'root');
+<?php require "header.php" ?>
+<?php $bdd = new PDO('mysql:host=localhost;dbname=p_db_042main;', 'root', 'root');
 $artists = $bdd->query('SELECT * FROM t_artist');
 if(isset($_GET['search']) && !empty($_GET['search'])) {
 	$search = htmlspecialchars($_GET['search']);
