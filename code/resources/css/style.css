@@ -208,7 +208,7 @@ footer{
 .searchBar {
 	margin: auto;
 	position: relative;
-	max-width: 60%;
+	max-width: 70%;
     height: 50px;
 	padding: 90px 0 0 232px;
 }
@@ -257,6 +257,49 @@ footer{
 	margin: auto;
 	background-color: white;
 	border-radius: 10px;
+}
+
+.allTitleContainer {
+    /* padding-bottom: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+	max-width: 60%; */
+	width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.result {
+	text-align: left;
+	margin: 5% 0 0 0; 
+	color: white;
+}
+
+.titleContainer {
+	height: 80px;
+    position: relative;
+    border-radius: 5px;
+    margin: 5% 0 0 0;
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+}
+
+.titleContainer img{
+	float: left;
+	margin: 7px 0 0 7px;
+	border-radius: 7px;
+	height: 65px;
+}
+
+.titleContainer p{
+	float: left;
+	margin: 30px 0 0 3%;
+	font-size: 18px;
+	color: rgb(180, 180, 180);
+	/* text-shadow: 4px 4px 7px #5c5c5c; */
 }
 
 
@@ -621,9 +664,7 @@ svg.like:hover{
 /*******************************************ABOUT***********************************************/
 
 .bottom{
-	border-radius: 5px;
-	background-color: rgb(17, 17, 17);
-	margin-top: 350px;
+	padding-top: 380px;
 }
 
 

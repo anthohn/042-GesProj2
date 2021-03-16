@@ -32,8 +32,7 @@ require "_header.php";
 					<li><a href="playlists.php">Playlists</a></li>
 					<li><a href="alltitle.php">Tous les titres</a></li>
 					<li><a href="likedtitle.php">Titres likés</a></li>
-					<li><a href="about.php">À propos</a></li>
-					<li class="bottom"><a href="../../login/register.php"><?php if(!isset($_SESSION)) {echo "Connexion";} else {echo "Se Déconnecter";}?></a></li>	
+					<li class="bottom"><a href="about.php">À propos</a></li>
 				</ul>
 			</div>
 		</div>

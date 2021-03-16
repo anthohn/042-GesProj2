@@ -53,7 +53,7 @@ class DB{
 
     public function getAllArtists(){
 
-        $query = 'SELECT * FROM t_artist ORDER BY idArtist DESC';
+        $query = 'SELECT * FROM t_artist';
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
 
