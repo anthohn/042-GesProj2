@@ -33,10 +33,9 @@ class DB{
     //CA MARCHE <333333333333 je call bientot mvc
     //fonction pour pouvoir récuperer un artist (anthony)
     public function getArtist(){
-        $query = "SELECT * FROM t_artist WHERE idArtist =" . $_GET["idArtist"];
+        $query = "SELECT idArtist, musName, musDuration, artName FROM t_music JOIN t_artist ON idxArtist = idArtist WHERE idArtist =" . $_GET["idArtist"];
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
-
         $this->unsetData($reqExecuted);
         return $results;
     }
