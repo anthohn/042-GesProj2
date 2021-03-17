@@ -3,7 +3,7 @@
 ## Site web de gestion de musiques 
 
 ### Description : 
-Oto est un site web développé par une petite équipe d’informaticien de l’ETML en apprentisssge. Il permet notament, grâce à base de données, de pouvoir gérer différentes listes de lecture ainsi que de rajouter ou supprimer des artistes. Sur ce site, tu peux sans souci répertorier les différents morceaux de tes artistes préférés, afin de mettre de l’ordre dans tes sons favoris !
+Oto est un site web développé par une petite équipe d’informaticien de l’ETML en apprentissage. Il permet notament, grâce à une base de données, de pouvoir gérer différentes listes de lecture ainsi que de rajouter ou supprimer des artistes. Sur ce site, tu peux sans souci répertorier les différents morceaux de tes artistes préférés, afin de mettre de l’ordre dans tes sons favoris !
 
 #### languages utilisés :
 <code><img height="40" src="https://fofsoft.com/images/illustration/html_css_js.png"></code>
