@@ -7,10 +7,10 @@ Description : controller
 <?php
 class DB{
     //Déclaration des variables de connection
-    private $host = "";
-    private $username = "";
-    private $password = "";
-    private $database = "";
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "root";
+    private $database = "P_db_042main";
     private $db;
 
     public function __construct($host = null, $username = null, $password = null, $database = null){
@@ -29,8 +29,7 @@ class DB{
         }
     }
 
-
-    //Affiche de tous les tites "alltitle.php"
+    //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
         $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType;";
         $reqExecuted = $this->queryExecute($query);
@@ -39,7 +38,16 @@ class DB{
         return $results;
     }
 
-    //fonction pour la page chaque artiste suivant leur id
+    //fonction pour afficher tous les artistes -> "allartists.php"
+    public function getAllArtists(){
+        $query = "SELECT idArtist, artName, artBirth, couCountry FROM t_artist JOIN t_country ON idxCountry = idCountry";
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //fonction pour la page chaque artiste suivant leur id -> "detailArtist.php"
     public function getAEachArtist(){
         $query = "SELECT idArtist, musName, musDuration, artName FROM t_music JOIN t_artist ON idxArtist = idArtist WHERE idArtist =" . $_GET["idArtist"];
         $reqExecuted = $this->queryExecute($query);
