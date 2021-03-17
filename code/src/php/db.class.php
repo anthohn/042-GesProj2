@@ -30,9 +30,17 @@ class DB{
     }
 
 
-    //CA MARCHE <333333333333 je call bientot mvc
-    //fonction pour pouvoir récuperer un artist (anthony)
-    public function getArtist(){
+    //Affiche de tous les tites "alltitle.php"
+    public function getAllTitle(){
+        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType;";
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //fonction pour la page chaque artiste suivant leur id
+    public function getAEachArtist(){
         $query = "SELECT idArtist, musName, musDuration, artName FROM t_music JOIN t_artist ON idxArtist = idArtist WHERE idArtist =" . $_GET["idArtist"];
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
@@ -62,12 +70,5 @@ class DB{
         $req->closeCursor();
     }
 
-    public function getAllArtists(){
-        $query = 'SELECT * FROM t_artist';
-        $reqExecuted = $this->queryExecute($query);
-        $results = $this->formatData($reqExecuted);
-
-        $this->unsetData($reqExecuted);
-        return $results;
-    }
+    
 }

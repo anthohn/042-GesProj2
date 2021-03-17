@@ -1,20 +1,20 @@
 <?php
 require "header.php";
 //récupere la fonction dans db.class.php :)
-$artists = $DB->getArtist();
+$artists = $DB->getAEachArtist();
 // print_r($artists);
 ?>
 <?php foreach ( $artists as $artist): ?>	
 	<style>
-	body {
-	background-image: url('../../userContent/img/artists/background/<?= $artist["idArtist"];?>.jpg');
-	/* -webkit-filter: blur(8px); */
-	}
-</style>
+		body {
+		background-image: url('../../userContent/img/artists/background/<?= $artist["idArtist"];?>.jpg');
+		/* -webkit-filter: blur(8px); */
+		}
+	</style>
 <div class="ARPtitle">
 	<img src="../../userContent/img/artists/logo/<?= $artist["idArtist"];?>.jpg" alt="">
 	<p><?= $artist["artName"]; ?></p>
-</div>	
+</div>
 <div class="ARPmainBlock">
 	<div class="ARPblock1">
 		<img src="../../../userContent/img/coverPlaylists/travisScott.jpg" alt="">
