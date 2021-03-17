@@ -12,7 +12,7 @@ Oto est un site web développé par une petite équipe d’informaticien de l’
 #### outils utilisés :
 <code><img height="30" src="https://scontent.fzrh2-1.fna.fbcdn.net/v/t1.0-1/cp0/c17.17.216.216a/s50x50/943214_620978634597584_2140317874_n.png?_nc_cat=111&ccb=1-3&_nc_sid=dbb9e7&_nc_ohc=ZCdPyEp7z3cAX9HUU5C&_nc_ht=scontent.fzrh2-1.fna&_nc_tp=30&oh=9121d354fd4e2c6ac13da59b31256913&oe=60693548"></code>
 <code><img height="40" src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png"></code>
-<code><img height="40" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Finfo.blaisepascal.fr%2Frpi-installer-un-sgbd&psig=AOvVaw2SvoklFbyULyfgC20_18on&ust=1616077088973000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMD2sbjCt-8CFQAAAAAdAAAAABAT"></code>
+<code><img height="40" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/PhpMyAdmin_logo_2010_hidef.svgT"></code>
 
 <br/><br/></br>
 #### Contributeurs :
