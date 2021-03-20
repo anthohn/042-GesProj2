@@ -21,3 +21,6 @@ Oto est un site web développé par une petite équipe d’informaticien de l’
 * Killian Good [GitHub](https://github.com/KillianGood) [Linkdeln](https://www.linkedin.com/in/killian-good-89032a1b8)
 * Younes Sayeh [GitHub](https://github.com/yousayeh) [Linkdeln](https://www.linkedin.com/in/younes-sayeh-172a38208/)
 * Julien Cartier [GitHub](https://github.com/YaZOUU) [Linkdeln](https://www.linkedin.com/in/julien-cartier-9aa734208)
+
+### Chef de projet :
+* Jonathan Gander
