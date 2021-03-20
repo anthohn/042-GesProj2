@@ -26,8 +26,8 @@ require "_header.php";
 				<ul class="navBarLink">
 					<li class="logo"><a id="active" href="home.php">Oto</a></li>
 					<li><a href="home.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
-					<li><a href="research.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
-					<li class="espace"><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li>
+					<li class="espace"><a href="research.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<!-- <li ><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li> -->
 					<li class="border"><a href="allartists.php">Artistes</a></li>
 					<li><a href="playlists.php">Playlists</a></li>
 					<li><a href="alltitle.php">Tous les titres</a></li>

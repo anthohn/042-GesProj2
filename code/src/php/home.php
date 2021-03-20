@@ -1,66 +1,88 @@
-﻿<?php require "header.php"; ?>
+﻿<?php require "header.php"; 
+$artists = $DB->getAllArtists();
+$musics = $DB->getAllTitle();
+?>
 <div class="title">
-	<p>EN CONSTRUCTION</p>
+	<p>Artistes écoutés récemment</p>
 </div>
-<!-- <div class="title">
-	<p>Écoutés récemment</p>
-</div>	 -->
-<!-- <div class="ACmainBlock">			
-	<div class="ACblock1">
-		<div class="ACimgCover">
-			<img src="../../userContent/img/coverPlaylists/recent.jpg" alt="">
+	
+<div class="ACmainBlock">	
+	<?php foreach ( $artists as $artist): ?>			
+		<div class="ACblock">
+			<a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>">
+			<h1><?= $artist["artName"]; ?></h1>
+			<img src="../../userContent/img/artists/logo/<?= $artist["idArtist"]?>.jpg" alt="">
+			<p>testtestsetest</p>
 		</div>
-		<div class="ACblockTitle">
-			<p>track1</p>
-		</div>
-		<div class="plus">
-			<a href="#"><img src="../../userContent/logo/play.svg" alt=""></a>
-		</div>
-	</div>
+		</a>
+	<?php endforeach ?>
+</div>
 
-	<div class="ACblock1">
-		<div class="ACimgCover">
-			<img src="../../userContent/img/artistes/travis.jpg" alt="">
+
+
+<div class="title">
+	<p>Écoutés récemment</p>
+</div>
+<div class="ACmainBlock">	
+	<?php foreach ( $musics as $music): ?>			
+		<div class="ACblock">
+			<!-- <a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>"> -->
+			<h1><?= $music["musName"]; ?></h1>
+			<img src="../../userContent/img/music/<?= $music["idMusic"] ?>.jpg" alt="">
+			<p>testtestsetest</p>
 		</div>
-		<div class="ACblockTitle">
-			<p>test</p>
-		</div>
-		<div class="plus">
-			<a href="#">+</a>
-		</div>
-	</div>
-	<div class="ACblock1">
-		<div class="ACimgCover">
-			<img src="../../userContent/img/artistes/travis.jpg" alt="">
-		</div>
-		<div class="ACblockTitle">
-			<p>test</p>
-		</div>
-		<div class="plus">
-			<a href="#">+</a>
-		</div>
-	</div>
-	<div class="ACblock1">
-		<div class="ACimgCover">
-			<img src="../../userContent/img/artistes/travis.jpg" alt="">
-		</div>
-		<div class="ACblockTitle">
-			<p>test</p>
-		</div>
-		<div class="plus">
-			<a href="#">+</a>
-		</div>
-	</div>
-	<div class="ACblock1">
-		<div class="ACimgCover">
-			<img src="../../userContent/img/artistes/travis.jpg" alt="">
-		</div>
-		<div class="ACblockTitle">
-			<p>test</p>
-		</div>
-		<div class="plus">
-			<a href="#">+</a>
-		</div>
-	</div>	
-</div>	 -->
+		</a>
+	<?php endforeach ?>
+</div>
 <?php require "footer.php" ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="ACblock1">
+		<div class="ACimgCover">
+			<img src="../../userContent/img/artistes/travis.jpg" alt="">
+		</div>
+		<div class="ACblockTitle">
+			<p>test</p>
+		</div>
+		<div class="plus">
+			<a href="#">+</a>
+		</div>
+	</div> -->

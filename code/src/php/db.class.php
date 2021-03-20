@@ -7,10 +7,10 @@ Description : controller
 <?php
 class DB{
     //Déclaration des variables de connection
-    private $host = "localhost";
-    private $username = "root";
-    private $password = "root";
-    private $database = "P_db_042main";
+    private $host = "";
+    private $username = "";
+    private $password = "";
+    private $database = "";
     private $db;
 
     public function __construct($host = null, $username = null, $password = null, $database = null){
@@ -25,7 +25,7 @@ class DB{
           $this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->database, $this->username, $this->password);
         //Si la connexion n'est pas établie un messaye d'erreur s'affiche
         }catch(PDOException $e){
-            die("<h1>Impossible de se connecter à la base de données</h1>"); 
+            die("<h1>La connexion à la base de données est impossible.</h1>"); 
         }
     }
 
