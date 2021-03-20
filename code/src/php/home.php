@@ -7,7 +7,8 @@ $musics = $DB->getAllTitle();
 </div>
 	
 <div class="ACmainBlock">	
-	<?php foreach ( $artists as $artist): ?>			
+	<?php foreach ( $artists as $artist): ?>		
+
 		<div class="ACblock">
 			<a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>">
 			<h1><?= $artist["artName"]; ?></h1>
@@ -15,6 +16,7 @@ $musics = $DB->getAllTitle();
 			<p>testtestsetest</p>
 		</div>
 		</a>
+
 	<?php endforeach ?>
 </div>
 

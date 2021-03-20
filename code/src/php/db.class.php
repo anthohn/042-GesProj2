@@ -49,7 +49,16 @@ class DB{
 
     //fonction pour la page chaque artiste suivant leur id -> "detailArtist.php"
     public function getAEachArtist(){
-        $query = "SELECT idArtist, musName, musDuration, artName FROM t_music JOIN t_artist ON idxArtist = idArtist WHERE idArtist =" . $_GET["idArtist"];
+        $query = "SELECT idArtist, artName FROM t_artist  WHERE idArtist =" . $_GET["idArtist"];
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //fonction qui va chercher les musiques de chaque artiste
+    public function getMusicEachArtist(){
+        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist =" . $_GET["idArtist"];
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
