@@ -22,7 +22,7 @@ class DB{
         }
         //Essaye de se connecter à la base de données en utilisant les variables crées plus haut
         try{
-          $this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->database, $this->username, $this->password);
+        $this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->database.";charset=utf8", $this->username, $this->password);
         //Si la connexion n'est pas établie un messaye d'erreur s'affiche
         }catch(PDOException $e){
             die("<h1>La connexion à la base de données est impossible.</h1>"); 
