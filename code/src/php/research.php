@@ -5,18 +5,23 @@ Date        : 11.03.2021
 Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
 -->
 <?php require "header.php" ?>
-<?php $bdd = new PDO('mysql:host=localhost;dbname=p_db_042main;', 'root', 'root');
-$artists = $bdd->query('SELECT * FROM t_artist');
-if(isset($_GET['search']) && !empty($_GET['search'])) {
-	$search = htmlspecialchars($_GET['search']);
-	$artists = $bdd->query('SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC');
-}
-// echo "<pre style=\"margin:0 0 0 25%;color:white;\">";
-// print_r($artists);
-// echo "</pre>";
+<?php 
+	$bdd = new PDO('mysql:host=localhost;dbname=p_db_042main;', 'root', 'root');
+	$artists = $bdd->query('SELECT * FROM t_artist');
+	if(isset($_GET['search']) && !empty($_GET['search'])) {
+		$search = htmlspecialchars($_GET['search']);
+		$artists = $bdd->query('SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC');
+	}
+	// echo "<pre style=\"margin:0 0 0 25%;color:white;\">";
+	// print_r($artists);
+	// echo "</pre>";
 ?>
 <!-- barre de recherche--> 
 <div class="searchBar">
+	<div class="searchBarTitle">
+		<h1>Rechercher</h1>
+	</div>
+
 	<form method="GET">
 		<div class="searchBarInputContainer">
 			<div class="searchIcon">
@@ -32,17 +37,26 @@ if(isset($_GET['search']) && !empty($_GET['search'])) {
 		
 			if($artists->rowCount() > 0) {
 				foreach($artists as $artist) {
-					//echo $artist['artName'];
+
 				}
+				if(isset($_GET['search']) && !empty($_GET['search'])) {
+					echo "<h2>Résultat pour : $search</h2>";
+				}
+				
 			}
 			else {
-				echo "<h1>Aucun résultat pour : $search</h1>";
+				echo "<h2>Aucun résultat pour : $search</h2>";
 			}
 		
 		?>
 	</div>
 	<div class="allTitleContainer">
-		<?php $musics = $DB->query('SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC;');?>
+		<?php 
+			$musics = $DB->query('SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType;');
+			if(isset($_GET['search']) && !empty($_GET['search'])) {
+				$musics = $DB->query('SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC;');
+			}
+		?>
 		<?php foreach ($musics as $music):?>
 			<div class="titleContainer">
 				<img src="../../userContent/img/music/<?php echo $music->idMusic ?>.jpg" alt="">
