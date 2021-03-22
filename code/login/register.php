@@ -28,10 +28,11 @@
   	  <input type="password" name="password_2">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">S'enregistrer</button>
-  	</div>
+  	  <button type="submit" class="btn" name="reg_user">S'enregistrer</button> 	<div class="backSite"> 	
+	</div>
   	<p>
   		Déjà membre ?<a href="login.php">Login</a>
+	    <a href="../src/php/home.php" class="button">Revenir sur le site</a> 
   	</p>
   </form>
 </body>

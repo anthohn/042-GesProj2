@@ -33,7 +33,16 @@ require "_header.php";
 					<li><a href="alltitle.php">Tous les titres</a></li>
 					<li><a href="likedtitle.php">Titres likés</a></li>
 					<li><a href="about.php">À propos</a></li>
-					<li class="bottom"><a href="../../login/register.php"><?php if(!isset($_SESSION)) {echo "Connexion";} else {echo "Se Déconnecter";}?></a></li>	
+					<li class="bottom"><a href="../../login/register.php">
+					<?php if(!isset($_SESSION)) 
+					{
+						echo "Connexion";
+					} 
+					else 
+					{
+						echo "Se Déconnecter";
+						session_destroy();
+					}?></a></li>	
 				</ul>
 			</div>
 		</div>
