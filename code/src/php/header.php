@@ -1,5 +1,6 @@
 <?php
 require "_header.php";
+$usernames = $DB->getUserAccount();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -33,7 +34,11 @@ require "_header.php";
 					<li><a href="alltitle.php">Tous les titres</a></li>
 					<li><a href="likedtitle.php">Titres likés</a></li>
 					<li><a href="about.php">À propos</a></li>
-					<li class="bottom"><a href="../../login/register.php"><?php if(!isset($_SESSION)) {echo "Connexion";} else {echo "Se Déconnecter";}?></a></li>	
-				</ul>
+					<li class="bottom"><a href="#">
+					<?php foreach ( $usernames as $username): ?>
+						<li><p><?php echo "Bonjour" . " " . $username["username"]; ?></p></a></li>
+					<?php endforeach ?>	
+					<li class="border"><a href="allartists.php">Artistes</a></li>
+				</ul>	
 			</div>
 		</div>

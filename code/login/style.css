@@ -73,3 +73,7 @@ form, .content {
   margin-bottom: 20px;
 }
 
+.backSite {
+  display:inline;
+  float: left;
+}
