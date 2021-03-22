@@ -7,6 +7,7 @@ Description : tkt
 <?php
 require "db.class.php";
 require "like.class.php";
-$DB = new DB ();
+require "dbconfig.cfg";
+$DB = new DB (Config::$host, Config::$username, Config::$password, Config::$database);
 $like = new like ();
 ?>
