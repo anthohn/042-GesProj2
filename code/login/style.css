@@ -73,12 +73,7 @@ form, .content {
   margin-bottom: 20px;
 }
 
-/* .backSite {
-  padding: 10px;
-  font-size: 15px;
-  color: white;
-  background:black;
-  border: none;
-  border-radius: 5px;
-  margin: 10px 0px 10px 0px;
-} */
+.backSite {
+  display:inline;
+  float: left;
+}

@@ -1,6 +1,6 @@
 <!--
 ETML
-Auteur      : Anthony Höhn
+Auteur      : Anthony Höhn / Killian Good
 Date        : 15.03.2021
 Description : controller
 -->
@@ -60,6 +60,15 @@ class DB{
     //fonction qui va chercher les musiques de chaque artiste
     public function getMusicEachArtist(){
         $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist =" . $_GET["idArtist"];
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+    
+    //fonction qui va chercher le nom de l'utilisateur -> Killian Good
+    public function getUserAccount(){
+        $query = "SELECT username FROM accounts";
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
