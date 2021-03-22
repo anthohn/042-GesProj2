@@ -8,7 +8,7 @@
 html{
 	/* height: 100%; */
 	/* temporaire pour pouvoir scroll corecemment dans la page*/
-	height: 19000px;
+	height: 120%;
 	width: 100%;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -496,7 +496,7 @@ footer{
 
 .ARPmainBlock{
 	background: linear-gradient(to bottom right, rgb(32, 32, 32), rgb(138, 143, 138));
-	padding-bottom: 100%;
+	padding-bottom: 30%;
 	margin: 400px 0 0 232px;
 	text-align: center;
 	display: flex;
