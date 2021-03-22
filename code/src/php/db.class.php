@@ -7,10 +7,10 @@ Description : controller
 <?php
 class DB{
     //Déclaration des variables de connection
-    private $host = "localhost";
-    private $username = "root";
-    private $password = "root";
-    private $database = "P_db_042main";
+    private $host;
+    private $username;
+    private $password;
+    private $database;
     private $db;
 
     public function __construct($host = null, $username = null, $password = null, $database = null){
@@ -59,6 +59,23 @@ class DB{
     //fonction qui va chercher les musiques de chaque artiste
     public function getMusicEachArtist(){
         $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist =" . $_GET["idArtist"];
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    public function getSearchedArtists($search){
+        $query = 'SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC';
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    public function getAllTitleSearched($search){
+        $query = 'SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC;';
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
