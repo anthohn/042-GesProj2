@@ -1,16 +1,18 @@
 ﻿<?php require "header.php"; ?>
 		<style>
 			body {
-			background-image: url(' ../../userContent/about/image.png');
+				background-image: url(' ../../userContent/about/image.png');
 			}
 		</style>
 		<div class="contenu">
 			<div class="contenutext">
-				<p>Oto est un site web développé par une petite équipe d’informaticien de l’ETML en apprentisssge. 
-				Il permet notament, grâce à base de données, de pouvoir gérer différentes listes de lecture 
-				ainsi que de rajouter ou supprimer des artistes. Sur ce site, tu peux sans souci répertorier les 
-				différents morceaux de tes artistes préférés, afin de mettre de 
-				l’ordre dans tes sons favoris !</p>
+				<p>
+					Oto est un site web développé par une petite équipe d’informaticien de l’ETML en apprentisssge. 
+					Il permet notament, grâce à base de données, de pouvoir gérer différentes listes de lecture 
+					ainsi que de rajouter ou supprimer des artistes. Sur ce site, tu peux sans souci répertorier les 
+					différents morceaux de tes artistes préférés, afin de mettre de 
+					l’ordre dans tes sons favoris !
+				</p>
 			</div>
 		
 		
