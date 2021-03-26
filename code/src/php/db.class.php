@@ -24,9 +24,25 @@ class DB{
         try{
         $this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->database.";charset=utf8", $this->username, $this->password);
         //Si la connexion n'est pas établie un messaye d'erreur s'affiche
-        }catch(PDOException $e){
+        }catch(PDOException $e)
+        {
             die("<h1>La connexion à la base de données est impossible.</h1>"); 
         }
+    }
+
+    private function querySimpleExecute($query){
+
+        $req = $this->connector->query($query);
+        return $req;
+    }
+
+    private function queryPrepareExecute($query, $binds){
+        $req = $this->db->prepare($query);
+        foreach($binds as $bind){
+            $req->bindValue($bind['field'], $bind['value'], $bind['type']);
+        }
+        $req->execute();
+        return $req;
     }
 
     //fonction pour afficher tous les tites -> "alltitle.php"
@@ -47,10 +63,17 @@ class DB{
         return $results;
     }
 
-    //fonction pour la page chaque artiste suivant leur id -> "detailArtist.php"
-    public function getAEachArtist(){
-        $query = "SELECT idArtist, artName FROM t_artist  WHERE idArtist =" . $_GET["idArtist"];
-        $reqExecuted = $this->queryExecute($query);
+    //fonction qui va chercher les musiques de chaque artiste + sécurisé qu'avant 
+    public function getAEachArtist($id){
+        $query = "SELECT idArtist, artName FROM t_artist WHERE idArtist = :id";
+        $binds = array(
+            0 => array(
+                'field' => ':id',
+                'value' => $id,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;

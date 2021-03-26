@@ -1,7 +1,8 @@
 <?php
 require "header.php";
 //récupere la fonction dans db.class.php :)
-$artists = $DB->getAEachArtist();
+$id = $_GET["idArtist"];
+$artists = $DB->getAEachArtist($id);
 $musics = $DB->getMusicEachArtist();
 // print_r($artists);
 ?>
@@ -24,6 +25,8 @@ $musics = $DB->getMusicEachArtist();
 		<p><?= $music["musName"]; ?></p>
 		<p>-</p>
 		<p><?= $music["musDuration"]; ?></p>
+		<p>-</p>
+		<p><?= $music["typeName"]; ?></p>
 		<div class="dropdown" style="float:right;">
 			<button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button>
 			<div class="dropdown-content">
