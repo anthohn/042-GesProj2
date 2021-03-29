@@ -1,6 +1,11 @@
 <?php
 require "_header.php";
-$usernames = $DB->getUserAccount();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,10 +40,16 @@ $usernames = $DB->getUserAccount();
 					<li><a href="likedtitle.php">Titres likés</a></li>
 					<li><a href="about.php">À propos</a></li>
 					<li class="bottom"><a href="#">
-					<?php foreach ( $usernames as $username): ?>
-						<li><p><?php echo "Bonjour" . " " . $username["username"]; ?></p></a></li>
-					<?php endforeach ?>	
-					<li class="border"><a href="allartists.php">Artistes</a></li>
+					<?php if(isset($_SESSION["loggedin"]) == true)
+					{
+						echo "Bienvenue" . " " . $_SESSION["username"];
+						echo "<li><a href='../../login/logout.php'>Se déconnecter</a></li>";
+					}
+					else 
+					{
+						echo "<li><a href='about.php'>À propos</a></li>";
+					}
+					?>
 				</ul>	
 			</div>
 		</div>
