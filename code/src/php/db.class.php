@@ -62,9 +62,34 @@ class DB{
         return $results;
     }
 
+    public function getAllLink(){
+        $query = "SELECT linLink FROM t_link";
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
     //fonction qui va chercher les musiques de chaque artiste + sécurisé qu'avant 
     public function getAEachArtist($id){
         $query = "SELECT idArtist, artName FROM t_artist WHERE idArtist = :id";
+        $binds = array(
+            0 => array(
+                'field' => ':id',
+                'value' => $id,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+
+    //Suppression d'un artistes dans la bdd 
+    public function deleteOneArtist($id){
+        $query = "DELETE FROM t_artist WHERE idArtist = :id";
         $binds = array(
             0 => array(
                 'field' => ':id',
@@ -146,6 +171,22 @@ class DB{
             )
         );
         $results = $this->queryPrepareExecute($query, $binds);
+        return $results;
+    }
+
+    //Suppression d'une musique dans la bdd 
+    public function deleteOneMusic($id){
+        $query = "DELETE FROM t_music WHERE idMusic = :id";
+        $binds = array(
+            0 => array(
+                'field' => ':id',
+                'value' => $id,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
         return $results;
     }
 

@@ -60,7 +60,7 @@ CREATE TABLE t_artist (
   artName VARCHAR(50) NOT NULL,
   artBirth DATE NOT NULL,
   idxCountry INT NOT NULL,
-  CONSTRAINT fk_t_artist_t_country_idCountry FOREIGN KEY (idxCountry) REFERENCES t_country(idCountry)
+  CONSTRAINT fk_t_artist_t_country_idCountry FOREIGN KEY (idxCountry) REFERENCES t_country(idCountry) 
 )engine=innodb character set utf8 collate utf8_general_ci;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE t_music (
   musDuration TIME NOT NULL,
   idxArtist INT NOT NULL,
   idxType INT NOT NULL,
-  CONSTRAINT fk_t_music_t_artist_idArtist FOREIGN KEY (idxArtist) REFERENCES t_artist(idArtist),
+  CONSTRAINT fk_t_music_t_artist_idArtist FOREIGN KEY (idxArtist) REFERENCES t_artist(idArtist) ON DELETE CASCADE,
   CONSTRAINT fk_t_music_t_type_idType FOREIGN KEY (idxType) REFERENCES t_type(idType)
 )engine=innodb character set utf8 collate utf8_general_ci;
 
@@ -172,8 +172,8 @@ CREATE TABLE t_link (
   idxMusic INT NOT NULL,
   idxTypelink INT NOT NULL,
   linLink VARCHAR(255),
-  CONSTRAINT fk_t_link_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic),
-  CONSTRAINT fk_t_link_t_typeLink_idTypeLink FOREIGN KEY (idxTypelink) REFERENCES t_typeLink(idTypeLink)
+  CONSTRAINT fk_t_link_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
+  CONSTRAINT fk_t_link_t_typeLink_idTypeLink FOREIGN KEY (idxTypelink) REFERENCES t_typeLink(idTypeLink) ON DELETE CASCADE
 )engine=innodb character set utf8 collate utf8_general_ci;
 
 -- 

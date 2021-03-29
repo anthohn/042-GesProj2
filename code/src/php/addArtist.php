@@ -3,18 +3,18 @@ require "header.php";
 $countries = $DB->getAllCountry();
  ?>
 <div class="tableContainer">
-            <h2>Ajout d'un artiste</h2>
+            <h1>Ajout d'un artiste</h1>
             <form method="POST" action="addArtist.php">
                 <div class="inputName input">
                     <label for="name">Nom :</label>
                     <input type="text" id="name" name="name">
                 </div>
 
-                <div class="inputFirstname input">
+                <div class="inputDate input">
                     <label for="date">Date :</label>
                     <input type="date" name="date">
                 </div>
-                <div class="selectSection input">
+                <div class="selectCountry input">
                     <select name="country" id="country">
                         <option value="0">nationalité </option>
                         <?php foreach($countries as $country) : ?>

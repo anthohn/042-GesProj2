@@ -26,6 +26,7 @@ $artists = $DB->getAllArtists();
 					<p><?= $artist["artBirth"]; ?></p>
 					<p><?= $artist["couCountry"]; ?></p>
 				</div>
+				<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de voiloir supprimer l\'artiste ?')"><img src="../../userContent/icon/trash.svg"></img></a>
 			</a>
 		</div>
 	<?php endforeach ?>			
