@@ -35,8 +35,12 @@ body{
 
 .main{
 	overflow: auto;
-	position: absolute;
+	/* position: absolute; */
 }
+
+/* #mainAbout {
+	position: unset;
+} */
 
 .toggleButton {
 	position: absolute;
@@ -105,11 +109,11 @@ body{
 	font-size: 40px;
 }
 
-.espace{
+.research{
 	margin-bottom: 50px;
 }
 
-.border{
+.allArtists{
 	padding-top: 10px;
 	border-top: 1px solid Gray;
 }
@@ -698,7 +702,10 @@ svg.like:hover{
 	padding-top: 380px;
 }
 
-
+.resContainer {
+	margin: auto;
+	padding: 90px 0 0 0;
+}
 
 .contenu{
 	/* width: 80%;
@@ -716,8 +723,8 @@ svg.like:hover{
     border-radius: 10px;
     background-color: rgb(169, 169, 169);
     box-shadow: 0 7px 40px 0 rgb(131 131 131 / 70%);
-    position: absolute;
-    margin: 10% 0 0 26%;
+    /* position: absolute; */
+    margin: 123px 0 0 26%;
 }
 
 .contenutext p{
@@ -731,7 +738,6 @@ svg.like:hover{
 
 .resContenu {
 	text-align: center;
-	padding-top: 210px;
 	margin: 0 10px 23px 10px;
 	font-weight: 800;
 	font-size: 25px;
@@ -754,12 +760,9 @@ svg.like:hover{
 
 /*Responsive Design*/
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 1150px)
 {
-
-	.title{
-		margin-left: 50px;
-	}
+	/*Navigation Bar*/
 
 	.ARmainBlock{
 		margin-left: 0;
@@ -768,41 +771,89 @@ svg.like:hover{
 	.toggleButton
 	{
 		display: flex;
+		position: absolute;
 	}
 
 	.leftnav {
-		width: 0;
-		padding-top: 100px;
+		width: 100%;
+		height: 110px;
+		padding: 0;
+		position: unset;
 	}
 
 	.leftnav ul
 	{
 		display: none;
 		flex-direction: column;
+		width: 100%;
 	}
 
 	.leftnav li {
-		width: 168px;
+		width: 100%;
+		background-color: black;
+		text-align: center;
+	}
+
+	.leftnav li:hover {
+		background-color: Gray;
+	}
+
+	.leftnav ul li a {
+		color: white;
+		padding: 12px;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	.research {
+		margin: 0;
+	}
+
+	.bottom {
+		padding: 0;
+	}
+
+	.home {
+		border-top: 1px solid Gray;
 	}
 
 	.navBarLink.active {
 		display: flex;
+		position: absolute;
+		margin: 110px 0 0 0;
+		z-index: 1;
 	}
 
-	/*Search*/
+	/*Content Home*/
 
-	/* #search {
-		width: 250px;
-		height: 50px;	
-		font-size: 20px;
-		padding: 0 0 0 15px;
-	} */
+	.ACmainBlock{
+		margin-left: 20px;
+	}
+
+	.title{
+		margin-left: 15px;
+		padding: 0;
+	}
+
+	/*Search Bar*/
 
 	.searchBar {
-		margin: 0 0 0 0;
+		padding: 10px 60px 0 50px;
 	}
+
+	/*playlist*/
+
+	.PLmainBlock {
+		margin: 0;
+	}
+
+	/*Artists*/
+
+	.alltitlemainBlock {
+		margin: 260px 0 0 0;
+	}
+
 	
-	.searchForm {
-		margin: 0 0 0 15px;
-	}
 }

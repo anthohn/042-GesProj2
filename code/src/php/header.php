@@ -15,7 +15,7 @@ $usernames = $DB->getUserAccount();
 	</head>	
 	<body>
 		</style>
-		<div class="main">
+		<div class="main" id="mainAbout">
 			<!-- Hamburger menu -->
 			<a href="#" class="toggleButton" id="toggleButtonID">
 				<span class="bar"></span>
@@ -26,19 +26,19 @@ $usernames = $DB->getUserAccount();
 			<div class="leftnav">
 				<ul class="navBarLink">
 					<li class="logo"><a id="active" href="home.php">Oto</a></li>
-					<li><a href="home.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
-					<li class="espace"><a href="research.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
+					<li class="home"><a href="home.php"><img src="../../userContent/logo/home.svg" alt="">Accueil</a></li>
+					<li class="research"><a href="research.php"><img src="../../userContent/logo/search.svg" alt="">Recherche</a></li>
 					<!-- <li ><a href="library.php"><img src="../../userContent/logo/library.svg" alt="">Bibliothèque</a></li> -->
-					<li class="border"><a href="allartists.php">Artistes</a></li>
-					<li><a href="playlists.php">Playlists</a></li>
-					<li><a href="alltitle.php">Tous les titres</a></li>
-					<li><a href="likedtitle.php">Titres likés</a></li>
-					<li><a href="about.php">À propos</a></li>
+					<li class="allArtists"><a href="allartists.php">Artistes</a></li>
+					<li class="playlists"><a href="playlists.php">Playlists</a></li>
+					<li class="allTitle"><a href="alltitle.php">Tous les titres</a></li>
+					<li class="likedTitle"><a href="likedtitle.php">Titres likés</a></li>
+					<li class="about"><a href="about.php">À propos</a></li>
 					<li class="bottom"><a href="#">
 					<?php foreach ( $usernames as $username): ?>
 						<li><p><?php echo "Bonjour" . " " . $username["username"]; ?></p></a></li>
 					<?php endforeach ?>	
-					<li class="border"><a href="allartists.php">Artistes</a></li>
+					<li class="allArtists"><a href="allartists.php">Artistes</a></li>
 				</ul>	
 			</div>
 		</div>
