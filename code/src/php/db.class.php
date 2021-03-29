@@ -47,7 +47,7 @@ class DB{
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
-        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType;";
+        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType; ";
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
@@ -97,6 +97,7 @@ class DB{
         return $results;
     }
 
+    //Fonction bar de recherche 
     public function getSearchedArtists($search){
         $query = 'SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC';
         $reqExecuted = $this->queryExecute($query);
@@ -106,6 +107,7 @@ class DB{
         return $results;
     }
 
+    //relier au dessus
     public function getAllTitleSearched($search){
         $query = 'SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC;';
         $reqExecuted = $this->queryExecute($query);
@@ -114,15 +116,101 @@ class DB{
         return $results;
     }
 
-    public function query($sql, $data = array()){
-        $req =$this->db->prepare($sql);
-        $req->execute($data);
-        return $req->fetchAll(PDO::FETCH_OBJ);
+    //Ajouter une musique 
+    public function addTeacher($surname, $firstname, $gender , $nickname, $origin){
+        $query = "INSERT INTO t_music (teaFirstname, teaName, teaGender, teaNickname, teaOrigin) VALUES (:surname, :firstname, :gender, :nickname, :origin)";
+        $binds = array(
+            0 => array(
+                'field' => ':surname',
+                'value' => $surname,
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array(
+                'field' => ':firstname',
+                'value' => $firstname,
+                'type' => PDO::PARAM_STR
+            ),
+            2 => array(
+                'field' => ':gender',
+                'value' => $gender,
+                'type' => PDO::PARAM_STR
+            ),
+            3 => array(
+                'field' => ':nickname',
+                'value' => $nickname,
+                'type' => PDO::PARAM_STR
+            ),
+            4 => array(
+                'field' => ':origin',
+                'value' => $origin,
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $results = $this->queryPrepareExecute($query, $binds);
+        return $results;
     }
 
     private function queryExecute($query){
         $req = $this->db->query($query);
         return $req;
+    }
+
+    //récupérer tous les genres de musique
+    public function getAllType(){
+        $query = "SELECT idType, typeName FROM t_type";
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //récupérer tous les pays
+    public function getAllCountry(){
+        $query = "SELECT idCountry, couCountry FROM t_country";
+        $reqExecuted = $this->queryExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    // fonction pour ajouter un artistes dans la bdd
+    public function addArtist($name, $date, $country){
+        $query = "INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES (:artName, :artBirth, :idxCountry)";
+        $binds = array(
+            0 => array(
+                'field' => ':artName',
+                'value' => $name,
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array(
+                'field' => ':artBirth',
+                'value' => $date,
+                'type' => PDO::PARAM_STR //https://stackoverflow.com/questions/2374631/pdoparam-for-dates
+            ),
+            2 => array(
+                'field' => ':idxCountry',
+                'value' => $country,
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $results = $this->queryPrepareExecute($query, $binds);
+        return $results;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    public function query($sql, $data = array()){
+        $req =$this->db->prepare($sql);
+        $req->execute($data);
+        return $req->fetchAll(PDO::FETCH_OBJ);
     }
 
     private function formatData($req){

@@ -15,6 +15,7 @@ $musics = $DB->getAllTitle();
 	background-position: top;
 	}
 </style>
+
 <div class="alltitle">
 	<p>Tous les titres</p>
 </div>	
