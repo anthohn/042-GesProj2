@@ -88,15 +88,6 @@ class DB{
         return $results;
     }
     
-    //fonction qui va chercher le nom de l'utilisateur -> Killian Good
-    public function getUserAccount(){
-        $query = "SELECT username FROM accounts";
-        $reqExecuted = $this->queryExecute($query);
-        $results = $this->formatData($reqExecuted);
-        $this->unsetData($reqExecuted);
-        return $results;
-    }
-
     public function getSearchedArtists($search){
         $query = 'SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC';
         $reqExecuted = $this->queryExecute($query);
