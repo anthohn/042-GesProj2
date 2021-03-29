@@ -29,7 +29,6 @@ class DB{
             die("<h1>La connexion à la base de données est impossible.</h1>"); 
         }
     }
-
     private function querySimpleExecute($query){
 
         $req = $this->connector->query($query);
@@ -88,7 +87,6 @@ class DB{
         return $results;
     }
     
-<<<<<<< HEAD
     //fonction qui va chercher le nom de l'utilisateur -> Killian Good
     public function getUserAccount(){
         $query = "SELECT username FROM accounts";
@@ -98,9 +96,7 @@ class DB{
         return $results;
     }
 
-    //Fonction bar de recherche 
-=======
->>>>>>> ff68aa542b771cdf86d7dd08c8a66830268246fd
+
     public function getSearchedArtists($search){
         $query = 'SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC';
         $reqExecuted = $this->queryExecute($query);
@@ -199,17 +195,6 @@ class DB{
         $results = $this->queryPrepareExecute($query, $binds);
         return $results;
     }
-
-
-
-
-
-
-
-
-
-
-
     public function query($sql, $data = array()){
         $req =$this->db->prepare($sql);
         $req->execute($data);
@@ -225,7 +210,5 @@ class DB{
     private function unsetData($req){
 
         $req->closeCursor();
-    }
-
-    
+    }    
 }

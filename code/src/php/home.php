@@ -4,8 +4,7 @@ $musics = $DB->getAllTitle();
 ?>
 <div class="title">
 	<p>Artistes écoutés récemment</p>
-</div>
-	
+</div>	
 <div class="ACmainBlock">	
 	<?php foreach ( $artists as $artist): ?>		
 
@@ -19,9 +18,6 @@ $musics = $DB->getAllTitle();
 
 	<?php endforeach ?>
 </div>
-
-
-
 <div class="title">
 	<p>Écoutés récemment</p>
 </div>
@@ -37,54 +33,3 @@ $musics = $DB->getAllTitle();
 	<?php endforeach ?>
 </div>
 <?php require "footer.php" ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="ACblock1">
-		<div class="ACimgCover">
-			<img src="../../userContent/img/artistes/travis.jpg" alt="">
-		</div>
-		<div class="ACblockTitle">
-			<p>test</p>
-		</div>
-		<div class="plus">
-			<a href="#">+</a>
-		</div>
-	</div> -->

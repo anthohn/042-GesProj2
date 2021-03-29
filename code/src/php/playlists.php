@@ -1,4 +1,5 @@
-﻿<?php require "header.php"; ?>	
+﻿
+<?php require "header.php"; ?>	
 		<!-- <div class="title">
 			<p>Playlists</p>
 		</div> -->
