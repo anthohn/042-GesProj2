@@ -9,7 +9,8 @@ Description : Tous les artistes de la base de données rescencé ici grâce à u
 $artists = $DB->getAllArtists();
 ?>
 <div class="title">
-	<p>Artistes</p>
+	<p>Artistes<a href="addArtist.php"><img src="../../userContent/icon/add.svg" height="30"></img></a>
+</p>
 </div>		
 <div class="ARmainBlock">
 	<?php foreach ( $artists as $artist): ?>			

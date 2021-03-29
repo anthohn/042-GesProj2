@@ -688,12 +688,62 @@ svg.like:hover{
 
 /******************************************Formulaire*******************************************/
 
-.formulaire{
+.tableContainer{
 	position: absolute;
 	margin-left: 232px;
 	padding-left: 40px;
 	margin-top: 20px;
 
+}
+
+label {
+	font-size: 18px;
+	margin: 0 20px 0 0;
+}
+
+.radio {
+    display: flex;
+    padding: 0 0 10px 0;
+}
+
+.input {
+    padding: 0 0 10px 0;
+    margin: 0 0 0 0;
+}
+
+#name {
+    margin: 0 0 0 0;
+}
+
+
+#origin {
+    margin: 0 0 0 70px;
+    width: 250px;
+    height: 50px;
+    resize: none;
+}
+
+#labelOrigin {
+    position: absolute;
+}
+
+select {
+    width: 150px;
+    height: 28px;
+}
+
+.button {
+    display: flex;
+    margin: 0 0 0 0;
+}
+
+.btnAdding, .btnDeleting {
+    padding: 0 10px 0 0;
+}
+
+#btnSubmit, #btnDelete {
+    width: 95px;
+    height: 28px;
 }
 
 /*******************************************ABOUT***********************************************/
