@@ -17,10 +17,10 @@ Oto est un site web développé par une petite équipe d’informaticien de l’
 
 <br/><br/></br>
 #### Contributeurs :
-* Anthony Höhn [GitHub](https://github.com/anthohn) [Linkdeln](https://www.linkedin.com/in/anthony-höhn-674320206)
-* Killian Good [GitHub](https://github.com/KillianGood) [Linkdeln](https://www.linkedin.com/in/killian-good-89032a1b8)
-* Younes Sayeh [GitHub](https://github.com/yousayeh) [Linkdeln](https://www.linkedin.com/in/younes-sayeh-172a38208/)
-* Julien Cartier [GitHub](https://github.com/YaZOUU) [Linkdeln](https://www.linkedin.com/in/julien-cartier-9aa734208)
+* Anthony Höhn [GitHub](https://github.com/anthohn) [LinkedIn](https://www.linkedin.com/in/anthony-höhn-674320206)
+* Killian Good [GitHub](https://github.com/KillianGood) [LinkedIn](https://www.linkedin.com/in/killian-good-89032a1b8)
+* Younes Sayeh [GitHub](https://github.com/yousayeh) [LinkedIn](https://www.linkedin.com/in/younes-sayeh-172a38208/)
+* Julien Cartier [GitHub](https://github.com/YaZOUU) [LinkedIn](https://www.linkedin.com/in/julien-cartier-9aa734208)
 
 ### Chef de projet :
-* Jonathan Gander [GitHub](https://github.com/Jonathan-Gander) [Linkdeln](https://www.linkedin.com/in/jonathangander/) [CV](https://jonathan.gander.family/)
+* Jonathan Gander [GitHub](https://github.com/Jonathan-Gander) [LinkedIn](https://www.linkedin.com/in/jonathangander/) [CV](https://jonathan.gander.family/)
