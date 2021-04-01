@@ -22,5 +22,5 @@ Oto est un site web développé par une petite équipe d’informaticien de l’
 * Younes Sayeh [GitHub](https://github.com/yousayeh) [LinkedIn](https://www.linkedin.com/in/younes-sayeh-172a38208/)
 * Julien Cartier [GitHub](https://github.com/YaZOUU) [LinkedIn](https://www.linkedin.com/in/julien-cartier-9aa734208)
 
-### Chef de projet :
+#### Chef de projet :
 * Jonathan Gander [GitHub](https://github.com/Jonathan-Gander) [LinkedIn](https://www.linkedin.com/in/jonathangander/) [CV](https://jonathan.gander.family/)
