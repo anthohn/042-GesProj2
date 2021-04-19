@@ -46,7 +46,7 @@ class DB{
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
-        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType; ";
+        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType; ORDER BY idMusic ";
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);

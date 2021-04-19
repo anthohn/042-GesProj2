@@ -46,10 +46,10 @@ CREATE TABLE t_type (
 -- Déchargement des données de la table "typeName"
 --
 INSERT INTO t_type (typeName) VALUES
-("Hip-hop/Rap"),
-("Rap"),
-("Synth-pop"),
-("RnB"
+('Hip-hop/Rap'),
+('Rap'),
+('Synth-pop'),
+('RnB'
 );
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE t_artist (
 INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES
 ('Travis Scott', '1992-04-30', 1),
 ('Drake', '1986-10-24', 1),
-('Ohmidz', '2002-03-04', 2),
+('Koba LaD', '2000-04-03', 3),
 ('Oboy', '1997-01-06', 3),
 ('Josman', '1995-04-15', 3),
 ('Tyler', '1991-03-06', 1),
@@ -102,9 +102,9 @@ INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES
 ('Passionfruit', '000:04:59', 2, 1),
 ('Controlla', '000:04:05', 2, 1),
 ('Feel No Ways', '000:04:01', 2, 1),
-('Gelato', '000:03:14', 3, 1),
-(' ', '000:00:00', 3, 1),
-(' ', '000:00:00', 3, 1),
+('Cellophané', '000:03:21', 3, 2),
+('La C', '000:03:07', 3, 2),
+('Coffre plein', '000:03:40', 3, 2),
 ('Cabeza', '000:02:28', 4, 1),
 ('Avec Toi', '000:03:14', 4, 1),
 ('Rien à fêter', '000:02:45', 4, 1),
