@@ -40,7 +40,6 @@ require "_header.php";
 					<li class="allTitle"><a href="alltitle.php">Tous les titres</a></li>
 					<li class="likedTitle"><a href="likedtitle.php">Titres likés</a></li>
 					<li class="about"><a href="about.php">À propos</a></li>
-					<li class="bottom"><a href="#">
 					<?php if(isset($_SESSION["loggedin"]) == true)
 					{
 						echo "Bienvenue" . " " . $_SESSION["username"];

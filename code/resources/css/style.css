@@ -45,7 +45,7 @@ body{
 .toggleButton {
 	position: absolute;
 	margin-top: 30px;
-	left: 30px;
+	left: 50px;
 	display: none;
 	flex-direction: column;
 	justify-content: space-between;
@@ -557,6 +557,10 @@ svg.like:hover{
 	border: none;
 	cursor: pointer;
   }
+
+  #heartBtnList {
+	  display: none;
+  }
   
   .dropdown {
 	position: relative;
@@ -826,6 +830,7 @@ select {
 		height: 110px;
 		padding: 0;
 		position: unset;
+		border-bottom: 1px solid gray;
 	}
 
 	.leftnav ul
@@ -902,5 +907,75 @@ select {
 		margin: 260px 0 0 0;
 	}
 
+	/*About*/
+
+	.contenu {
+		margin: 0;
+	}
+
+	.contenutext {
+		margin: auto;
+		width: 60%;
+	}
+
 	
 }
+
+@media only screen and (max-width: 925px)
+{ 
+	/*Search and Titles*/
+	.typeName {
+		display: none;
+	}
+
+	svg.like {
+		margin: 25px 25px 0 0;
+	}
+}
+
+@media only screen and (max-width: 735px)
+{ 
+	/*Search and Titles*/
+	.musDuration {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 595px)
+{ 
+	/*Search and Titles*/
+	.artName {
+		display: none;
+	}
+
+	#heartBtnList {
+		display: block;
+	}
+
+	.likeList:hover {
+		fill: rgb(54, 184, 54);
+	}
+
+	#heartBtn {
+		display: none;
+	}
+
+	
+	.searchBar {
+		padding: 10px 5px 0 5px;
+	}
+
+	/*Playlists*/
+	.PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8 {
+		margin: 50px 19px;
+	}
+
+	/*About*/
+	.contenutext {
+		width: 90%;
+	}
+}
+
+
+
+
