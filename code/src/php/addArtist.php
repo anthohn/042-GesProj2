@@ -22,10 +22,10 @@ $countries = $DB->getAllCountry();
                         <?php endforeach; ?>
                     </select>
                 </div>
-                <!-- <p>
+                <p>
                     <label for="img">image :</label>
                     <input type="file" name="printscreen" id="printscreen" />
-                </p> -->
+                </p>
                
                 <div class="button">
                     <div class="btnAdding">
