@@ -32,7 +32,7 @@ $artists = $DB->getAllArtists();
 				</div>
 				<!-- Si l'utilisateur est admin ET connecté il a accès à cette fonctionnalité -->
 				<?php if(isLogged() && (isAdmin())): ?>
-					<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de voiloir supprimer l\'artiste ?')"><img src="../../userContent/icon/trash.svg"></img></a>
+					<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer l\'artiste ? Toutes les musiques qui lui y sont associées seront par la même occasion supprimées.')"><img src="../../userContent/icon/trash.svg"></img></a>
 				<?php endif; ?>
 			</a>
 		</div>
