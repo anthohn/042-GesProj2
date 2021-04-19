@@ -1,6 +1,6 @@
 <!--
 ETML
-Auteur      : Anthony Höhn / Killian Good / Younes sayeh / julien il connnait pas encore ca 
+Auteur      : Anthony Höhn / Killian Good / Younes sayeh / julien il connnait pas encore ca // FAUX JAI COMPRIS
 Date        : 15.03.2021
 Description : controller
 -->
@@ -63,7 +63,7 @@ class DB{
     }
 
     public function getAllLink(){
-        $query = "SELECT linLink FROM t_link";
+        $query = "SELECT linLink FROM t_link WHERE idxMusic = 2 AND idxTypelink = 2";
         $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
