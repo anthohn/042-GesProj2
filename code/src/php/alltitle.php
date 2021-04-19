@@ -38,8 +38,8 @@ $links = $DB->getAllLink();
 				<?php foreach ( $links as $link):?>
 					<div class="dropdown-content">
 						<a href="<?= $link["linLink"]; ?>" target="_blank">Spotify</a>
-						<a href="https://music.apple.com/fr/album/goosebumps/1150135681?i=1150135924"target="_blank">Apple Music</a>
-						<a href="https://deezer.page.link/v8oPg9tyRbygcbvg6" target="_blank">Deezer</a>
+						<a href="<?= $link["linLink"]; ?>"target="_blank">Apple Music</a>
+						<a href="<?= $link["linLink"]; ?>" target="_blank">YouTube</a>
 					</div>
 				<?php endforeach; ?>	
 
