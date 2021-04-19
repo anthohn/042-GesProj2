@@ -1,5 +1,6 @@
 <?php
 require "header.php";
+
 if(isLogged() && (isAdmin())):
     
 $id = $_GET["idArtist"];

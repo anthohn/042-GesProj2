@@ -35,7 +35,6 @@ require "util.php";
 					<li class="allTitle"><a href="alltitle.php">Tous les titres</a></li>
 					<li class="likedTitle"><a href="likedtitle.php">Titres likés</a></li>
 					<li class="about"><a href="about.php">À propos</a></li>
-					<li class="bottom"></li>
 					<div class="login-container">
                     <?php if(!isLogged()): ?>
                     <form method="post" action="">

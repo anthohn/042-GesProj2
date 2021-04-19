@@ -77,7 +77,6 @@ if(isset($_POST["submit"]))
 
 <?php else :
     header('Location: 404.php'); 
-
 endif; 
 ?>
 <?php require "footer.php";?>
