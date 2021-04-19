@@ -1,6 +1,6 @@
 <!--
 ETML
-Auteur      : Anthony Höhn / Killian Good / Younes sayeh / julien il connnait pas encore ca 
+Auteur      : Anthony Höhn / Killian Good / Younes sayeh / julien il connnait pas encore ca // FAUX JAI COMPRIS
 Date        : 15.03.2021
 Description : controller
 -->
@@ -62,8 +62,8 @@ class DB{
     }
 
     public function getAllLink(){
-        $query = "SELECT linLink FROM t_link";
-        $reqExecuted = $this->querySimpleExecute($query);
+        $query = "SELECT linLink FROM t_link WHERE idxMusic = 2 AND idxTypelink = 2";
+        $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -121,9 +121,9 @@ class DB{
     }
 
 
-    public function getSearchedArtists($search){
-        $query = 'SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC';
-        $reqExecuted = $this->querySimpleExecute($query);
+    public function getSearchedArtistsMusics($search){
+        $query = 'SELECT artName, musName FROM t_music JOIN t_artist ON t_music.idxArtist = t_artist.idArtist WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" ORDER BY artName ASC';
+        $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
 
         $this->unsetData($reqExecuted);
@@ -132,8 +132,8 @@ class DB{
 
     //relier au dessus
     public function getAllTitleSearched($search){
-        $query = 'SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC;';
-        $reqExecuted = $this->querySimpleExecute($query);
+        $query = 'SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" ORDER BY idArtist ASC;';
+        $reqExecuted = $this->queryExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
