@@ -119,6 +119,48 @@ body{
 	border-top: 1px solid Gray;
 }
 
+
+/*****************************LOGIN*********************************/
+
+.login-container{
+	margin: 400px 0 0 0;
+	border-radius: 10px;
+}
+
+input{
+  padding: 2px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; 
+  border-radius: 5px;
+  border: 2px solid rgb(158, 158, 158);
+}
+
+.login-container button {
+	padding: 10px;
+	margin-top: 8px;
+	font-size: 17px;
+	border: none;
+	width: 150px; 
+	border-radius: 5px;
+	background-color: rgb(107, 151, 113);
+	color: white;
+}
+
+.notlog a {
+	text-decoration: none;
+	padding: 10px;
+	margin-top: 8px;
+	font-size: 17px;
+	border: none;
+	width: 150px; 
+	border-radius: 5px;
+	background-color:coral;
+	color: white; 
+}
+
+
 /******************************ACCUEIL******************************/
 
 /* https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
@@ -923,55 +965,55 @@ select {
 
 @media only screen and (max-width: 925px)
 { 
-/*Search and Titles*/
-.typeName {
-	display: none;
-}
+	/*Search and Titles*/
+	.typeName {
+		display: none;
+	}
 
-svg.like {
-	margin: 25px 25px 0 0;
-}
-}
+	svg.like {
+		margin: 25px 25px 0 0;
+	}
+	}
 
-@media only screen and (max-width: 735px)
-{ 
-/*Search and Titles*/
-.musDuration {
-	display: none;
-}
+	@media only screen and (max-width: 735px)
+	{ 
+	/*Search and Titles*/
+	.musDuration {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 595px)
 { 
-/*Search and Titles*/
-.artName {
-	display: none;
-}
+	/*Search and Titles*/
+	.artName {
+		display: none;
+	}
 
-#heartBtnList {
-	display: block;
-}
+	#heartBtnList {
+		display: block;
+	}
 
-.likeList:hover {
-	fill: rgb(54, 184, 54);
-}
+	.likeList:hover {
+		fill: rgb(54, 184, 54);
+	}
 
-#heartBtn {
-	display: none;
-}
+	#heartBtn {
+		display: none;
+	}
 
 
-.searchBar {
-	padding: 10px 5px 0 5px;
-}
+	.searchBar {
+		padding: 10px 5px 0 5px;
+	}
 
-/*Playlists*/
-.PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8 {
-	margin: 50px 19px;
-}
+	/*Playlists*/
+	.PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8 {
+		margin: 50px 19px;
+	}
 
-/*About*/
-.contenutext {
-	width: 90%;
-}
+	/*About*/
+	.contenutext {
+		width: 90%;
+	}
 }

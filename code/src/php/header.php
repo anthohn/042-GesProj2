@@ -36,16 +36,18 @@ require "util.php";
 					<li class="likedTitle"><a href="likedtitle.php">Titres likés</a></li>
 					<li class="about"><a href="about.php">À propos</a></li>
 					<div class="login-container">
-                    <?php if(!isLogged()): ?>
-                    <form method="post" action="">
-                        <label>Surnom des enseignants</label>
-                        <input type="text" placeholder="Login" name="login">
-                        <input type="password" placeholder="Mot de passe" name="psw">
-                        <button type="submit" name="forminscription">Se Connecter</button>
-                    </form>
-                    <?php else: ?>
-                        <a href="home.php?auth=logout">Se deconnecter</a>
-                    <?php endif; ?>
+                   		<?php if(!isLogged()): ?>
+						<form method="post" action="home.php">
+							<input type="text" placeholder="Nom d'utilisateur" name="login">
+							<input type="password" placeholder="Mot de passe" name="psw">
+							<button type="submit" name="forminscription">Se Connecter</button>
+						</form>
+						<?php else: ?>
+							<div class="notlog">
+								<a href="home.php?auth=logout">Se deconnecter</a>
+							</div>
+						<?php endif; ?>
+					</div>
                 </div>
 				</ul>	
 			</div>
@@ -56,6 +58,7 @@ if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout")
 {
 	session_unset();
 	session_destroy();
+	header("Location:home.php");
 }
 
 if(isset($_POST["forminscription"]))
@@ -69,9 +72,6 @@ if(isset($_POST["forminscription"]))
             {
                 if(password_verify($_POST['psw'], $user['usePassword']))
                 {
-                    echo '<pre>';
-                    print_r($_SESSION);
-                    echo '</pre>';
                     $_SESSION['username'] = $user['useLogin'];
                     $_SESSION['isAdmin'] = $user['useIsAdmin'];
                     header("Location:home.php");
