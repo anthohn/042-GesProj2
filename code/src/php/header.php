@@ -1,5 +1,7 @@
 <?php
+session_start();
 require "_header.php";
+require "util.php";
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +16,6 @@ require "_header.php";
 		<script src="../js/toggleMenu.js" defer></script>
 	</head>	
 	<body>
-		</style>
 		<div class="main" id="mainAbout">
 			<!-- Hamburger menu -->
 			<a href="#" class="toggleButton" id="toggleButtonID">
@@ -34,17 +35,55 @@ require "_header.php";
 					<li class="allTitle"><a href="alltitle.php">Tous les titres</a></li>
 					<li class="likedTitle"><a href="likedtitle.php">Titres likés</a></li>
 					<li class="about"><a href="about.php">À propos</a></li>
-					<li class="bottom"><a href="#">
-					<?php if(isset($_SESSION["loggedin"]) == true)
-					{
-						echo "Bienvenue" . " " . $_SESSION["username"];
-						echo "<li><a href='../../login/logout.php'>Se déconnecter</a></li>";
-					}
-					else 
-					{
-						echo "<li><a href='about.php'>À propos</a></li>";
-					}
-					?>
+					<li class="bottom"></li>
+					<div class="login-container">
+                    <?php if(!isLogged()): ?>
+                    <form method="post" action="">
+                        <label>Surnom des enseignants</label>
+                        <input type="text" placeholder="Login" name="login">
+                        <input type="password" placeholder="Mot de passe" name="psw">
+                        <button type="submit" name="forminscription">Se Connecter</button>
+                    </form>
+                    <?php else: ?>
+                        <a href="home.php?auth=logout">Se deconnecter</a>
+                    <?php endif; ?>
+                </div>
 				</ul>	
 			</div>
 		</div>
+
+<?php
+if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout") 
+{
+	session_unset();
+	session_destroy();
+}
+
+if(isset($_POST["forminscription"]))
+{
+    if(!empty($_POST["login"]) || (!empty($_POST["psw"])))
+    {	
+        $users = $DB->getUsers();
+        foreach($users as $user)
+        {
+            if($user['useLogin'] == $_POST['login'])
+            {
+                if(password_verify($_POST['psw'], $user['usePassword']))
+                {
+                    echo '<pre>';
+                    print_r($_SESSION);
+                    echo '</pre>';
+                    $_SESSION['username'] = $user['useLogin'];
+                    $_SESSION['isAdmin'] = $user['useIsAdmin'];
+                    header("Location:home.php");
+                }
+            }
+        }
+    }
+    else
+    {
+        $erreur = "Veuillez renseignez tous les champs !";
+        echo $erreur;
+    }
+}
+?>

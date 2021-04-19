@@ -2,7 +2,7 @@
 
 <div class="maintest">
     <div class="error">
-        <center><h1>Erreur 404</h1></center>
+        <h1>Erreur 404</h1>
         <p>Vous semblez vous être perdu..</p>
     </div>
 </div>

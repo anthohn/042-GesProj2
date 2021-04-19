@@ -9,9 +9,13 @@ Description : Tous les artistes de la base de données rescencé ici grâce à u
 $artists = $DB->getAllArtists();
 ?>
 <div class="title">
-	<p>Artistes<a href="addArtist.php"><img src="../../userContent/icon/add.svg" height="30"></img></a>
-</p>
+	<p>Artistes
+		<?php if(isLogged() && (isAdmin())): ?>
+		<a href="addArtist.php"><img src="../../userContent/icon/add.svg" height="30"></img></a>
+		<?php endif; ?>
+	</p>
 </div>		
+
 <div class="ARmainBlock">
 	<?php foreach ( $artists as $artist): ?>			
 		<div class="ARblock1">
@@ -26,7 +30,10 @@ $artists = $DB->getAllArtists();
 					<p><?= $artist["artBirth"]; ?></p>
 					<p><?= $artist["couCountry"]; ?></p>
 				</div>
-				<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de voiloir supprimer l\'artiste ?')"><img src="../../userContent/icon/trash.svg"></img></a>
+				<!-- Si l'utilisateur est admin ET connecté il a accès à cette fonctionnalité -->
+				<?php if(isLogged() && (isAdmin())): ?>
+					<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de voiloir supprimer l\'artiste ?')"><img src="../../userContent/icon/trash.svg"></img></a>
+				<?php endif; ?>
 			</a>
 		</div>
 	<?php endforeach ?>			

@@ -1,5 +1,7 @@
 <?php 
 require "header.php";
+if(isLogged() && (isAdmin())):
+
 $countries = $DB->getAllCountry();
  ?>
 <div class="tableContainer">
@@ -52,20 +54,7 @@ $countries = $DB->getAllCountry();
                 }
             ?>
         </div>
-
 <?php
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if(isset($_POST["submit"]))
@@ -83,5 +72,12 @@ if(isset($_POST["submit"]))
         // header('Location: index.php');
     }
 }
+?>
+
+
+<?php else :
+    header('Location: 404.php'); 
+
+endif; 
 ?>
 <?php require "footer.php";?>

@@ -30,8 +30,7 @@ class DB{
         }
     }
     private function querySimpleExecute($query){
-
-        $req = $this->connector->query($query);
+        $req = $this->db->query($query);
         return $req;
     }
 
@@ -46,8 +45,8 @@ class DB{
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
-        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType; ORDER BY idMusic ";
-        $reqExecuted = $this->queryExecute($query);
+        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY idMusic ";
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -56,7 +55,7 @@ class DB{
     //fonction pour afficher tous les artistes -> "allartists.php"
     public function getAllArtists(){
         $query = "SELECT idArtist, artName, artBirth, couCountry FROM t_artist JOIN t_country ON idxCountry = idCountry";
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -64,7 +63,7 @@ class DB{
 
     public function getAllLink(){
         $query = "SELECT linLink FROM t_link";
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -106,7 +105,7 @@ class DB{
     //fonction qui va chercher les musiques de chaque artiste
     public function getMusicEachArtist(){
         $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist =" . $_GET["idArtist"];
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -115,7 +114,7 @@ class DB{
     //fonction qui va chercher le nom de l'utilisateur -> Killian Good
     public function getUserAccount(){
         $query = "SELECT username FROM accounts";
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -124,7 +123,7 @@ class DB{
 
     public function getSearchedArtists($search){
         $query = 'SELECT artName FROM t_artist WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC';
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
 
         $this->unsetData($reqExecuted);
@@ -134,7 +133,7 @@ class DB{
     //relier au dessus
     public function getAllTitleSearched($search){
         $query = 'SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" ORDER BY idArtist ASC;';
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -190,15 +189,10 @@ class DB{
         return $results;
     }
 
-    private function queryExecute($query){
-        $req = $this->db->query($query);
-        return $req;
-    }
-
     //récupérer tous les genres de musique
     public function getAllType(){
         $query = "SELECT idType, typeName FROM t_type";
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -207,7 +201,7 @@ class DB{
     //récupérer tous les pays
     public function getAllCountry(){
         $query = "SELECT idCountry, couCountry FROM t_country";
-        $reqExecuted = $this->queryExecute($query);
+        $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -236,6 +230,17 @@ class DB{
         $results = $this->queryPrepareExecute($query, $binds);
         return $results;
     }
+
+    //Connexion d'un utilisateur à la bdd
+    public function getUsers(){
+        $query = "SELECT * FROM t_user";
+        $reqExecuted = $this->querySimpleExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+
     public function query($sql, $data = array()){
         $req =$this->db->prepare($sql);
         $req->execute($data);
@@ -244,12 +249,11 @@ class DB{
 
     private function formatData($req){
 
-        $result = $req->fetchALL(PDO::FETCH_ASSOC);
-        return $result;
+        $results = $req->fetchALL(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     private function unsetData($req){
-
         $req->closeCursor();
     }    
 }

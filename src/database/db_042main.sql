@@ -279,9 +279,13 @@ CREATE TABLE t_link (
 --
 -- TABLE DE LOGIN 
 --
-CREATE TABLE users (
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE t_user(
+  idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  useLogin varchar(50) NOT NULL,
+	usePassword varchar(255) NOT NULL,
+	useIsAdmin BOOLEAN NOT NULL
+);
+
+INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES 
+("admin", "$2y$10$ebINd1FQ518pmgmdagSBzeoSS3Ps5NEucIASl0DVnqJt4jD9oXV1a", 1
 );
