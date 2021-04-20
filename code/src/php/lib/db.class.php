@@ -230,10 +230,42 @@ class DB{
         return $results;
     }
 
+    // Systeme de like -> vérifie si la musique existe
+    public function checkMusic($id){
+        $query = 'SELECT idMusic, musName FROM t_music WHERE idMusic = :id';
+        $binds = array(
+            0 => array(
+                'field' => ':id',
+                'value' => $id,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+
     //Connexion d'un utilisateur à la bdd
     public function getUsers(){
         $query = "SELECT * FROM t_user";
         $reqExecuted = $this->querySimpleExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    public function getUserLikedMusics($id){
+        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_liked  JOIN t_music ON idxMusic = idMusic JOIN t_user ON idxUser = idUser WHERE idMusic = :id ";
+        $binds = array(
+            0 => array(
+                'field' => ':id',
+                'value' => $id,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
