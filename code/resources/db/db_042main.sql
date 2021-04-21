@@ -179,96 +179,103 @@ CREATE TABLE t_link (
 -- 
 -- Déchargement des données de la table "t_link"
 --
-INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
-(2,1,"https://open.spotify.com/track/7wBJfHzpfI3032CSD7CE2m?si=3ceb51ee1a5a42ee"),
-(2,2,"https://music.apple.com/ca/album/stargazing/1421658111?i=1421658117"),
-(2,3,"https://youtu.be/2a8PgqWrc_4"),
-(3,1,"https://open.spotify.com/track/1wHZx0LgzFHyeIZkUydNXq?si=2556726199f647fc"),
-(3,2,"https://music.apple.com/ca/album/antidote/1456176981?i=1456177234"),
-(3,3,"https://youtu.be/KnZ8h3MRuYg"),
-(4,1,"https://open.spotify.com/track/5mCPDVBb16L4XQwDdbRUpz?si=153942b27151495b"),
-(4,2,"https://music.apple.com/ca/album/passionfruit/1440890708?i=1440891494"),
-(4,3,"https://youtu.be/COz9lDCFHjw"),
-(5,1,"https://open.spotify.com/track/3O8NlPh2LByMU9lSRSHedm?si=33752d2f51f04a13"),
-(5,2,"https://music.apple.com/ca/album/controlla/1440841363?i=1440841382"),
-(5,3,"https://youtu.be/Mg-QZCp1v1c"),
-(6,1,"https://open.spotify.com/track/3cjF2OFRmip8spwZYQRKxP?si=917921365a4045c7"),
-(6,2,"https://music.apple.com/ca/album/feel-no-ways/1440841363?i=1440841371"),
-(6,3,"Indispo"),
-(7,1,"https://open.spotify.com/track/41Rp0dMSgO2QeguHANPsCD?si=2084b361f7f24ba2"),
-(7,2,"https://music.apple.com/us/album/cellophan%C3%A9/1459575532?i=1459575787"),
-(7,3,"https://youtu.be/6LITCu0Jvkw"),
-(8,1,"Indispo"),
-(8,2,"Indispo"),
-(8,3,"Indispo"),
-(9,1,"Indispo"),
-(9,2,"Indispo"),
-(9,3,"Indispo"),
-(10,1,"https://open.spotify.com/track/66tNDqYNR2S6Svwgm3BMi9?si=2405e982900c41bf"),
-(10,2,"https://music.apple.com/ca/album/cabeza/1518975690?i=1518975831"),
-(10,3,"https://youtu.be/lEfkziQSmZI"),
-(11,1,"https://open.spotify.com/track/656vbT8JKkVx7g1yG12L89?si=d185b4a2392e4eb6"),
-(11,2,"https://music.apple.com/ca/album/avec-toi/1467379875?i=1467380154"),
-(11,3,"https://youtu.be/PjjRd03jmJY"),
-(12,1,"https://open.spotify.com/track/2qmCcm2ceHKQNyO3x4Jlof?si=f3dbb075154f4072"),
-(12,2,"https://music.apple.com/ca/album/rien-%C3%A0-f%C3%AAter/1467379875?i=1467380382"),
-(12,3,"https://youtu.be/l0m6kMRkmzI"),
-(13,1,"https://open.spotify.com/track/7bg469g8qRoMwFQf6Vleh3?si=c9ee41a8a7e249c2"),
-(13,2,"https://music.apple.com/ca/album/jaime-bien/1408802489?i=1408805995"),
-(13,3,"https://youtu.be/_KxWL_YB1Ik"),
-(14,1,"https://open.spotify.com/track/3BiOpT9LiASPNc7Z6JYYde?si=61a0ef2c3bfd4860"),
-(14,2,"https://music.apple.com/ca/album/au-bout/1440514073?i=1440514458"),
-(14,3,"https://youtu.be/hRGotyhU4fY"),
-(15,1,"https://open.spotify.com/track/6hK9rzweEnK3kQEGFUW7Im?si=934529f4204a4383"),
-(15,2,"https://music.apple.com/ca/album/xs/1408802489?i=1408805523"),
-(15,3,"https://youtu.be/MzLOAEyF3Bk"),
-(16,1,"https://open.spotify.com/track/5hVghJ4KaYES3BFUATCYn0?si=d5129bde39434e0e"),
-(16,2,"https://music.apple.com/ca/album/earfquake/1463409338?i=1463409350"),
-(16,3,"https://youtu.be/HmAsUQEFYGI"),
-(17,1,"https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB?si=5be4e44a27f24f34"),
-(17,2,"https://music.apple.com/ca/album/see-you-again-feat-kali-uchis/1254572564?i=1254572572"),
-(17,3,"https://youtu.be/TGgcC5xg9YI"),
-(18,1,"https://open.spotify.com/track/3jHdKaLCkuNEkWcLVmQPCX?si=94f0132d442045a8"),
-(18,2,"https://music.apple.com/ca/album/best-interest-single/1496259436"),
-(18,3,"https://youtu.be/NkMTKGM-efw"),
-(19,1,"https://open.spotify.com/track/0EewDLYCINTBqEAEvmoQNx?si=68acae330cb24b88"),
-(19,2,"https://music.apple.com/ca/album/menace/1443753968?i=1443754492"),
-(19,3,"https://youtu.be/KHxAxaWR5vc"),
-(20,1,"https://open.spotify.com/track/0Aku40bfcW03gPURCFPWnb?si=49c97c2d9ba54636"),
-(20,2,"https://music.apple.com/ca/album/venus/1443753968?i=1443754798"),
-(20,3,"https://youtu.be/LsmyPjahk20"),
-(21,1,"https://open.spotify.com/track/4SIcGSJqTXg5zL9atiSYRL?si=29bb8cdd5052428a"),
-(21,2,"https://music.apple.com/ca/album/casino/1443753968?i=1443754969"),
-(21,3,"https://youtu.be/EtnYiNpK74s"),
-(22,1,"https://open.spotify.com/track/2ewjMyCbNv2X1dB2qIDCwD?si=58dca9b032134bab"),
-(22,2,"https://music.apple.com/ca/album/%CE%B8-macarena/1440888455?i=1440888904"),
-(22,3,"https://youtu.be/GGhKPm18E48"),
-(23,1,"https://open.spotify.com/track/2chIkORxBLpPVgruGiMY8k?si=3550f764b6134505"),
-(23,2,"https://music.apple.com/ca/album/911/1532027611?i=1532028230"),
-(23,3,"https://youtu.be/56STvMBKYdw"),
-(24,1,"https://open.spotify.com/track/2BYiWgDk243sjYEDjs2agc?si=7532d1a52fd3447f"),
-(24,2,"Indispo"),
-(24,3,"https://youtu.be/6f7-Mj2PSDQ"),
-(25,1,"https://open.spotify.com/track/7pTCGpz43p0txphdsvWBNV?si=1155886dbc254711"),
-(25,2,"https://music.apple.com/ca/album/ouais-ouais/1457391938?i=1457392034"),
-(25,3,"https://youtu.be/ZKnUrhbKL6g"),
-(26,1,"https://open.spotify.com/track/3jGpGXoSwhyTNGew06h1NH?si=e115129917134375"),
-(26,2,"https://music.apple.com/ca/album/zolabeille/1457391938?i=1457392210"),
-(26,3,"https://youtu.be/itVrblcm5ss"),
-(27,1,"https://open.spotify.com/track/2CdwW0Zz3dQlX9cHzsC83y?si=846be733e2ce443d"),
-(27,2,"https://music.apple.com/ca/album/california-girl/1363899192?i=1363899744"),
-(27,3,"https://youtu.be/A2PMldDoKaQ"),
-(28,1,"https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b?si=6cdd5a907b3c4f72"),
-(28,2,"https://music.apple.com/ca/album/blinding-lights/1488408555?i=1488408568"),
-(28,3,"https://youtu.be/fHI8X4OXluQ"),
-(29,1,"https://open.spotify.com/track/7szuecWAPwGoV1e5vGu8tl?si=0b2c261ba9cf4dad"),
-(29,2,"https://music.apple.com/ca/album/in-your-eyes/1499378108?i=1499378612"),
-(29,3,"https://youtu.be/E3QiD99jPAg"),
-(30,1,"https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB?si=708d87084d5f4b6e"),
-(30,2,"https://music.apple.com/ca/album/starboy-feat-daft-punk/1440871397?i=1440871420"),
-(30,3,"https://youtu.be/34Na4j8AVgA"
-);
+ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
+ (2,1,"https://open.spotify.com/track/7wBJfHzpfI3032CSD7CE2m?si=3ceb51ee1a5a42ee"),
+ (2,2,"https://music.apple.com/ca/album/stargazing/1421658111?i=1421658117"),
+ (2,3,"https://youtu.be/2a8PgqWrc_4"),
+ (3,1,"https://open.spotify.com/track/1wHZx0LgzFHyeIZkUydNXq?si=2556726199f647fc"),
+ (3,2,"https://music.apple.com/ca/album/antidote/1456176981?i=1456177234"),
+ (3,3,"https://youtu.be/KnZ8h3MRuYg"),
+ (4,1,"https://open.spotify.com/track/5mCPDVBb16L4XQwDdbRUpz?si=153942b27151495b"),
+ (4,2,"https://music.apple.com/ca/album/passionfruit/1440890708?i=1440891494"),
+ (4,3,"https://youtu.be/COz9lDCFHjw"),
+ (5,1,"https://open.spotify.com/track/3O8NlPh2LByMU9lSRSHedm?si=33752d2f51f04a13"),
+ (5,2,"https://music.apple.com/ca/album/controlla/1440841363?i=1440841382"),
+ (5,3,"https://youtu.be/Mg-QZCp1v1c"),
+ (6,1,"https://open.spotify.com/track/3cjF2OFRmip8spwZYQRKxP?si=917921365a4045c7"),
+ (6,2,"https://music.apple.com/ca/album/feel-no-ways/1440841363?i=1440841371"),
+ (6,3,"Indispo"),
+ (7,1,"https://open.spotify.com/track/41Rp0dMSgO2QeguHANPsCD?si=2084b361f7f24ba2"),
+ (7,2,"https://music.apple.com/us/album/cellophan%C3%A9/1459575532?i=1459575787"),
+ (7,3,"https://youtu.be/6LITCu0Jvkw"),
+ (8,1,"Indispo"),
+ (8,2,"Indispo"),
+ (8,3,"Indispo"),
+ (9,1,"Indispo"),
+ (9,2,"Indispo"),
+ (9,3,"Indispo"),
+ (10,1,"https://open.spotify.com/track/66tNDqYNR2S6Svwgm3BMi9?si=2405e982900c41bf"),
+ (10,2,"https://music.apple.com/ca/album/cabeza/1518975690?i=1518975831"),
+ (10,3,"https://youtu.be/lEfkziQSmZI"),
+ (11,1,"https://open.spotify.com/track/656vbT8JKkVx7g1yG12L89?si=d185b4a2392e4eb6"),
+ (11,2,"https://music.apple.com/ca/album/avec-toi/1467379875?i=1467380154"),
+ (11,3,"https://youtu.be/PjjRd03jmJY"),
+ (12,1,"https://open.spotify.com/track/2qmCcm2ceHKQNyO3x4Jlof?si=f3dbb075154f4072"),
+ (12,2,"https://music.apple.com/ca/album/rien-%C3%A0-f%C3%AAter/1467379875?i=1467380382"),
+ (12,3,"https://youtu.be/l0m6kMRkmzI"),
+ (13,1,"https://open.spotify.com/track/7bg469g8qRoMwFQf6Vleh3?si=c9ee41a8a7e249c2"),
+ (13,2,"https://music.apple.com/ca/album/jaime-bien/1408802489?i=1408805995"),
+ (13,3,"https://youtu.be/_KxWL_YB1Ik"),
+ (14,1,"https://open.spotify.com/track/3BiOpT9LiASPNc7Z6JYYde?si=61a0ef2c3bfd4860"),
+ (14,2,"https://music.apple.com/ca/album/au-bout/1440514073?i=1440514458"),
+ (14,3,"https://youtu.be/hRGotyhU4fY"),
+ (15,1,"https://open.spotify.com/track/6hK9rzweEnK3kQEGFUW7Im?si=934529f4204a4383"),
+ (15,2,"https://music.apple.com/ca/album/xs/1408802489?i=1408805523"),
+ (15,3,"https://youtu.be/MzLOAEyF3Bk"),
+ (16,1,"https://open.spotify.com/track/5hVghJ4KaYES3BFUATCYn0?si=d5129bde39434e0e"),
+ (16,2,"https://music.apple.com/ca/album/earfquake/1463409338?i=1463409350"),
+ (16,3,"https://youtu.be/HmAsUQEFYGI"),
+ (17,1,"https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB?si=5be4e44a27f24f34"),
+ (17,2,"https://music.apple.com/ca/album/see-you-again-feat-kali-uchis/1254572564?i=1254572572"),
+ (17,3,"https://youtu.be/TGgcC5xg9YI"),
+ (18,1,"https://open.spotify.com/track/3jHdKaLCkuNEkWcLVmQPCX?si=94f0132d442045a8"),
+ (18,2,"https://music.apple.com/ca/album/best-interest-single/1496259436"),
+ (18,3,"https://youtu.be/NkMTKGM-efw"),
+ (19,1,"https://open.spotify.com/track/0EewDLYCINTBqEAEvmoQNx?si=68acae330cb24b88"),
+ (19,2,"https://music.apple.com/ca/album/menace/1443753968?i=1443754492"),
+ (19,3,"https://youtu.be/KHxAxaWR5vc"),
+ (20,1,"https://open.spotify.com/track/0Aku40bfcW03gPURCFPWnb?si=49c97c2d9ba54636"),
+ (20,2,"https://music.apple.com/ca/album/venus/1443753968?i=1443754798"),
+ (20,3,"https://youtu.be/LsmyPjahk20"),
+ (21,1,"https://open.spotify.com/track/4SIcGSJqTXg5zL9atiSYRL?si=29bb8cdd5052428a"),
+ (21,2,"https://music.apple.com/ca/album/casino/1443753968?i=1443754969"),
+ (21,3,"https://youtu.be/EtnYiNpK74s"),
+ (22,1,"https://open.spotify.com/track/2ewjMyCbNv2X1dB2qIDCwD?si=58dca9b032134bab"),
+ (22,2,"https://music.apple.com/ca/album/%CE%B8-macarena/1440888455?i=1440888904"),
+ (22,3,"https://youtu.be/GGhKPm18E48"),
+ (23,1,"https://open.spotify.com/track/2chIkORxBLpPVgruGiMY8k?si=3550f764b6134505"),
+ (23,2,"https://music.apple.com/ca/album/911/1532027611?i=1532028230"),
+ (23,3,"https://youtu.be/56STvMBKYdw"),
+ (24,1,"https://open.spotify.com/track/2BYiWgDk243sjYEDjs2agc?si=7532d1a52fd3447f"),
+ (24,2,"Indispo"),
+ (24,3,"https://youtu.be/6f7-Mj2PSDQ"),
+ (25,1,"https://open.spotify.com/track/7pTCGpz43p0txphdsvWBNV?si=1155886dbc254711"),
+ (25,2,"https://music.apple.com/ca/album/ouais-ouais/1457391938?i=1457392034"),
+ (25,3,"https://youtu.be/ZKnUrhbKL6g"),
+ (26,1,"https://open.spotify.com/track/3jGpGXoSwhyTNGew06h1NH?si=e115129917134375"),
+ (26,2,"https://music.apple.com/ca/album/zolabeille/1457391938?i=1457392210"),
+ (26,3,"https://youtu.be/itVrblcm5ss"),
+ (27,1,"https://open.spotify.com/track/2CdwW0Zz3dQlX9cHzsC83y?si=846be733e2ce443d"),
+ (27,2,"https://music.apple.com/ca/album/california-girl/1363899192?i=1363899744"),
+ (27,3,"https://youtu.be/A2PMldDoKaQ"),
+ (28,1,"https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b?si=6cdd5a907b3c4f72"),
+ (28,2,"https://music.apple.com/ca/album/blinding-lights/1488408555?i=1488408568"),
+ (28,3,"https://youtu.be/fHI8X4OXluQ"),
+ (29,1,"https://open.spotify.com/track/7szuecWAPwGoV1e5vGu8tl?si=0b2c261ba9cf4dad"),
+ (29,2,"https://music.apple.com/ca/album/in-your-eyes/1499378108?i=1499378612"),
+ (29,3,"https://youtu.be/E3QiD99jPAg"),
+ (30,1,"https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB?si=708d87084d5f4b6e"),
+ (30,2,"https://music.apple.com/ca/album/starboy-feat-daft-punk/1440871397?i=1440871420"),
+ (30,3,"https://youtu.be/34Na4j8AVgA"
+ );
  
+
+
+
+
+
+
+
 --
 -- TABLE DE LOGIN 
 --
@@ -276,35 +283,9 @@ CREATE TABLE t_user(
   idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   useLogin varchar(50) NOT NULL,
 	usePassword varchar(255) NOT NULL,
-	useIsAdmin BOOLEAN NOT NULL,
-  useLikedTitle INT
+	useIsAdmin BOOLEAN NOT NULL
 );
 
 INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES 
-('admin', "$2y$10$ebINd1FQ518pmgmdagSBzeoSS3Ps5NEucIASl0DVnqJt4jD9oXV1a", 1),
-('anthohn', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
-('julcartier', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
-('yousayeh', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
-('kilgood', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0
+("admin", "$2y$10$ebINd1FQ518pmgmdagSBzeoSS3Ps5NEucIASl0DVnqJt4jD9oXV1a", 1
 );
-
-CREATE TABLE t_liked(
-  idxMusic INT NOT NULL,
-  idxUser INT NOT NULL,
-  likMusic BOOLEAN,
-  CONSTRAINT fk_t_liked_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
-  CONSTRAINT fk_t_liked_t_user_idUser FOREIGN KEY (idxUser) REFERENCES t_user(idUser) ON DELETE CASCADE
-);
-
-INSERT INTO t_liked (idxMusic, idxUser, likMusic) VALUES 
-(1, 2, 1
-);
-
-
-
-
-
-
-
-
-

@@ -42,9 +42,8 @@ require "util.php";
 							<input type="password" placeholder="Mot de passe" name="psw">
 							<button type="submit" name="forminscription">Se Connecter</button>
 						</form>
-						<?php elseif(islogged()): ?>
-							<div class="log">		
-								<p><?= 'Bonjour ' . $_SESSION['username']; ?></p>
+						<?php else: ?>
+							<div class="notlog">
 								<a href="home.php?auth=logout">Se deconnecter</a>
 							</div>
 						<?php endif; ?>
@@ -78,12 +77,6 @@ if(isset($_POST["forminscription"]))
                     header("Location:home.php");
                 }
             }
-			else 
-			{
-				//probleme de répetition + faire css
-				$erreur = "Mot de passe éroné";
-     		    echo $erreur;
-			}
         }
     }
     else

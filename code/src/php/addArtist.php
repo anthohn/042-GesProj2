@@ -1,6 +1,7 @@
 <?php 
 require "header.php";
 if(isLogged() && (isAdmin())):
+
 $countries = $DB->getAllCountry();
  ?>
 <div class="tableContainer">
