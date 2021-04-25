@@ -148,7 +148,7 @@ input{
 	color: white;
 }
 
-.log a {
+.notlog a {
 	text-decoration: none;
 	padding: 10px;
 	margin-top: 8px;
@@ -157,13 +157,6 @@ input{
 	width: 150px; 
 	border-radius: 5px;
 	background-color:coral;
-	color: white; 
-}
-
-.log p {
-	padding: 0 0 0 5px;
-	font-size: 17px;
-	border: none;
 	color: white; 
 }
 
@@ -621,16 +614,18 @@ svg.like:hover{
 	font-weight: 800;
 	border: none;
 	cursor: pointer;
-  } 
-  #heartBtnList {
+} 
+
+#heartBtnList {
 	display: none;
-	}
-  .dropdown {
+}
+
+.dropdown {
 	position: relative;
 	display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
 	border-radius: 10px;
 	display: none;
 	position: absolute;
@@ -639,18 +634,18 @@ svg.like:hover{
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
 	color: black;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
-  }
-  
-  /* .dropdown-content a:hover {background-color: #757575;} */
-  .dropdown:hover .dropdown-content {display: block;}
-  .dropdown:hover .dropbtn {background-color: rgb(177, 177, 177);}
+}
+
+/* .dropdown-content a:hover {background-color: #757575;} */
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: rgb(177, 177, 177);}
 
 /*******************************************PLAYLISTS***********************************************/
 
@@ -822,12 +817,7 @@ select {
 }
 
 .contenu{
-	/* width: 80%;
-	margin-left: 292px;
-	padding-top: 70px; */
-
 	max-width: 100%;
-    /* margin: auto; */
     position: relative;
 	margin: 0 0 0 232px;
 }
@@ -970,19 +960,19 @@ select {
 		margin: 260px 0 0 0;
 	}
 
-	
+	/*About*/
+
+	.contenu {
+		margin: 0;
+	}
+
+	.contenutext {
+		margin: auto;
+		width: 60%;
+	}	
 }
 
-/*About*/
 
-.contenu {
-	margin: 0;
-}
-
-.contenutext {
-	margin: auto;
-	width: 60%;
-}
 
 
 @media only screen and (max-width: 925px)
@@ -1014,6 +1004,7 @@ select {
 
 	#heartBtnList {
 		display: block;
+		border-top: 1px solid #808080;
 	}
 
 	.likeList:hover {
