@@ -194,32 +194,47 @@ input{
 	margin-left: 232px;
 	display: flex;
 	overflow-x: auto;
+
 }
 
 .ACmainBlock .ACblock{
 	text-align: center;
-	min-width: 260px;
-	height: 300px;
+	min-width: 200px;
+	min-height: 200px;
 	border-radius: 10px;
 	margin: 50px 20px 30px 20px;
-	background-color: darkgrey;
+	background-color: rgb(24, 24, 24);
+
+}
+
+.ACmainBlock .ACblock:hover{
+	background-color: rgb(43, 43, 43);
+
+}
+
+.ACmainBlock a{
+	text-decoration: none;
 }
 
 .ACblock a{
 	text-decoration: none;
+
 }
 
 .ACblock h1{
-	padding-top: 5px;
-	margin: 0 10px 0 0;
+	width: 100%;
 	font-weight: 800;
-	font-size: 25px;
-	color: rgb(32, 32, 32);
-	text-shadow: 4px 4px 7px #5c5c5c;
+	font-size: 20px;
+	color: rgb(220, 220, 220);
+	/* text-shadow: 1px 1px 3px #5c5c5c; */
+
 }
 
 .ACblock p{
-	color: rgb(32, 32, 32);
+	width: 100%;
+	float: bottom;
+	text-decoration: none;
+	color: rgb(200, 200, 200);
 }
 
 
@@ -227,9 +242,9 @@ input{
 .ACblock img{
 	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 	border-radius: 100px;
-	margin-top: 30px;
+	margin-top: 10px;
 	margin-bottom: 0;
-	height: 120px;
+	height: 90px;
 }
 
 /*************************Footer****************************************/
