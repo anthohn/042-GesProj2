@@ -1,4 +1,4 @@
-<?php require "header.php"; ?>
+<?php require "template/header.php"; ?>
 
 <div class="maintest">
     <div class="error">
@@ -7,4 +7,4 @@
     </div>
 </div>
 
-<?php require "footer.php"; ?>
+<?php require "template/footer.php"; ?>

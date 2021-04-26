@@ -4,7 +4,7 @@ Auteur      : Anthony Höhn
 Date        : 04.03.2021
 Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
 -->
-<?php require "header.php";
+<?php require "template/header.php";
 $musics = $DB->getAllTitle();
 $links = $DB->getAllLink();
 
@@ -54,4 +54,4 @@ $links = $DB->getAllLink();
 		<?php endforeach; ?>	
 
 </div> 
-<?php require "footer.php"; ?>
+<?php require "template/footer.php"; ?>

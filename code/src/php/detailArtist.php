@@ -1,5 +1,5 @@
 <?php
-require "header.php";
+require "template/header.php";
 //récupere la fonction dans db.class.php :)
 $id = $_GET["idArtist"];
 $artists = $DB->getAEachArtist($id);
@@ -40,4 +40,4 @@ $musics = $DB->getMusicEachArtist();
 	<?php endforeach ?>			
 </div>
 
-<?php require "footer.php" ?>
+<?php require "template/footer.php" ?>

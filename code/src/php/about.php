@@ -1,7 +1,7 @@
-﻿<?php require "header.php"; ?>
+﻿<?php require "template/header.php"; ?>
 		<style>
 			body {
-				background-image: url(' ../../userContent/about/image.png');
+				background-image: url(' ../../userContent/img/about/oto.png');
 			}
 		</style>
 		<div class="contenu">
@@ -26,4 +26,4 @@
 				</div>
 			</div>
 		</div>
-<?php require "footer.php"; ?>
+<?php require "template/footer.php"; ?>

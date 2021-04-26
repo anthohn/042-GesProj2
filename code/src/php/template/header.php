@@ -1,8 +1,9 @@
 <?php
 session_start();
-require "_header.php";
-require "util.php";
-
+require "lib/util.php";
+require "lib/db.class.php";
+require "config/dbconfig.cfg";
+$DB = new DB (Config::$host, Config::$username, Config::$password, Config::$database);
 ?>
 <!DOCTYPE html>
 <html lang="fr">

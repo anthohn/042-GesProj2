@@ -1,5 +1,5 @@
 <?php 
-require "header.php";
+require "template/header.php";
 if(isLogged() && (isAdmin())):
 
 $countries = $DB->getAllCountry();
@@ -76,7 +76,7 @@ if(isset($_POST["submit"]))
 
 
 <?php else :
-    header('Location: 404.php'); 
+    header('Location: template/404.php'); 
 endif; 
 ?>
-<?php require "footer.php";?>
+<?php require "template/footer.php";?>

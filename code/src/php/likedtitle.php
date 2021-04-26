@@ -4,7 +4,7 @@ Auteur      : Anthony Höhn
 Date        : 04.03.2021
 Description : Tous les titres likés de l'utilisateur (session)
 -->
-<?php require "header.php"; ?>
+<?php require "template/header.php"; ?>
 <div class="alltitle">
 	<p>Tous les titres</p>
 </div>	
@@ -34,4 +34,4 @@ Description : Tous les titres likés de l'utilisateur (session)
 		</div>
 	<?php endforeach; ?>
 </div> 
-<?php require "footer.php"; ?>
+<?php require "template/footer.php"; ?>

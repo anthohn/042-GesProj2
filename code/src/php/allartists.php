@@ -5,7 +5,7 @@ Date        : 17.03.2021
 Description : Tous les artistes de la base de données rescencé ici grâce à un foreach qui va chercher dans la table t_artiste
 (s'affiche dynamiquement)
 -->
-<?php require "header.php";
+<?php require "template/header.php";
 $artists = $DB->getAllArtists();
 ?>
 <div class="title">
@@ -38,4 +38,4 @@ $artists = $DB->getAllArtists();
 		</div>
 	<?php endforeach ?>			
 </div>	
-<?php require "footer.php"; ?>
+<?php require "template/footer.php"; ?>

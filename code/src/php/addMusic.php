@@ -1,5 +1,5 @@
 <?php
-require "header.php";
+require "template/header.php";
 if(isLogged() && (isAdmin())):
 $types = $DB->getAllType(); ?>
  <div class="selectSection input">
@@ -11,8 +11,8 @@ $types = $DB->getAllType(); ?>
     </select>
 </div>
 <?php else :
-    header('Location: 404.php'); 
+    header('Location: template/404.php'); 
 
 endif; 
 ?>
-<?php require "footer.php";?>
+<?php require "template/footer.php";?>

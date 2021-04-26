@@ -1,4 +1,4 @@
-﻿<?php require "header.php"; 
+﻿<?php require "template/header.php"; 
 $artists = $DB->getAllArtists();
 $musics = $DB->getAllTitle();
 ?>
@@ -31,4 +31,4 @@ $musics = $DB->getAllTitle();
 		</a>
 	<?php endforeach ?>
 </div>
-<?php require "footer.php" ?>
+<?php require "template/footer.php" ?>

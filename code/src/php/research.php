@@ -4,7 +4,7 @@ Auteur      : Younes Sayeh
 Date        : 11.03.2021
 Description : Recherche dynamique pour chaque nom d'artiste.
 -->
-<?php require "header.php" ?>
+<?php require "template/header.php" ?>
 <?php 
 	$musics = $DB->getAllTitle();
 
@@ -70,4 +70,4 @@ Description : Recherche dynamique pour chaque nom d'artiste.
 		<?php endforeach; ?>
 	</div> 
 </div>
-<?php require "footer.php"; ?>
+<?php require "template/footer.php"; ?>
