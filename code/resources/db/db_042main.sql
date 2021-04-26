@@ -17,7 +17,7 @@ USE P_db_042main;
 CREATE TABLE t_country (
   idCountry INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   couCountry VARCHAR(50) NOT NULL
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
 
 --
 -- Déchargement des données de la table "t_country"
@@ -40,7 +40,7 @@ INSERT INTO t_country (couCountry) VALUES
 CREATE TABLE t_type (
   idType INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   typeName VARCHAR(255)
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
 
 --
 -- Déchargement des données de la table "typeName"
@@ -61,7 +61,7 @@ CREATE TABLE t_artist (
   artBirth DATE NOT NULL,
   idxCountry INT NOT NULL,
   CONSTRAINT fk_t_artist_t_country_idCountry FOREIGN KEY (idxCountry) REFERENCES t_country(idCountry) 
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
 
 --
 -- Déchargement des données de la table "t_artist"
@@ -90,7 +90,7 @@ CREATE TABLE t_music (
   idxType INT NOT NULL,
   CONSTRAINT fk_t_music_t_artist_idArtist FOREIGN KEY (idxArtist) REFERENCES t_artist(idArtist) ON DELETE CASCADE,
   CONSTRAINT fk_t_music_t_type_idType FOREIGN KEY (idxType) REFERENCES t_type(idType)
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
 
 --
 -- Déchargement des données de la table "t_music"
@@ -135,18 +135,42 @@ CREATE TABLE t_playlist (
   idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plaName VARCHAR(255) NOT NULL,
   plaCreationDate DATE NOT NULL
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
+
+ INSERT INTO t_playlist (plaName, plaCreationDate) VALUES
+('Noice 2.0', '2020-01-14'),
+('Party Playlist', '2021-04-26'),
+('ZolaSki', '2015-04-26'),
+('Viral Hits', '2018-08-02'),
+('OG dkzop', '2018-05-12'),
+('Top 50 : Mondial', '2019-10-30'),
+('Party songs', '2021-12-09'
+ );
 
 --
 -- Structure de la table "t_add"
 --
 CREATE TABLE t_add (
-  idxMusic INT NOT NULL,
   idxPlaylist INT NOT NULL,
-  ajoOrder INT NOT NULL,
-  CONSTRAINT fk_t_add_t_musix_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic),
+  idxMusic INT NOT NULL,
+  CONSTRAINT fk_t_add_t_musix_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
   CONSTRAINT fk_t_add_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist)
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
+
+INSERT INTO t_add (idxPlaylist, idxMusic) VALUES
+(1, 2),
+(1, 7),
+(1, 5),
+(1, 12),
+(1, 8),
+(2, 15),
+(2, 14),
+(2, 11),
+(2, 9),
+(2, 5),
+(2, 2
+
+);
 
 --
 -- Structure de la table "t_typeLink"
@@ -154,7 +178,7 @@ CREATE TABLE t_add (
 CREATE TABLE t_typeLink (
   idTypeLink INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   typLiens VARCHAR(15) NOT NULL
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
 -- 
 -- Déchargement des données de la table "t_link"
 --
@@ -174,7 +198,7 @@ CREATE TABLE t_link (
   linLink VARCHAR(255),
   CONSTRAINT fk_t_link_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
   CONSTRAINT fk_t_link_t_typeLink_idTypeLink FOREIGN KEY (idxTypelink) REFERENCES t_typeLink(idTypeLink) ON DELETE CASCADE
-)engine=innodb character set utf8 collate utf8_general_ci;
+);
 
 -- 
 -- Déchargement des données de la table "t_link"
