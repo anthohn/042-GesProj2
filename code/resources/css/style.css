@@ -1042,11 +1042,29 @@ select {
 	}
 	}
 
-	@media only screen and (max-width: 735px)
-	{ 
+@media only screen and (max-width: 735px)
+{ 
 	/*Search and Titles*/
 	.musDuration {
 		display: none;
+	}
+
+	/*Login form*/
+
+	.login-container {
+		position: unset;
+		margin: 0;
+		background-color: black;
+		width: 100%;
+		border-radius: 0;
+		height: 57px;
+		border: 1px solid grey;
+		border-left: none;
+		border-right: none;
+	}
+
+	#loginForm {
+		text-align: center;
 	}
 }
 
