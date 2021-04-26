@@ -206,6 +206,47 @@ class DB{
         return $results;
     }
 
+    //récupere toutes les playlist
+    public function getPlaylists(){
+        $query = 'SELECT * FROM t_playlist';
+        $reqExecuted = $this->querySimpleExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //récupere une playlist
+    public function getPlaylist($idPlaylist){
+        $query = 'SELECT * FROM t_playlist WHERE idPlaylist = :idPlaylist';
+        $binds = array(
+            0 => array(
+                'field' => ':idPlaylist',
+                'value' => $idPlaylist,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //récupere les music contenu dans la playlist 
+    public function getMusicsPlaylist($idPlaylist){
+        $query = 'SELECT * FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist';
+        $binds = array(
+            0 => array(
+                'field' => ':idPlaylist',
+                'value' => $idPlaylist,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
     // fonction pour ajouter un artistes dans la bdd
     public function addArtist($name, $date, $country){
         $query = "INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES (:artName, :artBirth, :idxCountry)";
