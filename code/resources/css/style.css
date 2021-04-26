@@ -52,6 +52,7 @@ body{
 	justify-content: space-between;
 	width: 50px;
 	height: 44px;
+	transition: all 0.2s ease-in-out;
 }
 
 .bar {
@@ -59,6 +60,24 @@ body{
 	width: 100%;
 	background-color: white;
 	border-radius: 10px;
+}
+
+.open #middleBar {
+	display: none;
+}
+
+.open {
+	margin: 30px 0 0 0;
+	left: 28px;
+	transition: all 0.2s ease-in-out;
+}
+
+.open #topBar {
+	transform: rotate(45deg) translate(18px, -8px);
+}
+
+.open #bottomBar {
+	transform: rotate(-45deg) translate(13px, 13px);
 }
 
 .leftnav h1{
@@ -99,6 +118,7 @@ body{
 
 .leftnav li a:hover {
 	color: white;
+	transition: all 0.2s ease-out;
 }
 
 #active {
@@ -849,8 +869,15 @@ select {
 	text-shadow: 2px 4px 7px #000000;
 }
 
-.resSVG{
-	padding-left: 43%;
+.iconContainer a {
+	text-align: center;
+}
+
+.iconContainer {
+	max-width: 40%;
+    position: relative;
+    margin: auto;
+    text-align: center;
 }
 
 .resSVGTwitter{
@@ -876,6 +903,10 @@ select {
 	{
 		display: flex;
 		position: absolute;
+	}
+
+	.open {
+		justify-content: center;
 	}
 
 	.leftnav {
@@ -929,6 +960,23 @@ select {
 		position: absolute;
 		margin: 110px 0 0 0;
 		z-index: 1;
+		align-items: flex-end
+	}
+
+	/*Login Form*/
+
+	.login-container{
+		margin: -80px 50px 0 0;
+		position: absolute;
+	}
+
+	#psw, #login {
+		height: 34px;
+    	border: 1px solid rgb(158, 158, 158);
+	}
+
+	.notlog {
+		margin: 15px 0 0 0;
 	}
 
 	/*Content Home*/
@@ -958,6 +1006,13 @@ select {
 
 	.alltitlemainBlock {
 		margin: 260px 0 0 0;
+	}
+
+	/*Title*/
+
+	.alltitle{
+		margin: 0;
+		padding: 0;
 	}
 
 	/*About*/
