@@ -20,9 +20,9 @@ $DB = new DB (Config::$host, Config::$username, Config::$password, Config::$data
 		<div class="main" id="mainAbout">
 			<!-- Hamburger menu -->
 			<a href="#" class="toggleButton" id="toggleButtonID">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
+				<span class="bar" id="topBar"></span>
+				<span class="bar" id="middleBar"></span>
+				<span class="bar" id="bottomBar"></span>
 			</a>
 			<!-- Bar de navigation -->
 			<div class="leftnav">
@@ -39,8 +39,8 @@ $DB = new DB (Config::$host, Config::$username, Config::$password, Config::$data
 					<div class="login-container">
                    		<?php if(!isLogged()): ?>
 						<form method="post" action="home.php">
-							<input type="text" placeholder="Nom d'utilisateur" name="login">
-							<input type="password" placeholder="Mot de passe" name="psw">
+							<input type="text" placeholder="Nom d'utilisateur" name="login" id="login">
+							<input type="password" placeholder="Mot de passe" name="psw" id="psw">
 							<button type="submit" name="forminscription">Se Connecter</button>
 						</form>
 						<?php else: ?>
