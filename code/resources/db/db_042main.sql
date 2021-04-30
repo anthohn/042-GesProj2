@@ -128,23 +128,45 @@ INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES
 ('Starboy', '000:03:50', 10, 4
 );
 
+
+--
+-- TABLE DE LOGIN 
+--
+CREATE TABLE t_user(
+  idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  useLogin varchar(50) NOT NULL,
+	usePassword varchar(255) NOT NULL,
+	useIsAdmin BOOLEAN NOT NULL,
+  useLikedTitle INT
+);
+
+INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES 
+('admin', "$2y$10$ebINd1FQ518pmgmdagSBzeoSS3Ps5NEucIASl0DVnqJt4jD9oXV1a", 1),
+('anthohn', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
+('julcartier', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
+('yousayeh', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
+('kilgood', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0
+);
+
 --
 -- Structure de la table "t_playlist"
 --
 CREATE TABLE t_playlist (
   idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plaName VARCHAR(255) NOT NULL,
-  plaCreationDate DATE NOT NULL
+  plaCreationDate DATE NOT NULL,
+  idxUser INT NOT NULL,
+  CONSTRAINT fk_t_playlist_t_user_idUser FOREIGN KEY (idxUser) REFERENCES t_user (idUser)
 );
 
- INSERT INTO t_playlist (plaName, plaCreationDate) VALUES
-('Noice 2.0', '2020-01-14'),
-('Party Playlist', '2021-04-26'),
-('ZolaSki', '2015-04-26'),
-('Viral Hits', '2018-08-02'),
-('OG dkzop', '2018-05-12'),
-('Top 50 : Mondial', '2019-10-30'),
-('Party songs', '2021-12-09'
+ INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
+('Noice 2.0', '2020-01-14', 2),
+('Party Playlist', '2021-04-26', 2),
+('ZolaSki', '2015-04-26', 2),
+('Viral Hits', '2018-08-02', 5),
+('OG dkzop', '2018-05-12', 5),
+('Top 50 : Mondial', '2019-10-30', 5),
+('Party songs', '2021-12-09', 3
  );
 
 --
@@ -293,24 +315,12 @@ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
 (30,3,"https://youtu.be/34Na4j8AVgA"
 );
  
---
--- TABLE DE LOGIN 
---
-CREATE TABLE t_user(
-  idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  useLogin varchar(50) NOT NULL,
-	usePassword varchar(255) NOT NULL,
-	useIsAdmin BOOLEAN NOT NULL,
-  useLikedTitle INT
-);
 
-INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES 
-('admin', "$2y$10$ebINd1FQ518pmgmdagSBzeoSS3Ps5NEucIASl0DVnqJt4jD9oXV1a", 1),
-('anthohn', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
-('julcartier', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
-('yousayeh', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
-('kilgood', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0
-);
+
+
+
+
+
 
 CREATE TABLE t_liked(
   idxMusic INT NOT NULL,
@@ -323,12 +333,4 @@ CREATE TABLE t_liked(
 INSERT INTO t_liked (idxMusic, idxUser, likMusic) VALUES 
 (1, 2, 1
 );
-
-
-
-
-
-
-
-
 

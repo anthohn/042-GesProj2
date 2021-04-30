@@ -180,6 +180,12 @@ input{
 	color: white; 
 }
 
+.notlog p {
+	padding: 0 0 10px 10px;
+
+	color: white;
+}
+
 
 /******************************ACCUEIL******************************/
 
@@ -591,6 +597,11 @@ footer{
 
 .PLblock1 p{
 	color: rgb(36, 36, 36);
+}
+
+.notlogplaylist{
+	margin-left: 232px;
+	padding: 30px;
 }
 /*******************************************ARTISTES PERSO***********************************************/
 .ARPtitle{

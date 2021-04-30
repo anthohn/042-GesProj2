@@ -207,9 +207,16 @@ class DB{
     }
 
     //récupere toutes les playlist
-    public function getPlaylists(){
-        $query = 'SELECT * FROM t_playlist';
-        $reqExecuted = $this->querySimpleExecute($query);
+    public function getPlaylists($idUser){
+        $query = 'SELECT * FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser';
+        $binds = array(
+            0 => array(
+                'field' => ':idUser',
+                'value' => $idUser,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;

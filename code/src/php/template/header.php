@@ -44,7 +44,10 @@ $DB = new DB (Config::$host, Config::$username, Config::$password, Config::$data
 							<button type="submit" name="forminscription">Se Connecter</button>
 						</form>
 						<?php else: ?>
+
+							
 							<div class="notlog">
+								<p><?= 'Bonjour ' . $_SESSION['username']; ?></p>
 								<a href="home.php?auth=logout">Se deconnecter</a>
 							</div>
 						<?php endif; ?>
@@ -75,6 +78,7 @@ if(isset($_POST["forminscription"]))
                 {
                     $_SESSION['username'] = $user['useLogin'];
                     $_SESSION['isAdmin'] = $user['useIsAdmin'];
+					$_SESSION['idUser'] = $user['idUser'];
                     header("Location:home.php");
                 }
             }
