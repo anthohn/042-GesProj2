@@ -1,4 +1,10 @@
-﻿<?php require "template/header.php"; ?>
+﻿<!--
+ETML
+Auteur      : Anthony Höhn
+Date        : 04.03.2021
+Description : Toutes les playlists de l'utilisateur (session)
+-->
+<?php require "template/header.php"; ?>
 <?php if(isLogged()): ?>
 	<!-- récupere lid du user -->
 	<?php $idUser = ($_SESSION['idUser']) ?>

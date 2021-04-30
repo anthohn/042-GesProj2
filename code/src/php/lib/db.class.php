@@ -29,6 +29,7 @@ class DB{
             die("<h1>La connexion à la base de données est impossible.</h1>"); 
         }
     }
+
     private function querySimpleExecute($query){
         $req = $this->db->query($query);
         return $req;
@@ -42,6 +43,22 @@ class DB{
         $req->execute();
         return $req;
     }
+
+    public function query($sql, $data = array()){
+        $req =$this->db->prepare($sql);
+        $req->execute($data);
+        return $req->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    private function formatData($req){
+
+        $results = $req->fetchALL(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    private function unsetData($req){
+        $req->closeCursor();
+    }    
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
@@ -61,9 +78,16 @@ class DB{
         return $results;
     }
 
-    public function getAllLink(){
-        $query = "SELECT linLink FROM t_link";
-        $reqExecuted = $this->querySimpleExecute($query);
+    public function getLinkEachMusics($idMusic){
+        $query = 'SELECT * FROM t_link JOIN t_music ON idxMusic = idMusic JOIN t_typelink ON idxTypelink = idTypelink WHERE idMusic = :idMusic';
+        $binds = array(
+            0 => array(
+                'field' => ':idMusic',
+                'value' => $idMusic,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -206,7 +230,67 @@ class DB{
         return $results;
     }
 
-    //récupere toutes les playlist
+    //récupere les titres likés d'un utilisateur 
+    public function getLikedtitles($idUser){
+        $query = 'SELECT * FROM t_liked JOIN t_user ON idxUser = idUser JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idUser = :idUser';
+        $binds = array(
+            0 => array(
+                'field' => ':idUser',
+                'value' => $idUser,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //permet d'ajouter un titre dans sa liste de titre likés
+    public function addLikedMusic($idMusic, $idUser) {
+        $query = "INSERT INTO t_liked (idxMusic, idxUser) VALUES (:idMusic, :idUser)";
+        $binds = array(
+            0 => array(
+                'field' => ':idMusic',
+                'value' => $idMusic,
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array(
+                'field' => ':idUser',
+                'value' => $idUser,
+                'type' => PDO::PARAM_STR
+            )     
+        );
+        $results = $this->queryPrepareExecute($query, $binds);
+        return $results;
+    }
+
+    //Permet de supprimer un titre likés
+    public function suppLikedMusic($idMusic, $idUser){
+        $query = 'DELETE FROM t_liked WHERE idxMusic = :idMusic AND idxUser = :idUser';
+        $binds = array(
+            0 => array(
+                'field' => ':idMusic',
+                'value' => $idMusic,
+                'type' => PDO::PARAM_INT
+            ),
+            1 => array(
+                'field' => ':idUser',
+                'value' => $idUser,
+                'type' => PDO::PARAM_INT
+            )     
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //vérifie si la table est vide
+
+    // $rows = mysql_result(mysql_query('SELECT COUNT(*) FROM table'), 0);
+
+    //récupere les playlists d'UN utilisateur
     public function getPlaylists($idUser){
         $query = 'SELECT * FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser';
         $binds = array(
@@ -288,19 +372,5 @@ class DB{
     }
 
 
-    public function query($sql, $data = array()){
-        $req =$this->db->prepare($sql);
-        $req->execute($data);
-        return $req->fetchAll(PDO::FETCH_OBJ);
-    }
-
-    private function formatData($req){
-
-        $results = $req->fetchALL(PDO::FETCH_ASSOC);
-        return $results;
-    }
-
-    private function unsetData($req){
-        $req->closeCursor();
-    }    
+    
 }
