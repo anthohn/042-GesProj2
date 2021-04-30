@@ -42,7 +42,7 @@ $musics = $DB->getAllTitle();
 					<?php $idMusic = $music['idMusic']; ?>
 					<?php $links = $DB->getLinkEachMusics($idMusic); ?>
 					
-					<?php foreach ( $links as $link):?>
+					<?php foreach ($links as $link): ?>
 						
 						<div class="dropdown-content">
 

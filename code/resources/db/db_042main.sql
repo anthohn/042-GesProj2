@@ -333,6 +333,12 @@ CREATE TABLE t_liked(
 );
 
 INSERT INTO t_liked (idxMusic, idxUser) VALUES 
-  (2, 2
+  (2, 2),
+  (10, 2),
+  (4, 2),
+  (7, 2),
+  (20, 2),
+  (1, 2),
+  (16, 2
 );
 

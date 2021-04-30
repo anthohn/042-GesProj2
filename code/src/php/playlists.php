@@ -42,7 +42,9 @@ Description : Toutes les playlists de l'utilisateur (session)
 			<?php endforeach ?>			
 			</div>	
 <?php else :?>
-	<h1 class="notlogplaylist">Connectez-vous pour visualiser vos playlists.</h1>
+	<div class="error">
+		<h1>Connectez-vous pour visualiser vos playlists.</h1>
+	</div>	
 <?php endif; ?>
 
 <?php require "template/footer.php"; ?>
