@@ -38,10 +38,12 @@ $DB = new DB (Config::$host, Config::$username, Config::$password, Config::$data
 					<li class="about"><a href="about.php">À propos</a></li>
 					<div class="login-container">
                    		<?php if(!isLogged()): ?>
-						<form method="post" action="home.php">
-							<input type="text" placeholder="Nom d'utilisateur" name="login" id="login">
-							<input type="password" placeholder="Mot de passe" name="psw" id="psw">
-							<button type="submit" name="forminscription">Se Connecter</button>
+						<form method="post" action="home.php" id="loginForm">
+							<div class="inputContainer">
+								<input type="text" placeholder="Nom d'utilisateur" name="login" id="login">
+								<input type="password" placeholder="Mot de passe" name="psw" id="psw">
+								<button type="submit" name="forminscription">Se Connecter</button>
+							</div>
 						</form>
 						<?php else: ?>
 
