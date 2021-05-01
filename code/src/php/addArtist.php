@@ -1,4 +1,6 @@
 <?php 
+$title = "Oto - Ajout d'artiste";
+
 require "template/header.php";
 if(isLogged() && (isAdmin())):
 

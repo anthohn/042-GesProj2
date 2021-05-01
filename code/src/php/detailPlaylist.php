@@ -1,4 +1,5 @@
-<?php
+<?php $title = 'Oto - Détails playlist';
+
 require "template/header.php";
 $idPlaylist = $_GET["idPlaylist"];
 $getPlaylists = $DB->getPlaylist($idPlaylist);

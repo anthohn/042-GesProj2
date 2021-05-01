@@ -4,7 +4,8 @@ Auteur      : Younes Sayeh
 Date        : 11.03.2021
 Description : Recherche dynamique pour chaque nom d'artiste.
 -->
-<?php require "template/header.php" ?>
+<?php $title = 'Oto - Recherche';
+require "template/header.php" ?>
 <?php 
 	$musics = $DB->getAllTitle();
 

@@ -4,7 +4,9 @@ Auteur      : Anthony Höhn
 Date        : 04.03.2021
 Description : Tous les titres likés de l'utilisateur (session)
 -->
-<?php require "template/header.php"; ?>
+
+<?php $title = 'Oto - Titres Likés';
+require "template/header.php"; ?>
 <?php if(isLogged()): ?>
 	<!-- récupere l'id du user -->
 	<?php $idUser = ($_SESSION['idUser']) ?>
@@ -62,11 +64,8 @@ Description : Tous les titres likés de l'utilisateur (session)
 					<!-- <h1>Pas encore de titres likées, rien à voir ici..</h1> -->
 				<?php /*endif;*/ ?>		
 
-			<?php endforeach; ?>				
-		</div> 
-
-
-
+		<?php endforeach; ?>				
+	</div> 
 
 <?php else :?>
 	<div class="error">

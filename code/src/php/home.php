@@ -1,4 +1,5 @@
-﻿<?php require "template/header.php"; 
+﻿<?php $title = 'Oto - Accueil'; ?>
+<?php require "template/header.php"; 
 $artists = $DB->getAllArtists();
 $musics = $DB->getAllTitle();
 ?>

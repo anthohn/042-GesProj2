@@ -1,4 +1,5 @@
-﻿<?php require "template/header.php"; ?>
+﻿<?php $title = 'Oto - À propos'; ?>
+<?php require "template/header.php"; ?>
 		<style>
 			body {
 				background-image: url(' ../../userContent/img/about/oto.png');

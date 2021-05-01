@@ -4,6 +4,7 @@ Auteur      : Anthony Höhn
 Date        : 04.03.2021
 Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
 -->
+<?php $title = 'Oto - Ajouter une playlist'; ?>
 <?php require "template/header.php"; ?>
 <?php if(isLogged()): ?>
 <?php $musics = $DB->getAllTitle();

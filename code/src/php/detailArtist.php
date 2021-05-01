@@ -1,4 +1,4 @@
-<?php
+<?php $title = 'Oto - Détails artiste';
 require "template/header.php";
 //récupere la fonction dans db.class.php :)
 $id = $_GET["idArtist"];
