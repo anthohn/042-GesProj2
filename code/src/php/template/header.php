@@ -11,7 +11,7 @@ $DB = new DB (Config::$host, Config::$username, Config::$password, Config::$data
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Logo onglet-->
-		<link rel="icon" href="../../userContent/logoOnglet.png" />
+		<link rel="icon" href="../../userContent/logo/oto.png" />
 		<title><?= $title ?></title>
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
 		<script src="../js/toggleMenu.js" defer></script>

@@ -8,7 +8,7 @@ $countries = $DB->getAllCountry();
  ?>
 <div class="tableContainer">
             <h1>Ajout d'un artiste</h1>
-            <form method="POST" action="addArtist.php">
+            <form method="POST" action="addArtist.php" enctype="multipart/form-data">
                 <div class="inputName input">
                     <label for="name">Nom :</label>
                     <input type="text" id="name" name="name">
@@ -45,37 +45,30 @@ $countries = $DB->getAllCountry();
             </form>
             <?php 
                 if(isset($_POST['btnSubmit'])) {
-                    if(!(isset($_POST['name'])) || empty($_POST['date']) || $_POST['country'] == 0)
+                    if(!(isset($_POST['name'])) || empty($_POST['date']) || $_POST['country'] == 0/* || empty($_POST['printscreen'])*/)
                      {
                         echo '<h2 id="errorMessage">Veuillez renseignez tout les champs.</h2>';
                     }
                     else {
                         $DB->addArtist($_POST['name'], $_POST['date'],  $_POST['country']);
+
+                        // $_FILES["printscreen"]["tmp_name"];
+                        // $_FILES["printscreen"]["name"] ;
+                        // $_FILES["printscreen"]["size"];
+                        // $_FILES["printscreen"]["type"];
+
+                        $source = $_FILES["printscreen"]["tmp_name"];
+                        $destination = '../../userContent/img/artists/logo/'.'1.jpg';
+
+                        move_uploaded_file($source, $destination);
+
                         echo '<h1 id="validationMessage">L\'artiste à bien été ajouté.</h1>';
                     }
+
+
                 }
             ?>
         </div>
-<?php
-
-
-if(isset($_POST["submit"]))
-{
-    if(empty($_POST["gender"]) || empty($_POST["name"]) || empty($_POST["surname"]) || empty($_POST["nickname"]) || empty($_POST["origin"]))
-    {
-        echo "Veuillez renseignez tous les champs.";
-    } 
-    else {
-        $teachers = $db->getAllTeachers();
-
-        $db->addTeacher($_POST['gender'], $_POST['name'], $_POST['surname'], $_POST['nickname'], $_POST['origin']);
-        // $db->addTeacherSection($section['idSection'], max($teachers['idTeachers']) + 1);
-        echo "<h1>L'enseigant a bien été ajouté</h1>";
-        // header('Location: index.php');
-    }
-}
-?>
-
 
 <?php else :
     header('Location: template/404.php'); 

@@ -454,7 +454,7 @@ footer{
 	border-radius: 100px;
 	margin-top: 30px;
 	margin-bottom: 0;
-	height: 120px;
+	max-height: 120px;
 }
 
 .ARblockText{
@@ -875,7 +875,12 @@ svg.like:hover{
 }
 
 .tableContainer h1{
-	border-bottom: 2px solid black;
+	padding: 5px;
+	color: white;
+	background-color: rgb(85, 145, 93);
+	text-align: center;
+	/* border: 1px solid white; */
+	border-radius: 10px;
 }
 
 label {
