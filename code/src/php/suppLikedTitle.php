@@ -11,5 +11,4 @@ if(isLogged()):
 
 else :
     header('Location: template/404.php'); 
-
 endif; 

@@ -30,6 +30,8 @@ body{
 }
 
 .error{
+	background-color: rgb(102, 24, 24);
+	padding: 10px;
 	color: white;
 	text-align: center;
 }
@@ -603,6 +605,47 @@ footer{
 	margin-left: 232px;
 	padding: 30px;
 }
+
+/******************************************Création playlists********************************************/
+
+.plalistCreaTitle{
+	margin-left: 232px;
+	padding: 0 0 0 0;
+	color: White;
+	font-weight: bold;
+	font-size: 80px;
+}
+
+.plalistCreaTitle p{
+	margin-left: 2%;
+}
+
+.formCreation{
+	margin: 0 0 0 232px;
+}
+
+.formCreation label{
+	font-weight: bold;
+	color: white;
+	margin-left: 2%;
+	font-size: 30px;
+}
+
+.playlistCreaBlock {
+	margin: 260px 0 0 0;
+}
+
+.playlistCreaBlock{
+	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
+	padding-bottom: 40%;
+	margin: 110px 0 0 232px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
 /*******************************************ARTISTES PERSO***********************************************/
 .ARPtitle{
 	margin-left: 232px;
@@ -664,6 +707,12 @@ footer{
 	margin: 7px 0 0 7px;
 	border-radius: 7px;
 	height: 65px;
+}
+
+.ARPblock1 input {
+	margin-top: 33px;
+	width: 50px;
+	float: left;
 }
 
 svg.like{

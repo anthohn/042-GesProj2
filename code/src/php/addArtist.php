@@ -31,7 +31,7 @@ $countries = $DB->getAllCountry();
                
                 <div class="button">
                     <div class="btnAdding">
-                        <input type="submit" id="btnSubmit" name="btnSubmit" value="Ajouter" />
+                    <input type="submit" id="btnSubmit" name="btnSubmit" value="Ajouter" />
                 </div>
                 <div class="btnDeleting">
                     <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>
