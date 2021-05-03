@@ -16,6 +16,7 @@
 	--buttonBack-color: #6b9771;
 	--coralButton-color: Coral;
 	--lightBlack-color: #181818;
+	--ligthBlackhover-color: #0a0a0a;
 	--lighterBlack-color: darkgrey;
 	--pastel-color: #dcdcdc;
 	--lightPastel-color: #c8c8c8;
@@ -208,26 +209,6 @@ input{
 
 /******************************ACCUEIL******************************/
 
-/* https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
-
-/* ::-webkit-scrollbar {
-	width: 20px;
-  }
-  
-  ::-webkit-scrollbar-track {
-	box-shadow: 0 0 5px rgb(126, 126, 126);
-	border-radius: 10px;
-  }
-   
-  ::-webkit-scrollbar-thumb {
-	background: rgb(29, 29, 29); 
-	border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-	background: rgb(20, 20, 20); 
-  } */
-
 .ACmainBlock{
 	margin-left: 232px;
 	display: flex;
@@ -242,11 +223,10 @@ input{
 	border-radius: 10px;
 	margin: 50px 20px 30px 20px;
 	background-color: var(--lightBlack-color);
-
 }
 
 .ACmainBlock .ACblock:hover{
-	background-color: var(--lighterBlack-color);
+	background-color: var(--ligthBlackhover-color);
 
 }
 
@@ -597,7 +577,7 @@ footer{
 }
 
 .PLblock1 p{
-	color: var(--lighterBlack-color);
+	color: var(--lightBlack-color);
 }
 
 .notlogplaylist{
@@ -835,8 +815,8 @@ svg.like:hover{
 	height: 320px;
 	margin: 50px;
 	flex-basis: 260px;
-	background-color: var(--dropdown-color);
-	box-shadow: 0 7px 40px 0 var(--gray-color);
+	background-color: var(--lighterBlack-color);
+	box-shadow: 0 7px 40px 0 var(--lightBlack-color);
 }
 
 .PLblockTitle p{
@@ -870,67 +850,90 @@ svg.like:hover{
     box-shadow: 0 7px 40px 0 var(--blackBackground-color);
 } 
 
-/******************************************Formulaire*******************************************/
+/******************************************Formulaire artiste*******************************************/
 
-.tableContainer{
-	position: absolute;
-	margin-left: 232px;
-	padding-left: 40px;
-	margin-top: 20px;
+.formcontent{
+	display: flex;
+  	justify-content: center;
 }
 
-.tableContainer h1{
-	padding: 5px;
-	color: var(--back-color);
-	background-color: var(--greenLike-color);
+.formcontent form {
+	color: var(--lightBlack-color);
 	text-align: center;
-	/* border: 1px solid white; */
+	margin: 100px 0 0 0;
+	height: 500px;
+	width: 400px;
+	background-color: rgb(156, 156, 156);
+	border: 3px solid rgb(48, 48, 48);
+	border-radius: 25px;
+}
+
+.formcontent table{
+	margin: 0 0 0 20px;
+  
+}
+
+
+.formcontent form table tr td{
+	font-size: 20px;
+}
+
+.formcontent form button{
+	font-size: 20px;
+	border: none;
+	padding: 10px 20px;
+	color: #ffffff;
+	background-color: red;
 	border-radius: 10px;
+	cursor: pointer;
 }
 
-label {
+.formcontent form button:hover{
+	background-color: blue;
+}
+  
+.formcontent form table tr td svg{
+	margin: 10px 0 0 0;
+	position: absolute;
+}
+  
+.formcontent form table tr input{
 	font-size: 18px;
-	margin: 0 20px 0 0;
+	border-radius: 10px;
+	border: 1px solid var(--darkGrey-color);
+	width: 170px;
+	margin: 10px 0 0 50px;
+	padding: 7px;
 }
 
-.radio {
-    display: flex;
-    padding: 0 0 10px 0;
+.formcontent form table tr select{
+	font-size: 18px;
+	border-radius: 10px;
+	border: 1px solid var(--darkGrey-color);
+	width: 170px;
+	margin: 10px 0 0 50px;
+	padding: 7px;
 }
 
-.input {
-    padding: 0 0 10px 0;
-    margin: 0 0 0 0;
+.errorLoginContainer{
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+  
+.errorLogin{
+	margin: auto;
+	width: 380px;
+	padding: 10px;
+	color: var(--back-color);
+	border-radius: 25px;
+	text-align: center;
+	background-color: var(--redAlert-color);
 }
 
-#name {
-	padding: 5px 5px 5px 5px;
-	border-radius: 5px;
-    margin: 0 0 0 0;
+.erreurrr{
+	margin-left: 232px;
 }
 
-#labelOrigin {
-    position: absolute;
-}
-
-select {
-    width: 150px;
-    height: 28px;
-}
-
-.button {
-    display: flex;
-    margin: 0 0 0 0;
-}
-
-.btnAdding, .btnDeleting {
-    padding: 0 10px 0 0;
-}
-
-#btnSubmit, #btnDelete {
-    width: 95px;
-    height: 28px;
-}
 
 /*******************************************ABOUT***********************************************/
 
@@ -1218,7 +1221,7 @@ select {
 	}
 
 	/*Playlists*/
-	.PLblock1, .PLblock2, .PLblock3, .PLblock4, .PLblock5, .PLblock6, .PLblock7, .PLblock8 {
+	.PLblock1{
 		margin: 50px 19px;
 	}
 

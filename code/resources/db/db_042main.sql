@@ -89,7 +89,7 @@ CREATE TABLE t_music (
   idxArtist INT NOT NULL,
   idxType INT NOT NULL,
   CONSTRAINT fk_t_music_t_artist_idArtist FOREIGN KEY (idxArtist) REFERENCES t_artist(idArtist) ON DELETE CASCADE,
-  CONSTRAINT fk_t_music_t_type_idType FOREIGN KEY (idxType) REFERENCES t_type(idType)
+  CONSTRAINT fk_t_music_t_type_idType FOREIGN KEY (idxType) REFERENCES t_type(idType) ON DELETE CASCADE
 );
 
 --
@@ -135,8 +135,8 @@ INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES
 CREATE TABLE t_user(
   idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   useLogin varchar(50) NOT NULL,
-	usePassword varchar(255) NOT NULL,
-	useIsAdmin BOOLEAN NOT NULL,
+  usePassword varchar(255) NOT NULL,
+  useIsAdmin BOOLEAN NOT NULL,
   useLikedTitle INT
 );
 
@@ -155,11 +155,11 @@ CREATE TABLE t_playlist (
   idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plaName VARCHAR(255) NOT NULL,
   plaCreationDate DATE NOT NULL,
-  idxUser INT NOT NULL,
+  idxUser INT,
   CONSTRAINT fk_t_playlist_t_user_idUser FOREIGN KEY (idxUser) REFERENCES t_user (idUser)
 );
 
- INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
+INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
   ('Noice 2.0', '2020-01-14', 2),
   ('Party Playlist', '2021-04-26', 2),
   ('ZolaSki', '2015-04-26', 2),
@@ -203,7 +203,7 @@ CREATE TABLE t_typeLink (
 -- 
 -- Déchargement des données de la table "t_link"
 --
- INSERT INTO t_typeLink (typLiens) VALUES
+INSERT INTO t_typeLink (typLiens) VALUES
   ('Spotify'),
   ('Apple Music'),
   ('YouTube'
@@ -316,7 +316,7 @@ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
   (30,2,"https://music.apple.com/ca/album/starboy-feat-daft-punk/1440871397?i=1440871420"),
   (30,3,"https://youtu.be/34Na4j8AVgA"
 );
- 
+
 
 
 

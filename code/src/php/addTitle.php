@@ -1,67 +1,98 @@
-<?php 
+<?php
+
+// Permet d'ajouter du contenu dans l'onglet
 $title = "Oto - Ajout d'une musique";
 
 require "template/header.php";
+
+// Vérifie si l'utilisateur est loggé ET admin
 if(isLogged() && (isAdmin())):
 
-$artists = $DB->getAllArtists();
- ?>
-<div class="tableContainer">
-            <h1>Ajout d'une musiques</h1>
-            <form method="POST" action="addArtist.php" enctype="multipart/form-data">
-                <div class="inputName input">
+// Récupere tous les artistes dans la variable '$artists'
+$artists = $DB->getAllArtists(); 
+$types = $DB->getAllType(); 
+?>
+
+
+<div class="formcontent">   
+    <form method="POST" action="addTitle.php" enctype="multipart/form-data">
+        <h1>Ajout d'une musique</h1>
+        <table>
+            <tr>
+                <td>
                     <label for="name">Nom :</label>
                     <input type="text" id="name" name="name">
-                </div>
-
-                <div class="selectCountry input">
-                    <label for="name">Artiste :</label>
-                    <select name="country" id="country">
+                </td>    
+            </tr>
+            <tr>
+                <td>
+                    <label for="artist">Artiste :</label>
+                    <select name="artist" id="artist">
                         <option value="0">Artiste </option>
                         <?php foreach($artists as $artist) : ?>
                             <option value="<?= $artist["idArtist"]; ?>"><?= $artist["artName"]; ?></option>
                         <?php endforeach; ?>
                     </select>
-                </div>
-                <p>
-                    <label for="img">logo de l'artiste :</label>
-                    <input type="file" name="printscreen" id="printscreen" />
-                </p>
-               
-                <div class="button">
-                    <div class="btnAdding">
-                        <input type="submit" id="btnSubmit" name="btnSubmit" value="Ajouter" />
-                    </div>
-                    <div class="btnDeleting">
-                        <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>
-                    </div>
-                </div>
-                <div class="test">
-                    <a href="allartists.php"><img width="100px" src="../../userContent/icon/backArrow.svg"></img></a>
-                </div>
-            </form>
-            <?php 
-                if(isset($_POST['btnSubmit'])) {
-                    if(!(isset($_POST['name'])) || empty($_POST['date']) || $_POST['country'] == 0/* || empty($_POST['printscreen'])*/)
-                     {
-                        echo '<h2 id="errorMessage">Veuillez renseignez tout les champs.</h2>';
-                    }
-                    else {
-                        $newID = $DB->addTitle($_POST['name'], $_POST['date'],  $_POST['country']);
-                        if($newID >= 0){
-                            $source = $_FILES["printscreen"]["tmp_name"];
-                            $destination = "../../userContent/img/artists/logo/$newID.jpg";
-                            move_uploaded_file($source, $destination);
-                            echo '<h1 id="validationMessage">L\'artiste à bien été ajouté.</h1>';
-                        }      
-                        else
-                        {
-                            echo '<h1> failed </h1>';
-                        }                                              
-                    }
-                }
-            ?>
-        </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="type">Genre :</label>
+                    <select name="type" id="type">
+                        <option value="0">Type </option>
+                        <?php foreach($types as $type) : ?>
+                            <option value="<?= $type["idType"]; ?>"><?= $type["typeName"]; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="img">Cover :</label>
+                    <input type="file" name="img" id="printscreen"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="duration">Durée :</label>
+                    <input id="duration" type="time" name='duration'>
+                </td>
+            </tr>
+        </table>    
+        <button type="submit" name="btnSubmit">Ajouter</button>
+        <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>  
+        <div class="test">
+            <a href="alltitle.php"><img width="100px" src="../../userContent/icon/backArrow.svg"></img></a>
+        </div>        
+    </form>
+</div>
+<!-- (!empty($_POST['name'])) || $_POST['artist'] == 0 || $_POST['type'] == 0 || (!empty($_POST['img'])) || (!empty($_POST['duration'])) -->
+<div class="erreurrr">
+<?php 
+    if(isset($_POST['btnSubmit'])) {
+        if(0 == 1)
+        {
+            echo '<div class="errorLoginContainer">
+            <h3 class="errorLogin">Veuillez renseignez tous les champs !</h3>
+            </div>';
+        }
+        else {
+            $newID = $DB->addTitle($_POST['name'], $_POST['artist'],  $_POST['type'], $_POST['duration']);
+            if($newID >= 0){
+                $source = $_FILES["printscreen"]["tmp_name"];
+                $destination = "../../userContent/img/artists/music/$newID.jpg";
+                move_uploaded_file($source, $destination);
+                echo '<h1 id="validationMessage">La musique a bien été ajouté.</h1>';
+            }      
+            else
+            {
+                
+            }                                              
+        }
+    }
+?>
+</div>
+   
 
 <?php else :
     header('Location: template/404.php'); 
