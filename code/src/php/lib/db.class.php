@@ -296,12 +296,17 @@ class DB{
         return $results;
     }
 
-    //vérifie si la table est vide
-
-    // $rows = mysql_result(mysql_query('SELECT COUNT(*) FROM table'), 0);
+    //récupere les playlists (sans forcément que l'utilisateur soit connecté)
+    public function getPlaylists(){
+        $query = 'SELECT * FROM t_playlist';
+        $reqExecuted = $this->querySimpleExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
 
     //récupere les playlists d'UN utilisateur
-    public function getPlaylists($idUser){
+    public function getPlaylistsUser($idUser){
         $query = 'SELECT * FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser';
         $binds = array(
             0 => array(
@@ -378,7 +383,7 @@ class DB{
     }
 
     // fonction pour ajouter une musique dans la bdd
-    public function addTitle($name, $date, $country){
+    public function addTitle($name, $duration, $artist, $type){
         $query = "INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES (:musName, :musDuration, :idxArtist, :idxType)";
         $binds = array(
             0 => array(
@@ -393,17 +398,18 @@ class DB{
             ),
             2 => array(
                 'field' => ':idxArtist',
-                'value' => $country,
-                'type' => PDO::PARAM_STR
+                'value' => $artist,
+                'type' => PDO::PARAM_INT
             ),
             3 => array(
                 'field' => ':idxType',
                 'value' => $type,
-                'type' => PDO::PARAM_STR
+                'type' => PDO::PARAM_INT
             )
         );
         $results = $this->queryPrepareExecute($query, $binds);
 
+        //récupere le dernier ID (qui vient d'être inséré)
         $query2 = "SELECT LAST_INSERT_ID()";
         $results2 = $this->querySimpleExecute($query2);
         $results2 = $this->formatData($results2);
