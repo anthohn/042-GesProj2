@@ -22,6 +22,9 @@ $musics = $DB->getAllTitle();
 	<p>Tous les titres</p>
 </div>	
 	<div class="alltitlemainBlock">
+	<?php if(isLogged() && (isAdmin())): ?>
+		<a class='addTitle' href="addTitle.php">ajouter</img></a>
+	<?php endif; ?>
 		<?php foreach ( $musics as $music):?>
 			<div class="ARPblock1">
 				<img src="../../userContent/img/music/<?= $music["idMusic"] ?>.jpg" alt="">
