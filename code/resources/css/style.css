@@ -181,7 +181,7 @@ input{
 	margin-top: 8px;
 	font-size: 17px;
 	border: none;
-	width: 150px; 
+	width: 157px; 
 	border-radius: 5px;
 	background-color: var(--buttonBack-color);
 	color: var(--back-color);
@@ -1084,6 +1084,17 @@ select {
 
 	.notlog {
 		margin: 15px 0 0 0;
+		display: flex;
+	}
+
+	.notlog a {
+		height: 20px;
+		margin-top: -8px;
+		text-align: center;
+	}
+
+	.notlog p {
+		display: none;
 	}
 
 	/*Content Home*/
@@ -1147,7 +1158,9 @@ select {
 	svg.like {
 		margin: 25px 25px 0 0;
 	}
-	}
+	
+	
+}
 
 @media only screen and (max-width: 735px)
 { 
@@ -1172,6 +1185,10 @@ select {
 
 	#loginForm {
 		text-align: center;
+	}
+
+	.notlog {
+		justify-content: center;
 	}
 }
 
@@ -1208,5 +1225,16 @@ select {
 	/*About*/
 	.contenutext {
 		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 494px)
+{ 
+	/*Login*/
+
+	.login-container {
+		height: 150px;
+		display: flex;
+  		align-items: center;
 	}
 }

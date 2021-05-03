@@ -24,7 +24,7 @@ require "template/header.php"; ?>
 				<a href="addPlaylist.php">+</a>
 			</div>
 		</div>
-		<?php foreach ( $playlists as $playlist): ?>
+		<?php foreach ($playlists as $playlist): ?>
 			<div class="PLblock1">
 				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
 					<div class="PLimgCover">

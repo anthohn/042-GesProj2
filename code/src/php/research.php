@@ -8,11 +8,14 @@ Description : Recherche dynamique pour chaque nom d'artiste.
 require "template/header.php" ?>
 <?php 
 	$musics = $DB->getAllTitle();
+	$idUser = ($_SESSION['idUser']);
+	$playlists = $DB->getPlaylists($idUser);
 
 	if(isset($_GET['search']) && !empty($_GET['search'])) {
 		$search = htmlspecialchars($_GET['search']);
-		$artists = $DB->getSearchedArtistsMusics($search);
+		$searchResults = $DB->getSearchedArtistsMusicsPlaylists($search);
 		$musics = $DB->getAllTitleSearched($search);
+		$playlists = $DB->getAllPlaylistSearched($search);
 	}
 ?>
 <!-- barre de recherche--> 
@@ -34,9 +37,11 @@ require "template/header.php" ?>
 	<div class="result">
 		<?php 
 			if(isset($_GET['search']) && !empty($_GET['search'])) {
-				if(count($artists) > 0) {
-					foreach($artists as $artist) {
-						
+				if(count($searchResults) > 0) {
+					foreach($searchResults as $searchResult) {
+						// echo '<pre>';
+						// 	echo print_r($searchResult);
+						// echo '</pre>';
 					}
 					echo "<h2>Résultat pour : $search</h2>";
 				}
@@ -77,5 +82,22 @@ require "template/header.php" ?>
 			</div>
 		<?php endforeach; ?>
 	</div> 
+	<div class="PLmainBlock">
+		<?php foreach ($playlists as $playlist): ?>
+			<div class="PLblock1">
+				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
+					<div class="PLimgCover">
+						<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
+					</div>
+					<div class="PLblockTitle">
+						<p><?= $playlist['plaName']; ?></p>
+					</div>
+					<div class="PLblockText">
+						<p><?= $playlist['plaCreationDate']; ?></p>
+					</div>
+				</a>
+			</div>	
+		<?php endforeach ?>
+	</div>
 </div>
 <?php require "template/footer.php"; ?>
