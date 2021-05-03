@@ -1,9 +1,28 @@
 /**
 * ETML
-* Auteur      : Anthony Höhn / Younes Sayeh
+* Auteur      : Anthony Höhn / Younes Sayeh / Julien Cartier / Killian Good
 * Date        : 01.02.2021
 * Description : style du html
 **/
+
+/**Variables CSS - Couleur**/
+:root
+{
+	--back-color: #ffffff;
+	--backError-color: rgb(102, 24, 24);
+	--gray-color: Gray;
+	--blackBackground-color: Black;
+	--borderInput-color: #9e9e9e;
+	--buttonBack-color: #6b9771;
+	--coralButton-color: Coral;
+	--lightBlack-color: #181818;
+	--lighterBlack-color: darkgrey;
+	--pastel-color: #dcdcdc;
+	--lightPastel-color: #c8c8c8;
+	--greenLike-color: #36ba36;
+	--dropdown-color: #f9f9f9;
+}
+
 
 html{
 	/* height: 100%; */
@@ -14,7 +33,7 @@ html{
 }
 
 body{
-	background: linear-gradient(to bottom right, Gray, Black);
+	background: linear-gradient(to bottom right, var(--gray-color), var(--blackBackground-color));
 	margin: 0;
 	background-position: center;
 	background-attachment: fixed;
@@ -30,9 +49,9 @@ body{
 }
 
 .error{
-	background-color: rgb(102, 24, 24);
+	background-color: var(--backError-color);
 	padding: 10px;
-	color: white;
+	color: var(--back-color);
 	text-align: center;
 }
 
@@ -60,7 +79,7 @@ body{
 .bar {
 	height: 7px;
 	width: 100%;
-	background-color: white;
+	background-color: var(--back-color);
 	border-radius: 10px;
 }
 
@@ -83,7 +102,7 @@ body{
 }
 
 .leftnav h1{
-	color: white;
+	color: var(--back-color);
 }
 
 .leftnav{
@@ -92,7 +111,7 @@ body{
 	position: fixed;
 	height: 150vh;
 	width: 232px;
-	background: black;
+	background: var(--blackBackground-color);
 	padding-top : 40px;
 }
 
@@ -112,19 +131,19 @@ body{
 	padding-bottom: 5px;
 	border-radius:7px;
 	display: block;
-	color: Gray;
+	color: var(--gray-color);
 	padding: 8px 16px;
 	text-decoration: none;
 	font-weight: bold;
 }
 
 .leftnav li a:hover {
-	color: white;
+	color: var(--back-color);
 	transition: all 0.2s ease-out;
 }
 
 #active {
-	color: White;
+	color: var(--back-color);
 }
 
 .logo{
@@ -138,7 +157,7 @@ body{
 
 .allArtists{
 	padding-top: 10px;
-	border-top: 1px solid Gray;
+	border-top: 1px solid var(--gray-color);
 }
 
 
@@ -156,7 +175,7 @@ input{
   border: none;
   width: 150px; 
   border-radius: 5px;
-  border: 2px solid rgb(158, 158, 158);
+  border: 2px solid var(--borderInput-color);
 }
 
 .login-container button {
@@ -166,8 +185,8 @@ input{
 	border: none;
 	width: 150px; 
 	border-radius: 5px;
-	background-color: rgb(107, 151, 113);
-	color: white;
+	background-color: var(--buttonBack-color);
+	color: var(--back-color);
 }
 
 .notlog a {
@@ -178,14 +197,14 @@ input{
 	border: none;
 	width: 150px; 
 	border-radius: 5px;
-	background-color:coral;
-	color: white; 
+	background-color:var(--coralButton-color);
+	color: var(--back-color);
 }
 
 .notlog p {
 	padding: 0 0 10px 10px;
 
-	color: white;
+	color: var(--back-color);
 }
 
 
@@ -224,12 +243,12 @@ input{
 	min-height: 200px;
 	border-radius: 10px;
 	margin: 50px 20px 30px 20px;
-	background-color: rgb(24, 24, 24);
+	background-color: var(--lightBlack-color);
 
 }
 
 .ACmainBlock .ACblock:hover{
-	background-color: rgb(43, 43, 43);
+	background-color: var(--lighterBlack-color);
 
 }
 
@@ -246,7 +265,7 @@ input{
 	width: 100%;
 	font-weight: 800;
 	font-size: 20px;
-	color: rgb(220, 220, 220);
+	color: var(--pastel-color);
 	/* text-shadow: 1px 1px 3px #5c5c5c; */
 
 }
@@ -255,13 +274,13 @@ input{
 	width: 100%;
 	float: bottom;
 	text-decoration: none;
-	color: rgb(200, 200, 200);
+	color: var(--lightPastel-color);
 }
 
 
 
 .ACblock img{
-	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	box-shadow: 0 7px 40px 0 var(--blackBackground-color);
 	border-radius: 100px;
 	margin-top: 10px;
 	margin-bottom: 0;
@@ -274,8 +293,8 @@ footer{
 	float: left;
 	height: 100px;
 	width: 100%;
-	background-color: rgb(19, 19, 19);
-	color: gray;
+	background-color: var(--blackBackground-color);
+	color: var(--gray-color);
 	bottom: 0;
 	position: fixed;
 }
@@ -322,7 +341,7 @@ footer{
 
 
 .searchBarTitle h1 {
-	color: white;
+	color: var(--back-color);
 	padding: 0 0 20px 0;
 }
 
@@ -340,7 +359,7 @@ footer{
 	flex-direction: row;
 	width: 100%;
 	height: 100%;
-	background-color: white;
+	background-color: var(--back-color);
 	border-radius: 10px;
 }
 
@@ -369,14 +388,14 @@ footer{
 	height: 40px;
 	font-size: 25px;
 	border: 0;
-	background-color: white;
+	background-color: var(--back-color);
 	outline:none;
 }
 
 .searchBarInput {
 	width: 100%;
 	margin: auto;
-	background-color: white;
+	background-color: var(--back-color);
 	border-radius: 10px;
 }
 
@@ -389,7 +408,7 @@ footer{
 .result {
 	text-align: left;
 	margin: 5% 0 0 0; 
-	color: white;
+	color: var(--back-color);
 }
 
 .titleContainer {
@@ -398,7 +417,7 @@ footer{
     border-radius: 5px;
     margin: 5% 0 0 0;
     width: 100%;
-    background-color: rgb(10, 10, 10);
+    background-color: var(--blackBackground-color);
 }
 
 .titleContainer img{
@@ -412,7 +431,7 @@ footer{
 	float: left;
 	margin: 30px 0 0 3%;
 	font-size: 18px;
-	color: rgb(180, 180, 180);
+	color: var(--lightPastel-color);
 }
 
 
@@ -432,12 +451,12 @@ footer{
 	height: 270px;
 	margin: 50px 20px 0 20px;
 	flex-basis: 260px;
-	background-color: darkgrey;
+	background-color: var(--lighterBlack-color);
 }
 
 .ARblock1 a{
 	text-decoration: none;
-	color: rgb(32, 32, 32);
+	color: var(--blackBackground-color);
 }
 
 .ARblockTitle p{
@@ -446,11 +465,11 @@ footer{
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
-	text-shadow: 4px 4px 7px #5c5c5c;
+	text-shadow: 4px 4px 7px var(--lighterBlack-color);
 }
 
 .ARimgCover img{
-	box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+	box-shadow: 0 7px 40px 0 var(--blackBackground-color);
 	border-radius: 100px;
 	margin-top: 30px;
 	margin-bottom: 0;
@@ -469,7 +488,7 @@ footer{
 }
 
 .plus{
-	background-color: rgb(88, 88, 88);
+	background-color: var(--lighterBlack-color);
 	height: 22px;
 	width: 22px;
 	margin-left: 85%;
@@ -481,7 +500,7 @@ footer{
 	margin: 5px;
 	font-weight: 400;
 	font-size: 20px;
-	color: white;
+	color: var(--back-color);
 	text-decoration: none;
 }
 
@@ -490,13 +509,13 @@ footer{
 }
 
 .ARblock1:hover{
-    box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+    box-shadow: 0 7px 40px 0 var(--blackBackground-color);
 } 
 /*******************************************TOUS LES TITRES**********************************************/
 .alltitle{
 	margin-left: 232px;
 	padding: 30px 0 0 0;
-	color: White;
+	color: var(--back-color);
 	font-weight: bold;
 	font-size: 80px;
 }
@@ -509,7 +528,7 @@ footer{
 
 .alltitle img{
 	float: left;
-	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
+	box-shadow: 0 24px 25px 0 var(--blackBackground-color);
 	border-radius: 100px;
 	margin: 70px 0 0 0;
 	height: 120px;
@@ -562,7 +581,7 @@ footer{
 .Playlisttitle{
 	margin-left: 232px;
 	padding: 30px 0 0 70px;
-	color: White;
+	color: var(--back-color);
 	font-weight: bold;
 	font-size: 80px;
 }
@@ -575,7 +594,7 @@ footer{
 
 .Playlisttitle img{
 	float: left;
-	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
+	box-shadow: 0 24px 25px 0 var(--blackBackground-color);
 	border-radius: 20px;
 	margin: 70px 0 0 0;
 	height: 120px;
@@ -584,7 +603,7 @@ footer{
 }
 
 .ListMusicsMainBlock{
-	background: linear-gradient(to bottom right, rgb(32, 32, 32), rgb(138, 143, 138));
+	background: linear-gradient(to bottom right, var(--blackBackground-color), var(--gray-color));
 	padding-bottom: 12%;
 	margin: 100px 0 0 232px;
 	text-align: center;
@@ -598,7 +617,7 @@ footer{
 }
 
 .PLblock1 p{
-	color: rgb(36, 36, 36);
+	color: var(--lighterBlack-color);
 }
 
 .notlogplaylist{
@@ -611,7 +630,7 @@ footer{
 .plalistCreaTitle{
 	margin-left: 232px;
 	padding: 0 0 0 0;
-	color: White;
+	color: var(--back-color);
 	font-weight: bold;
 	font-size: 80px;
 }
@@ -626,7 +645,7 @@ footer{
 
 .formCreation label{
 	font-weight: bold;
-	color: white;
+	color: var(--back-color);
 	margin-left: 2%;
 	font-size: 30px;
 }
@@ -650,7 +669,7 @@ footer{
 .ARPtitle{
 	margin-left: 232px;
 	padding: 30px 0 0 70px;
-	color: White;
+	color: var(--back-color);
 	font-weight: bold;
 	font-size: 80px;
 }
@@ -663,7 +682,7 @@ footer{
 
 .ARPtitle img{
 	float: left;
-	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
+	box-shadow: 0 24px 25px 0 var(--blackBackground-color);
 	border-radius: 100px;
 	margin: 70px 0 0 0;
 	height: 120px;
@@ -698,7 +717,7 @@ footer{
 	float: left;
 	margin: 30px 0 0 3%;
 	font-size: 18px;
-	color: rgb(180, 180, 180);
+	color: var(--gray-color);
 	/* text-shadow: 4px 4px 7px #5c5c5c; */
 }
 
@@ -718,18 +737,18 @@ footer{
 svg.like{
 	float: right;
 	margin: 25px 50px 0 0;
-	fill: White;
+	fill: var(--back-color);
 }
 
 svg.like:hover{
-	fill: rgb(54, 184, 54);
+	fill: var(--greenLike-color);
 }
 
 .dropbtn {
 	margin : 25px 14px 0 0;
 	border-radius: 10px;
-	background-color: rgb(136, 136, 136);
-	color: white;
+	background-color: var(--gray-color);
+	color: var(--back-color);
 	padding: 5px 10px 0 10px;
 	font-size: 18px;
 	font-weight: 800;
@@ -748,17 +767,18 @@ svg.like:hover{
 }
 
 .dropdown-content {
-	border-radius: 10px;
+	border-radius: 9px;
 	display: none;
 	right: 0;
 	background-color: #f9f9f9;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	position: relative; 
+	background-color: var(--dropdown-color);
+	box-shadow: 0px 8px 16px 0px var(--blackBackground-color);
 	z-index: 1;
 }
 
 .dropdown-content a {
-	color: black;
+	color: var(--blackBackground-color);
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
@@ -782,7 +802,7 @@ svg.like:hover{
 }
 
 .title p{
-	color: White;
+	color: var(--back-color);
 	font-weight: bold;
 	font-size: 30px;
 }
@@ -801,7 +821,7 @@ svg.like:hover{
 	margin: 170px 50px 150px 50px;
 	background-color: darkgrey;
 	border-radius: 30px;
-	box-shadow: 0 7px 40px 0 rgba(88, 88, 88);
+	box-shadow: 0 7px 40px 0 var(--lighterBlack-color);
 }
 
 .playlistcreation p{
@@ -817,17 +837,17 @@ svg.like:hover{
 	border-radius: 30px;
 	margin-left: 108px;
 	margin-right: 108px;
-	background-color: rgb(88, 88, 88);
+	background-color: var(--borderInput-color);
 }
 
 .playlistcreationBoutton a{
 	font-size: 40px;
-	color: white;
+	color: var(--back-color);
 	text-decoration: none;
 }
 
 .playlistcreationBoutton:hover a {
-	color: rgb(226, 226, 226);
+	color: var(--lightPastel-color);
 }
 
 .PLblock1{
@@ -835,8 +855,8 @@ svg.like:hover{
 	height: 320px;
 	margin: 50px;
 	flex-basis: 260px;
-	background-color: darkgrey;
-	box-shadow: 0 7px 40px 0 rgba(131, 131, 131, 0.7);
+	background-color: var(--dropdown-color);
+	box-shadow: 0 7px 40px 0 var(--gray-color);
 }
 
 .PLblockTitle p{
@@ -844,8 +864,8 @@ svg.like:hover{
 	margin: 0 10px;
 	font-weight: 800;
 	font-size: 25px;
-	color: rgb(32, 32, 32);
-	text-shadow: 4px 4px 7px #5c5c5c;
+	color: var(--lightBlack-color);
+	text-shadow: 4px 4px 7px var(--gray-color);
 }
 
 .PLimgCover img{
@@ -867,7 +887,7 @@ svg.like:hover{
 }
 
 .playlistcreation:hover{
-    box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
+    box-shadow: 0 7px 40px 0 var(--blackBackground-color);
 } 
 
 /******************************************Formulaire*******************************************/
@@ -881,8 +901,8 @@ svg.like:hover{
 
 .tableContainer h1{
 	padding: 5px;
-	color: white;
-	background-color: rgb(85, 145, 93);
+	color: var(--back-color);
+	background-color: var(--greenLike-color);
 	text-align: center;
 	/* border: 1px solid white; */
 	border-radius: 10px;
@@ -952,7 +972,7 @@ select {
 .contenutext{
 	width: 50%;
     border-radius: 10px;
-    background-color: rgb(169, 169, 169);
+    background-color: var(--gray-color);
     box-shadow: 0 7px 40px 0 rgb(131 131 131 / 70%);
     /* position: absolute; */
     margin: 123px 0 0 26%;
@@ -964,7 +984,7 @@ select {
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(32, 32, 32);
-	text-shadow: 2px 4px 7px #8f8686;
+	text-shadow: 2px 4px 7px var(--gray-color);
 }
 
 .resContenu {
@@ -973,7 +993,7 @@ select {
 	font-weight: 800;
 	font-size: 25px;
 	color: rgb(150, 150, 150);
-	text-shadow: 2px 4px 7px #000000;
+	text-shadow: 2px 4px 7px var(--blackBackground-color);
 }
 
 .iconContainer a {
@@ -1021,7 +1041,7 @@ select {
 		height: 110px;
 		padding: 0;
 		position: unset;
-		border-bottom: 1px solid gray;
+		border-bottom: 1px solid var(--gray-color);
 	}
 
 	.leftnav ul
@@ -1033,16 +1053,16 @@ select {
 
 	.leftnav li {
 		width: 100%;
-		background-color: black;
+		background-color: var(--blackBackground-color);
 		text-align: center;
 	}
 
 	.leftnav li:hover {
-		background-color: Gray;
+		background-color: var(--pastel-color);
 	}
 
 	.leftnav ul li a {
-		color: white;
+		color: var(--back-color);
 		padding: 12px;
 	}
 
@@ -1059,7 +1079,7 @@ select {
 	}
 
 	.home {
-		border-top: 1px solid Gray;
+		border-top: 1px solid var(--pastel-color);
 	}
 
 	.navBarLink.active {
@@ -1079,7 +1099,7 @@ select {
 
 	#psw, #login {
 		height: 34px;
-    	border: 1px solid rgb(158, 158, 158);
+    	border: 1px solid var(--pastel-color);
 	}
 
 	.notlog {
@@ -1161,11 +1181,11 @@ select {
 	.login-container {
 		position: unset;
 		margin: 0;
-		background-color: black;
+		background-color: var(--blackBackground-color);
 		width: 100%;
 		border-radius: 0;
 		height: 57px;
-		border: 1px solid grey;
+		border: 1px solid var(--gray-color);
 		border-left: none;
 		border-right: none;
 	}
@@ -1184,11 +1204,11 @@ select {
 
 	#heartBtnList {
 		display: block;
-		border-top: 1px solid #808080;
+		border-top: 1px solid var(--gray-color);
 	}
 
 	.likeList:hover {
-		fill: rgb(54, 184, 54);
+		fill: var(--greenLike-color);
 	}
 
 	#heartBtn {
