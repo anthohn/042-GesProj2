@@ -359,7 +359,46 @@ class DB{
             )
         );
         $results = $this->queryPrepareExecute($query, $binds);
-        return $results;
+
+        $query2 = "SELECT LAST_INSERT_ID()";
+        $results2 = $this->querySimpleExecute($query2);
+        $results2 = $this->formatData($results2);
+
+        return $results2[0]["LAST_INSERT_ID()"];
+    }
+
+    // fonction pour ajouter une musique dans la bdd
+    public function addTitle($name, $date, $country){
+        $query = "INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES (:musName, :musDuration, :idxArtist, :idxType)";
+        $binds = array(
+            0 => array(
+                'field' => ':musName',
+                'value' => $name,
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array(
+                'field' => ':musDuration',
+                'value' => $duration,
+                'type' => PDO::PARAM_INT 
+            ),
+            2 => array(
+                'field' => ':idxArtist',
+                'value' => $country,
+                'type' => PDO::PARAM_STR
+            ),
+            3 => array(
+                'field' => ':idxType',
+                'value' => $type,
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $results = $this->queryPrepareExecute($query, $binds);
+
+        $query2 = "SELECT LAST_INSERT_ID()";
+        $results2 = $this->querySimpleExecute($query2);
+        $results2 = $this->formatData($results2);
+
+        return $results2[0]["LAST_INSERT_ID()"];
     }
 
     //Connexion d'un utilisateur à la bdd

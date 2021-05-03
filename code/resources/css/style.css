@@ -6,8 +6,6 @@
 **/
 
 html{
-	/* height: 100%; */
-	/* temporaire pour pouvoir scroll corecemment dans la page*/
 	height: 120%;
 	width: 100%;
 	font-family: Arial, Helvetica, sans-serif;
@@ -493,6 +491,18 @@ footer{
     box-shadow: 0 7px 40px 0 rgba(0, 0, 0, 0.7);
 } 
 /*******************************************TOUS LES TITRES**********************************************/
+
+.addTitle{
+	border-radius: 10px;
+	margin: auto;
+	width: 100px;
+	background-color: red;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+}
+
 .alltitle{
 	margin-left: 232px;
 	padding: 30px 0 0 0;
@@ -527,36 +537,6 @@ footer{
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
-/*******************************************Titres likés*************************************************/
-/* .alltitle{
-	margin-left: 232px;
-	padding: 30px 0 0 0;
-	color: White;
-	font-weight: bold;
-	font-size: 80px;
-}
-
-
-.alltitle img{
-	float: left;
-	box-shadow: 0 24px 25px 0 rgba(0, 0, 0, 0.7);
-	border-radius: 100px;
-	margin: 70px 0 0 0;
-	height: 120px;
-	position: fixed;
-	z-index: -1;
-}
-
-.alltitlemainBlock{
-	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
-	padding-bottom: 40%;
-	margin: 350px 0 0 232px;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-} */
 
 /*******************************************Playlist perso***********************************************/
 .Playlisttitle{
