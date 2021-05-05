@@ -5,6 +5,7 @@ require "lib/db.class.php";
 require "config/dbconfig.cfg";
 $DB = new DB (Config::$host, Config::$username, Config::$password, Config::$database);
 $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -115,6 +116,7 @@ if(isset($_POST["forminscription"]))
                     $_SESSION['isAdmin'] = $user['useIsAdmin'];
 					$_SESSION['idUser'] = $user['idUser'];
                     header("Location:home.php");
+					setcookie($user['idUser'] , $user['useLogin'] , time() + 60 * 60 * 24);
                 }
             }
         }
