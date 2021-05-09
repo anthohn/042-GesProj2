@@ -9,7 +9,8 @@
 :root
 {
 	--back-color: #ffffff;
-	--backError-color: rgb(102, 24, 24);
+	--backError-color: #cf0f0f;
+	--backSucces-color: #0fcf59;
 	--gray-color: Gray;
 	--blackBackground-color: Black;
 	--borderInput-color: #9e9e9e;
@@ -160,31 +161,22 @@ body{
 }
 
 
-/*****************************LOGIN*********************************/
+/*****************************LOGIN accueil*********************************/
 
 .login-container{
 	margin: 400px 0 0 0;
 	border-radius: 10px;
 }
 
-input{
-  padding: 2px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-  width: 150px; 
-  border-radius: 5px;
-  border: 2px solid var(--borderInput-color);
-}
-
-.login-container button {
+.login-container a {
+	text-decoration: none;
 	padding: 10px;
 	margin-top: 8px;
 	font-size: 17px;
 	border: none;
-	width: 157px; 
+	width: 150px; 
 	border-radius: 5px;
-	background-color: var(--buttonBack-color);
+	background-color:var(--coralButton-color);
 	color: var(--back-color);
 }
 
@@ -202,10 +194,298 @@ input{
 
 .notlog p {
 	padding: 0 0 10px 10px;
-
 	color: var(--back-color);
 }
 
+/*****************************CONNEXION*********************************/
+
+.connexionFormcontent{
+	margin: 0 0 0 0;
+  	display: flex;
+  	justify-content: center;
+}
+
+.connexionFormcontent form {
+	text-align: center;
+	margin: 100px 0 0 0;
+	height: 500px;
+	width: 400px;
+	background-color: var(--ligthBlackhover-color);
+	border-radius: 15px;
+}
+
+.connexionFormcontent form h2{
+	color: var(--pastel-color);
+	font-size: 30px;
+	margin: 20px 10px 0 20px;
+	float: left;
+	padding: 10px 10px 100px 0;
+}
+
+.connexionFormcontent table{
+  	margin: 0 0 0 20px;
+}
+
+.connexionFormcontent form table tr td{
+  	font-size: 25px;
+}
+
+.connexionFormcontent form button{
+	font-size: 20px;
+	border: none;
+	padding: 10px 20px;
+	color: #ffffff;
+	background-color:var(--gray-color);
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.connexionFormcontent form button:hover{
+	transition: all 0.3s ease-out;
+	background-color:var(--gray-color);
+}
+
+.connexionFormcontent form table tr td svg{
+	margin: 10px 0 0 0;
+	position: absolute;
+}
+
+.connexionFormcontent form table tr input{
+	font-size: 18px;
+	border-radius: 10px;
+	border: 1px solid var(--darkGrey-color);
+	width: 270px;
+	margin: 10px 0 0 50px;
+	padding: 7px;
+}
+
+.connexionFormcontent button{
+  	margin: 30px 0 0 0;
+}
+
+.connexionFormcontent p{
+	color: var(--greyTitle-color);
+	margin: 90px 0 0 0;
+}
+
+.connexionFormcontent a{
+  	color: rgb(223, 223, 223);
+}
+
+.connexionFormcontent a:hover{
+	transition: all 0.3s ease-out;
+	color:rgb(88, 94, 105);
+}
+
+.tableContainer {
+	margin: 0 0 0 20px;
+	color: var(--greyTitle-color);
+}
+
+/**********************CreateAccount**********************/
+
+
+.newAccountFormcontent{
+	display: flex;
+  	justify-content: center;
+  
+}
+
+.newAccountFormcontent form {
+	text-align: center;
+	margin: 100px 0 0 0;
+	height: 550px;
+	width: 400px;
+	background-color: var(--ligthBlackhover-color);
+	border-radius: 15px;
+}
+
+.newAccountFormcontent form h2{
+	color: var(--pastel-color);
+	font-size: 30px;
+	margin: 20px 10px 0 20px;
+	float: left;
+	padding: 10px 10px 100px 0;
+}
+
+.newAccountFormcontent table{
+  	margin: 0 0 0 20px;
+}
+
+.newAccountFormcontent form table tr td{
+  font-size: 25px;
+}
+
+.newAccountFormcontent form button{
+  	font-size: 20px;
+  	border: none;
+  	padding: 10px 20px;
+  	color: var(--pastel-color);
+  	background-color: var(--gray-color);
+  	border-radius: 25px;
+  	cursor: pointer;
+}
+
+.newAccountFormcontent form button:hover{
+	transition: all 0.3s ease-out;
+  	background-color:var(--gray-color);
+}
+
+.newAccountFormcontent form table tr td svg{
+  	margin: 10px 0 0 0;
+  	position: absolute;
+}
+
+.newAccountFormcontent form table tr input{
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid var(--darkGrey-color);
+  width: 270px;
+  margin: 10px 0 0 50px;
+  padding: 7px;
+}
+
+.newAccountFormcontent button{
+  margin: 30px 0 0 0;
+}
+
+.newAccountFormcontent p{
+  color: var(--pastel-color);
+  margin: 90px 0 0 0;
+}
+
+.newAccountFormcontent a{
+  color: var(--lightGreen-color);
+}
+
+.newAccountFormcontent a:hover{
+  color: var(--green-color);
+}
+
+.errorLoginContainer{
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+
+.errorLogin{
+  margin: auto;
+  width: 380px;
+  padding: 10px;
+  color: var(--pastel-color);
+  border-radius: 25px;
+  text-align: center;
+  background-color: var(--backError-color);
+}
+
+.succesLoginContainer{
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+
+.succesLogin{
+  margin: auto;
+  width: 380px;
+  padding: 10px;
+  color: var(--back-color);
+  border-radius: 25px;
+  text-align: center;
+  background-color: var(--backSucces-color);
+}
+
+.tableContainer {
+  margin: 0 0 0 20px;
+  color: var(--greyTitle-color);
+}
+
+/******************ACCOUNT**********************/
+
+
+.accountFormcontent{
+	display: flex;
+  	justify-content: center;
+  
+}
+
+.accountFormcontent form {
+  text-align: center;
+  margin: 100px 0 0 0;
+  height: auto;
+  width: 400px;
+  background-color: var(--ligthBlackhover-color);
+  border-radius: 15px;
+}
+
+.accountFormcontent form table tr td .logo {
+  margin-bottom:20px;
+}
+
+
+.accountFormcontent form h2{
+  color: var(--pastel-color);
+  font-size: 30px;
+  margin: 20px 10px 0 20px;
+  float: left;
+  padding: 10px 10px 50px 0;
+}
+
+.accountFormcontent table{
+  margin: auto;
+
+}
+
+.accountFormcontent form table tr td{
+  height: 100px;
+  font-size: 25px;
+}
+
+
+.accountFormcontent form table tr td svg{
+  margin: 10px 0 0 0;
+}
+
+.accountFormcontent form table tr td p{
+	color: var(--pastel-color);
+  font-size: 18px;
+  border-radius: 10px;
+  width: 270px;
+  margin: auto;
+  padding: 7px;
+}
+
+
+.accountFormcontent p{
+  color: var(--greyTitle-color);
+  margin: 90px 0 0 0;
+}
+
+.accountFormcontent .logout a{
+	font-size: 20px;
+	border-radius: 25px;
+	color: var(--pastel-color);
+	background-color: var(--gray-color);
+	text-decoration: none;
+	margin: 10px;
+	padding: 12px 15px 10px 15px;
+}
+
+.accountFormcontent .logout a:hover{
+	transition: all 0.3s ease-out;
+	background-color:var(--gray-color);
+}
+
+.accountFormcontent .deleteAccount a{
+  font-size: 15px;
+  border-radius: 25px;
+  color: var(--lightGreen-color);
+  text-decoration: none;
+  margin: 10px;
+  padding: 12px 15px 10px 15px;
+}
+
+.accountFormcontent .deleteAccount a:hover{
+  transition: all 0.3s ease-out;
+  color: var(--green-color);
+}
 
 /******************************ACCUEIL******************************/
 
@@ -913,21 +1193,6 @@ svg.like:hover{
 	width: 170px;
 	margin: 10px 0 0 50px;
 	padding: 7px;
-}
-
-.errorLoginContainer{
-	margin: 10px 0 0 0;
-	width: 100%;
-}
-  
-.errorLogin{
-	margin: auto;
-	width: 380px;
-	padding: 10px;
-	color: var(--back-color);
-	border-radius: 25px;
-	text-align: center;
-	background-color: var(--redAlert-color);
 }
 
 .erreurrr{

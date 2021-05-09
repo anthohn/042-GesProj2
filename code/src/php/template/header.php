@@ -74,17 +74,13 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 					<?php endif; ?>
 					<div class="login-container">
                    		<?php if(!isLogged()): ?>
-						<form method="post" action="home.php" id="loginForm">
 							<div class="inputContainer">
-								<input type="text" placeholder="Nom d'utilisateur" name="login" id="login">
-								<input type="password" placeholder="Mot de passe" name="psw" id="psw">
-								<button type="submit" name="forminscription">Se Connecter</button>
+								<a href="connexion.php">Connexion</a>
 							</div>
-						</form>
 						<?php else: ?>
 							<div class="notlog">
 								<p><?= 'Bonjour ' . $_SESSION['username']; ?></p>
-								<a href="home.php?auth=logout">Se deconnecter</a>
+								<a href="account.php">Mon compte</a>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -93,38 +89,3 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 			</div>
 		</div>
 
-<?php
-if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout") 
-{
-	session_unset();
-	session_destroy();
-	header("Location:home.php");
-}
-
-if(isset($_POST["forminscription"]))
-{
-    if(!empty($_POST["login"]) || (!empty($_POST["psw"])))
-    {	
-        $users = $DB->getUsers();
-        foreach($users as $user)
-        {
-            if($user['useLogin'] == $_POST['login'])
-            {
-                if(password_verify($_POST['psw'], $user['usePassword']))
-                {
-                    $_SESSION['username'] = $user['useLogin'];
-                    $_SESSION['isAdmin'] = $user['useIsAdmin'];
-					$_SESSION['idUser'] = $user['idUser'];
-                    header("Location:home.php");
-					setcookie($user['idUser'] , $user['useLogin'] , time() + 60 * 60 * 24);
-                }
-            }
-        }
-    }
-    else
-    {
-        $erreur = "Veuillez renseignez tous les champs !";
-        echo $erreur;
-    }
-}
-?>

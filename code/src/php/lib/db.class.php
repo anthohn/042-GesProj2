@@ -134,15 +134,6 @@ class DB{
         $this->unsetData($reqExecuted);
         return $results;
     }
-    
-    //fonction qui va chercher le nom de l'utilisateur -> Killian Good
-    public function getUserAccount(){
-        $query = "SELECT username FROM accounts";
-        $reqExecuted = $this->querySimpleExecute($query);
-        $results = $this->formatData($reqExecuted);
-        $this->unsetData($reqExecuted);
-        return $results;
-    }
 
     //
     public function getSearchedArtistsMusicsPlaylists($search){
@@ -426,6 +417,40 @@ class DB{
         return $results;
     }
 
+    //ajout d'un utilisateur dans la bdd 
+    public function addUser($login, $psw){
+        $query = "INSERT INTO t_user (useLogin, usePassword) VALUES (:useLogin, :usePassword)";
+        $binds = array(
+            0 => array(
+                'field' => ':useLogin',
+                'value' => $login,
+                'type' => PDO::PARAM_STR
+            ),  
+            1 => array(
+                'field' => ':usePassword',
+                'value' => $psw,
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
 
-    
+    // Suppression d'untilisateur dans la bdd
+    public function deleteUser($idUser){
+        $query = "DELETE FROM t_user WHERE idUser = :id";
+        $binds = array(
+            0 => array(
+                'field' => ':id',
+                'value' => $idUser,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }  
 }

@@ -136,7 +136,7 @@ CREATE TABLE t_user(
   idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   useLogin varchar(50) NOT NULL,
   usePassword varchar(255) NOT NULL,
-  useIsAdmin BOOLEAN NOT NULL,
+  useIsAdmin BOOLEAN NOT NULL DEFAULT 0,
   useLikedTitle INT
 );
 
@@ -156,17 +156,17 @@ CREATE TABLE t_playlist (
   plaName VARCHAR(255) NOT NULL,
   plaCreationDate DATE NOT NULL,
   idxUser INT,
-  CONSTRAINT fk_t_playlist_t_user_idUser FOREIGN KEY (idxUser) REFERENCES t_user (idUser)
+  CONSTRAINT fk_t_playlist_t_user_idUser FOREIGN KEY (idxUser) REFERENCES t_user (idUser) ON DELETE CASCADE
 );
 
 INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
   ('Noice 2.0', '2020-01-14', 2),
   ('Party Playlist', '2021-04-26', 2),
-  ('ZolaSki', '2015-04-26', 2),
-  ('Viral Hits', '2018-08-02', 5),
-  ('OG dkzop', '2018-05-12', 5),
-  ('Top 50 : Mondial', '2019-10-30', 5),
-  ('Party songs', '2021-12-09', 3
+  -- ('ZolaSki', '2015-04-26', 2),
+  -- ('Viral Hits', '2018-08-02', 5),
+  ('OG dkzop', '2018-05-12', 5
+  -- ('Top 50 : Mondial', '2019-10-30', 5),
+  -- ('Party songs', '2021-12-09', 3
 );
 
 --
@@ -176,7 +176,7 @@ CREATE TABLE t_add (
   idxPlaylist INT NOT NULL,
   idxMusic INT NOT NULL,
   CONSTRAINT fk_t_add_t_musix_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
-  CONSTRAINT fk_t_add_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist)
+  CONSTRAINT fk_t_add_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist) ON DELETE CASCADE
 );
 
 INSERT INTO t_add (idxPlaylist, idxMusic) VALUES
@@ -316,13 +316,6 @@ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
   (30,2,"https://music.apple.com/ca/album/starboy-feat-daft-punk/1440871397?i=1440871420"),
   (30,3,"https://youtu.be/34Na4j8AVgA"
 );
-
-
-
-
-
-
-
 
 CREATE TABLE t_liked(
   -- likMusic BOOLEAN,

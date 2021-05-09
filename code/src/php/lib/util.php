@@ -8,7 +8,7 @@ function isLogged() {
 
 function isAdmin() {
     if(isLogged()) {
-        if(isset($_SESSION['username']) && $_SESSION['isAdmin'] == 1) {
+        if(isset($_SESSION['username']) && $_SESSION['useIsAdmin'] == 1) {
             return true;
         }
     }
