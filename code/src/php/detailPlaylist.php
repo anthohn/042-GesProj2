@@ -1,16 +1,17 @@
 <?php $title = 'Oto - Détails playlist';
-
 require "template/header.php";
+
 $idPlaylist = $_GET["idPlaylist"];
 $getPlaylists = $DB->getPlaylist($idPlaylist);
 $playlistMusics = $DB->getMusicsPlaylist($idPlaylist);
+
 ?>
 <?php foreach ( $getPlaylists as $getPlaylist): ?>	
     <div class="Playlisttitle">
         <img src="../../userContent/img/playlists/cover/<?= $getPlaylist["idPlaylist"];?>.jpg" alt="">
         <p><?= $getPlaylist["plaName"]; ?></p>
     </div>
-	<?php endforeach ?>			
+<?php endforeach ?>			
 	
 <div class="ListMusicsMainBlock">
     <?php foreach ( $playlistMusics as $playlistMusic): ?>	

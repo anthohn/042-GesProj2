@@ -5,19 +5,21 @@ Date        : 11.03.2021
 Description : Recherche dynamique pour chaque nom d'artiste.
 -->
 <?php $title = 'Oto - Recherche';
-require "template/header.php" ?>
-<?php 
-	$musics = $DB->getAllTitle();
-	$idUser = $_SESSION['idUser'];
-	$playlists = $DB->getPlaylists($idUser);
+require "template/header.php" 
 
-	if(isset($_GET['search']) && !empty($_GET['search'])) {
-		$search = htmlspecialchars($_GET['search']);
-		$searchResults = $DB->getSearchedArtistsMusicsPlaylists($search);
-		$musics = $DB->getAllTitleSearched($search);
-		$playlists = $DB->getAllPlaylistSearched($search);
-	}
+$musics = $DB->getAllTitle();
+$idUser = $_SESSION['idUser'];
+$playlists = $DB->getPlaylists($idUser);
+
+if(isset($_GET['search']) && !empty($_GET['search']))
+{
+	$search = htmlspecialchars($_GET['search']);
+	$searchResults = $DB->getSearchedArtistsMusicsPlaylists($search);
+	$musics = $DB->getAllTitleSearched($search);
+	$playlists = $DB->getAllPlaylistSearched($search);
+}
 ?>
+
 <!-- barre de recherche--> 
 <div class="searchBar">
 	<div class="searchBarTitle">
@@ -34,26 +36,31 @@ require "template/header.php" ?>
 			</div>
 		</div>
 	</form>
+
 	<div class="result">
-		<?php 
-			if(isset($_GET['search']) && !empty($_GET['search'])) {
-				if(count($searchResults) > 0) {
-					echo '<pre>';
-						print_r($_SESSION);
-					echo '</pre>';
-					// foreach($searchResults as $searchResult) {
-					// 	echo '<pre>';
-					// 	print_r($_SESSION);
-					// echo '</pre>';
-					// }
-					echo "<h2>Résultat pour : $search</h2>";
-				}
-				else {
-					echo "<h2>Aucun résultat pour : $search</h2>";
-				}
+		<?php
+		if(isset($_GET['search']) && !empty($_GET['search']))
+		{
+			if(count($searchResults) > 0)
+			{
+				echo '<pre>';
+					print_r($_SESSION);
+				echo '</pre>';
+				// foreach($searchResults as $searchResult) {
+				// 	echo '<pre>';
+				// 	print_r($_SESSION);
+				// echo '</pre>';
+				// }
+				echo "<h2>Résultat pour : $search</h2>";
 			}
+			else
+			{
+				echo "<h2>Aucun résultat pour : $search</h2>";
+			}
+		}
 		?>
 	</div>
+
 	<div class="allTitleContainer">
 		<?php foreach ($musics as $music):?>
 			<div class="ARPblock1" id="ARPblock1Id">
@@ -85,6 +92,7 @@ require "template/header.php" ?>
 			</div>
 		<?php endforeach; ?>
 	</div> 
+
 	<div class="PLmainBlock">
 		<?php foreach ($playlists as $playlist): ?>
 			<div class="PLblock1">
@@ -102,5 +110,7 @@ require "template/header.php" ?>
 			</div>	
 		<?php endforeach ?>
 	</div>
+	
 </div>
+
 <?php require "template/footer.php"; ?>

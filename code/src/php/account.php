@@ -1,5 +1,5 @@
 <?php 
-$title = 'Connexion';
+$title = 'Oto - Connexion';
 require ('template/header.php');
 
 if(isLogged()): 

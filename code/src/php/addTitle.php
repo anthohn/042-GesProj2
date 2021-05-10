@@ -66,30 +66,33 @@ $types = $DB->getAllType();
         </div>        
     </form>
 </div>
-<!-- (!empty($_POST['name'])) || $_POST['artist'] == 0 || $_POST['type'] == 0 || (!empty($_POST['img'])) || (!empty($_POST['duration'])) -->
+
 <div class="erreurrr">
 <?php 
-    if(isset($_POST['btnSubmit'])) {
-        if(0 == 1)
-        {
-            echo '<div class="errorLoginContainer">
-            <h3 class="errorLogin">Veuillez renseignez tous les champs !</h3>
-            </div>';
-        }
-        else {
-            $newID = $DB->addTitle($_POST['name'], $_POST['artist'],  $_POST['type'], $_POST['duration']);
-            if($newID >= 0){
-                $source = $_FILES["printscreen"]["tmp_name"];
-                $destination = "../../userContent/img/artists/music/$newID.jpg";
-                move_uploaded_file($source, $destination);
-                echo '<h1 id="validationMessage">La musique a bien été ajouté.</h1>';
-            }      
-            else
-            {
-                
-            }                                              
-        }
+if(isset($_POST['btnSubmit'])) 
+{
+    if(0 == 1)
+    {
+        echo '<div class="errorLoginContainer">
+        <h3 class="errorLogin">Veuillez renseignez tous les champs !</h3>
+        </div>';
     }
+    else
+    {
+        $newID = $DB->addTitle($_POST['name'], $_POST['artist'],  $_POST['type'], $_POST['duration']);
+        if($newID >= 0)
+        {
+            $source = $_FILES["printscreen"]["tmp_name"];
+            $destination = "../../userContent/img/artists/music/$newID.jpg";
+            move_uploaded_file($source, $destination);
+            echo '<h1 id="validationMessage">La musique a bien été ajouté.</h1>';
+        }
+        else
+        {
+            
+        }                                              
+    }
+}
 ?>
 </div>
    

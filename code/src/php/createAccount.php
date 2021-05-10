@@ -1,9 +1,8 @@
 <?php 
 $title = 'Création compte';
 require ('template/header.php');
-?>
 
-<?php if(isset($_POST['forminscription']))
+if(isset($_POST['forminscription']))
 {
     $login = htmlspecialchars($_POST['login']);
 
@@ -37,9 +36,8 @@ require ('template/header.php');
         $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner tous les champs !</h4></div>'; 
     }
 }
-?>
 
-<?php if(!isLogged()): ?>
+if(!isLogged()): ?>
     <div class="newAccountFormcontent">
         <form method="post">
             <h2>Créer un compte</h2>
@@ -72,16 +70,16 @@ require ('template/header.php');
             <p>Déjà inscrit ? <a href="connexion.php">Connexion</a></p>
         </form>
     </div>  
+<?php endif; ?>
 
 <?php
 if(isset($error))
 {
     echo $error;
 }
+
 elseif(isset($succes))
 {
     echo $succes;
 }
 ?>
-
-<?php endif; ?>

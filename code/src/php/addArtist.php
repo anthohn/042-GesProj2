@@ -5,7 +5,11 @@ require "template/header.php";
 if(isLogged() && (isAdmin())):
 
 $countries = $DB->getAllCountry();
- ?>
+
+?>
+
+
+<!-- A corriger -->
 <div class="formcontent">
     <h1>Ajout d'un artiste</h1>
     <form method="POST" action="addArtist.php" enctype="multipart/form-data">
@@ -18,6 +22,7 @@ $countries = $DB->getAllCountry();
             <label for="date">Date :</label>
             <input type="date" name="date">
         </div>
+
         <div class="selectCountry input">
             <select name="country" id="country">
                 <option value="0">nationalité </option>
@@ -67,7 +72,7 @@ $countries = $DB->getAllCountry();
 </div>
 
 <?php else :
-    header('Location: template/404.php'); 
+    header('Location:404.php'); 
 endif; 
 ?>
 <?php require "template/footer.php";?>

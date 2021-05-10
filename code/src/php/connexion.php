@@ -1,9 +1,6 @@
 <?php 
 $title = 'Oto - Connexion';
 require ('template/header.php');
-?>
-
-<?php
 
 if(isset($_POST["connexion"]))
 {
@@ -11,10 +8,7 @@ if(isset($_POST["connexion"]))
     {	
         $users = $DB->getUsers();
         foreach($users as $user)
-
         {
-     
-
             if($user['useLogin'] == $_POST['login'])
             {
                 if(password_verify($_POST['psw'], $user['usePassword']))
@@ -27,7 +21,6 @@ if(isset($_POST["connexion"]))
             }  
             else{
                 $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Nom d\'utilisateur ou mot de passe incorect</h4></div>'; 
-                // break;
             }          
         }
     }
@@ -67,6 +60,9 @@ if(isset($_POST["connexion"]))
     </form>
 </div>
 
+<?php else :
+header('location:home.php');
+?>
 
 <?php
 if(isset($error))
@@ -78,12 +74,5 @@ elseif(isset($succes))
     echo $succes;
 }
 ?>
-
-<?php else :
-
-header('location:home.php');
-
-?>
-
 
 <?php endif; ?>
