@@ -63,7 +63,7 @@ if(isset($_POST["connexion"]))
             </tr>                       
         </table>
         <button type="submit" name="connexion">Connexion</button>
-        <p>Pas de compte ?<a href="createAccount.php">Créez-en un</a></p>
+        <p id="noAccount">Pas de compte ? <a href="createAccount.php">Créez-en un</a></p>
     </form>
 </div>
 
