@@ -9,36 +9,35 @@ Description : Toutes les playlists de l'utilisateur (session)
 require "template/header.php"; ?>
 
 <?php $playlists = $DB->getPlaylists(); ?>
-	
-	<div class="title">
-		<p>Playlists public : </p>
-	</div>
-	<div class="PLmainBlock">
-	<?php if(isLogged()): ?>
-		<div class="playlistcreation">
-			<p>Créer une playlist</p>
-			<div class="playlistcreationBoutton">
-				<a href="addPlaylist.php">+</a>
-			</div>
-	
+<div class="title">
+	<p>Playlists public : </p>
+</div>
+<div class="PLmainBlock">
+<?php if(isLogged()): ?>
+	<div class="playlistcreation">
+		<p>Créer une playlist</p>
+		<div class="playlistcreationBoutton">
+			<a href="addPlaylist.php">+</a>
 		</div>
-		<?php endif; ?>	
-		<?php foreach ($playlists as $playlist): ?>
-			<div class="PLblock1">
-				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
-					<div class="PLimgCover">
-						<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
-					</div>
-					<div class="PLblockTitle">
-						<p><?= $playlist['plaName']; ?></p>
-					</div>
-					<div class="PLblockText">
-						<p><?= $playlist['plaCreationDate']; ?></p>
-					</div>
-				</a>
-			</div>	
-		<?php endforeach ?>			
+	</div>
+<?php endif; ?>
+
+<?php foreach ($playlists as $playlist): ?>
+	<div class="PLblock1">
+		<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
+			<div class="PLimgCover">
+				<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
+			</div>
+			<div class="PLblockTitle">
+				<p><?= $playlist['plaName']; ?></p>
+			</div>
+			<div class="PLblockText">
+				<p><?= $playlist['plaCreationDate']; ?></p>
+			</div>
+		</a>
 	</div>	
+<?php endforeach ?>			
+</div>	
 
 
 

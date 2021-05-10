@@ -94,7 +94,7 @@ class DB{
     }
 
     //fonction qui va chercher les musiques de chaque artiste + sécurisé qu'avant 
-    public function getAEachArtist($id){
+    public function getArtist($id){
         $query = "SELECT idArtist, artName FROM t_artist WHERE idArtist = :id";
         $binds = array(
             0 => array(
@@ -289,7 +289,7 @@ class DB{
 
     //récupere les playlists (sans forcément que l'utilisateur soit connecté)
     public function getPlaylists(){
-        $query = 'SELECT * FROM t_playlist';
+        $query = 'SELECT * FROM t_playlist WHERE idxUser is NULL';
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);

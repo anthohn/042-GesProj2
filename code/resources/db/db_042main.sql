@@ -31,8 +31,7 @@ INSERT INTO t_country (couCountry) VALUES
   ('Portugal'),
   ('Bulgarie'),
   ('Maroc'),
-  ('Allemagne'
-);
+  ('Allemagne');
 
 --
 -- Structure de la table "t_type"
@@ -49,8 +48,7 @@ INSERT INTO t_type (typeName) VALUES
   ('Hip-hop/Rap'),
   ('Rap'),
   ('Synth-pop'),
-  ('RnB'
-);
+  ('RnB');
 
 --
 -- Structure de la table "t_artist"
@@ -76,8 +74,7 @@ INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES
   ('Ateyaba', '1989-10-27', 3),
   ('Damso', '1992-05-10', 4),
   ('Zola', '1999-11-16', 3),
-  ('The Weeknd', '1990-02-16', 1
-);
+  ('The Weeknd', '1990-02-16', 1);
 
 --
 -- Structure de la table "t_music"
@@ -125,8 +122,7 @@ INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES
   ('California Girl', '000:03:07', 9, 1),
   ('Blinding Lights', '000:03:20', 10, 1),
   ('In your Eyes', '000:03:58', 10, 3),
-  ('Starboy', '000:03:50', 10, 4
-);
+  ('Starboy', '000:03:50', 10, 4);
 
 
 --
@@ -145,8 +141,7 @@ INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES
   ('anthohn', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
   ('julcartier', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
   ('yousayeh', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0),
-  ('kilgood', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0
-);
+  ('kilgood', '$2y$10$/nJCUqu0g8LO4uIDoCDIE.GLvXJUGomTiiCak6e7MyjPunXIGhdPq', 0);
 
 --
 -- Structure de la table "t_playlist"
@@ -160,14 +155,13 @@ CREATE TABLE t_playlist (
 );
 
 INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
-  ('Noice 2.0', '2020-01-14', 2),
-  ('Party Playlist', '2021-04-26', 2),
-  -- ('ZolaSki', '2015-04-26', 2),
-  -- ('Viral Hits', '2018-08-02', 5),
-  ('OG dkzop', '2018-05-12', 5
-  -- ('Top 50 : Mondial', '2019-10-30', 5),
-  -- ('Party songs', '2021-12-09', 3
-);
+  ('Noice 2.0', '2020-01-14', NULL),
+  ('Party Playlist', '2021-04-26', NULL),
+  ('ZolaSki', '2015-04-26', 2),
+  ('Viral Hits', '2018-08-02', 5),
+  ('OG dkzop', '2018-05-12', 2),
+  ('Top 50 : Mondial', '2019-10-30', 5),
+  ('Party songs', '2021-12-09', 3);
 
 --
 -- Structure de la table "t_add"
@@ -179,6 +173,9 @@ CREATE TABLE t_add (
   CONSTRAINT fk_t_add_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist) ON DELETE CASCADE
 );
 
+-- 
+-- Déchargement des données de la table "t_add"
+--
 INSERT INTO t_add (idxPlaylist, idxMusic) VALUES
   (1, 2),
   (1, 7),
@@ -206,8 +203,7 @@ CREATE TABLE t_typeLink (
 INSERT INTO t_typeLink (typLiens) VALUES
   ('Spotify'),
   ('Apple Music'),
-  ('YouTube'
-);
+  ('YouTube');
 
 
 -- 
@@ -314,11 +310,9 @@ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
   (29,3,"https://youtu.be/E3QiD99jPAg"),
   (30,1,"https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB?si=708d87084d5f4b6e"),
   (30,2,"https://music.apple.com/ca/album/starboy-feat-daft-punk/1440871397?i=1440871420"),
-  (30,3,"https://youtu.be/34Na4j8AVgA"
-);
+  (30,3,"https://youtu.be/34Na4j8AVgA");
 
 CREATE TABLE t_liked(
-  -- likMusic BOOLEAN,
   idxMusic INT NOT NULL,
   idxUser INT NOT NULL,
   CONSTRAINT fk_t_liked_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
@@ -334,4 +328,3 @@ INSERT INTO t_liked (idxMusic, idxUser) VALUES
   (1, 2),
   (16, 2
 );
-
