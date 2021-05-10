@@ -242,12 +242,13 @@ body{
 
 .connexionFormcontent form button:hover{
 	transition: all 0.3s ease-out;
-	background-color:var(--gray-color);
+	background-color:var(--lightPastel-color);
 }
 
 .connexionFormcontent form table tr td svg{
 	margin: 10px 0 0 0;
 	position: absolute;
+	color: var(--back-color);
 }
 
 .connexionFormcontent form table tr input{
@@ -257,6 +258,10 @@ body{
 	width: 270px;
 	margin: 10px 0 0 50px;
 	padding: 7px;
+}
+
+#noAccount {
+	color: var(--back-color);
 }
 
 .connexionFormcontent button{
@@ -269,7 +274,7 @@ body{
 }
 
 .connexionFormcontent a{
-  	color: rgb(223, 223, 223);
+	color: var(--gray-color);
 }
 
 .connexionFormcontent a:hover{
@@ -1341,7 +1346,7 @@ svg.like:hover{
 	/*Login Form*/
 
 	.login-container{
-		margin: -80px 50px 0 0;
+		margin: -57px 50px 0 0;
 		position: absolute;
 	}
 
@@ -1436,28 +1441,6 @@ svg.like:hover{
 	.musDuration {
 		display: none;
 	}
-
-	/*Login form*/
-
-	.login-container {
-		position: unset;
-		margin: 0;
-		background-color: var(--blackBackground-color);
-		width: 100%;
-		border-radius: 0;
-		height: 57px;
-		border: 1px solid var(--gray-color);
-		border-left: none;
-		border-right: none;
-	}
-
-	#loginForm {
-		text-align: center;
-	}
-
-	.notlog {
-		justify-content: center;
-	}
 }
 
 @media only screen and (max-width: 595px)
@@ -1493,16 +1476,5 @@ svg.like:hover{
 	/*About*/
 	.contenutext {
 		width: 90%;
-	}
-}
-
-@media only screen and (max-width: 494px)
-{ 
-	/*Login*/
-
-	.login-container {
-		height: 150px;
-		display: flex;
-  		align-items: center;
 	}
 }

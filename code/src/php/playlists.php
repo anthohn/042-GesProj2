@@ -42,7 +42,7 @@ require "template/header.php"; ?>
 
 
 <?php if(isLogged()): ?>
-	<!-- récupere lid du user -->
+	<!-- récupere l'id du user -->
 	<?php $idUser = ($_SESSION['idUser']) ?>
 
 	<?php $playlists = $DB->getPlaylistsUser($idUser); ?>
