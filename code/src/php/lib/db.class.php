@@ -1,10 +1,14 @@
 <!--
 ETML
-Auteur      : Anthony Höhn / Killian Good / Younes sayeh / julien il connnait pas encore ca 
-Date        : 15.03.2021
-Description : controller
+Auteur      : Anthony Höhn, Killian Good, Younes sayeh
+Date        : 11.05.2021
+Description : database.php fichier où se trouve les fonctions pour le fonctionnement du site
 -->
 <?php
+
+/**
+ * Class Database to connect on the database
+ */
 class DB{
     //Déclaration des variables de connection
     private $host;
@@ -20,21 +24,34 @@ class DB{
             $this->password = $password;
             $this->database = $database;
         }
-        //Essaye de se connecter à la base de données en utilisant les variables crées plus haut
-        try{
+        /**
+         * Try to open the connection on the database
+         * If catch a PDOException -> show the error
+         */ 
+        try
+        {
         $this->db = new PDO("mysql:host=".$this->host.";dbname=".$this->database.";charset=utf8", $this->username, $this->password);
-        //Si la connexion n'est pas établie un messaye d'erreur s'affiche
-        }catch(PDOException $e)
+        }
+        catch(PDOException $e)
         {
             die("<h1>La connexion à la base de données est impossible.</h1>"); 
         }
     }
 
+    /**
+     * Function querySimpleExecute to execute a SQL query without WHERE
+     * @param $query
+     */
     private function querySimpleExecute($query){
         $req = $this->db->query($query);
         return $req;
     }
 
+    /**
+     * Function queryPrepareExecute to execute a SQL query with WHERE and avoid SQL injections
+     * @param $query
+     * @param $binds
+     */
     private function queryPrepareExecute($query, $binds){
         $req = $this->db->prepare($query);
         foreach($binds as $bind){
@@ -44,18 +61,32 @@ class DB{
         return $req;
     }
 
+    /**
+     * Function query
+     * @param $sql
+     * @param $data
+     */
     public function query($sql, $data = array()){
         $req =$this->db->prepare($sql);
         $req->execute($data);
         return $req->fetchAll(PDO::FETCH_OBJ);
     }
 
+
+    /**
+     * Function formatData to get the result of the SQL query in an associative array
+     * @param $req
+     */
     private function formatData($req){
 
         $results = $req->fetchALL(PDO::FETCH_ASSOC);
         return $results;
     }
 
+    /**
+     * Function unsetData to empty the record set
+     * @param $req
+     */
     private function unsetData($req){
         $req->closeCursor();
     }    
