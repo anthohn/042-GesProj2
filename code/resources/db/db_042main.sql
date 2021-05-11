@@ -238,7 +238,7 @@ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
   (5,3,"https://youtu.be/Mg-QZCp1v1c"),
   (6,1,"https://open.spotify.com/track/3cjF2OFRmip8spwZYQRKxP?si=917921365a4045c7"),
   (6,2,"https://music.apple.com/ca/album/feel-no-ways/1440841363?i=1440841371"),
-  (6,3,"Indispo"),
+  (6,3,"https://www.youtube.com/watch?v=pMaogWC5TEQ&ab_channel=Drake-Topic"),
   (7,1,"https://open.spotify.com/track/41Rp0dMSgO2QeguHANPsCD?si=2084b361f7f24ba2"),
   (7,2,"https://music.apple.com/us/album/cellophan%C3%A9/1459575532?i=1459575787"),
   (7,3,"https://youtu.be/6LITCu0Jvkw"),

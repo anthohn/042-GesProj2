@@ -1,11 +1,11 @@
 <?php 
-$title = 'Oto - Connexion';
+$title = 'Oto - Compte';
 require ('template/header.php');
 
 if(isLogged()): 
 
 //Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page d'accueil
-if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout") 
+if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout")
 {
 	session_unset();
 	session_destroy();
