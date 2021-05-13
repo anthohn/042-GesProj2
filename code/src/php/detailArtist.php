@@ -1,9 +1,18 @@
-<?php $title = 'Oto - Détails artiste';
-require "template/header.php";
-
-$id = $_GET["idArtist"];
-$artists = $DB->getArtist($id);
-$musics = $DB->getMusicEachArtist();
+<?php
+// Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
+if(!isset($_GET['idArtist']) OR !is_numeric($_GET['idArtist']))
+{
+    header('Location:404.php');
+}
+// Si tout est ok -> appelle les fonctions
+else
+{
+    $title = 'Oto - Détails artiste';
+	require "template/header.php";
+	$id = $_GET["idArtist"];
+	$artists = $DB->getArtist($id);
+	$musics = $DB->getMusicEachArtist();
+}
 
 
 foreach ( $artists as $artist): ?>	

@@ -1,12 +1,21 @@
-<?php $title = 'Oto - Détails playlist';
-require "template/header.php";
+<?php
+// Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
+if(!isset($_GET['idPlaylist']) OR !is_numeric($_GET['idPlaylist']))
+{
+    header('Location:404.php');
+}
+// Si tout est ok -> appelle les fonctions
+else
+{
+    $title = 'Oto - Détails playlist'; 
+    require "template/header.php";
+    $idPlaylist = $_GET["idPlaylist"];
+    $getPlaylists = $DB->getPlaylist($idPlaylist);
+    $playlistMusics = $DB->getMusicsPlaylist($idPlaylist);
+}
 
-$idPlaylist = $_GET["idPlaylist"];
-$getPlaylists = $DB->getPlaylist($idPlaylist);
-$playlistMusics = $DB->getMusicsPlaylist($idPlaylist);
 
-?>
-<?php foreach ( $getPlaylists as $getPlaylist): ?>	
+foreach ( $getPlaylists as $getPlaylist): ?>	
     <div class="Playlisttitle">
         <img src="../../userContent/img/playlists/cover/<?= $getPlaylist["idPlaylist"];?>.jpg" alt="">
         <p><?= $getPlaylist["plaName"]; ?></p>
