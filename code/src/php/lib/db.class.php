@@ -78,7 +78,6 @@ class db{
      * @param $req
      */
     private function formatData($req){
-
         $results = $req->fetchALL(PDO::FETCH_ASSOC);
         return $results;
     }
@@ -93,7 +92,7 @@ class db{
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
-        $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY idMusic ";
+        $query = 'SELECT idMusic, musName, musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY idMusic';
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
@@ -129,12 +128,12 @@ class db{
     }
 
     //fonction qui va chercher les musiques de chaque artiste + sécurisé qu'avant 
-    public function getArtist($id){
-        $query = "SELECT idArtist, artName FROM t_artist WHERE idArtist = :id";
+    public function getArtist($idArtist){
+        $query = "SELECT idArtist, artName, artBirth, couCountry FROM t_artist  JOIN t_country ON idxCountry = idCountry WHERE idArtist = :idArtist";
         $binds = array(
             0 => array(
-                'field' => ':id',
-                'value' => $id,
+                'field' => ':idArtist',
+                'value' => $idArtist,
                 'type' => PDO::PARAM_INT
             )    
         );
@@ -143,6 +142,33 @@ class db{
         $this->unsetData($reqExecuted);
         return $results;
     }
+
+    /**
+     * Function modification d'un artiste
+     * @param $req
+     */
+    public function updateArtist($idArtist, $name, $date){
+        $query = 'UPDATE t_artist SET artName = :artName,  artBirth = :artBirth WHERE idArtist = :idArtist';
+        $binds = array(
+            0 => array(
+                'field' => ':idArtist',
+                'value' => $idArtist,
+                'type' => PDO::PARAM_INT
+            ),
+            1 => array(
+                'field' => ':artName',
+                'value' => $name,
+                'type' => PDO::PARAM_STR
+            ),
+            2 => array(
+                'field' => ':artBirth',
+                'value' => $date,
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $results = $this->queryPrepareExecute($query, $binds);
+        return $results;
+    } 
 
 
     //Suppression d'un artistes dans la bdd 
@@ -425,8 +451,8 @@ class db{
     }
 
     // fonction pour ajouter une musique dans la bdd
-    public function addTitle($name, $duration, $artist, $type){
-        $query = "INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES (:musName, :musDuration, :idxArtist, :idxType)";
+    public function addTitle($name, $duration){
+        $query = 'INSERT INTO t_music (musName, musDuration) VALUES (:musName, :musDuration)';
         $binds = array(
             0 => array(
                 'field' => ':musName',
@@ -437,16 +463,6 @@ class db{
                 'field' => ':musDuration',
                 'value' => $duration,
                 'type' => PDO::PARAM_INT 
-            ),
-            2 => array(
-                'field' => ':idxArtist',
-                'value' => $artist,
-                'type' => PDO::PARAM_INT
-            ),
-            3 => array(
-                'field' => ':idxType',
-                'value' => $type,
-                'type' => PDO::PARAM_INT
             )
         );
         $results = $this->queryPrepareExecute($query, $binds);

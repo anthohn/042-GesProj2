@@ -62,7 +62,7 @@ if(isset($_POST["connexion"]))
     </div>
 
 <?php else :
-    header('location:home.php');
+    header('location:account.php');
 endif; 
 
 

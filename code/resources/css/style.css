@@ -1144,8 +1144,7 @@ svg.like:hover{
 }
 
 .formcontent table{
-	margin: 0 0 0 20px;
-  
+	margin: 0 0 0 33px;
 }
 
 
@@ -1154,17 +1153,18 @@ svg.like:hover{
 }
 
 .formcontent form button{
+	margin: 20px 0 0 0;
 	font-size: 20px;
 	border: none;
 	padding: 10px 20px;
 	color: #ffffff;
-	background-color: red;
+	background-color: var(--backSucces-color);
 	border-radius: 10px;
 	cursor: pointer;
 }
 
 .formcontent form button:hover{
-	background-color: blue;
+	background-color: #0bc251;
 }
   
 .formcontent form table tr td svg{
@@ -1172,6 +1172,13 @@ svg.like:hover{
 	position: absolute;
 }
   
+.formcontent form table tr img{
+	box-shadow: 0 7px 40px 0 var(--blackBackground-color);
+    border-radius: 50%;
+    margin-bottom: 0;
+    max-height: 100px;
+}
+
 .formcontent form table tr input{
 	font-size: 18px;
 	border-radius: 10px;
