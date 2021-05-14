@@ -3,7 +3,7 @@ session_start();
 require "lib/util.php";
 require "lib/db.class.php";
 require "config/dbconfig.cfg";
-$DB = new DB (Config::$host, Config::$username, Config::$password, Config::$database);
+$db = new db (Config::$host, Config::$username, Config::$password, Config::$database);
 $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 
 ?>

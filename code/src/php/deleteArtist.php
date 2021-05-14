@@ -4,7 +4,7 @@ require "template/header.php";
 if(isLogged() && (isAdmin()))
 {   
     $id = $_GET["idArtist"];
-    $deleteArtist = $DB->deleteOneArtist($id);
+    $deleteArtist = $db->deleteOneArtist($id);
     header('Location: allartists.php');  
 }
 else

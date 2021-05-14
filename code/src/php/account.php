@@ -17,7 +17,7 @@ if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "deleteAcco
 {
     $idUser = $_SESSION['idUser'];
     print_r($idUser);
-    $DB->deleteUser($idUser);
+    $db->deleteUser($idUser);
 	session_unset();
 	session_destroy();
 	header("Location:home.php");

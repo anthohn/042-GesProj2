@@ -7,7 +7,7 @@ Description : Tous les artistes de la base de données rescencé ici grâce à u
 -->
 <?php $title = 'Oto - Artistes'; 
 require "template/header.php";
-$artists = $DB->getAllArtists();
+$artists = $db->getAllArtists();
 ?>
 
 

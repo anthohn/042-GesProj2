@@ -6,7 +6,7 @@ Description : Tous les titres de la base de données rescencé ici grace à un f
 -->
 <?php $title = 'Oto - Titres';
 require "template/header.php";
-$musics = $DB->getAllTitle();
+$musics = $db->getAllTitle();
 
 ?>
 <style>
@@ -26,7 +26,7 @@ $musics = $DB->getAllTitle();
 		<a class='addTitle' href="addTitle.php">ajouter</img></a>
 	<?php endif; ?>
 
-	<?php foreach ( $musics as $music):?>
+	<?php foreach ($musics as $music):?>
 		<div class="ARPblock1">
 			<img src="../../userContent/img/music/<?= $music["idMusic"] ?>.jpg" alt="">
 			<p><?= $music["musName"]; ?></p>
@@ -42,7 +42,7 @@ $musics = $DB->getAllTitle();
 			<div class="dropdown" style="float:right;">
 				<a href=""><button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button></a>
 				<?php $idMusic = $music['idMusic']; ?>
-				<?php $links = $DB->getLinkEachMusics($idMusic); ?>
+				<?php $links = $db->getLinkEachMusics($idMusic); ?>
 				
 				<?php foreach ($links as $link): ?>
 					<div class="dropdown-content">

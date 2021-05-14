@@ -5,18 +5,18 @@ Date        : 11.03.2021
 Description : Recherche dynamique pour chaque nom d'artiste.
 -->
 <?php $title = 'Oto - Recherche';
-require "template/header.php" 
+require "template/header.php";
 
-$musics = $DB->getAllTitle();
+$musics = $db->getAllTitle();
 $idUser = $_SESSION['idUser'];
-$playlists = $DB->getPlaylists($idUser);
+$playlists = $db->getPlaylists($idUser);
 
 if(isset($_GET['search']) && !empty($_GET['search']))
 {
 	$search = htmlspecialchars($_GET['search']);
-	$searchResults = $DB->getSearchedArtistsMusicsPlaylists($search);
-	$musics = $DB->getAllTitleSearched($search);
-	$playlists = $DB->getAllPlaylistSearched($search);
+	$searchResults = $db->getSearchedArtistsMusicsPlaylists($search);
+	$musics = $db->getAllTitleSearched($search);
+	$playlists = $db->getAllPlaylistSearched($search);
 }
 ?>
 
@@ -75,7 +75,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 				<div class="dropdown" style="float:right;">
 					<a href=""><button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button></a>
 					<?php $idMusic = $music['idMusic']; ?>
-					<?php $links = $DB->getLinkEachMusics($idMusic); ?>
+					<?php $links = $db->getLinkEachMusics($idMusic); ?>
 				
 					<?php foreach ($links as $link): ?>
 						<div class="dropdown-content">

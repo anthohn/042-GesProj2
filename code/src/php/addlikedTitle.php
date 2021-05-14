@@ -5,7 +5,7 @@ if(isLogged())
 {
     $idMusic = $_GET["idMusic"];
     $idUser = ($_SESSION['idUser']);
-    $addMusicLiked = $DB->addLikedMusic($idMusic, $idUser);
+    $addMusicLiked = $db->addLikedMusic($idMusic, $idUser);
     header('Location: allTitle.php');
 }
 else

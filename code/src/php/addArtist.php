@@ -4,7 +4,7 @@ $title = "Oto - Ajout d'artiste";
 require "template/header.php";
 if(isLogged() && (isAdmin())):
 
-$countries = $DB->getAllCountry();
+$countries = $db->getAllCountry();
 
 ?>
 
@@ -55,7 +55,7 @@ $countries = $DB->getAllCountry();
                 echo '<h2 id="errorMessage">Veuillez renseignez tout les champs.</h2>';
             }
             else {
-                $newID = $DB->addArtist($_POST['name'], $_POST['date'],  $_POST['country']);
+                $newID = $db->addArtist($_POST['name'], $_POST['date'],  $_POST['country']);
                 if($newID >= 0){
                     $source = $_FILES["printscreen"]["tmp_name"];
                     $destination = "../../userContent/img/artists/logo/$newID.jpg";

@@ -9,8 +9,8 @@ require "template/header.php";
 if(isLogged() && (isAdmin())):
 
 // Récupere tous les artistes dans la variable '$artists'
-$artists = $DB->getAllArtists(); 
-$types = $DB->getAllType(); 
+$artists = $db->getAllArtists(); 
+$types = $db->getAllType(); 
 ?>
 
 
@@ -79,7 +79,7 @@ if(isset($_POST['btnSubmit']))
     }
     else
     {
-        $newID = $DB->addTitle($_POST['name'], $_POST['artist'],  $_POST['type'], $_POST['duration']);
+        $newID = $db->addTitle($_POST['name'], $_POST['artist'],  $_POST['type'], $_POST['duration']);
         if($newID >= 0)
         {
             $source = $_FILES["printscreen"]["tmp_name"];

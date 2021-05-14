@@ -9,7 +9,7 @@
 :root
 {
 	--back-color: #ffffff;
-	--backError-color: #cf0f0f;
+	--backError-color: #ff3333;
 	--backSucces-color: #0fcf59;
 	--gray-color: Gray;
 	--blackBackground-color: Black;
@@ -41,7 +41,7 @@ body{
 	background-repeat: no-repeat
 }
 
-.maintest{
+.main404{
 	font-size: 20px;
 	padding: 1% 0 0 0;
 	margin-left: 10%;

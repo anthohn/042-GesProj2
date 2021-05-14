@@ -7,7 +7,7 @@ Description : Toutes les playlists de l'utilisateur (session)
 <?php $title = 'Oto - Playlists';
 require "template/header.php"; ?>
 
-<?php $playlists = $DB->getPlaylists(); ?>
+<?php $playlists = $db->getPlaylists(); ?>
 
 <div class="title">
 	<p>Playlists public : </p>
@@ -45,7 +45,7 @@ require "template/header.php"; ?>
 <?php if(isLogged()): ?>
 	<!-- récupere l'id du user -->
 	<?php $idUser = ($_SESSION['idUser']) ?>
-	<?php $playlists = $DB->getPlaylistsUser($idUser); ?>
+	<?php $playlists = $db->getPlaylistsUser($idUser); ?>
 	
 	<div class="title">
 		<p>Playlists de <?= $_SESSION['username'];?> :</p>

@@ -9,7 +9,7 @@ Description : database.php fichier où se trouve les fonctions pour le fonctionn
 /**
  * Class Database to connect on the database
  */
-class DB{
+class db{
     //Déclaration des variables de connection
     private $host;
     private $username;

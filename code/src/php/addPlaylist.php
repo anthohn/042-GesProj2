@@ -7,10 +7,13 @@ Description :
 <?php $title = 'Oto - Ajouter une playlist'; ?>
 <?php require "template/header.php"; ?>
 
-<?php if(isLogged()): ?>
-<?php $musics = $DB->getAllTitle();
+<?php if(!isLogged()): ?>
+    <div class="error">
+		<h1>Connectez-vous pour pouvoir créer vos playlists.</h1>
+	</div>
+<?php  else : ?>
 
-
+<?php $musics = $db->getAllTitle();
 ?>
 <style>
 	body {
@@ -56,15 +59,11 @@ if(isset($_POST['btnSubmit']))
     }
     else
     {
-        $DB->addArtist($_POST['name'], $_POST['date'],  $_POST['country']);
+        $db->addArtist($_POST['name'], $_POST['date'],  $_POST['country']);
         echo '<h1 id="validationMessage">L\'artiste à bien été ajouté.</h1>';
     }
 }
 
-else : ?>
-	<div class="error">
-		<h1>Connectez-vous pour pouvoir créer vos playlists.</h1>
-	</div>	
-<?php endif; ?>
+endif;
 
-<?php require "template/footer.php"; ?>
+require "template/footer.php"; ?>

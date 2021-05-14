@@ -1,8 +1,8 @@
 ﻿<?php $title = 'Oto - Accueil'; ?>
 <?php require "template/header.php"; 
 
-$artists = $DB->getAllArtists();
-$musics = $DB->getAllTitle();
+$artists = $db->getAllArtists();
+$musics = $db->getAllTitle();
 ?>
 
 <div class="title">

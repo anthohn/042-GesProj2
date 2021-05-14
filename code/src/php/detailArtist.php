@@ -10,8 +10,8 @@ else
     $title = 'Oto - Détails artiste';
 	require "template/header.php";
 	$id = $_GET["idArtist"];
-	$artists = $DB->getArtist($id);
-	$musics = $DB->getMusicEachArtist();
+	$artists = $db->getArtist($id);
+	$musics = $db->getMusicEachArtist();
 }
 
 
