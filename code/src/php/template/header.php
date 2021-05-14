@@ -117,11 +117,11 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 						</div>
 					<?php else: ?>
 						<div class="notlog">
-							<p><?= 'Bonjour ' . $_SESSION['username']; ?></p>
+							<p><?=  welcome(). ' ' . $_SESSION['username']; ?></p>
 							<a href="account.php">Mon compte</a>
 						</div>
 					<?php endif; ?>
 				</div>
 			</ul>		
 		</div>
-		<div class="mainContent">
+		<div class='mainContent'>

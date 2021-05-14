@@ -8,8 +8,15 @@ Description : Recherche dynamique pour chaque nom d'artiste.
 require "template/header.php";
 
 $musics = $db->getAllTitle();
-$idUser = $_SESSION['idUser'];
-$playlists = $db->getPlaylists($idUser);
+
+if (isset($_SESSION['idUser']))
+{
+	$idUser = $_SESSION['idUser'];
+	$playlists = $db->getPlaylists($idUser);
+}
+
+
+
 
 if(isset($_GET['search']) && !empty($_GET['search']))
 {
@@ -43,9 +50,9 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 		{
 			if(count($searchResults) > 0)
 			{
-				echo '<pre>';
-					print_r($_SESSION);
-				echo '</pre>';
+				// echo '<pre>';
+				// 	print_r($_SESSION);
+				// echo '</pre>';
 				// foreach($searchResults as $searchResult) {
 				// 	echo '<pre>';
 				// 	print_r($_SESSION);

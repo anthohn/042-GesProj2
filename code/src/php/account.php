@@ -4,23 +4,22 @@ require ('template/header.php');
 
 if(isLogged()): 
 
-//Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page d'accueil
+//Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page de connexion
 if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout")
 {
 	session_unset();
 	session_destroy();
-	header("Location:home.php");
+	header("Location:connexion.php");
 }
 
-//Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page d'accueil
+//Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page de connexion
 if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "deleteAccount") 
 {
     $idUser = $_SESSION['idUser'];
-    print_r($idUser);
     $db->deleteUser($idUser);
 	session_unset();
 	session_destroy();
-	header("Location:home.php");
+	header("Location:connexion.php");
 }
 ?>
 

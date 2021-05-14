@@ -174,23 +174,20 @@ body{
 
 .login-container a {
 	text-decoration: none;
-	padding: 10px;
-	margin-top: 8px;
+	padding: 10px 40px 10px 40px;
 	font-size: 17px;
 	border: none;
-	width: 150px; 
 	border-radius: 5px;
-	background-color:var(--coralButton-color);
+	background-color:var(--greenLike-color);
 	color: var(--back-color);
 }
 
 .notlog a {
 	text-decoration: none;
-	padding: 10px;
+	padding: 10px 40px 10px 40px;
 	margin-top: 8px;
 	font-size: 17px;
 	border: none;
-	width: 150px; 
 	border-radius: 5px;
 	background-color:var(--coralButton-color);
 	color: var(--back-color);
