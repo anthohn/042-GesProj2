@@ -35,6 +35,10 @@ require "template/header.php"; ?>
 				<div class="PLblockText">
 					<p><?= $playlist['plaCreationDate']; ?></p>
 				</div>
+				<!-- Si l'utilisateur est admin ET connecté il a accès à cette fonctionnalité -->
+				<?php if(isLogged() && (isAdmin())): ?>
+					<a href="deletePlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la playlist ?')"><img src="../../userContent/icon/trash.svg"></img></a>
+				<?php endif; ?>
 			</a>
 		</div>	
 	<?php endforeach ?>			

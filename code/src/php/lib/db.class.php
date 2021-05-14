@@ -109,6 +109,10 @@ class db{
         return $results;
     }
 
+    /**
+     * Function 
+     * @param $idMusic
+     */
     public function getLinkEachMusics($idMusic){
         $query = 'SELECT * FROM t_link JOIN t_music ON idxMusic = idMusic JOIN t_typelink ON idxTypelink = idTypelink WHERE idMusic = :idMusic';
         $binds = array(
@@ -346,6 +350,22 @@ class db{
     //récupere une playlist
     public function getPlaylist($idPlaylist){
         $query = 'SELECT * FROM t_playlist WHERE idPlaylist = :idPlaylist';
+        $binds = array(
+            0 => array(
+                'field' => ':idPlaylist',
+                'value' => $idPlaylist,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //Suppression d'une playlist
+    public function deleteOnePlaylist($idPlaylist){
+        $query = 'DELETE FROM t_playlist WHERE idPlaylist = :idPlaylist';
         $binds = array(
             0 => array(
                 'field' => ':idPlaylist',
