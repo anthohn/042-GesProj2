@@ -25,7 +25,6 @@
 	--dropdown-color: #f9f9f9;
 }
 
-
 html{
 	height: 120%;
 	width: 100%;
@@ -39,6 +38,10 @@ body{
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat
+}
+
+.mainContent{
+	margin-left: 232px;
 }
 
 .main404{
@@ -496,10 +499,8 @@ body{
 /******************************ACCUEIL******************************/
 
 .ACmainBlock{
-	margin-left: 232px;
 	display: flex;
 	overflow-x: auto;
-
 }
 
 .ACmainBlock .ACblock{
@@ -507,7 +508,7 @@ body{
 	min-width: 200px;
 	min-height: 200px;
 	border-radius: 10px;
-	margin: 50px 20px 30px 20px;
+	margin: 50px 0 30px 50px;
 	background-color: var(--lightBlack-color);
 }
 
@@ -614,7 +615,7 @@ footer{
 	position: relative;
 	max-width: 100%;
     height: 50px;
-	padding: 10px 60px 0 292px;
+	padding: 10px 60px 0 50px;
 }
 
 .searchBarInputContainer {
@@ -704,7 +705,6 @@ footer{
 
 .ARmainBlock{
 	text-align: center;
-	margin-left: 232px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -789,7 +789,6 @@ footer{
 }
 
 .alltitle{
-	margin-left: 232px;
 	padding: 30px 0 0 0;
 	color: var(--back-color);
 	font-weight: bold;
@@ -815,7 +814,7 @@ footer{
 .alltitlemainBlock{
 	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
 	padding-bottom: 40%;
-	margin: 370px 0 0 232px;
+	margin: 370px 0 0 0;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -825,7 +824,6 @@ footer{
 
 /*******************************************Playlist perso***********************************************/
 .Playlisttitle{
-	margin-left: 232px;
 	padding: 30px 0 0 70px;
 	color: var(--back-color);
 	font-weight: bold;
@@ -851,7 +849,7 @@ footer{
 .ListMusicsMainBlock{
 	background: linear-gradient(to bottom right, var(--blackBackground-color), var(--gray-color));
 	padding-bottom: 12%;
-	margin: 100px 0 0 232px;
+	margin: 100px 0 0 0;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -867,14 +865,12 @@ footer{
 }
 
 .notlogplaylist{
-	margin-left: 232px;
 	padding: 30px;
 }
 
 /******************************************Création playlists********************************************/
 
 .plalistCreaTitle{
-	margin-left: 232px;
 	padding: 0 0 0 0;
 	color: var(--back-color);
 	font-weight: bold;
@@ -886,7 +882,7 @@ footer{
 }
 
 .formCreation{
-	margin: 0 0 0 232px;
+	margin: 0 0 0 0;
 }
 
 .formCreation label{
@@ -903,7 +899,7 @@ footer{
 .playlistCreaBlock{
 	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
 	padding-bottom: 40%;
-	margin: 110px 0 0 232px;
+	margin: 110px 0 0 0;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -913,7 +909,6 @@ footer{
 
 /*******************************************ARTISTES PERSO***********************************************/
 .ARPtitle{
-	margin-left: 232px;
 	padding: 30px 0 0 70px;
 	color: var(--back-color);
 	font-weight: bold;
@@ -939,7 +934,7 @@ footer{
 .ARPmainBlock{
 	background: linear-gradient(to bottom right, rgb(32, 32, 32), rgb(138, 143, 138));
 	padding-bottom: 30%;
-	margin: 400px 0 0 232px;
+	margin: 400px 0 0 0;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -1042,9 +1037,7 @@ svg.like:hover{
 /*******************************************PLAYLISTS***********************************************/
 
 .title{
-	margin-left: 232px;
-	padding-top: 10px;
-	padding-left: 60px;	
+	padding: 10px 0 0 60px;
 }
 
 .title p{
@@ -1055,7 +1048,6 @@ svg.like:hover{
 
 .PLmainBlock{
 	text-align: center;
-	margin-left: 232px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -1201,9 +1193,9 @@ svg.like:hover{
 	padding: 7px;
 }
 
-.erreurrr{
+/* .erreurrr{
 	margin-left: 232px;
-}
+} */
 
 
 /*******************************************ABOUT***********************************************/
@@ -1220,7 +1212,7 @@ svg.like:hover{
 .contenu{
 	max-width: 100%;
     position: relative;
-	margin: 0 0 0 232px;
+	margin: 0;
 }
 
 .contenutext{
@@ -1275,6 +1267,10 @@ svg.like:hover{
 @media only screen and (max-width: 1150px)
 {
 	/*Navigation Bar*/
+
+	.mainContent{
+		margin-left: 0;
+	}
 
 	.ARmainBlock{
 		margin-left: 0;
