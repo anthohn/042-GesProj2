@@ -9,6 +9,10 @@
 DROP DATABASE if EXISTS P_db_042main;
 CREATE DATABASE P_db_042main;
 USE P_db_042main;
+
+DROP USER IF EXISTS 'dbUser042'@'%';
+CREATE USER 'dbUser042'@'%' IDENTIFIED BY '.Etml-';
+GRANT SELECT, INSERT, UPDATE, DELETE ON p_db_042main.* TO 'dbUser042'@'%';
 -- --------------------------------------------------------
 
 --
