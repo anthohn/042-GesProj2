@@ -1,6 +1,6 @@
 <?php
 
-$title = "Oto - Modification d'une musique";
+$title = "Oto - Modification d'un artiste";
 require "template/header.php";
 // Vérifie si l'utilisateur est loggé ET admin
 if(isLogged() && (isAdmin())):
@@ -60,7 +60,7 @@ if(isLogged() && (isAdmin())):
                 </tr>
                 <tr>
                     <td>
-                    <label for="date">Nationalité :</label>
+                    <label for="country">Nationalité :</label>
                     <select name="country" id="country">
                         <option value='<?= $artist["idCountry"];?>'><?= $artist["couCountry"];?></option>                       
                         <?php foreach($countries as $country) : ?>
@@ -69,12 +69,6 @@ if(isLogged() && (isAdmin())):
                     </select>
                     </td>
                 </tr>
-                <!-- <tr>
-                    <td>
-                        <label for="img">Cover :</label>
-                        <input type="file" name="img" id="printscreen"/>
-                    </td>
-                </tr> -->
             </table>    
             <button type="submit" name="btnSubmit">Modifier</button>
             <div class="test">

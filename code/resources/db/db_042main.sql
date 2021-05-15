@@ -97,36 +97,36 @@ CREATE TABLE t_music (
 -- Déchargement des données de la table "t_music"
 --
 INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES
-('goosebumps', '00:04:04', 1, 1),
-('STARGAZING', '000:04:31', 1, 1),
-('Antidote', '000:04:23', 1, 1),
-('Passionfruit', '000:04:59', 2, 1),
-('Controlla', '000:04:05', 2, 1),
-('Feel No Ways', '000:04:01', 2, 1),
-('Cellophané', '000:03:21', 3, 2),
-('La C', '000:03:07', 3, 2),
-('Coffre plein', '000:03:40', 3, 2),
-('Cabeza', '000:02:28', 4, 1),
-('Avec Toi', '000:03:14', 4, 1),
-('Rien à fêter', '000:02:45', 4, 1),
-('J`aime Bien!', '000:03:12', 5, 1),
-('Au Bout', '000:04:01', 5, 1),
-('XS', '000:03:26', 5 ,1),
-('EARFQUAKE', '000:03:10', 6, 1),
-('See You Again', '000:03:10', 6, 1),
-('BEST INTEREST', '000:02:07', 6, 1),
-('Menace', '000:03:12', 7, 1),
-('Venus', '000:03:37', 7, 1),
-('Casino', '000:04:50', 7, 1),
-('Macarena', '000:03:26', 8, 1),
-('911', '000:02:52', 8, 1),
-('Amnésie', '000:03:33', 8, 1),
-('Ouais Ouais', '000:02:54', 9, 1),
-('Zolabeille', '000:02:34', 9, 1),
-('California Girl', '000:03:07', 9, 1),
-('Blinding Lights', '000:03:20', 10, 1),
-('In your Eyes', '000:03:58', 10, 3),
-('Starboy', '000:03:50', 10, 4);
+('goosebumps', '04:04', 1, 1),
+('STARGAZING', '04:31', 1, 1),
+('Antidote', '04:23', 1, 1),
+('Passionfruit', '04:59', 2, 1),
+('Controlla', '04:05', 2, 1),
+('Feel No Ways', '04:01', 2, 1),
+('Cellophané', '03:21', 3, 2),
+('La C', '03:07', 3, 2),
+('Coffre plein', '03:40', 3, 2),
+('Cabeza', '02:28', 4, 1),
+('Avec Toi', '03:14', 4, 1),
+('Rien à fêter', '02:45', 4, 1),
+('J`aime Bien!', '03:12', 5, 1),
+('Au Bout', '04:01', 5, 1),
+('XS', '03:26', 5 ,1),
+('EARFQUAKE', '03:10', 6, 1),
+('See You Again', '03:10', 6, 1),
+('BEST INTEREST', '02:07', 6, 1),
+('Menace', '03:12', 7, 1),
+('Venus', '03:37', 7, 1),
+('Casino', '04:50', 7, 1),
+('Macarena', '03:26', 8, 1),
+('911', '02:52', 8, 1),
+('Amnésie', '03:33', 8, 1),
+('Ouais Ouais', '02:54', 9, 1),
+('Zolabeille', '02:34', 9, 1),
+('California Girl', '03:07', 9, 1),
+('Blinding Lights', '03:20', 10, 1),
+('In your Eyes', '03:58', 10, 3),
+('Starboy', '03:50', 10, 4);
 
 
 --
@@ -160,8 +160,8 @@ CREATE TABLE t_playlist (
 
 INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
 ('Noice 2.0', '2020-01-14', NULL),
-('Party Playlist', '2021-04-26', NULL),
-('ZolaSki', '2015-04-26', 2),
+('Rap FR', '2021-04-26', NULL),
+('Rap US', '2017-04-26', NULL),
 ('Viral Hits', '2018-08-02', 5),
 ('OG dkzop', '2018-05-12', 2),
 ('Top 50 : Mondial', '2019-10-30', 5),
@@ -186,12 +186,21 @@ INSERT INTO t_add (idxPlaylist, idxMusic) VALUES
 (1, 5),
 (1, 12),
 (1, 8),
-(2, 15),
-(2, 14),
-(2, 11),
-(2, 9),
-(2, 5),
-(2, 2);
+
+(2, 7),
+(2, 10),
+(2, 20),
+(2, 22),
+(2, 25),
+(2, 24),
+
+
+(3, 5),
+(3, 5),
+(3, 5),
+(3, 5),
+(3, 5),
+(3, 2);
 
 --
 -- Structure de la table "t_typeLink"

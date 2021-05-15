@@ -92,8 +92,24 @@ class db{
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
-        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%i:%s") AS musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY idMusic';
+        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, " %H:%i" ) AS musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY idMusic';
         $reqExecuted = $this->querySimpleExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    //fonction
+    public function getMusic($idMusic){
+        $query = 'SELECT idArtist, idMusic, musName, musDuration, artName, idType, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idMusic = :idMusic';
+        $binds = array(
+            0 => array(
+                'field' => ':idMusic',
+                'value' => $idMusic,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
@@ -183,13 +199,57 @@ class db{
         return $results;
     } 
 
+    /**
+     * Function 
+     * @param $idMusic
+     * @param $name
+     * @param $time
+     * @param $artist
+     * @param $type
+     */
+    public function updateMusic($idMusic, $name, $time, $artist, $type){
+        // echo $time;
+        // die();
+        $query = 'UPDATE t_music SET musName = :musName,  musDuration = :musDuration, idxArtist = :idxArtist, idxType = :idxType WHERE idMusic = :idMusic';
+        $binds = array(
+            0 => array(
+                'field' => ':idMusic',
+                'value' => $idMusic,
+                'type' => PDO::PARAM_INT
+            ),
+            1 => array(
+                'field' => ':musName',
+                'value' => $name,
+                'type' => PDO::PARAM_STR
+            ),
+            2 => array(
+                'field' => ':musDuration',
+                'value' => $time,
+                'type' => PDO::PARAM_STR
+            ),
+            3 => array(
+                'field' => ':idxArtist',
+                'value' => $artist,
+                'type' => PDO::PARAM_INT
+            ),
+            4 => array(
+                'field' => ':idxType',
+                'value' => $type,
+                'type' => PDO::PARAM_INT
+            )
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
 
     /**
      * Function 
      * @param $idArtist
      */
     public function deleteOneArtist($idArtist){
-        $query = "DELETE FROM t_artist WHERE idArtist = :idArtist";
+        $query = 'DELETE FROM t_artist WHERE idArtist = :idArtist';
         $binds = array(
             0 => array(
                 'field' => ':idArtist',

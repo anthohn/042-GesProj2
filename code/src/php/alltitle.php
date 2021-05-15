@@ -37,7 +37,8 @@ $musics = $db->getAllTitle();
 			<p class="typeName">-</p>
 			<p class="typeName"><?= $music["typeName"]; ?></p>
 			<?php if(isLogged() && (isAdmin())): ?>
-				<a href="deleteMusic.php?idMusic=<?= $music["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img height="8px" src="../../userContent/icon/trash.svg"></img></a>
+				<a href="deleteMusic.php?idMusic=<?= $music["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img width="20px" src="../../userContent/icon/trash.svg"></img></a>
+				<a href="editMusic.php?idMusic=<?= $music["idMusic"]; ?>"><img width="20px" src="../../userContent/icon/edit.svg"></img></a>
 			<?php endif; ?>
 			<div class="dropdown" style="float:right;">
 				<a href=""><button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button></a>
