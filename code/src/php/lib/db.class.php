@@ -555,8 +555,13 @@ class db{
      * @param $name
      * @param $duration
      */
-    public function addTitle($name, $duration){
-        $query = 'INSERT INTO t_music (musName, musDuration) VALUES (:musName, :musDuration)';
+    public function addMusic($name, $duration, $artist , $type){
+        // echo $name;
+        // echo $duration;
+        // echo $artist;
+        // echo $type;
+        // die();
+        $query = 'INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES (:musName, :musDuration, :idxArtist, :idxType)';
         $binds = array(
             0 => array(
                 'field' => ':musName',
@@ -566,6 +571,16 @@ class db{
             1 => array(
                 'field' => ':musDuration',
                 'value' => $duration,
+                'type' => PDO::PARAM_STR
+            ),
+            2 => array(
+                'field' => ':idxArtist',
+                'value' => $artist,
+                'type' => PDO::PARAM_INT 
+            ),
+            3 => array(
+                'field' => ':idxType',
+                'value' => $type,
                 'type' => PDO::PARAM_INT 
             )
         );

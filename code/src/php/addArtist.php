@@ -24,13 +24,12 @@ if(isLogged() && (isAdmin())):
             }      
             else
             {
-                echo '<h1> failed </h1>';
+                $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Erreur</h4></div>'; 
             } 
         }
-                
-                                                        
+                                                                      
     }
-    ?>
+?>
 
     <div class="formcontent">
         <form method="POST" action="addArtist.php" enctype="multipart/form-data">
