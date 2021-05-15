@@ -15,7 +15,7 @@ else
 }
 
 
-foreach ( $getPlaylists as $getPlaylist): ?>	
+foreach ($getPlaylists as $getPlaylist): ?>	
     <div class="Playlisttitle">
         <img src="../../userContent/img/playlists/cover/<?= $getPlaylist["idPlaylist"];?>.jpg" alt="">
         <p><?= $getPlaylist["plaName"]; ?></p>

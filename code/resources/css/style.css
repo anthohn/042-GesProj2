@@ -19,7 +19,7 @@
 	--lightBlack-color: #181818;
 	--ligthBlackhover-color: #0a0a0a;
 	--lighterBlack-color: darkgrey;
-	--pastel-color: #dcdcdc;
+	--pastel-color: #ffffff;
 	--lightPastel-color: #c8c8c8;
 	--greenLike-color: #36ba36;
 	--dropdown-color: #f9f9f9;
@@ -385,6 +385,12 @@ body{
   border-radius: 25px;
   text-align: center;
   background-color: var(--backError-color);
+}
+
+.errorNoSong{
+	margin: auto;
+	text-align: center;
+	margin-top: 20%;
 }
 
 .succesLoginContainer{
@@ -934,8 +940,8 @@ footer{
 
 .ARPmainBlock{
 	background: linear-gradient(to bottom right, rgb(32, 32, 32), rgb(138, 143, 138));
-	padding-bottom: 30%;
-	margin: 400px 0 0 0;
+	padding-bottom: 100%;
+	margin: 300px 0 0 0;
 	text-align: center;
 	display: flex;
 	flex-direction: column;

@@ -60,13 +60,13 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 					</li>
 				<?php endif; ?>
 
-				<?php if($activePage == 'allartists.php') : ?>
+				<?php if($activePage == 'allArtists.php') : ?>
 					<li class="allArtists">
-						<a id="active" href="allartists.php">Artistes</a>
+						<a id="active" href="allArtists.php">Artistes</a>
 					</li>
 				<?php else : ?>
 					<li class="allArtists"
-						><a href="allartists.php">Artistes</a>
+						><a href="allArtists.php">Artistes</a>
 					</li>
 				<?php endif; ?>
 
@@ -80,23 +80,23 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 					</li>
 				<?php endif; ?>
 
-				<?php if($activePage == 'alltitle.php') : ?>
+				<?php if($activePage == 'allTitle.php') : ?>
 					<li class="allTitle">
-						<a id="active" href="alltitle.php">Tous les titres</a>
+						<a id="active" href="allTitle.php">Tous les titres</a>
 					</li>
 				<?php else : ?>
 					<li class="allTitle">
-						<a href="alltitle.php">Tous les titres</a>
+						<a href="allTitle.php">Tous les titres</a>
 					</li>
 				<?php endif; ?>
 
-				<?php if($activePage == 'likedtitle.php') : ?>
+				<?php if($activePage == 'likedTitle.php') : ?>
 					<li class="likedTitle">
-						<a id="active" href="likedtitle.php">Titres likés</a>
+						<a id="active" href="likedTitle.php">Titres likés</a>
 					</li>
 				<?php else : ?>
 					<li class="likedTitle">
-						<a href="likedtitle.php">Titres likés</a>
+						<a href="likedTitle.php">Titres likés</a>
 					</li>
 				<?php endif; ?>
 
