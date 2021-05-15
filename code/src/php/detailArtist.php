@@ -11,7 +11,7 @@ else
 	require "template/header.php";
 	$idArtist = $_GET["idArtist"];
 	$artists = $db->getArtist($idArtist);
-	$musics = $db->getMusicEachArtist();
+	$musics = $db->getMusicEachArtist($idArtist);
 }
 ?>
 
@@ -24,7 +24,7 @@ else
 <?php 
 if(empty($musics)) : ?>
 
-	<div class="errorLoginContainer"><h1 class="errorNoSong">Malheureusement, aucune musique de <?= $artists[0]['artName']; ?> m'est disponible.</h1></div>
+	<div class="errorLoginContainer"><h1 class="errorNoSong">Malheureusement, aucune musique de <?= $artists[0]['artName']; ?> n'est disponible.</h1></div>
 
 <?php else : ?>
 

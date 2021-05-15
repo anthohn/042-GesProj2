@@ -39,7 +39,7 @@ if(isLogged()): ?>
 				<p class="typeName"><?= $likedTitle["typeName"]; ?></p>
 				
 				<?php if(isLogged() && (isAdmin())): ?>
-					<a href="deleteMusic.php?idMusic=<?= $music["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img height="8px" src="../../userContent/icon/trash.svg"></img></a>
+					<a href="deleteMusic.php?idMusic=<?= $likedTitle["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img height="8px" src="../../userContent/icon/trash.svg"></img></a>
 				<?php endif; ?>
 
 				<div class="dropdown" style="float:right;">

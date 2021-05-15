@@ -855,7 +855,7 @@ footer{
 
 .ListMusicsMainBlock{
 	background: linear-gradient(to bottom right, var(--blackBackground-color), var(--gray-color));
-	padding-bottom: 12%;
+	padding-bottom: 100%;
 	margin: 100px 0 0 0;
 	text-align: center;
 	display: flex;
