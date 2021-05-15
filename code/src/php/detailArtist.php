@@ -9,8 +9,8 @@ else
 {
     $title = 'Oto - Détails artiste';
 	require "template/header.php";
-	$id = $_GET["idArtist"];
-	$artists = $db->getArtist($id);
+	$idArtist = $_GET["idArtist"];
+	$artists = $db->getArtist($idArtist);
 	$musics = $db->getMusicEachArtist();
 }
 ?>
@@ -24,7 +24,7 @@ else
 <?php 
 if(empty($musics)) : ?>
 
-	<div class="errorLoginContainer"><h1 class="errorNoSong">Malheureusement, aucune musique de cet <?= $artists[0]['artName']; ?> est disponible.</h1></div>
+	<div class="errorLoginContainer"><h1 class="errorNoSong">Malheureusement, aucune musique de <?= $artists[0]['artName']; ?> m'est disponible.</h1></div>
 
 <?php else : ?>
 
