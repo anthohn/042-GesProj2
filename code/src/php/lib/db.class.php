@@ -92,7 +92,7 @@ class db{
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
-        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, " %H:%i" ) AS musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY idMusic';
+        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY  idMusic DESC';
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
@@ -267,7 +267,7 @@ class db{
      * Function 
      */
     public function getMusicEachArtist($idArtist){
-        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%i:%s") AS musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist = :idArtist';
+        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist = :idArtist';
         $binds = array(
             0 => array(
                 'field' => ':idArtist',
@@ -298,7 +298,7 @@ class db{
      * @param $search
      */
     public function getAllTitleSearched($search){
-        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%i:%s") AS musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" ORDER BY idArtist ASC';        
+        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" ORDER BY idArtist ASC';        
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
@@ -363,7 +363,7 @@ class db{
      * @param $idUser
      */
     public function getLikedtitles($idUser){
-        $query = 'SELECT idMusic, artName, musName, typeName, DATE_FORMAT(musDuration, "%i:%s") AS musDuration FROM t_liked JOIN t_user ON idxUser = idUser JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idUser = :idUser';
+        $query = 'SELECT idMusic, artName, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration FROM t_liked JOIN t_user ON idxUser = idUser JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idUser = :idUser';
         $binds = array(
             0 => array(
                 'field' => ':idUser',
@@ -500,7 +500,7 @@ class db{
      * @param $idPlaylist
      */
     public function getMusicsPlaylist($idPlaylist){
-        $query = 'SELECT idMusic, musName, typeName, DATE_FORMAT(musDuration, "%i:%s") AS musDuration  FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist';
+        $query = 'SELECT idMusic, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration  FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist';
         $binds = array(
             0 => array(
                 'field' => ':idPlaylist',

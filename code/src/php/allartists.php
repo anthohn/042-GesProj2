@@ -14,7 +14,7 @@ $artists = $db->getAllArtists();
 <div class="title">
 	<p>Artistes
 		<?php if(isLogged() && (isAdmin())): ?>
-			<a href="addArtist.php"><img src="../../userContent/icon/add.svg" height="30"></img></a>
+			<a class='addArtist' href="addArtist.php"><img src="../../userContent/icon/add.svg" height="30"></img></a>
 		<?php endif; ?>
 	</p>
 </div>		

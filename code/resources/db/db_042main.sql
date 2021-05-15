@@ -161,7 +161,7 @@ CREATE TABLE t_playlist (
 INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
 ('Noice 2.0', '2020-01-14', NULL),
 ('Rap FR', '2021-04-26', NULL),
-('Rap US', '2017-04-26', NULL),
+('US Best Tracks', '2017-04-26', NULL),
 ('Viral Hits', '2018-08-02', 5),
 ('OG dkzop', '2018-05-12', 2),
 ('Top 50 : Mondial', '2019-10-30', 5),
@@ -186,22 +186,20 @@ INSERT INTO t_add (idxPlaylist, idxMusic) VALUES
 (1, 5),
 (1, 12),
 (1, 8),
-
 (2, 7),
 (2, 10),
 (2, 20),
 (2, 22),
 (2, 25),
 (2, 24),
-
-
+(2, 12),
+(2, 27),
+(2, 9),
+(3, 2),
 (3, 5),
-(3, 5),
-(3, 5),
-(3, 5),
-(3, 5),
-(3, 2);
-
+(3, 17),
+(3, 16),
+(3, 6);
 --
 -- Structure de la table "t_typeLink"
 --

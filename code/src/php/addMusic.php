@@ -38,7 +38,7 @@ if(isLogged() && (isAdmin())):
 
 
     <div class="formcontent">   
-        <form method="POST" action="addTitle.php" enctype="multipart/form-data">
+        <form method="POST" action="addMusic.php" enctype="multipart/form-data">
             <h1>Ajout d'une musique</h1>
             <table>
                 <tr>
