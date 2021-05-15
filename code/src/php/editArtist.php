@@ -62,7 +62,7 @@ if(isLogged() && (isAdmin())):
                     <td>
                     <label for="date">Nationalité :</label>
                     <select name="country" id="country">
-                        <option value='0'><?= $artist["couCountry"]?></option>
+                        <option value='<?= $artist["idCountry"];?>'><?= $artist["couCountry"];?></option>                       
                         <?php foreach($countries as $country) : ?>
                             <option value="<?= $country["idCountry"]; ?>"><?= $country["couCountry"]; ?></option>
                         <?php endforeach; ?>

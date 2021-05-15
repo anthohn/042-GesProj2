@@ -132,7 +132,7 @@ class db{
      * @param $idArtist
      */
     public function getArtist($idArtist){
-        $query = "SELECT idArtist, artName, artBirth, couCountry FROM t_artist  JOIN t_country ON idxCountry = idCountry WHERE idArtist = :idArtist";
+        $query = "SELECT idArtist, artName, artBirth, idCountry, couCountry FROM t_artist  JOIN t_country ON idxCountry = idCountry WHERE idArtist = :idArtist";
         $binds = array(
             0 => array(
                 'field' => ':idArtist',
