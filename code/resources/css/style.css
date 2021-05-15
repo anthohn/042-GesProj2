@@ -173,8 +173,10 @@ body{
 }
 
 .login-container a {
+	position: fixed;
 	text-decoration: none;
 	padding: 10px 40px 10px 40px;
+	margin: 36px 0 0 0;
 	font-size: 17px;
 	border: none;
 	border-radius: 5px;
@@ -183,8 +185,9 @@ body{
 }
 
 .notlog a {
+	position: fixed;
 	text-decoration: none;
-	padding: 10px 40px 10px 40px;
+	padding: 10px 28px 10px 40px;
 	margin-top: 8px;
 	font-size: 17px;
 	border: none;
@@ -194,6 +197,7 @@ body{
 }
 
 .notlog p {
+	margin: 0 0 0 0;
 	padding: 0 0 10px 5px;
 	color: var(--back-color);
 }

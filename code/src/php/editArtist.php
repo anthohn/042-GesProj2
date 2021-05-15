@@ -19,18 +19,18 @@ if(isLogged() && (isAdmin())):
     ?>
 
     <?php 
-        if(isset($_POST['btnSubmit']))
+    if(isset($_POST['btnSubmit']))
+    {
+        if(empty($_POST['name']) || empty($_POST['date']))
         {
-            if(!empty($_POST['name']) || !empty($_POST['date']))
-            {
-                $db->updateArtist($idArtist, $_POST['name'], $_POST['date']);
-                $error = '<div class="succesLoginContainer"><h4 class="succesLogin">Modifications effectuées avec succès !</h4></div>'; 
-            } 
-            else
-            {
-                $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner tous les champs !</h4></div>'; 
-            }
+            $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner tous les champs !</h4></div>';  
+        } 
+        else
+        {   
+            $db->updateArtist($idArtist, $_POST['name'], $_POST['date'], $_POST['country']);
+            $error = '<div class="succesLoginContainer"><h4 class="succesLogin">Modifications effectuées avec succès !</h4></div>'; 
         }
+    }
     ?>
 
 

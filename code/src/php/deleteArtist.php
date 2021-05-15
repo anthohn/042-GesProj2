@@ -3,8 +3,8 @@ require "template/header.php";
 
 if(isLogged() && (isAdmin()))
 {   
-    $id = $_GET["idArtist"];
-    $deleteArtist = $db->deleteOneArtist($id);
+    $idArtist = $_GET["idArtist"];
+    $deleteArtist = $db->deleteOneArtist($idArtist);
     header('Location: allartists.php');  
 }
 else

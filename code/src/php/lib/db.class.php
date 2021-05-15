@@ -127,7 +127,10 @@ class db{
         return $results;
     }
 
-    //fonction qui va chercher les musiques de chaque artiste + sécurisé qu'avant 
+    /**
+     * Function 
+     * @param $idArtist
+     */
     public function getArtist($idArtist){
         $query = "SELECT idArtist, artName, artBirth, couCountry FROM t_artist  JOIN t_country ON idxCountry = idCountry WHERE idArtist = :idArtist";
         $binds = array(
@@ -144,11 +147,14 @@ class db{
     }
 
     /**
-     * Function modification d'un artiste
-     * @param $req
+     * Function 
+     * @param $idArtist
+     * @param $name
+     * @param $date
+     * @param $country
      */
-    public function updateArtist($idArtist, $name, $date){
-        $query = 'UPDATE t_artist SET artName = :artName,  artBirth = :artBirth WHERE idArtist = :idArtist';
+    public function updateArtist($idArtist, $name, $date, $country){
+        $query = 'UPDATE t_artist SET artName = :artName,  artBirth = :artBirth, idxCountry = :idxCountry WHERE idArtist = :idArtist';
         $binds = array(
             0 => array(
                 'field' => ':idArtist',
@@ -164,20 +170,30 @@ class db{
                 'field' => ':artBirth',
                 'value' => $date,
                 'type' => PDO::PARAM_STR
+            ),
+            3 => array(
+                'field' => ':idxCountry',
+                'value' => $country,
+                'type' => PDO::PARAM_INT
             )
         );
-        $results = $this->queryPrepareExecute($query, $binds);
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
         return $results;
     } 
 
 
-    //Suppression d'un artistes dans la bdd 
-    public function deleteOneArtist($id){
-        $query = "DELETE FROM t_artist WHERE idArtist = :id";
+    /**
+     * Function 
+     * @param $idArtist
+     */
+    public function deleteOneArtist($idArtist){
+        $query = "DELETE FROM t_artist WHERE idArtist = :idArtist";
         $binds = array(
             0 => array(
-                'field' => ':id',
-                'value' => $id,
+                'field' => ':idArtist',
+                'value' => $idArtist,
                 'type' => PDO::PARAM_INT
             )    
         );
@@ -187,7 +203,9 @@ class db{
         return $results;
     }
 
-    //fonction qui va chercher les musiques de chaque artiste
+    /**
+     * Function 
+     */
     public function getMusicEachArtist(){
         $query = "SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist =" . $_GET["idArtist"];
         $reqExecuted = $this->querySimpleExecute($query);
@@ -196,17 +214,22 @@ class db{
         return $results;
     }
 
-    //
+    /**
+     * Function 
+     * @param $search
+     */
     public function getSearchedArtistsMusicsPlaylists($search){
         $query = 'SELECT artName, musName, plaName, plaCreationDate FROM t_music JOIN t_artist ON t_music.idxArtist = t_artist.idArtist JOIN t_add ON t_add.idxMusic = t_music.idMusic JOIN t_playlist ON t_playlist.idPlaylist = t_add.idxPlaylist WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" OR plaName LIKE "%'.$search.'%" ORDER BY artName ASC';
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
-
         $this->unsetData($reqExecuted);
         return $results;
     }
 
-    //relier au dessus
+    /**
+     * Function 
+     * @param $search
+     */
     public function getAllTitleSearched($search){
         $query = 'SELECT idMusic, musName, musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" ORDER BY idArtist ASC';        
         $reqExecuted = $this->querySimpleExecute($query);
@@ -215,7 +238,10 @@ class db{
         return $results;
     }
 
-    //relier au dessus
+    /**
+     * Function 
+     * @param $search
+     */
     public function getAllPlaylistSearched($search){
         $query = 'SELECT * FROM t_music JOIN t_artist ON t_music.idxArtist = t_artist.idArtist JOIN t_add ON t_add.idxMusic = t_music.idMusic JOIN t_playlist ON t_playlist.idPlaylist = t_add.idxPlaylist WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" OR plaName LIKE "%'.$search.'%" ORDER BY artName ASC';       
         $reqExecuted = $this->querySimpleExecute($query);
@@ -224,47 +250,16 @@ class db{
         return $results;
     }
 
-    //Ajouter une musique 
-    public function addTeacher($surname, $firstname, $gender , $nickname, $origin){
-        $query = "INSERT INTO t_music (teaFirstname, teaName, teaGender, teaNickname, teaOrigin) VALUES (:surname, :firstname, :gender, :nickname, :origin)";
+    /**
+     * Function suppression d'une musique dans la bdd 
+     * @param $idMusic
+     */
+    public function deleteOneMusic($idMusic){
+        $query = "DELETE FROM t_music WHERE idMusic = :idMusic";
         $binds = array(
             0 => array(
-                'field' => ':surname',
-                'value' => $surname,
-                'type' => PDO::PARAM_STR
-            ),
-            1 => array(
-                'field' => ':firstname',
-                'value' => $firstname,
-                'type' => PDO::PARAM_STR
-            ),
-            2 => array(
-                'field' => ':gender',
-                'value' => $gender,
-                'type' => PDO::PARAM_STR
-            ),
-            3 => array(
-                'field' => ':nickname',
-                'value' => $nickname,
-                'type' => PDO::PARAM_STR
-            ),
-            4 => array(
-                'field' => ':origin',
-                'value' => $origin,
-                'type' => PDO::PARAM_STR
-            )
-        );
-        $results = $this->queryPrepareExecute($query, $binds);
-        return $results;
-    }
-
-    //Suppression d'une musique dans la bdd 
-    public function deleteOneMusic($id){
-        $query = "DELETE FROM t_music WHERE idMusic = :id";
-        $binds = array(
-            0 => array(
-                'field' => ':id',
-                'value' => $id,
+                'field' => ':idMusic',
+                'value' => $idMusic,
                 'type' => PDO::PARAM_INT
             )    
         );
@@ -274,7 +269,9 @@ class db{
         return $results;
     }
 
-    //récupérer tous les genres de musique
+    /**
+     * Function récupérer tous les genres de musique
+     */
     public function getAllType(){
         $query = "SELECT idType, typeName FROM t_type";
         $reqExecuted = $this->querySimpleExecute($query);
@@ -283,7 +280,9 @@ class db{
         return $results;
     }
 
-    //récupérer tous les pays
+    /**
+     * Function récupere tous les pays
+     */   
     public function getAllCountry(){
         $query = "SELECT idCountry, couCountry FROM t_country";
         $reqExecuted = $this->querySimpleExecute($query);
@@ -292,7 +291,10 @@ class db{
         return $results;
     }
 
-    //récupere les titres likés d'un utilisateur 
+    /**
+     * Function récupere les titres likés d'un utilisateur 
+     * @param $idUser
+     */
     public function getLikedtitles($idUser){
         $query = 'SELECT * FROM t_liked JOIN t_user ON idxUser = idUser JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idUser = :idUser';
         $binds = array(
@@ -308,7 +310,11 @@ class db{
         return $results;
     }
 
-    //permet d'ajouter un titre dans sa liste de titre likés
+    /**
+     * Function permet d'ajouter un titre dans sa liste de titre likés
+     * @param $idMusic
+     * @param $idUser
+     */
     public function addLikedMusic($idMusic, $idUser) {
         $query = "INSERT INTO t_liked (idxMusic, idxUser) VALUES (:idMusic, :idUser)";
         $binds = array(
@@ -323,11 +329,17 @@ class db{
                 'type' => PDO::PARAM_STR
             )     
         );
-        $results = $this->queryPrepareExecute($query, $binds);
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
         return $results;
     }
 
-    //Permet de supprimer un titre likés
+    /**
+     * Function Permet de supprimer un titre likés
+     * @param $idMusic
+     * @param $idUser
+     */
     public function suppLikedMusic($idMusic, $idUser){
         $query = 'DELETE FROM t_liked WHERE idxMusic = :idMusic AND idxUser = :idUser';
         $binds = array(
@@ -348,7 +360,9 @@ class db{
         return $results;
     }
 
-    //récupere les playlists (sans forcément que l'utilisateur soit connecté)
+    /**
+     * Function récupere les playlists (sans forcément que l'utilisateur soit connecté)
+     */
     public function getPlaylists(){
         $query = 'SELECT * FROM t_playlist WHERE idxUser is NULL';
         $reqExecuted = $this->querySimpleExecute($query);
@@ -357,7 +371,10 @@ class db{
         return $results;
     }
 
-    //récupere les playlists d'UN utilisateur
+    /**
+     * Function récupere les playlists d'UN utilisateur
+     * @param $idUser
+     */
     public function getPlaylistsUser($idUser){
         $query = 'SELECT * FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser';
         $binds = array(
@@ -373,7 +390,10 @@ class db{
         return $results;
     }
 
-    //récupere une playlist
+    /**
+     * Function récupere une playlist
+     * @param $idPlaylist
+     */
     public function getPlaylist($idPlaylist){
         $query = 'SELECT * FROM t_playlist WHERE idPlaylist = :idPlaylist';
         $binds = array(
@@ -389,7 +409,10 @@ class db{
         return $results;
     }
 
-    //Suppression d'une playlist
+    /**
+     * Function suppression d'une playlist
+     * @param $idPlaylist
+     */
     public function deleteOnePlaylist($idPlaylist){
         $query = 'DELETE FROM t_playlist WHERE idPlaylist = :idPlaylist';
         $binds = array(
@@ -405,7 +428,10 @@ class db{
         return $results;
     }
 
-    //récupere les music contenu dans la playlist 
+    /**
+     * Function récupere les music contenu dans la playlist 
+     * @param $idPlaylist
+     */
     public function getMusicsPlaylist($idPlaylist){
         $query = 'SELECT * FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist';
         $binds = array(
@@ -421,7 +447,12 @@ class db{
         return $results;
     }
 
-    // fonction pour ajouter un artistes dans la bdd
+    /**
+     * Function add artist in db
+     * @param $name
+     * @param $date
+     * @param $country
+     */
     public function addArtist($name, $date, $country){
         $query = "INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES (:artName, :artBirth, :idxCountry)";
         $binds = array(
@@ -441,7 +472,9 @@ class db{
                 'type' => PDO::PARAM_STR
             )
         );
-        $results = $this->queryPrepareExecute($query, $binds);
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
 
         $query2 = "SELECT LAST_INSERT_ID()";
         $results2 = $this->querySimpleExecute($query2);
@@ -450,7 +483,11 @@ class db{
         return $results2[0]["LAST_INSERT_ID()"];
     }
 
-    // fonction pour ajouter une musique dans la bdd
+    /**
+     * Function add music in db
+     * @param $name
+     * @param $duration
+     */
     public function addTitle($name, $duration){
         $query = 'INSERT INTO t_music (musName, musDuration) VALUES (:musName, :musDuration)';
         $binds = array(
@@ -465,7 +502,9 @@ class db{
                 'type' => PDO::PARAM_INT 
             )
         );
-        $results = $this->queryPrepareExecute($query, $binds);
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
 
         //récupere le dernier ID (qui vient d'être inséré)
         $query2 = "SELECT LAST_INSERT_ID()";
@@ -475,7 +514,9 @@ class db{
         return $results2[0]["LAST_INSERT_ID()"];
     }
 
-    //Connexion d'un utilisateur à la bdd
+    /**
+     * Function getUser from db
+     */
     public function getUsers(){
         $query = "SELECT * FROM t_user";
         $reqExecuted = $this->querySimpleExecute($query);
@@ -484,7 +525,11 @@ class db{
         return $results;
     }
 
-    //ajout d'un utilisateur dans la bdd 
+    /**
+     * Function add user in db
+     * @param $login
+     * @param $psw
+     */
     public function addUser($login, $psw){
         $query = "INSERT INTO t_user (useLogin, usePassword) VALUES (:useLogin, :usePassword)";
         $binds = array(
@@ -505,7 +550,10 @@ class db{
         return $results;
     }
 
-    // Suppression d'untilisateur dans la bdd
+    /**
+     * Function delete user from db
+     * @param $idUser
+     */
     public function deleteUser($idUser){
         $query = "DELETE FROM t_user WHERE idUser = :id";
         $binds = array(
