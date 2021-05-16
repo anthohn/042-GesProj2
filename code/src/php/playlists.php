@@ -53,7 +53,7 @@ require "template/header.php"; ?>
 		<div class="playlistcreation">
 			<p>Créer une playlist</p>
 			<div class="playlistcreationBoutton">
-				<a href="addPlaylist.php">+</a>
+				<a href="addPlaylistUser.php">+</a>
 			</div>
 		</div>
 	<?php endif; ?>

@@ -516,6 +516,38 @@ class db{
             return $results2[0]["LAST_INSERT_ID()"];
         }
 
+        /**
+         * Function permet de créer une playlist personnel à un utilisateur
+         * @param $playlistName
+         * Tout fonctionne mais je n'arrive pas à binds le "now()"
+         */
+        public function addPersonnalPlaylist($playlistName, $idUser) {
+            $query = 'INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES (:plaName, now(), :idxUser)';
+            $binds = array(
+                0 => array(
+                    'field' => ':plaName',
+                    'value' => $playlistName,
+                    'type' => PDO::PARAM_STR
+                ),
+                1 => array(
+                    'field' => ':idxUser',
+                    'value' => $idUser,
+                    'type' => PDO::PARAM_INT
+                )                
+            );
+            $reqExecuted = $this->queryPrepareExecute($query, $binds);
+            $results = $this->formatData($reqExecuted);
+            $this->unsetData($reqExecuted);
+            
+            $query2 = "SELECT LAST_INSERT_ID()";
+            $results2 = $this->querySimpleExecute($query2);
+            $results2 = $this->formatData($results2);
+
+            return $results2[0]["LAST_INSERT_ID()"];
+        }
+
+        
+
 
         /**
          * Function 
