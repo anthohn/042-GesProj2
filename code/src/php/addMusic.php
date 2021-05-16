@@ -19,7 +19,7 @@ if(isLogged() && (isAdmin())):
         }
         else
         {
-            $newID = $db->addMusic($_POST['name'], $_POST['duration'], $_POST['artist'], $_POST['type'] );
+            $newID = $db->addMusic($_POST['name'], $_POST['duration'], $_POST['artist'], $_POST['type']);
             
             if($newID >= 0)
             {

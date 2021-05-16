@@ -826,7 +826,7 @@ footer{
 }
 
 .alltitlemainBlock{
-	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
+	background: linear-gradient(to left, rgb(35, 80, 55), rgb(15, 29, 55));
 	padding-bottom: 40%;
 	margin: 370px 0 0 0;
 	text-align: center;
@@ -855,9 +855,10 @@ footer{
 	box-shadow: 0 24px 25px 0 var(--blackBackground-color);
 	border-radius: 20px;
 	margin: 70px 0 0 0;
-	height: 120px;
-	/* position: fixed; */
-	z-index: -1;
+	min-height: 120px;
+	max-height: 120px;
+	min-width: 120px;
+	max-width: 120px;
 }
 
 .ListMusicsMainBlock{
@@ -870,6 +871,7 @@ footer{
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
+
 .PLblock1 a{
 	text-decoration: none;
 }
@@ -1099,9 +1101,9 @@ svg.like:hover{
 	text-decoration: none;
 }
 
-.playlistcreationBoutton:hover a {
-	color: var(--lightPastel-color);
-}
+/* .playlistcreationBoutton:hover a {
+	color: var(--gray-color);
+} */
 
 .PLblock1{
 	border-radius:10px;
@@ -1123,9 +1125,12 @@ svg.like:hover{
 
 .PLimgCover img{
 	border-radius: 5px;
-	margin-top: 30px;
+	margin: 30px 0 0 0;
 	margin-bottom: 0;
-	height: 200px;
+	min-height: 200px;
+	max-width: 200px;
+	min-height: 200px;
+	max-height: 200px;
 }
 
 .PLblockText{

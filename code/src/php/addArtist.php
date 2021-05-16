@@ -8,7 +8,7 @@ if(isLogged() && (isAdmin())):
  
     if(isset($_POST['btnSubmit']))
     {
-        if(empty($_POST['name']) || empty($_POST['date']) || $_POST['country'] == 0 || empty($_POST['printscreen']))
+        if(empty($_POST['name']) || empty($_POST['date']) || $_POST['country'] == 0)
         {
             $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner tous les champs !</h4></div>'; 
         }

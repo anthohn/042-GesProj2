@@ -38,7 +38,7 @@ if(isLogged() && (isAdmin())):
 
         <form method="POST" action="editMusic.php?idMusic=<?= $idMusic ?>" enctype="multipart/form-data">
         <?php foreach($musics as $music): ?> 
-            <h2>Modification d'un artiste</h2>
+            <h2>Modification d'une musique</h2>
             <table>
                 <tr>
                     <td>
