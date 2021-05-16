@@ -10,19 +10,13 @@ require "template/header.php"; ?>
 <?php $playlists = $db->getPlaylists(); ?>
 
 <div class="title">
-	<p>Playlists public : </p>
+	<p>Playlists public : 
+	<?php if(isLogged() && (isAdmin())): ?>
+			<a class='addArtist' href="addPlaylistPublic.php"><img src="../../userContent/icon/add.svg" height="30"></img></a>
+		<?php endif; ?></p>
 </div>
 
 <div class="PLmainBlock">
-	<?php if(isLogged()): ?>
-		<div class="playlistcreation">
-			<p>Créer une playlist</p>
-			<div class="playlistcreationBoutton">
-				<a href="addPlaylist.php">+</a>
-			</div>
-		</div>
-	<?php endif; ?>
-
 	<?php foreach ($playlists as $playlist): ?>
 		<div class="PLblock1">
 			<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
@@ -44,9 +38,8 @@ require "template/header.php"; ?>
 	<?php endforeach ?>			
 </div>	
 
-
-
 <?php if(isLogged()): ?>
+
 	<!-- récupere l'id du user -->
 	<?php $idUser = ($_SESSION['idUser']) ?>
 	<?php $playlists = $db->getPlaylistsUser($idUser); ?>
@@ -56,6 +49,14 @@ require "template/header.php"; ?>
 	</div>
 
 	<div class="PLmainBlock">
+	<?php if(isLogged()): ?>
+		<div class="playlistcreation">
+			<p>Créer une playlist</p>
+			<div class="playlistcreationBoutton">
+				<a href="addPlaylist.php">+</a>
+			</div>
+		</div>
+	<?php endif; ?>
 		<?php foreach ($playlists as $playlist): ?>
 			<div class="PLblock1">
 				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">

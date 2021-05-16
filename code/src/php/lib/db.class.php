@@ -476,6 +476,95 @@ class db{
         return $results;
     }
 
+    /********************************TRAVAUX*****************************************************/
+
+
+
+
+
+
+
+
+
+        /**
+         * Function permet de créer une playlist PUBLIC (accès admin)
+         * @param $playlistName
+         * Tout fonctionne mais je n'arrive pas à binds le "now()"
+         */
+        public function addPublicPlaylist($playlistName) {
+            $query = 'INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES (:plaName, now(), :idxUser)';
+            $binds = array(
+                0 => array(
+                    'field' => ':plaName',
+                    'value' => $playlistName,
+                    'type' => PDO::PARAM_STR
+                ),
+                1 => array(
+                    'field' => ':idxUser',
+                    'value' => NULL,
+                    'type' => PDO::PARAM_INT
+                )                
+            );
+            $reqExecuted = $this->queryPrepareExecute($query, $binds);
+            $results = $this->formatData($reqExecuted);
+            $this->unsetData($reqExecuted);
+            
+            $query2 = "SELECT LAST_INSERT_ID()";
+            $results2 = $this->querySimpleExecute($query2);
+            $results2 = $this->formatData($results2);
+
+            return $results2[0]["LAST_INSERT_ID()"];
+        }
+
+
+        /**
+         * Function 
+         * @param $newID
+         * @param $checkedMusic
+         */
+        public function addMusicPlaylist($newID, $checkedMusic) {
+            $query = 'INSERT INTO t_add (idxPlaylist, idxMusic) VALUES (:idxPlaylist, :idxMusic)';
+            // $test = implode($checkMusic);
+            // echo $test;
+            
+            $binds = array(
+                0 => array(
+                    'field' => ':idxPlaylist',
+                    'value' => $newID,
+                    'type' => PDO::PARAM_INT
+                ),
+                1 => array(
+                    'field' => ':idxMusic',
+                    'value' => $checkedMusic,
+                    'type' => PDO::PARAM_INT
+                )                
+            );
+            $reqExecuted = $this->queryPrepareExecute($query, $binds);
+            $results = $this->formatData($reqExecuted);
+            $this->unsetData($reqExecuted);
+            
+            $query2 = "SELECT LAST_INSERT_ID()";
+            $results2 = $this->querySimpleExecute($query2);
+            $results2 = $this->formatData($results2);
+
+            return $results2[0]["LAST_INSERT_ID()"];
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /************************************************************************************************ */    
+
     /**
      * Function suppression d'une playlist
      * @param $idPlaylist

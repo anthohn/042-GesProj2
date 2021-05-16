@@ -890,7 +890,7 @@ footer{
 	padding: 0 0 0 0;
 	color: var(--back-color);
 	font-weight: bold;
-	font-size: 80px;
+	font-size: 60px;
 }
 
 .plalistCreaTitle p{
@@ -913,7 +913,7 @@ footer{
 }
 
 .playlistCreaBlock{
-	background: linear-gradient(to left, rgb(36, 35, 80), rgb(15, 29, 55));
+	background: linear-gradient(to bottom right, var(--lightBlack-color), var(--gray-color));
 	padding-bottom: 40%;
 	margin: 110px 0 0 0;
 	text-align: center;
