@@ -15,9 +15,6 @@ if (isset($_SESSION['idUser']))
 	$playlists = $db->getPlaylists($idUser);
 }
 
-
-
-
 if(isset($_GET['search']) && !empty($_GET['search']))
 {
 	$search = htmlspecialchars($_GET['search']);
@@ -51,13 +48,8 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 			if(count($searchResults) > 0)
 			{
 				// echo '<pre>';
-				// 	print_r($_SESSION);
+				// 	print_r($searchResults);
 				// echo '</pre>';
-				// foreach($searchResults as $searchResult) {
-				// 	echo '<pre>';
-				// 	print_r($_SESSION);
-				// echo '</pre>';
-				// }
 				echo "<h2>Résultat pour : $search</h2>";
 			}
 			else
@@ -66,6 +58,26 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 			}
 		}
 		?>
+	</div>
+
+	<div class="playlistContainer">
+		<?php foreach ($playlists as $playlist): ?>
+			<div class="playlistBlock">
+				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
+					<div class="playlistImg">
+						<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
+					</div>
+					<div class="playlistTitleDateContainer">
+						<div class="playlistTitle">
+							<p><?= $playlist['plaName']; ?></p>
+						</div>
+						<div class="playlistCreationDate">
+							<p><?= $playlist['plaCreationDate']; ?></p>
+						</div>
+					</div>
+				</a>
+			</div>	
+		<?php endforeach ?>
 	</div>
 
 	<div class="allTitleContainer">
@@ -83,7 +95,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 					<a href=""><button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button></a>
 					<?php $idMusic = $music['idMusic']; ?>
 					<?php $links = $db->getLinkEachMusics($idMusic); ?>
-				
+					
 					<?php foreach ($links as $link): ?>
 						<div class="dropdown-content">
 							 <a href="<?= $link["linLink"]; ?>"><?= $link["typLiens"]; ?></a>
@@ -98,26 +110,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 				<?php endif; ?>
 			</div>
 		<?php endforeach; ?>
-	</div> 
-
-	<div class="PLmainBlock">
-		<?php foreach ($playlists as $playlist): ?>
-			<div class="PLblock1">
-				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
-					<div class="PLimgCover">
-						<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
-					</div>
-					<div class="PLblockTitle">
-						<p><?= $playlist['plaName']; ?></p>
-					</div>
-					<div class="PLblockText">
-						<p><?= $playlist['plaCreationDate']; ?></p>
-					</div>
-				</a>
-			</div>	
-		<?php endforeach ?>
-	</div>
-	
+	</div> 	
 </div>
 
 <?php require "template/footer.php"; ?>

@@ -707,6 +707,64 @@ footer{
 	color: var(--lightPastel-color);
 }
 
+.playlistContainer {
+	text-align: center;
+    display: flex;
+    flex-direction: row;
+	justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.playlistBlock {
+	border-radius: 10px;
+    height: 100px;
+    margin: 50px 0 50px 0;
+    flex-basis: 500px;
+    background-color: var(--lighterBlack-color);
+    box-shadow: 0 7px 40px 0 var(--lightBlack-color);
+}
+
+.playlistBlock a {
+	text-decoration: none;
+    display: flex;
+	justify-content: flex-start;
+	margin: 0 0 0 20px;
+}
+
+.playlistImg img {
+	border-radius: 5px;
+    margin: 18px 0 0 0;
+    min-height: 65px;
+    max-width: 65px;
+    min-width: 65px;
+    max-height: 65px;
+}
+
+.playlistTitleDateContainer {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+	margin: 0 0 0 10px;
+}
+
+.playlistTitle p {
+	padding-top: 5px;
+    margin: 0 10px;
+    font-weight: 800;
+    font-size: 25px;
+    color: var(--lightBlack-color);
+    text-shadow: 4px 4px 7px var(--gray-color);
+}
+
+.playlistCreationDate p {
+	font-size: 13px;
+	color: var(--lightBlack-color);
+    margin: 0;
+	padding-top: 5px;
+    margin: 0 10px;
+}
+
 
 /********************************************Artistes*************************************************/
 
