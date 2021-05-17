@@ -39,7 +39,7 @@ $musics = $db->getAllTitle();
 			<?php if(isLogged() && (isAdmin())): ?>
 			<div class="testtest">
 				<a href="deleteMusic.php?idMusic=<?= $music["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img width="20px" src="../../userContent/icon/trash.svg"></img></a>
-				<a href="editMusic.php?idMusic=<?= $music["idMusic"]; ?>"><img width="20px" src="../../userContent/icon/edit.svg"></img></a>
+				<a href="editMusic.php?idMusic=<?= $music["idMusic"]; ?>"><img class='justTesting' width="20px" src="../../userContent/icon/edit.svg"></img></a>
 			</div>
 			<?php endif; ?>
 			<div class="dropdown" style="float:right;">

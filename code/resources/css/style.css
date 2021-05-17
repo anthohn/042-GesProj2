@@ -25,6 +25,7 @@
 	--dropdown-color: #f9f9f9;
 }
 
+
 html{
 	height: 120%;
 	width: 100%;
@@ -187,7 +188,7 @@ body{
 .notlog a {
 	position: fixed;
 	text-decoration: none;
-	padding: 10px 28px 10px 40px;
+	padding: 10px 34px;
 	margin-top: 8px;
 	font-size: 17px;
 	border: none;
