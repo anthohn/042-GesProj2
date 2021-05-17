@@ -26,12 +26,12 @@ $musics = $db->getAllTitle();
 		<a class='addTitle' href="addMusic.php"><img src="../../userContent/icon/add.svg" height="30"></img></a>
 	<?php endif; ?>
 
-	<?php foreach ($musics as $music):?>
+	<?php foreach ($musics as $music): ?>
 		<div class="ARPblock1">
 			<img src="../../userContent/img/music/<?= $music["idMusic"] ?>.jpg" alt="">
 			<p><?= $music["musName"]; ?></p>
-			<p class="artName">-</p>			
-			<p class="artName"><?= $music["artName"]; ?></p>
+			<p class="artName">-</p>
+			<p><a class="artName" href="detailArtist.php?idArtist=<?= $music["idArtist"]; ?>"><?= $music["artName"]; ?></a></p>
 			<p class="musDuration">-</p>
 			<p class="musDuration"><?= $music["musDuration"]; ?></p>
 			<p class="typeName">-</p>

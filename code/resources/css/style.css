@@ -837,6 +837,16 @@ footer{
 	justify-content: space-evenly;
 }
 
+.artName{
+	color: var(--gray-color);
+	text-decoration: none;
+}
+
+.artName:hover{
+	transition: all 0.2s ease-in-out;
+	color: var(--lightPastel-color);
+}
+
 /*******************************************Playlist perso***********************************************/
 .Playlisttitle{
 	padding: 30px 0 0 70px;
