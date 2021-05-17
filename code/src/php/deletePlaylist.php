@@ -1,5 +1,4 @@
-<?php
-require "template/header.php";
+<?php require "template/header.php";
 
 // Vérifie que l'utilisateur soit admin
 if(isLogged() && (isAdmin()))
@@ -12,7 +11,7 @@ if(isLogged() && (isAdmin()))
     // Si tout est ok -> appelle les fonctions
     else
     {
-        $idPlaylist = $_GET["idPlaylist"];
+        $idPlaylist = $_GET['idPlaylist'];
         $db->deleteOnePlaylist($idPlaylist);
         header('Location: allPlaylists.php');  
     }  
