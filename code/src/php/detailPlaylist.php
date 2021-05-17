@@ -1,3 +1,10 @@
+<!--
+ETML
+Auteur      : Anthony Höhn
+Date        : 16.05.2021
+Description : détail des playlist
+-->
+
 <?php
 // Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
 if(!isset($_GET['idPlaylist']) OR !is_numeric($_GET['idPlaylist']))
@@ -19,6 +26,7 @@ foreach ($getPlaylists as $getPlaylist): ?>
     <div class="Playlisttitle">
         <img src="../../userContent/img/playlists/cover/<?= $getPlaylist["idPlaylist"];?>.jpg" alt="">
         <p><?= $getPlaylist["plaName"]; ?></p>
+        <h4>Date de création : <?= $getPlaylist["plaCreationDate"]; ?></h4>
     </div>
 <?php endforeach ?>			
 	

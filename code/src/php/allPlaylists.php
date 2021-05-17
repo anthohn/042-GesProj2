@@ -1,7 +1,7 @@
 ﻿<!--
 ETML
 Auteur      : Anthony Höhn
-Date        : 04.03.2021
+Date        : 16.05.2021
 Description : Toutes les playlists de l'utilisateur (session)
 -->
 <?php $title = 'Oto - Playlists';
@@ -69,6 +69,10 @@ require "template/header.php"; ?>
 					<div class="PLblockText">
 						<p><?= $playlist['plaCreationDate']; ?></p>
 					</div>
+					<?php if(isLogged()): ?>
+						<a href="deletePlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la playlist ?')"><img src="../../userContent/icon/trash.svg"></img></a>
+						<a href="editPlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>"><img src="../../userContent/icon/edit.svg"></img></a>
+					<?php endif; ?>
 				</a>
 			</div>	
 		<?php endforeach ?>			

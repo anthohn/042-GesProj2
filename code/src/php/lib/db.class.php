@@ -1,7 +1,7 @@
 <!--
 ETML
 Auteur      : Anthony Höhn, Killian Good, Younes sayeh
-Date        : 11.05.2021
+Date        : 16.05.2021
 Description : database.php fichier où se trouve les fonctions pour le fonctionnement du site
 -->
 <?php
@@ -443,7 +443,7 @@ class db{
      * @param $idUser
      */
     public function getPlaylistsUser($idUser){
-        $query = 'SELECT * FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser';
+        $query = 'SELECT idPlaylist, plaName, DATE_FORMAT(plaCreationDate, "%d/%m/%Y") AS plaCreationDate FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser';
         $binds = array(
             0 => array(
                 'field' => ':idUser',
@@ -462,7 +462,7 @@ class db{
      * @param $idPlaylist
      */
     public function getPlaylist($idPlaylist){
-        $query = 'SELECT * FROM t_playlist WHERE idPlaylist = :idPlaylist';
+        $query = 'SELECT idPlaylist, plaName, DATE_FORMAT(plaCreationDate, "%d/%m/%Y") AS plaCreationDate FROM t_playlist WHERE idPlaylist = :idPlaylist';
         $binds = array(
             0 => array(
                 'field' => ':idPlaylist',
@@ -477,10 +477,6 @@ class db{
     }
 
     /********************************TRAVAUX*****************************************************/
-
-
-
-
 
 
 
@@ -546,9 +542,6 @@ class db{
             return $results2[0]["LAST_INSERT_ID()"];
         }
 
-        
-
-
         /**
          * Function 
          * @param $newID
@@ -582,7 +575,30 @@ class db{
             return $results2[0]["LAST_INSERT_ID()"];
         }
 
-
+        /**
+         * Function 
+         * @param $idPlaylist
+         * @param $checkedMusic
+         */
+        public function updatePlaylist($idPlaylist, $checkedMusic){
+            $query = 'UPDATE t_add SET idxMusic = :idxMusic WHERE idxPlaylist = :idxPlaylist';
+            $binds = array(
+                0 => array(
+                    'field' => ':idxPlaylist',
+                    'value' => $idPlaylist,
+                    'type' => PDO::PARAM_INT
+                ),
+                1 => array(
+                    'field' => ':idxMusic',
+                    'value' => $checkedMusic,
+                    'type' => PDO::PARAM_INT
+                )
+            );
+            $reqExecuted = $this->queryPrepareExecute($query, $binds);
+            $results = $this->formatData($reqExecuted);
+            $this->unsetData($reqExecuted);
+            return $results;
+        } 
 
 
 

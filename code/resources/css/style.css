@@ -790,7 +790,7 @@ footer{
 	height: 30px;
 	width: 30px;
 	background-color: rgb(214, 214, 214);
-	padding: 10px;
+	padding: 10px 9px 9px 10px;
 }
 
 .addArtist{
@@ -799,7 +799,7 @@ footer{
 	height: 30px;
 	width: 30px;
 	background-color: rgb(214, 214, 214);
-	padding: 12px 10px 3px 10px;	
+	padding: 12px 8px 2px 9px;	
 }
 
 .alltitle{
@@ -841,10 +841,10 @@ footer{
 	padding: 30px 0 0 70px;
 	color: var(--back-color);
 	font-weight: bold;
-	font-size: 80px;
 }
 
 .Playlisttitle p{
+	font-size: 80px;
 	margin-left: 10%;
 	/* position: fixed; */
 	z-index: -1;

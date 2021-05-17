@@ -2,6 +2,7 @@
 
 $title = "Oto - Modification d'une musique";
 require "template/header.php";
+
 // Vérifie si l'utilisateur est loggé ET admin
 if(isLogged() && (isAdmin())):
 

@@ -70,13 +70,13 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 					</li>
 				<?php endif; ?>
 
-				<?php if($activePage == 'playlists.php') : ?>
+				<?php if($activePage == 'allPlaylists.php') : ?>
 					<li class="playlists">
-						<a id="active" href="playlists.php">Playlists</a>
+						<a id="active" href="allPlaylists.php">Playlists</a>
 					</li>
 				<?php else : ?>
 					<li class="playlists">
-						<a href="playlists.php">Playlists</a>
+						<a href="allPlaylists.php">Playlists</a>
 					</li>
 				<?php endif; ?>
 
