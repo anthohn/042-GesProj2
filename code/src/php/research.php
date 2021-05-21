@@ -60,25 +60,27 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 		?>
 	</div>
 
-	<div class="playlistContainer">
-		<?php foreach ($playlists as $playlist): ?>
-			<div class="playlistBlock">
-				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
-					<div class="playlistImg">
-						<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
-					</div>
-					<div class="playlistTitleDateContainer">
-						<div class="playlistTitle">
-							<p><?= $playlist['plaName']; ?></p>
+	<?php if(isLogged()): ?>
+		<div class="playlistContainer">
+			<?php foreach ($playlists as $playlist): ?>
+				<div class="playlistBlock">
+					<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
+						<div class="playlistImg">
+							<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
 						</div>
-						<div class="playlistCreationDate">
-							<p><?= $playlist['plaCreationDate']; ?></p>
+						<div class="playlistTitleDateContainer">
+							<div class="playlistTitle">
+								<p><?= $playlist['plaName']; ?></p>
+							</div>
+							<div class="playlistCreationDate">
+								<p><?= $playlist['plaCreationDate']; ?></p>
+							</div>
 						</div>
-					</div>
-				</a>
-			</div>	
-		<?php endforeach ?>
-	</div>
+					</a>
+				</div>	
+			<?php endforeach ?>
+		</div>
+	<?php endif; ?>
 
 	<div class="allTitleContainer">
 		<?php foreach ($musics as $music):?>

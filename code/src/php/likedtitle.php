@@ -62,9 +62,10 @@ if(isLogged()): ?>
 	<?php endif; ?>	
 
 <?php else :?>
-	<div class="error">
+	<!-- <div class="error">
 		<h1>Connectez-vous pour visualiser vos titres likés.</h1>
-	</div>
+	</div> -->
+	<?php header("Location:connexion.php"); ?>
 <?php endif; ?>
 
 <?php require "template/footer.php"; ?>

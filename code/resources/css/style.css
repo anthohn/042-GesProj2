@@ -53,10 +53,15 @@ body{
 }
 
 .error{
-	background-color: var(--backError-color);
+	background-color: var(--coralButton-color);
 	padding: 10px;
 	color: var(--back-color);
 	text-align: center;
+}
+
+.error a{
+	color: var(--back-color);
+	/* text-decoration: none; */
 }
 
 .main{
@@ -181,7 +186,7 @@ body{
 	font-size: 17px;
 	border: none;
 	border-radius: 5px;
-	background-color:var(--greenLike-color);
+	background-color:var(--buttonBack-color);
 	color: var(--back-color);
 }
 

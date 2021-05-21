@@ -11,7 +11,7 @@ if(isLogged() && (isAdmin()))
     else
     {
         $idArtist = $_GET['idArtist'];
-        $deleteArtist = $db->deleteOneArtist($idArtist);
+        $db->deleteOneArtist($idArtist);
         header('Location: allartists.php');    
     } 
 }

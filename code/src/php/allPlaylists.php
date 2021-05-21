@@ -80,7 +80,7 @@ require "template/header.php"; ?>
 		
 <?php else :?>
 	<div class="error">
-		<h1>Connectez-vous pour visualiser vos playlists personnel !</h1>
+		<h2><a href='connexion.php'>Connectez-vous</a> pour visualiser vos playlists personnel !</h2>
 	</div>	
 <?php endif; ?>
 
