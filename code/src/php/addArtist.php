@@ -28,8 +28,7 @@ if(isLogged() && (isAdmin())):
             } 
         }
                                                                       
-    }
-?>
+    }?>
 
     <div class="formcontent">
         <form method="POST" action="addArtist.php" enctype="multipart/form-data">

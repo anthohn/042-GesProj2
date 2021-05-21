@@ -54,7 +54,7 @@ body{
 
 .error{
 	background-color: var(--coralButton-color);
-	padding: 10px;
+	padding: 1px;
 	color: var(--back-color);
 	text-align: center;
 }

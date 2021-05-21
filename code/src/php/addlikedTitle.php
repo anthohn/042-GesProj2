@@ -10,5 +10,5 @@ if(isLogged())
 }
 else
 {
-    header('Location: template/404.php');
+    header('Location: connexion.php');
 }
