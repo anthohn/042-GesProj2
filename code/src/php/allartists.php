@@ -5,9 +5,10 @@ Date        : 17.03.2021
 Description : Tous les artistes de la base de données rescencé ici grâce à un foreach qui va chercher dans la table t_artiste
 (s'affiche dynamiquement)
 -->
-<?php $title = 'Oto - Artistes'; 
-require "template/header.php";
-$artists = $db->getAllArtists();
+<?php 
+	$title = 'Oto - Artistes'; 
+	require "template/header.php";
+	$artists = $db->getAllArtists();
 ?>
 
 
@@ -20,7 +21,7 @@ $artists = $db->getAllArtists();
 </div>		
 
 <div class="ARmainBlock">
-	<?php foreach ( $artists as $artist): ?>			
+	<?php foreach ($artists as $artist): ?>			
 		<div class="ARblock1">
 			<a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>">
 				<div class="ARimgCover">

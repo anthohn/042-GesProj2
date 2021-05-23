@@ -8,11 +8,12 @@ Description : Recherche dynamique
 require "template/header.php";
 
 $musics = $db->getAllTitle();
+$playlists = $db->getPlaylists();
 
-if (isset($_SESSION['idUser']))
+if(isset($_SESSION['idUser']))
 {
 	$idUser = $_SESSION['idUser'];
-	$playlists = $db->getPlaylists($idUser);
+	$userPlaylists = $db->getPlaylistsUser($idUser);
 }
 
 if(isset($_GET['search']) && !empty($_GET['search']))
@@ -20,7 +21,12 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 	$search = htmlspecialchars($_GET['search']);
 	$searchResults = $db->getSearchedArtistsMusicsPlaylists($search);
 	$musics = $db->getAllTitleSearched($search);
-	$playlists = $db->getAllPlaylistSearched($search);
+	$playlists = $db->getAllPublicPlaylistSearched($search);
+	if(isLogged()) {
+		$playlists = $db->getAllPlaylistSearchedUser($search);
+		// $playlists = $db->getAllPublicPlaylistSearched($search);
+	}
+	$artists = $db->getAllArtistSearched($search);
 }
 ?>
 
@@ -60,6 +66,28 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 		?>
 	</div>
 
+	<?php if(!isLogged()): ?>
+	<div class="playlistContainer">
+		<?php foreach ($playlists as $playlist): ?>
+			<div class="playlistBlock">
+				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
+					<div class="playlistImg">
+						<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
+					</div>
+					<div class="playlistTitleDateContainer">
+						<div class="playlistTitle">
+							<p><?= $playlist['plaName']; ?></p>
+						</div>
+						<div class="playlistCreationDate">
+							<p><?= $playlist['plaCreationDate']; ?></p>
+						</div>
+					</div>
+				</a>
+			</div>	
+		<?php endforeach ?>
+	</div>
+	<?php endif; ?>
+
 	<?php if(isLogged()): ?>
 		<div class="playlistContainer">
 			<?php foreach ($playlists as $playlist): ?>
@@ -79,6 +107,52 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 					</a>
 				</div>	
 			<?php endforeach ?>
+		</div>
+
+		<div class="playlistContainer">
+			<?php foreach ($userPlaylists as $userPlaylist): ?>
+				<div class="playlistBlock">
+					<a href="detailPlaylist.php?idPlaylist=<?= $userPlaylist['idPlaylist']; ?>">
+						<div class="playlistImg">
+							<img src="../../userContent/img/playlists/cover/<?= $userPlaylist["idPlaylist"]?>.jpg" alt="">
+						</div>
+						<div class="playlistTitleDateContainer">
+							<div class="playlistTitle">
+								<p><?= $userPlaylist['plaName']; ?></p>
+							</div>
+							<div class="playlistCreationDate">
+								<p><?= $userPlaylist['plaCreationDate']; ?></p>
+							</div>
+						</div>
+					</a>
+				</div>	
+			<?php endforeach ?>
+		</div>
+	<?php endif; ?>
+
+	<?php if(isset($_GET['search']) && !empty($_GET['search'])): ?>
+		<div class="ARmainBlockResearch">
+			<?php foreach ($artists as $artist): ?>			
+				<div class="ARblock">
+					<a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>">
+						<div class="ARimgCover">
+							<img src="../../userContent/img/artists/logo/<?= $artist["idArtist"]?>.jpg" alt="">
+						</div>
+						<div class="ARblockTitle">
+							<p><?= $artist["artName"]; ?></p>
+						</div>
+						<div class="ARblockText">
+							<p><?= $artist["artBirth"]; ?></p>
+							<p><?= $artist["couCountry"]; ?></p>
+						</div>
+						<!-- Si l'utilisateur est admin ET connecté il a accès à cette fonctionnalité -->
+						<?php if(isLogged() && (isAdmin())): ?>
+							<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer l\'artiste ? Toutes les musiques qui lui y sont associées seront par la même occasion supprimées.')"><img src="../../userContent/icon/trash.svg"></img></a>
+							<a href="editArtist.php?idArtist=<?= $artist["idArtist"]; ?>"><img src="../../userContent/icon/edit.svg"></img></a>
+						<?php endif; ?>
+					</a>
+				</div>
+			<?php endforeach ?>			
 		</div>
 	<?php endif; ?>
 

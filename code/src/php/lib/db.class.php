@@ -298,7 +298,7 @@ class db{
      * @param $search
      */
     public function getAllTitleSearched($search){
-        $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" ORDER BY idArtist ASC';        
+        $query = 'SELECT idArtist, idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE artName LIKE "%'.$search.'%" OR musName LIKE "%'.$search.'%" ORDER BY idArtist ASC';        
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
@@ -309,8 +309,32 @@ class db{
      * Function 
      * @param $search
      */
-    public function getAllPlaylistSearched($search){
+    public function getAllPublicPlaylistSearched($search){
+        $query = 'SELECT DISTINCT idPlaylist, plaName, plaCreationDate FROM t_music JOIN t_artist ON t_music.idxArtist = t_artist.idArtist JOIN t_add ON t_add.idxMusic = t_music.idMusic JOIN t_playlist ON t_playlist.idPlaylist = t_add.idxPlaylist WHERE idxUser IS NULL AND plaName LIKE "%'.$search.'%" ORDER BY artName ASC';  
+        $reqExecuted = $this->querySimpleExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    /**
+     * Function 
+     * @param $search
+     */
+    public function getAllPlaylistSearchedUser($search){
         $query = 'SELECT DISTINCT idPlaylist, plaName, plaCreationDate FROM t_music JOIN t_artist ON t_music.idxArtist = t_artist.idArtist JOIN t_add ON t_add.idxMusic = t_music.idMusic JOIN t_playlist ON t_playlist.idPlaylist = t_add.idxPlaylist WHERE plaName LIKE "%'.$search.'%" ORDER BY artName ASC';  
+        $reqExecuted = $this->querySimpleExecute($query);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    /**
+     * Function 
+     * @param $search
+     */
+    public function getAllArtistSearched($search){
+        $query = 'SELECT idArtist, artName, DATE_FORMAT(artBirth, "%d/%m/%Y") AS artBirth, couCountry FROM t_artist JOIN t_country ON idxCountry = idCountry WHERE artName LIKE "%'.$search.'%"';  
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
