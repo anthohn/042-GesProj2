@@ -363,7 +363,7 @@ class db{
      * @param $idUser
      */
     public function getLikedtitles($idUser){
-        $query = 'SELECT idMusic, artName, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration FROM t_liked JOIN t_user ON idxUser = idUser JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idUser = :idUser';
+        $query = 'SELECT idArtist, artName, idMusic, artName, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration FROM t_liked JOIN t_user ON idxUser = idUser JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idUser = :idUser';
         $binds = array(
             0 => array(
                 'field' => ':idUser',

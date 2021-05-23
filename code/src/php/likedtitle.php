@@ -32,7 +32,7 @@ if(isLogged()): ?>
 					<img src="../../userContent/img/music/<?= $likedTitle["idMusic"] ?>.jpg" alt="">
 					<p><?= $likedTitle["musName"]; ?></p>
 					<p class="artName">-</p>			
-					<p class="artName"><?= $likedTitle["artName"]; ?></p>
+					<p><a class="artName" href="detailArtist.php?idArtist=<?= $likedTitle["idArtist"]; ?>"><?= $likedTitle["artName"]; ?></a></p>
 					<p class="musDuration">-</p>
 					<p class="musDuration"><?= $likedTitle["musDuration"]; ?></p>
 					<p class="typeName">-</p>
