@@ -1073,6 +1073,7 @@ svg.like{
 }
 
 svg.like:hover{
+	transition: 0.5s;
 	fill: var(--greenLike-color);
 }
 

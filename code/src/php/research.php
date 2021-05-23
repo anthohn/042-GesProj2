@@ -88,7 +88,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 				<img src="../../userContent/img/music/<?= $music["idMusic"] ?>.jpg" alt="">
 				<p><?= $music["musName"]; ?></p>
 				<p class="artName">-</p>			
-				<p class="artName"><?= $music["artName"]; ?></p>
+				<p><a class="artName" href="detailArtist.php?idArtist=<?= $music["idArtist"]; ?>"><?= $music["artName"]; ?></a></p>
 				<p class="musDuration">-</p>
 				<p class="musDuration"><?= $music["musDuration"]; ?></p>
 				<p class="typeName">-</p>
