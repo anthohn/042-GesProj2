@@ -3,6 +3,7 @@ require "template/header.php";
 
 $artists = $db->getAllArtists();
 $musics = $db->getAllTitle();
+
 ?>
 
 <div class="title">
@@ -12,7 +13,7 @@ $musics = $db->getAllTitle();
 	<?php foreach ( $artists as $artist): ?>		
 		<a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>">
 			<div class="ACblock">			
-				<img src="../../userContent/img/artists/logo/<?= $artist["idArtist"]?>.jpg" alt="">
+				<img src="<?= FILEPATHLOGOARTISTS, $artist["idArtist"]?>.jpg" alt="">
 				<h1><?= $artist["artName"]; ?></h1>
 				<p>Artiste</p>
 			</div>

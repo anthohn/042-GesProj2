@@ -7,7 +7,7 @@ if(isLogged())
     $idUser = ($_SESSION['idUser']);
 
     $suppMusicLiked = $db->suppLikedMusic($idMusic, $idUser);
-    header('Location: likedTitle.php');  
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 else
 {

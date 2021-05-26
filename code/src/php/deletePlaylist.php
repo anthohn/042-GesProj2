@@ -13,7 +13,7 @@ if(isLogged() && (isAdmin()))
     {
         $idPlaylist = $_GET['idPlaylist'];
         $db->deleteOnePlaylist($idPlaylist);
-        header('Location: allPlaylists.php');  
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }  
 }
 else

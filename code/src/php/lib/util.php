@@ -1,4 +1,12 @@
 <?php 
+
+//Déclaration constant chemin fichier
+
+//emplacement logo artistes
+define("FILEPATHLOGOARTISTS", "../../userContent/img/artists/logo/");
+
+
+
 //Vérifie si l'utilisateur est connecté ou non
 function isLogged() {
     if(isset($_SESSION['username'])) {

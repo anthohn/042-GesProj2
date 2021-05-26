@@ -12,7 +12,7 @@ if(isLogged() && (isAdmin()))
     {
         $idMusic = $_GET['idMusic'];
         $deleteArtist = $db->deleteOneMusic($idMusic);
-        header('Location: alltitle.php');   
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     } 
 }
 else

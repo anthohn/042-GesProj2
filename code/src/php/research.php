@@ -136,7 +136,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 				<div class="ARblock">
 					<a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>">
 						<div class="ARimgCover">
-							<img src="../../userContent/img/artists/logo/<?= $artist["idArtist"]?>.jpg" alt="">
+							<img src="<?= FILEPATHLOGOARTISTS, $artist["idArtist"]?>.jpg" alt="">
 						</div>
 						<div class="ARblockTitle">
 							<p><?= $artist["artName"]; ?></p>

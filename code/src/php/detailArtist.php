@@ -17,7 +17,7 @@ else
 
 <!-- <style>body{background-image: url('../../userContent/img/artists/background/<?= $artists[0]["idArtist"];?>.jpg');}</style> -->
 <div class="ARPtitle">
-	<img src="../../userContent/img/artists/logo/<?= $artists[0]["idArtist"];?>.jpg" alt="">
+	<img src="<?= FILEPATHLOGOARTISTS, $artists[0]["idArtist"];?>.jpg" alt="">
 	<p><?= $artists[0]["artName"]; ?></p>
 </div>
 
