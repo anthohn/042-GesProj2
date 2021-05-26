@@ -646,6 +646,31 @@ footer{
 	margin: auto;
 }
 
+.ARmainBlockResearch {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.ARblock {
+	border-radius: 10px;
+	height: 270px;
+	margin: 10px 20px 0 0;
+	flex-basis: 260px;
+	background-color: var(--lighterBlack-color);
+}
+
+.ARblock a{
+	text-decoration: none;
+	color: var(--blackBackground-color);
+}
+
+.ARblock:hover{
+    box-shadow: 0 7px 40px 0 var(--blackBackground-color);
+} 
+
 .icon {
 	background-color: transparent;
 	height: 95%;
