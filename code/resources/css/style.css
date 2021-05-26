@@ -999,17 +999,31 @@ footer{
 
 /*******************************************ARTISTES PERSO***********************************************/
 .ARPtitle{
+	z-index: -1;
 	padding: 30px 0 0 70px;
 	color: var(--back-color);
-	font-weight: bold;
-	font-size: 80px;
 }
 
 .ARPtitle p{
-	margin-left: 10%;
-	position: fixed;
+	font-weight: bold;
 	z-index: -1;
+	position: fixed;
+	font-size: 80px;
+	margin-left: 10%;
 }
+
+.ARPtitle h3{
+	margin-top: 230px;
+	z-index: -1;
+	position: fixed;
+}
+
+.ARPtitle h4{
+	margin-top: 260px;
+	z-index: -1;
+	position: fixed;
+}
+
 
 .ARPtitle img{
 	float: left;
