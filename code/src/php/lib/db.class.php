@@ -661,7 +661,7 @@ class db{
      * @param $idPlaylist
      */
     public function getMusicsPlaylist($idPlaylist){
-        $query = 'SELECT idMusic, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration  FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist';
+        $query = 'SELECT idMusic, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, idArtist, artName FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist';
         $binds = array(
             0 => array(
                 'field' => ':idPlaylist',

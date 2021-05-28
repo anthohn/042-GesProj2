@@ -21,7 +21,7 @@ require "template/header.php"; ?>
 		<div class="PLblock1">
 			<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
 				<div class="PLimgCover">
-					<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
+					<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]; ?>.jpg" alt="">
 				</div>
 				<div class="PLblockTitle">
 					<p><?= $playlist['plaName']; ?></p>
@@ -61,7 +61,7 @@ require "template/header.php"; ?>
 			<div class="PLblock1">
 				<a href="detailPlaylist.php?idPlaylist=<?= $playlist['idPlaylist']; ?>">
 					<div class="PLimgCover">
-						<img src="../../userContent/img/playlists/cover/<?= $playlist["idPlaylist"]?>.jpg" alt="">
+						<img src="<?= FILE_PATH_COVER_PLAYLISTS, $playlist["idPlaylist"]?>.jpg" alt="">
 					</div>
 					<div class="PLblockTitle">
 						<p><?= $playlist['plaName']; ?></p>

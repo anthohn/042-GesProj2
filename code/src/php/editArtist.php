@@ -42,7 +42,7 @@ if(isLogged() && (isAdmin())):
             <table>
                 <tr>
                     <td>
-                        <img src="<?= FILEPATHLOGOARTISTS, $artist["idArtist"]?>.jpg" alt="">
+                        <img src="<?= FILE_PATH_LOGO_ARTISTS, $artist["idArtist"]?>.jpg" alt="">
                     </td>    
                 </tr>
                 <tr>               

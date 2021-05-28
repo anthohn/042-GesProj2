@@ -76,7 +76,7 @@ if(isLogged()):
             <?php foreach ( $musics as $music):?>
                 <div class="ARPblock1">
                     <input type="checkbox" name="checkMusic[]" value="<?= $music["idMusic"] ?>"  />
-                    <img src="../../userContent/img/music/<?= $music["idMusic"] ?>.jpg" alt="">
+                    <img src="<?= FILE_PATH_COVER_MUSICS, $music["idMusic"] ?>.jpg" alt="">
                     <p><?= $music["musName"]; ?></p>
                     <p class="artName">-</p>			
                     <p class="artName"><?= $music["artName"]; ?></p>

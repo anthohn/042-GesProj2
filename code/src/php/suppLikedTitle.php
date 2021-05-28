@@ -4,9 +4,9 @@ require "template/header.php";
 if(isLogged())
 {
     $idMusic = $_GET["idMusic"];
-    $idUser = ($_SESSION['idUser']);
+    $idUser = $_SESSION['idUser'];
 
-    $suppMusicLiked = $db->suppLikedMusic($idMusic, $idUser);
+    $db->suppLikedMusic($idMusic, $idUser);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 else

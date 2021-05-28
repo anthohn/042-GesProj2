@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "lib/util.php";
+require "lib/helpers.php";
 require "lib/db.class.php";
 require "config/dbconfig.cfg";
 $db = new db (Config::$host, Config::$username, Config::$password, Config::$database);

@@ -13,7 +13,7 @@ $musics = $db->getAllTitle();
 	<?php foreach ( $artists as $artist): ?>		
 		<a href="detailArtist.php?idArtist=<?= $artist["idArtist"]; ?>">
 			<div class="ACblock">			
-				<img src="<?= FILEPATHLOGOARTISTS, $artist["idArtist"]?>.jpg" alt="">
+				<img src="<?= FILE_PATH_LOGO_ARTISTS, $artist["idArtist"]?>.jpg" alt="">
 				<h1><?= $artist["artName"]; ?></h1>
 				<p>Artiste</p>
 			</div>
@@ -29,7 +29,7 @@ $musics = $db->getAllTitle();
 	<?php foreach ( $musics as $music): ?>
 		<div class="ACblock">
 			<h1><?= $music["musName"]; ?></h1>
-			<img src="../../userContent/img/music/<?= $music["idMusic"] ?>.jpg" alt="">
+			<img src="<?= FILE_PATH_COVER_MUSICS, $music["idMusic"] ?>.jpg" alt="">
 			<p>Musique</p>
 		</div>
 	<?php endforeach ?>
