@@ -18,6 +18,7 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 		<title><?= $title ?></title>
 		<link href="../../resources/css/style.css" rel="stylesheet" type="text/css" />
 		<script src="../js/toggleMenu.js" defer></script>
+		<script src="../js/profileCard.js" defer></script>
 	</head>	
 	<body>
 		<div class="main" id="mainAbout">

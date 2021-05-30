@@ -147,7 +147,7 @@ body{
 }
 
 .leftnav li a:hover {
-	color: var(--back-color);
+	color: var(--pastel-color);
 	transition: all 0.2s ease-out;
 }
 
@@ -1341,64 +1341,204 @@ svg.like:hover{
 
 /*******************************************ABOUT***********************************************/
 
-.bottom{
-	padding-top: 380px;
-}
-
-.resContainer {
-	margin: auto;
-	padding: 90px 0 0 0;
-}
-
-.contenu{
-	max-width: 100%;
-    position: relative;
-	margin: 0;
-}
-
-.contenutext{
-	width: 50%;
-    border-radius: 10px;
-    background-color: var(--gray-color);
-    box-shadow: 0 7px 40px 0 rgb(131 131 131 / 70%);
-    /* position: absolute; */
-    margin: 123px 0 0 26%;
+.mainAbout {
+	padding: 10px 60px 0 50px;
 }
 
 .contenutext p{
-	text-align: center;
-	margin: 20px;
-	font-weight: 800;
+	text-align: left;
+	color: var(--lightPastel-color);
 	font-size: 25px;
-	color: rgb(32, 32, 32);
-	text-shadow: 2px 4px 7px var(--gray-color);
+	margin: 0;
 }
 
-.resContenu {
-	text-align: center;
-	margin: 0 10px 23px 10px;
-	font-weight: 800;
-	font-size: 25px;
-	color: rgb(150, 150, 150);
-	text-shadow: 2px 4px 7px var(--blackBackground-color);
+.aboutTitle {
+	color: var(--back-color);
+    padding: 0 0 20px 0;
+	font-size: 20px;
 }
 
-.iconContainer a {
-	text-align: center;
+.aboutTitle h1 {
+	margin: 20px 0 0 0;
 }
 
-.iconContainer {
-	max-width: 40%;
-    position: relative;
-    margin: auto;
-    text-align: center;
+.aboutTeam {
+	padding-top: 50px;
+	font-size: 15px !important;
 }
 
-.resSVGTwitter{
-	padding-left: 2%;
+.aboutSocials {
+	font-size: 15px !important;
 }
-.resSVGYTB{
-	padding-left: 2%;
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cardContainer {
+	display: flex;
+	justify-content: space-between;
+    flex-wrap: wrap;	
+}
+
+.mainAboutContaint {
+    margin: 30px;
+}
+
+.box {
+	width: 250px;
+	height: 250px;
+	box-shadow: 0 10px 20px var(--blackBackground-color);
+	border-radius: 23px;
+	flex-direction: column;
+	color: white;
+	position: relative;
+	overflow: hidden;
+}
+
+.box img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
+
+.username {
+	margin: 0 0 5px 0;
+	font-size: 2rem;
+}
+
+.skill {
+	color: var(--lightPastel-color);
+	margin: 0 0 20px 0;
+}
+
+.arrContainer, .cancel, .arrContainer2, .cancel2, .arrContainer3, .cancel3, .arrContainer4, .cancel4 {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: white;
+	bottom: 0;
+	right: 0;
+	border-radius: 23px 0;
+	color: var(--lightBlack-color);
+	font-size: 1.6rem;
+	cursor: pointer;
+	transition: all .4s;
+}
+
+.cancelIcon {
+	fill: var(--blackBackground-color);
+}
+
+.arrowIcon {
+	fill: var(--blackBackground-color);
+}
+
+.activeArr, .activeArr2, .activeArr3, .activeArr4 {
+	transform: translate(80%, 80%);
+}
+
+.leftContainer, .leftContainer2, .leftContainer3, .leftContainer4 {
+	position: absolute;
+	background: var(--lightBlack-color);
+	width: 100%;
+	height: 100%;
+	border-radius: 23px;
+	transition: all .4s;
+}
+
+.activeContent {
+	position: absolute;
+    padding: 20px 0 0 20px;
+}
+
+.off, .off2, .off3, .off4 {
+	transform: translate(-80%, -80%) rotate(90deg);
+}
+
+.active, .active2, .active3, .active4 {
+	transform: translate(0) rotate(0);
+}
+
+.leftContainer p, .leftContainer2 p, .leftContainer3 p, .leftContainer4 p {
+	margin: 0 0 15px 0;
+	font-size: 1.2rem;
+}
+
+.leftContainer .skills .skillDetail, .leftContainer2 .skills .skillDetail, .leftContainer3 .skills .skillDetail, .leftContainer4 .skills .skillDetail {
+	display: inline-block;
+	color: var(--lightPastel-color);
+	border: 1px solid var(--lightPastel-color);
+	padding: 5px 10px;
+	font-size: .9rem;
+	margin: 4px 4px 4px 0;
+}
+
+.leftContainer .icons, .leftContainer2 .icons, .leftContainer3 .icons , .leftContainer4 .icons  {
+	color: var(--lightPastel-color);
+	cursor: pointer;
+	margin: 20px 10px 0 0;
+	transition: all .4s;
+}
+
+.githubLink, .linkedinLink {
+	text-decoration: none;
+	color: var(--pastel-color);
+}
+
+.githubLink:hover, .linkedinLink:hover {
+	color: var(--lightPastel-color);
+	transition: all .2s ease-in-out;
+}
+
+.githubIcon, .linkedinIcon {
+	width: 32px;
+	height: 32px;
+}
+
+.linkedinIcon {
+	margin: 0 0 0 10px;
+}
+
+.aboutSocialsLinkContainer {
+	border: 1px solid var(--lightPastel-color);
+	margin: 20px 0 0 0;
+	padding: 10px;
+}
+
+.aboutIconContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.aboutInstagramIcon, .aboutTwitterIcon, .aboutYoutubeIcon {
+	fill: var(--back-color);
+	width: 40px;
+	height: 40px;
+	color: var(--back-color);
+	margin: 0 10px;
+}
+
+.aboutInstagramIcon:hover, .aboutTwitterIcon:hover, .aboutYoutubeIcon:hover {
+	fill: var(--lightPastel-color);
+	color: var(--lightPastel-color);
+	transition: all .2s ease-in-out;
+}
+
+.aboutSocials {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+    max-width: 53%;
+}
+
+.aboutSocialsText p {
+	text-align: left;
+    color: var(--lightPastel-color);
+    font-size: 25px;
+    margin: 0;
 }
 
 /***********************************************************************************************/
@@ -1449,12 +1589,13 @@ svg.like:hover{
 	}
 
 	.leftnav li:hover {
-		background-color: var(--pastel-color);
+		background-color: var(--gray-color);
 	}
 
 	.leftnav ul li a {
 		color: var(--back-color);
 		padding: 12px;
+		border-radius: 0;
 	}
 
 	.logo {
@@ -1484,8 +1625,22 @@ svg.like:hover{
 	/*Login Form*/
 
 	.login-container{
-		margin: -57px 50px 0 0;
+		margin: 316px 0 0 0;
 		position: absolute;
+		background-color: black;
+		height: 50px;
+		width: 100%;
+		border-radius: 0;
+		border-top: 1px solid var(--lightPastel-color);
+	}
+
+	.login-container a {
+		margin: 5px 0 0 0;
+	}
+
+	.inputContainer {
+		display: flex;
+		justify-content: center;
 	}
 
 	#psw, #login {
@@ -1550,10 +1705,9 @@ svg.like:hover{
 		margin: 0;
 	}
 
-	.contenutext {
-		margin: auto;
-		width: 60%;
-	}	
+	.aboutSocials {
+		max-width: 60%;
+	}
 }
 
 
@@ -1609,10 +1763,5 @@ svg.like:hover{
 	/*Playlists*/
 	.PLblock1{
 		margin: 50px 19px;
-	}
-
-	/*About*/
-	.contenutext {
-		width: 90%;
 	}
 }
