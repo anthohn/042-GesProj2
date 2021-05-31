@@ -25,6 +25,7 @@
 	--dropdown-color: #f9f9f9;
 }
 
+/********************************************Global******************************************************/
 
 html{
 	height: 120%;
@@ -61,17 +62,11 @@ body{
 
 .error a{
 	color: var(--back-color);
-	/* text-decoration: none; */
 }
 
 .main{
 	overflow: auto;
-	/* position: absolute; */
 }
-
-/* #mainAbout {
-	position: unset;
-} */
 
 .toggleButton {
 	position: absolute;
@@ -116,7 +111,6 @@ body{
 
 .leftnav{
 	display: flex;
-	/* sorry yene */
 	position: fixed;
 	height: 150vh;
 	width: 232px;
@@ -511,12 +505,12 @@ body{
 
 /******************************ACCUEIL******************************/
 
-.ACmainBlock{
+.ACmainBlock {
 	display: flex;
 	overflow-x: auto;
 }
 
-.ACmainBlock .ACblock{
+.ACmainBlock .ACblock {
 	text-align: center;
 	min-width: 200px;
 	min-height: 200px;
@@ -525,7 +519,7 @@ body{
 	background-color: var(--lightBlack-color);
 }
 
-.ACmainBlock .ACblock:hover{
+.ACmainBlock .ACblock:hover {
 	background-color: var(--ligthBlackhover-color);
 
 }
@@ -544,8 +538,6 @@ body{
 	font-weight: 800;
 	font-size: 20px;
 	color: var(--pastel-color);
-	/* text-shadow: 1px 1px 3px #5c5c5c; */
-
 }
 
 .ACblock p{
@@ -945,7 +937,6 @@ footer{
 .Playlisttitle p{
 	font-size: 80px;
 	margin-left: 10%;
-	/* position: fixed; */
 	z-index: -1;
 }
 
@@ -1075,8 +1066,7 @@ footer{
 	height: 80px;
 	border-radius: 5px;
 	margin: 30px 20px 20px 20px;
-	background-color: rgb(10, 10, 10);
-	/* box-shadow: 0 7px 40px 0 rgba(85, 85, 85, 0.7);	 */
+	background-color: var(--lightBlack-color);
 }
 
 #ARPblock1Id {
@@ -1088,7 +1078,6 @@ footer{
 	margin: 30px 0 0 3%;
 	font-size: 18px;
 	color: var(--gray-color);
-	/* text-shadow: 4px 4px 7px #5c5c5c; */
 }
 
 .ARPblock1 img{
@@ -1107,7 +1096,7 @@ footer{
 
 svg.like{
 	float: right;
-	margin: 25px 50px 0 0;
+	margin: 25px 70px 0 0;
 	fill: var(--back-color);
 }
 
@@ -1133,19 +1122,19 @@ svg.like:hover{
 }
 
 .dropdown {
-	position: relative;
-	display: inline-block;
-	/* z-index: 1; */
+	position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 20px;
 }
 
 .dropdown-content {
-	border-radius: 9px;
 	display: none;
 	right: 0;
 	background-color: #f9f9f9;
 	position: relative; 
 	background-color: var(--dropdown-color);
-	box-shadow: 0px 8px 16px 0px var(--blackBackground-color);
+	/* box-shadow: 0px 8px 16px 0px var(--blackBackground-color); */
 	z-index: 1;
 }
 
@@ -1214,10 +1203,6 @@ svg.like:hover{
 	color: var(--back-color);
 	text-decoration: none;
 }
-
-/* .playlistcreationBoutton:hover a {
-	color: var(--gray-color);
-} */
 
 .PLblock1{
 	border-radius:10px;
@@ -1333,11 +1318,6 @@ svg.like:hover{
 	margin: 10px 0 0 50px;
 	padding: 7px;
 }
-
-/* .erreurrr{
-	margin-left: 232px;
-} */
-
 
 /*******************************************ABOUT***********************************************/
 
