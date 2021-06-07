@@ -27,16 +27,12 @@ Description : Création de playlist public (admin)
 
             if($newID >= 0)
             {
-                //omg it works, :))))))))))sjfsa 
-
                 foreach($_POST['checkMusic'] as $key => $value)
                 {
-                $checkedMusic = $_POST['checkMusic'][$key];
-                $db->addMusicPlaylist($newID, $checkedMusic);
-
+                    
+                    $checkedMusic = $_POST['checkMusic'][$key];
+                    $db->addMusicPlaylist($newID, $checkedMusic);
                 }
-                
-                // print_r($_POST['checkMusic']);
 
                 $source = $_FILES["printscreen"]["tmp_name"];
                 $destination = "../../userContent/img/playlists/cover/$newID.jpg";

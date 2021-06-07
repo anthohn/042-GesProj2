@@ -19,16 +19,14 @@ else
     $idPlaylist = $_GET["idPlaylist"];
     $getPlaylists = $db->getPlaylist($idPlaylist);
     $playlistMusics = $db->getMusicsPlaylist($idPlaylist);
-}
+}?>
 
 
-foreach ($getPlaylists as $getPlaylist): ?>	
-    <div class="Playlisttitle">
-        <img src="<?= FILE_PATH_COVER_PLAYLISTS, $getPlaylist["idPlaylist"];?>.jpg" alt="">
-        <p><?= $getPlaylist["plaName"]; ?></p>
-        <h4>Date de création : <?= $getPlaylist["plaCreationDate"]; ?></h4>
-    </div>
-<?php endforeach ?>			
+<div class="Playlisttitle">
+    <img src="<?= FILE_PATH_COVER_PLAYLISTS, $getPlaylists[0]["idPlaylist"];?>.jpg" alt="">
+    <p><?= $getPlaylists[0]["plaName"]; ?></p>
+    <h4>Date de création : <?= $getPlaylists[0]["plaCreationDate"]; ?></h4>
+</div>
 	
 <div class="ListMusicsMainBlock">
     <?php foreach ( $playlistMusics as $playlistMusic): ?>	

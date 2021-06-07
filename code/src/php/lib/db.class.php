@@ -92,7 +92,7 @@ class db{
 
     //fonction pour afficher tous les tites -> "alltitle.php"
     public function getAllTitle(){
-        $query = 'SELECT idArtist, idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY  idMusic DESC';
+        $query = 'SELECT idArtist, idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY musName DESC';
         $reqExecuted = $this->querySimpleExecute($query);
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);

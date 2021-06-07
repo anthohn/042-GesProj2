@@ -29,9 +29,9 @@ require "template/header.php"; ?>
 				<div class="PLblockText">
 					<p><?= $playlist['plaCreationDate']; ?></p>
 				</div>
-				<!-- Si l'utilisateur est admin ET connecté il a accès à cette fonctionnalité -->
 				<?php if(isLogged() && (isAdmin())): ?>
 					<a href="deletePlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la playlist ?')"><img src="../../userContent/icon/trash.svg"></img></a>
+					<a href="editPlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>"><img class='justTesting' width="15px" src="../../userContent/icon/edit.svg"></img></a> 
 				<?php endif; ?>
 			</a>
 		</div>	
@@ -71,7 +71,7 @@ require "template/header.php"; ?>
 					</div>
 					<?php if(isLogged()): ?>
 						<a href="deletePlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la playlist ?')"><img src="../../userContent/icon/trash.svg"></img></a>
-						<a href="editPlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>"><img src="../../userContent/icon/edit.svg"></img></a>
+						<a href="editPlaylist.php?idPlaylist=<?= $playlist["idPlaylist"]; ?>"><img class='justTesting' width="20px" src="../../userContent/icon/edit.svg"></img></a> 
 					<?php endif; ?>
 				</a>
 			</div>	

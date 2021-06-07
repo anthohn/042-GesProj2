@@ -1,5 +1,5 @@
 <?php $title = 'Oto - Erreur 404';
-require "template/header.php"; ?>
+require 'template/header.php'; ?>
 
 <div class="main404">
     <div class="error">

@@ -7,8 +7,31 @@ $db = new db (Config::$host, Config::$username, Config::$password, Config::$data
 $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
+<!-- detect navigator (not working) -->
+<script>
+	window.addEventListener("load", function() {
+	// CHROME
+	if (navigator.userAgent.indexOf("Chrome") != -1 ) {
+		// alert("Hello World!");
+	}
+	// FIREFOX
+	else if (navigator.userAgent.indexOf("Firefox") != -1 ) {
+		// alert("Mozilla Firefox");
+	}
+	// INTERNET EXPLORER
+	else if (navigator.userAgent.indexOf("MSIE") != -1 ) {
+		// document.write("Hello World!");
+	}
+	// EDGE
+	else if (navigator.userAgent.indexOf("Edge") != -1 ) {
+		// alert("Internet Exploder");
+	}
+	});
+})
+</script>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +43,13 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 		<script src="../js/profileCard.js" defer></script>
 	</head>	
 	<body>
+		<!-- <div class="cookies">
+			<div class="container">
+				<div class="col-sm-12">
+					Nous utilisons des cookies pour nous aider à vous offrir la meilleure expérience sur notre site Web.<span class="mobile-hidden">If you continue without changing your settings, we'll assume that you are happy to receive all cookies on our website. However, if you would like to, you can change your cookie settings at any time.</span> <a href="/cookies">Find out more</a>. <a class="close-cookie-warning"><span>×</span></a></div>
+				</div>
+			</div>	
+		</div> -->
 		<div class="main" id="mainAbout">
 			<!-- Hamburger menu -->
 			<a href="#" class="toggleButton" id="toggleButtonID">
@@ -27,8 +57,8 @@ $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/"
 				<span class="bar" id="middleBar"></span>
 				<span class="bar" id="bottomBar"></span>
 			</a>
-		</div>	
-			<!-- Bar de navigation -->
+		</div>
+		<!-- Bar de navigation -->
 		<div class="leftnav">
 			<ul class="navBarLink">
 				<li class="logo"><a href="home.php">Oto</a></li>
