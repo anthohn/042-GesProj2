@@ -52,7 +52,7 @@ $musics = $db->getAllTitle();
 						<a href="<?= $link["linLink"]; ?>"target="_blank"><?= $link["typLiens"]; ?></a>
 						<a class="a" id="heartBtnList" href="addlikedtitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE_LIST; ?></a>
 					</div>
-				<?php endforeach; ?>	
+				<?php endforeach; ?>
 			</div>
 			<div class="heartBtnContainer">
 				<a class="a" id="heartBtn" href="addLikedTitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>					

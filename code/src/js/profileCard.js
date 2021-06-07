@@ -3,6 +3,7 @@
 //	Date        : 27.05.2021
 //	Description : Profile Card
 
+// Add or delete class for the 4 developers card.
 for(let i = 1; i <= 4; i++) {
     let clc = document.querySelector("#member"+i + " .cancel");
     let arr = document.querySelector("#member"+i + " .arrContainer");
@@ -23,5 +24,4 @@ for(let i = 1; i <= 4; i++) {
             leftContainer.classList.add("off");
         }
     });
-    
 }
