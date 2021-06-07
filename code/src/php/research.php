@@ -23,8 +23,8 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 	$musics = $db->getAllTitleSearched($search);
 	$playlists = $db->getAllPublicPlaylistSearched($search);
 	if(isLogged()) {
-		$playlists = $db->getAllPlaylistSearchedUser($search);
-		// $playlists = $db->getAllPublicPlaylistSearched($search);
+		$playlists = $db->getAllPublicPlaylistSearched($search);
+		$userPlaylists = $db->getPlaylistsUserSearch($idUser, $search);
 	}
 	$artists = $db->getAllArtistSearched($search);
 }
@@ -54,7 +54,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 			if(count($searchResults) > 0)
 			{
 				// echo '<pre>';
-				// 	print_r($searchResults);
+				// 	print_r($playlists1);
 				// echo '</pre>';
 				echo "<h2>Résultat pour : $search</h2>";
 			}
@@ -145,7 +145,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 							<p><?= $artist["artBirth"]; ?></p>
 							<p><?= $artist["couCountry"]; ?></p>
 						</div>
-						<!-- Si l'utilisateur est admin ET connecté il a accès à cette fonctionnalité -->
+						<!-- Si l'utilisateur est admin et connecté il a accès à cette fonctionnalité -->
 						<?php if(isLogged() && (isAdmin())): ?>
 							<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer l\'artiste ? Toutes les musiques qui lui y sont associées seront par la même occasion supprimées.')"><img src="../../userContent/icon/trash.svg"></img></a>
 							<a href="editArtist.php?idArtist=<?= $artist["idArtist"]; ?>"><img src="../../userContent/icon/edit.svg"></img></a>
@@ -158,30 +158,38 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 
 	<div class="allTitleContainer">
 		<?php foreach ($musics as $music):?>
-			<div class="ARPblock1" id="ARPblock1Id">
-				<img src="<?= FILE_PATH_COVER_MUSICS, $music["idMusic"] ?>.jpg" alt="">
+			<div class="ARPblock1">
+				<img src="<?= FILE_PATH_COVER_MUSICS, $music["idMusic"]; ?>.jpg" alt="">
 				<p><?= $music["musName"]; ?></p>
-				<p class="artName">-</p>			
+				<p class="artName">-</p>
 				<p><a class="artName" href="detailArtist.php?idArtist=<?= $music["idArtist"]; ?>"><?= $music["artName"]; ?></a></p>
 				<p class="musDuration">-</p>
 				<p class="musDuration"><?= $music["musDuration"]; ?></p>
 				<p class="typeName">-</p>
 				<p class="typeName"><?= $music["typeName"]; ?></p>
+				<?php if(isLogged() && (isAdmin())): ?>
+					<div class="testtest">
+						<a href="deleteMusic.php?idMusic=<?= $music["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img width="20px" src="../../userContent/icon/trash.svg"></img></a>
+						<a href="editMusic.php?idMusic=<?= $music["idMusic"]; ?>"><img class='justTesting' width="20px" src="../../userContent/icon/edit.svg"></img></a>
+					</div>
+				<?php endif; ?>
 				<div class="dropdown" style="float:right;">
-					<a href=""><button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button></a>
+					<button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button>
 					<?php $idMusic = $music['idMusic']; ?>
 					<?php $links = $db->getLinkEachMusics($idMusic); ?>
 					
 					<?php foreach ($links as $link): ?>
 						<div class="dropdown-content">
-							<a href="<?= $link["linLink"]; ?>"><?= $link["typLiens"]; ?></a>
+							<a href="<?= $link["linLink"]; ?>"target="_blank"><?= $link["typLiens"]; ?></a>
 							<a class="a" id="heartBtnList" href="addlikedtitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE_LIST; ?></a>
 						</div>
 					<?php endforeach; ?>	
 				</div>
-				<a class="a" id="heartBtn" href="addlikedtitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
+				<div class="heartBtnContainer">
+					<a class="a" id="heartBtn" href="addLikedTitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>					
+				</div>
 			</div>
-		<?php endforeach; ?>
+		<?php endforeach; ?>	
 	</div> 	
 </div>
 

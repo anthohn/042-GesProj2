@@ -2,6 +2,8 @@
 //	Author      : Younes Sayeh
 //	Date        : 27.05.2021
 //	Description : Profile Card
+//  Boucle for incremente 4 fois et concaténer variable d'incrémentation 
+//  selectionnez la div par rapport a un id
 
 const clc = document.querySelector(".cancel");
 const arr = document.querySelector(".arrContainer");
@@ -85,31 +87,3 @@ clc4.addEventListener("click", ()=>{
         leftContainer4.classList.add("off4");
     }
 });
-
-// const clc = document.querySelectorAll(".cancel");
-// const arr = document.querySelectorAll(".arrContainer");
-// const leftContainer = document.querySelectorAll(".leftContainer");
-
-// arr.forEach(arrs => {
-//     arrs.addEventListener("click", ()=>{
-//         arr.forEach(arrActv => arrActv.classList.add("activeArr"));
-//         leftContainer.forEach(leftContainers => {
-//             if(leftContainers.classList.contains("off")) { 
-//                 leftContainers.classList.remove("off");
-//                 leftContainers.classList.add("active");
-//             }
-//         });
-//     });
-// });
-
-// clc.forEach(clcs => {
-//     clcs.addEventListener("click", ()=>{
-//         arr.forEach(arrClc => arrClc.classList.remove("activeArr"));
-//         leftContainer.forEach(leftContainers => {
-//             if(leftContainers.classList.contains("active")) { 
-//                 leftContainers.classList.remove("active");
-//                 leftContainers.classList.add("off");
-//             }
-//         });
-//     });
-// });

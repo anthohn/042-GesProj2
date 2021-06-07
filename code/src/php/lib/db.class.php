@@ -463,11 +463,30 @@ class db{
     }
 
     /**
-     * Function récupere les playlists d'UN utilisateur
+     * Function récupere les playlists d'un utilisateur
      * @param $idUser
      */
     public function getPlaylistsUser($idUser){
         $query = 'SELECT idPlaylist, plaName, DATE_FORMAT(plaCreationDate, "%d/%m/%Y") AS plaCreationDate FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser';
+        $binds = array(
+            0 => array(
+                'field' => ':idUser',
+                'value' => $idUser,
+                'type' => PDO::PARAM_INT
+            )    
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    /**
+     * Function récupere les playlists d'un utilisateur
+     * @param $idUser
+     */
+    public function getPlaylistsUserSearch($idUser, $search){
+        $query = 'SELECT idPlaylist, plaName, DATE_FORMAT(plaCreationDate, "%d/%m/%Y") AS plaCreationDate FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser AND plaName LIKE "%'.$search.'%"';
         $binds = array(
             0 => array(
                 'field' => ':idUser',
