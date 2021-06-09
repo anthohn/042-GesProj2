@@ -8,6 +8,9 @@ Description : Tous les titres de la base de données rescencé ici grace à un f
 require "template/header.php";
 $musics = $db->getAllTitle();
 
+
+
+
 ?>
 <style>
 	body {
@@ -55,7 +58,35 @@ $musics = $db->getAllTitle();
 				<?php endforeach; ?>	
 			</div>
 			<div class="heartBtnContainer">
-				<a class="a" id="heartBtn" href="addLikedTitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>					
+				<?php
+				if(isLogged()){
+					$notLiked = true;
+
+					foreach($likedTitles as $likedTitle)
+					{ 
+						if($idMusic == $likedTitle['idxMusic'])
+						{
+							?>
+							<a class="a" id="heartBtn" href="supplikedTitle.php?idMusic=<?= $likedTitle["idMusic"]; ?>"><?= SVG_LIKE_FILL; ?></a>					
+							<?php
+							$notLiked = false;  
+							break;              
+						}
+					}
+					if($notLiked)
+					{
+						?>
+						<a class="a" id="heartBtn" href="addLikedTitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
+						<?php				
+					}
+				}
+				else{
+					?>
+					<a class="a" id="heartBtn" href="connexion.php"><?= SVG_LIKE; ?></a>
+					<?php
+				}
+				?>
+
 			</div>
 		</div>
 	<?php endforeach; ?>	

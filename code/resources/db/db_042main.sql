@@ -323,6 +323,7 @@ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
 (30,3,"https://youtu.be/34Na4j8AVgA");
 
 CREATE TABLE t_liked(
+  idLiked INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   idxMusic INT NOT NULL,
   idxUser INT NOT NULL,
   CONSTRAINT fk_t_liked_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,

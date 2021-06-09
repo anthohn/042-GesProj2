@@ -51,7 +51,7 @@ if(isLogged()): ?>
 						<?php endforeach; ?>
 							
 					</div>
-						<a class="a" id="heartBtn" href="supplikedTitle.php?idMusic=<?= $likedTitle["idMusic"]; ?>"><?= SVG_LIKE; ?></a>					
+						<a class="a" id="heartBtn" href="supplikedTitle.php?idMusic=<?= $likedTitle["idMusic"]; ?>"><?= SVG_LIKE_FILL; ?></a>					
 				</div>	
 			<?php endforeach; ?>				
 		</div> 

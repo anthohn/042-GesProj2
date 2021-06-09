@@ -6,32 +6,16 @@ require "config/dbconfig.cfg";
 $db = new db (Config::$host, Config::$username, Config::$password, Config::$database);
 $activePage = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 
+if(isset($_SESSION['idUser']))
+{
+	$idUser = $_SESSION['idUser'];
+	$likedTitles = $db->getLikedtitles($idUser);
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-<!-- detect navigator (not working) -->
-<script>
-	window.addEventListener("load", function() {
-	// CHROME
-	if (navigator.userAgent.indexOf("Chrome") != -1 ) {
-		// alert("Hello World!");
-	}
-	// FIREFOX
-	else if (navigator.userAgent.indexOf("Firefox") != -1 ) {
-		// alert("Mozilla Firefox");
-	}
-	// INTERNET EXPLORER
-	else if (navigator.userAgent.indexOf("MSIE") != -1 ) {
-		// document.write("Hello World!");
-	}
-	// EDGE
-	else if (navigator.userAgent.indexOf("Edge") != -1 ) {
-		// alert("Internet Exploder");
-	}
-	});
-})
-</script>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">

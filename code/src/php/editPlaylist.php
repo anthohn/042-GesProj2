@@ -2,13 +2,13 @@
 ETML
 Auteur      : Anthony Höhn
 Date        : 16.05.2021
-Description : Création de playlist personnelle.
+Description : Modifications playlists
 -->
 <?php
 $title = 'Oto - Modifier playlist'; 
 require "template/header.php";
 
-// Vérifie si l'utilisateur est loggé
+// Verifiy if the user is log
 if(isLogged()): 
     // Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
     if(!isset($_GET['idPlaylist']) OR !is_numeric($_GET['idPlaylist']))

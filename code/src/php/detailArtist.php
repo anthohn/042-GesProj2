@@ -13,6 +13,8 @@ else
 	$artists = $db->getArtist($idArtist);
 	$musics = $db->getMusicEachArtist($idArtist);
 }
+
+
 ?>
 
 <!-- <style>body{background-image: url('../../userContent/img/artists/background/<?= $artists[0]["idArtist"];?>.jpg');}</style> -->
@@ -49,7 +51,37 @@ if(empty($musics)) : ?>
 						</div>
 					<?php endforeach; ?>
 				</div>
-				<a class="a" id="heartBtn" href="addlikedtitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
+				<div class="heartBtnContainer">
+					<?php
+					if(isLogged()){
+						$notLiked = true;
+
+						foreach($likedTitles as $likedTitle)
+						{ 
+							if($idMusic == $likedTitle['idxMusic'])
+							{
+								?>
+								<a class="a" id="heartBtn" href="supplikedTitle.php?idMusic=<?= $likedTitle["idMusic"]; ?>"><?= SVG_LIKE_FILL; ?></a>					
+								<?php
+								$notLiked = false;  
+								break;              
+							}
+						}
+						if($notLiked)
+						{
+							?>
+							<a class="a" id="heartBtn" href="addLikedTitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
+							<?php				
+						}
+					}
+					else{
+						?>
+						<a class="a" id="heartBtn" href="connexion.php"><?= SVG_LIKE; ?></a>
+						<?php
+					}
+					?>
+
+				</div>	
 			</div>
 		<?php endforeach ?>	
 	</div>	

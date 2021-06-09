@@ -51,8 +51,37 @@ else
                     </div>
                 <?php endforeach; ?>	
 			</div>
-            <a class="a" id="heartBtn" href="addlikedtitle.php?idMusic=<?= $playlistMusic["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
-        </div>	
+            <div class="heartBtnContainer">
+					<?php
+					if(isLogged()){
+						$notLiked = true;
+
+						foreach($likedTitles as $likedTitle)
+						{ 
+							if($idMusic == $likedTitle['idxMusic'])
+							{
+								?>
+								<a class="a" id="heartBtn" href="supplikedTitle.php?idMusic=<?= $likedTitle["idMusic"]; ?>"><?= SVG_LIKE_FILL; ?></a>					
+								<?php
+								$notLiked = false;  
+								break;              
+							}
+						}
+						if($notLiked)
+						{
+							?>
+							<a class="a" id="heartBtn" href="addLikedTitle.php?idMusic=<?= $playlistMusic["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
+							<?php				
+						}
+					}
+					else{
+						?>
+						<a class="a" id="heartBtn" href="connexion.php"><?= SVG_LIKE; ?></a>
+						<?php
+					}
+					?>
+
+				</div>        </div>	
 	<?php endforeach ?>			
 </div>
 
