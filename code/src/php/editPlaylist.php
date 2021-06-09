@@ -36,9 +36,6 @@ if(isLogged()):
         }
         else
         {
-
-            // print_r($_POST['checkMusic']);
-            // die();
             foreach($_POST['checkMusic'] as $key => $value)
             {
                 $checkedMusic = $_POST['checkMusic'][$key];
@@ -71,6 +68,8 @@ if(isLogged()):
         }?>    
 
         <div class="playlistCreaBlock">
+        <h1 id="addTitlePlaylist">Titres présents :</h1>
+
             <?php foreach ( $playlistMusics as $playlistMusic):?>
                 <div class="ARPblock1">
                     <input type="checkbox" name="checkMusic[]" value="<?= $playlistMusic["idMusic"] ?>" checked/>
@@ -83,7 +82,26 @@ if(isLogged()):
                     <p class="typeName">-</p>
                     <p class="typeName"><?= $playlistMusic["typeName"]; ?></p>	
                 </div>
+            <?php endforeach; ?>
+
+            <h1 id="addTitlePlaylist">Ajoutez des titres :</h1>
+                
+            <div class="playlistCreaBlock">
+            <?php foreach ( $musics as $music):?>
+                <div class="ARPblock1">
+                    <input type="checkbox" name="checkMusic[]" value="<?= $music["idMusic"] ?>" />
+                    <img src="<?= FILE_PATH_COVER_MUSICS, $music["idMusic"]; ?>.jpg" alt="">
+                    <p><?= $music["musName"]; ?></p>
+                    <p class="artName">-</p>			
+                    <p class="artName"><?= $music["artName"]; ?></p>
+                    <p class="musDuration">-</p>
+                    <p class="musDuration"><?= $music["musDuration"]; ?></p>
+                    <p class="typeName">-</p>
+                    <p class="typeName"><?= $music["typeName"]; ?></p>	
+                </div>
             <?php endforeach; ?>	
+        </div>
+	
         </div>  
     </form>   
 <?php else :

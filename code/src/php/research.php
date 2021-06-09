@@ -171,17 +171,47 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 					</div>
 				<?php endif; ?>
 				<div class="dropdown" style="float:right;">
-					<button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button>
-					<?php $idMusic = $music['idMusic']; ?>
-					<?php $links = $db->getLinkEachMusics($idMusic); ?>
-					
+				<button class="dropbtn"><svg class="svg-icon svg-icon-options" focusable="false" height="20" width="20" viewBox="0 0 12 12" aria-hidden="true"><path d="M10.5 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM6 7.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-4.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg></button>
+				<?php $idMusic = $music['idMusic']; ?>
+				<?php $links = $db->getLinkEachMusics($idMusic); ?>
+				
+				<div class="dropdown-content">
 					<?php foreach ($links as $link): ?>
-						<div class="dropdown-content">
-							<a href="<?= $link["linLink"]; ?>"target="_blank"><?= $link["typLiens"]; ?></a>
-							<a class="a" id="heartBtnList" href="addlikedtitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE_LIST; ?></a>
-						</div>
-					<?php endforeach; ?>	
+						<a href="<?= $link["linLink"]; ?>"target="_blank"><?= $link["typLiens"]; ?></a>
+					<?php endforeach; ?>
+					<div class="heartBtnContainer">
+						<?php if(isLogged()){
+			
+							$notLiked = true;
+
+							foreach($likedTitles as $likedTitle)
+							{ 
+								if($idMusic == $likedTitle['idxMusic'])
+								{
+									?>
+									<a class="a" id="heartBtnList" href="supplikedTitle.php?idMusic=<?= $likedTitle["idMusic"]; ?>"><?= SVG_LIKE_FILL; ?></a>					
+									<?php
+									$notLiked = false;  
+									break;              
+								}
+							}
+							if($notLiked)
+							{
+								?>
+								<a class="a" id="heartBtnList" href="addLikedTitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
+								<?php				
+							}
+						}
+						else
+						{
+							?>
+							<a class="a" id="heartBtnList" href="connexion.php"><?= SVG_LIKE; ?></a>
+							<?php
+						}
+						?>
+					</div>
 				</div>
+			</div>
 				<div class="heartBtnContainer">
 					<?php
 					if(isLogged()){

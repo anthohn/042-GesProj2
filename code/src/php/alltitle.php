@@ -4,11 +4,12 @@ Auteur      : Anthony Höhn
 Date        : 04.03.2021
 Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
 -->
-<?php $title = 'Oto - Titres';
+<?php
+
+
+$title = 'Oto - Titres';
 require "template/header.php";
 $musics = $db->getAllTitle();
-
-
 
 
 ?>
@@ -50,16 +51,45 @@ $musics = $db->getAllTitle();
 				<?php $idMusic = $music['idMusic']; ?>
 				<?php $links = $db->getLinkEachMusics($idMusic); ?>
 				
-				<?php foreach ($links as $link): ?>
-					<div class="dropdown-content">
+				<div class="dropdown-content">
+					<?php foreach ($links as $link): ?>
 						<a href="<?= $link["linLink"]; ?>"target="_blank"><?= $link["typLiens"]; ?></a>
-						<a class="a" id="heartBtnList" href="addlikedtitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE_LIST; ?></a>
+					<?php endforeach; ?>
+					<div class="heartBtnContainer">
+						<?php if(isLogged()){
+			
+							$notLiked = true;
+
+							foreach($likedTitles as $likedTitle)
+							{ 
+								if($idMusic == $likedTitle['idxMusic'])
+								{
+									?>
+									<a class="a" id="heartBtnList" href="supplikedTitle.php?idMusic=<?= $likedTitle["idMusic"]; ?>"><?= SVG_LIKE_FILL; ?></a>					
+									<?php
+									$notLiked = false;  
+									break;              
+								}
+							}
+							if($notLiked)
+							{
+								?>
+								<a class="a" id="heartBtnList" href="addLikedTitle.php?idMusic=<?= $music["idMusic"]; ?>"><?= SVG_LIKE; ?></a>
+								<?php				
+							}
+						}
+						else
+						{
+							?>
+							<a class="a" id="heartBtnList" href="connexion.php"><?= SVG_LIKE; ?></a>
+							<?php
+						}
+						?>
 					</div>
-				<?php endforeach; ?>
+				</div>
 			</div>
 			<div class="heartBtnContainer">
-				<?php
-				if(isLogged()){
+				<?php if(isLogged()){
 					$notLiked = true;
 
 					foreach($likedTitles as $likedTitle)

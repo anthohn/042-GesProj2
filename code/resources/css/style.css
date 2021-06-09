@@ -21,7 +21,7 @@
 	--lighterBlack-color: darkgrey;
 	--pastel-color: #ffffff;
 	--lightPastel-color: #c8c8c8;
-	--greenLike-color: #36ba36;
+	--greenLike-color: #2a8d2a;
 	--dropdown-color: #f9f9f9;
 }
 
@@ -787,6 +787,21 @@ footer{
     margin: 0 10px;
 }
 
+/*********************************************playlistedit, ajout*************************************/
+
+#playlistName{
+	width: 200px;
+  	padding: 7px 20px;
+  	margin: 0 0;
+  	display: inline-block;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+}
+
+#addTitlePlaylist{
+	color: #ffffff;
+}
 
 /********************************************Artistes*************************************************/
 
@@ -1098,6 +1113,12 @@ svg.like{
 	float: right;
 	margin: 25px 70px 0 0;
 	fill: var(--back-color);
+}
+
+svg.likeFill{
+	float: right;
+	margin: 25px 70px 0 0;
+	fill: var(--greenLike-color);
 }
 
 svg.like:hover{
