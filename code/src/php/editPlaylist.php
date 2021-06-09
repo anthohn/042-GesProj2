@@ -15,13 +15,21 @@ if(isLogged()):
     {
         header('Location:404.php');
     }
-    // Si tout est ok -> appelle les fonctions
     else
     {
-        $idPlaylist = $_GET["idPlaylist"];
+        $idPlaylist = $_GET['idPlaylist'];
         $playlistMusics = $db->getMusicsPlaylist($idPlaylist);
         $musics = $db->getAllTitle();
         $playlistInfos = $db->getPlaylist($idPlaylist);
+    }
+
+    //Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page de connexion
+    if(isset($_GET['del']) && !empty($_GET['del']) && $_GET['del'] == "deleteMusic") 
+    {
+        $idMusic = $_GET['idMusic'];
+        $idPlaylist = $_GET['idPlaylist'];
+        $db->deleteMusicPlaylist($idPlaylist, $idMusic);
+        header("Location:editPlaylist.php?idPlaylist=$idPlaylist");
     }
 
     if(isset($_POST['btnSubmit'])) 
@@ -70,7 +78,7 @@ if(isLogged()):
         <div class="playlistCreaBlock">
         <h1 id="addTitlePlaylist">Titres présents :</h1>
 
-            <?php foreach ( $playlistMusics as $playlistMusic):?>
+            <?php foreach ($playlistMusics as $playlistMusic):?>
                 <div class="ARPblock1">
                     <input type="checkbox" name="checkMusic[]" value="<?= $playlistMusic["idMusic"] ?>" checked/>
                     <img src="<?= FILE_PATH_COVER_MUSICS, $playlistMusic["idMusic"] ?>.jpg" alt="">
@@ -80,7 +88,8 @@ if(isLogged()):
                     <p class="musDuration">-</p>
                     <p class="musDuration"><?= $playlistMusic["musDuration"]; ?></p>
                     <p class="typeName">-</p>
-                    <p class="typeName"><?= $playlistMusic["typeName"]; ?></p>	
+                    <p class="typeName"><?= $playlistMusic["typeName"]; ?></p>
+                    <a href="editPlaylist.php?idPlaylist=<?= $playlistMusic["idPlaylist"]; ?>&idMusic=<?= $playlistMusic["idMusic"]; ?>&del=deleteMusic" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique de cette playlist ?')"><img width="20px" src="../../userContent/icon/trash.svg"></img></a>
                 </div>
             <?php endforeach; ?>
 

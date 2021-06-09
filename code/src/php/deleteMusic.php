@@ -11,7 +11,7 @@ if(isLogged() && (isAdmin()))
     else
     {
         $idMusic = $_GET['idMusic'];
-        $deleteArtist = $db->deleteOneMusic($idMusic);
+        $db->deleteOneMusic($idMusic);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     } 
 }
