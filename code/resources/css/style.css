@@ -1020,7 +1020,7 @@ footer{
 .playlistCreaBlock{
 	background: linear-gradient(to bottom right, var(--lightBlack-color), var(--gray-color));
 	padding-bottom: 40%;
-	margin: 110px 0 0 0;
+	margin: 50px 0 0 0;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -1544,6 +1544,167 @@ svg.like:hover{
     color: var(--lightPastel-color);
     font-size: 25px;
     margin: 0;
+}
+
+.btnOpenForm {
+	/* color: black; */
+	font-size: 15px;
+	background-color: transparent !important;
+}
+
+.btnOpenForm:hover {
+	/* color: var(--green-color); */
+	transition: all .3s ease-in-out;
+}
+
+.open-button {
+	margin: 20px 0 0 20px;
+	border-radius: 20px;
+	background-color: #555;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	cursor: pointer;
+	width: 160px;
+}
+
+#myFormResult{
+	overflow-y: scroll;
+}
+
+.form-popup {
+
+	padding: 30px;
+	transition-duration: 0.5s;
+	border-radius: 20px;
+	height: 500px;
+	width: 800px;
+	background-color: gray;
+	display: none;
+	position: fixed;
+	top: 20%;
+	left: 33%;
+	border: 1px solid var(--darkGrey-color);
+	z-index: 9;
+}
+
+#playlistpopUp{
+	border-radius: 20px;
+	overflow-y: scroll;
+	border-radius: 20px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 90px;
+}
+
+.form-popup h1, .form-popup h3 {
+	color: var(--greyTitle-color);
+}
+
+.comment {
+	border: 1px solid var(--darkGrey-color);
+	border-radius: 10px;
+	margin: 10px;
+	padding: 20px;
+	background-color: var(--backGrey-color);
+}
+
+#text {
+	max-width: 732px;
+	min-width: 732px;
+	min-height: 225px;
+	max-height: 225px;
+	font-size: 20px;
+	border: 1px solid var(--darkGrey-color);
+	border-radius: 5px;
+}
+
+#resetDetail {
+	border: 1px solid var(--lightGreen-color);
+	color: var(--lightGreen-color);
+	background-color: transparent;
+	padding: 5px;
+	font-size: 20px;
+	border-radius: 25px;
+	cursor: pointer;
+	height: 36px;
+	margin: 0 0 0 10px;
+	width: 110px;
+}
+
+#resetDetail:hover {
+	border: 1px solid var(--green-color);
+	color: var(--green-color);
+	transition: all .3s ease-in-out;
+}
+
+.btnCommentPopUp {
+	display: flex;
+	margin: 10px 0 0 0;
+}
+
+.addNotePopUpTitle h3 {
+	margin: 0 0 10px 0;
+}
+
+.commentPopUpTitle h3 {
+margin: 20px 0 10px 0;
+}
+
+.form-popup h1{
+margin: 0 0 0 12px;
+width: 100%;
+}
+
+.form-container {
+width: 100%;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+border: none;
+background: #f1f1f1;
+}
+
+.form-container .btn {
+background-color: #04AA6D;
+color: white;
+padding: 16px 20px;
+border: none;
+cursor: pointer;
+width: 20px;
+margin-bottom:10px;
+opacity: 0.8;
+bottom: 0;
+}
+
+#btncancel {
+border-radius: 50%;
+cursor: pointer;
+background-color: var(--lightGreen-color);
+border: none;
+color: white;
+padding: 5px 7px 3px 7px;
+display: inline-block;
+font-size: 16px;
+margin: 0 9px 0 0;
+}
+
+#btncancel:hover {
+background-color: var(--green-color);
+transition: all .2s ease-in-out;
+} 
+
+.form-container .btn:hover, .open-button:hover {
+opacity: 1;
+}
+
+.tileButton {
+display: flex;
 }
 
 /***********************************************************************************************/

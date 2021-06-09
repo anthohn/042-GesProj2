@@ -65,22 +65,24 @@ if(isLogged()):
                 <input type="submit" id="btnSubmit" name="btnSubmit" value="Modifier" /> 
             </div>
         </div>    
+    </form>   
 
-        <?php if(isset($error))
-        {
-            echo $error;
-        }
-        elseif(isset($succes))
-        {
-            echo $succes;
-        }?>    
+    <?php if(isset($error))
+    {
+        echo $error;
+    }
+    elseif(isset($succes))
+    {
+        echo $succes;
+    }?>    
 
-        <div class="playlistCreaBlock">
-        <h1 id="addTitlePlaylist">Titres présents :</h1>
+    <div class="playlistCreaBlock">
+        <!-- <h1 id="addTitlePlaylist">Titres présents :</h1> -->
+        <button class="open-button" onclick="openForm1()">Ajouter des titres</button>
 
             <?php foreach ($playlistMusics as $playlistMusic):?>
                 <div class="ARPblock1">
-                    <input type="checkbox" name="checkMusic[]" value="<?= $playlistMusic["idMusic"] ?>" checked/>
+                    <a href="editPlaylist.php?idPlaylist=<?= $playlistMusic["idPlaylist"]; ?>&idMusic=<?= $playlistMusic["idMusic"]; ?>&del=deleteMusic" onclick="return confirm('Êtes vous sûr de vouloir supprimer cette musique de cette playlist ?')"><img width="20px" src="../../userContent/icon/trash.svg"></img></a>
                     <img src="<?= FILE_PATH_COVER_MUSICS, $playlistMusic["idMusic"] ?>.jpg" alt="">
                     <p><?= $playlistMusic["musName"]; ?></p>
                     <p class="artName">-</p>			
@@ -89,30 +91,48 @@ if(isLogged()):
                     <p class="musDuration"><?= $playlistMusic["musDuration"]; ?></p>
                     <p class="typeName">-</p>
                     <p class="typeName"><?= $playlistMusic["typeName"]; ?></p>
-                    <a href="editPlaylist.php?idPlaylist=<?= $playlistMusic["idPlaylist"]; ?>&idMusic=<?= $playlistMusic["idMusic"]; ?>&del=deleteMusic" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique de cette playlist ?')"><img width="20px" src="../../userContent/icon/trash.svg"></img></a>
                 </div>
             <?php endforeach; ?>
-
-            <h1 id="addTitlePlaylist">Ajoutez des titres :</h1>
                 
-            <div class="playlistCreaBlock">
-            <?php foreach ( $musics as $music):?>
-                <div class="ARPblock1">
-                    <input type="checkbox" name="checkMusic[]" value="<?= $music["idMusic"] ?>" />
-                    <img src="<?= FILE_PATH_COVER_MUSICS, $music["idMusic"]; ?>.jpg" alt="">
-                    <p><?= $music["musName"]; ?></p>
-                    <p class="artName">-</p>			
-                    <p class="artName"><?= $music["artName"]; ?></p>
-                    <p class="musDuration">-</p>
-                    <p class="musDuration"><?= $music["musDuration"]; ?></p>
-                    <p class="typeName">-</p>
-                    <p class="typeName"><?= $music["typeName"]; ?></p>	
-                </div>
-            <?php endforeach; ?>	
-        </div>
-	
-        </div>  
-    </form>   
+            <div class="form-popup" id="myForm">
+                <form method='POST' action="" class="form-container">
+                    <div class="tileButton">
+                        <h1>Ajouter des titres</h1>
+                        <button type="button" id="btncancel" onclick="closeForm1()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></button>
+                    </div>
+                    <div class="playlistCreaBlock" id="playlistpopUp">
+                        <?php foreach ( $musics as $music):?>
+                            <div class="ARPblock1">
+                                <input type="checkbox" name="checkMusic[]" value="<?= $music["idMusic"] ?>" />
+                                <img src="<?= FILE_PATH_COVER_MUSICS, $music["idMusic"]; ?>.jpg" alt="">
+                                <p><?= $music["musName"]; ?></p>
+                                <p class="artName">-</p>			
+                                <p class="artName"><?= $music["artName"]; ?></p>
+                                <p class="musDuration">-</p>
+                                <p class="musDuration"><?= $music["musDuration"]; ?></p>
+                                <p class="typeName">-</p>
+                                <p class="typeName"><?= $music["typeName"]; ?></p>	
+                            </div>
+                        <?php endforeach; ?>	
+                    </div>
+                 </form>    
+              </div>    
+            
+
+        
+<!-- Script for the pop-up -->
+<script>
+    function openForm1() {
+        document.getElementById("myForm").style.display = "block";
+        document.getElementById("html").style.overflow = "hidden";
+    }
+
+    function closeForm1() {
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("html").style.overflow = "auto";
+    }
+</script>
+    </div>  
 <?php else :
 
     header('Location: template/404.php'); 

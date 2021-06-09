@@ -55,7 +55,7 @@ $musics = $db->getAllTitle();
 					<?php endforeach; ?>
 					<div class="heartBtnContainer">
 						<?php if(isLogged()){
-			
+		
 							$notLiked = true;
 
 							foreach($likedTitles as $likedTitle)
