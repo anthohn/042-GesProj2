@@ -1131,11 +1131,15 @@ svg.like:hover{
 .dropdown-content {
 	display: none;
 	right: 0;
-	background-color: #f9f9f9;
+	background-color: var(--back-color);
 	position: relative; 
 	background-color: var(--dropdown-color);
-	/* box-shadow: 0px 8px 16px 0px var(--blackBackground-color); */
 	z-index: 1;
+}
+
+.dropdown-content:hover {
+	background-color: var(--lightPastel-color);
+	transition: all .2s ease-in-out;
 }
 
 .dropdown-content a {
@@ -1394,7 +1398,7 @@ svg.like:hover{
 	margin: 0 0 20px 0;
 }
 
-.arrContainer, .cancel, .arrContainer2, .cancel2, .arrContainer3, .cancel3, .arrContainer4, .cancel4 {
+.arrContainer, .cancel {
 	position: absolute;
 	width: 50px;
 	height: 50px;
@@ -1416,11 +1420,11 @@ svg.like:hover{
 	fill: var(--blackBackground-color);
 }
 
-.activeArr, .activeArr2, .activeArr3, .activeArr4 {
+.activeArr {
 	transform: translate(80%, 80%);
 }
 
-.leftContainer, .leftContainer2, .leftContainer3, .leftContainer4 {
+.leftContainer {
 	position: absolute;
 	background: var(--lightBlack-color);
 	width: 100%;
@@ -1434,20 +1438,20 @@ svg.like:hover{
     padding: 20px 0 0 20px;
 }
 
-.off, .off2, .off3, .off4 {
+.off {
 	transform: translate(-80%, -80%) rotate(90deg);
 }
 
-.active, .active2, .active3, .active4 {
+.active {
 	transform: translate(0) rotate(0);
 }
 
-.leftContainer p, .leftContainer2 p, .leftContainer3 p, .leftContainer4 p {
+.leftContainer p {
 	margin: 0 0 15px 0;
 	font-size: 1.2rem;
 }
 
-.leftContainer .skills .skillDetail, .leftContainer2 .skills .skillDetail, .leftContainer3 .skills .skillDetail, .leftContainer4 .skills .skillDetail {
+.leftContainer .skills .skillDetail {
 	display: inline-block;
 	color: var(--lightPastel-color);
 	border: 1px solid var(--lightPastel-color);
@@ -1456,7 +1460,7 @@ svg.like:hover{
 	margin: 4px 4px 4px 0;
 }
 
-.leftContainer .icons, .leftContainer2 .icons, .leftContainer3 .icons , .leftContainer4 .icons  {
+.leftContainer .icons {
 	color: var(--lightPastel-color);
 	cursor: pointer;
 	margin: 20px 10px 0 0;
@@ -1699,12 +1703,6 @@ svg.like:hover{
 	.typeName {
 		display: none;
 	}
-
-	svg.like {
-		margin: 25px 25px 0 0;
-	}
-	
-	
 }
 
 @media only screen and (max-width: 735px)
@@ -1715,7 +1713,7 @@ svg.like:hover{
 	}
 }
 
-@media only screen and (max-width: 595px)
+@media only screen and (max-width: 680px)
 { 
 	/*Search and Titles*/
 	.artName {

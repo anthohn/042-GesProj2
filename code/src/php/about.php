@@ -20,12 +20,12 @@
 
 	<div class="cardContainer">
 		<!-- yousayeh -->
-		<div class="mainAboutContaint center">
+		<div id="member1" class="mainAboutContaint center">
 			<div class="box center">
 				<img src="../../userContent/img/developers/yousayeh.jpg" alt="Photo de profil" >
 				<div class="paraphContainer">
 					<p class="username">Younes Sayeh</p>
-					<p class="skill">Developer</p>
+					<p class="skill">Developpeur</p>
 				</div>
 				<div class="arrContainer center">
 					<svg class="arrowIcon" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14 13.5a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1 0-1h4.793L2.146 2.854a.5.5 0 1 1 .708-.708L13 12.293V7.5a.5.5 0 0 1 1 0v6z"/></svg>
@@ -52,17 +52,17 @@
 		</div>
 
 		<!-- anthohn -->
-		<div class="mainAboutContaint center">
+		<div id="member2" class="mainAboutContaint center">
 			<div class="box center">
 				<img src="../../userContent/img/developers/anthohn.jpg" alt="Photo de profil" >
 				<div class="paraphContainer">
 					<p class="username">Anthony Höhn</p>
-					<p class="skill">Developer</p>
+					<p class="skill">Developpeur</p>
 				</div>
-				<div class="arrContainer2 center">
+				<div class="arrContainer center">
 					<svg class="arrowIcon" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14 13.5a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1 0-1h4.793L2.146 2.854a.5.5 0 1 1 .708-.708L13 12.293V7.5a.5.5 0 0 1 1 0v6z"/></svg>
 				</div>
-				<div class="leftContainer2 off2">
+				<div class="leftContainer off">
 					<div class="activeContent">
 						<p class="contribution">Contribution</p>
 						<div class="skills">
@@ -75,7 +75,7 @@
 							<a href="https://www.linkedin.com/in/anthony-h%C3%B6hn-674320206" class="linkedinLink" target="_blank"><svg class="linkedinIcon" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg></a>
 						</div>
 					</div>
-					<div class="cancel2 center">
+					<div class="cancel center">
 						<svg class="cancelIcon" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/></svg>
 					</div>
 				</div>
@@ -83,17 +83,17 @@
 		</div>
 
 		<!-- kilgood -->
-		<div class="mainAboutContaint center">
+		<div  id="member3" class="mainAboutContaint center">
 			<div class="box center">
 				<img src="../../userContent/img/developers/kilgood.jpg" alt="Photo de profil" >
 				<div class="paraphContainer">
 					<p class="username">Killian Good</p>
-					<p class="skill">Developer</p>
+					<p class="skill">Developpeur</p>
 				</div>
-				<div class="arrContainer3 center">
+				<div class="arrContainer center">
 					<svg class="arrowIcon" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14 13.5a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1 0-1h4.793L2.146 2.854a.5.5 0 1 1 .708-.708L13 12.293V7.5a.5.5 0 0 1 1 0v6z"/></svg>
 				</div>
-				<div class="leftContainer3 off3">
+				<div class="leftContainer off">
 					<div class="activeContent">
 						<p class="contribution">Contribution</p>
 						<div class="skills">
@@ -106,7 +106,7 @@
 							<a href="https://www.linkedin.com/in/killian-good-89032a1b8" class="linkedinLink" target="_blank"><svg class="linkedinIcon" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg></a>
 						</div>
 					</div>
-					<div class="cancel3 center">
+					<div class="cancel center">
 						<svg class="cancelIcon" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/></svg>
 					</div>
 				</div>
@@ -114,17 +114,17 @@
 		</div>
 
 		<!-- julcartier -->
-		<div class="mainAboutContaint center">
+		<div  id="member4" class="mainAboutContaint center">
 			<div class="box center">
 				<img src="../../userContent/img/developers/julcartier.jpg" alt="Photo de profil" >
 				<div class="paraphContainer">
 					<p class="username">Julien Cartier</p>
-					<p class="skill">Developer</p>
+					<p class="skill">Developpeur</p>
 				</div>
-				<div class="arrContainer4 center">
+				<div class="arrContainer center">
 					<svg class="arrowIcon" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14 13.5a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1 0-1h4.793L2.146 2.854a.5.5 0 1 1 .708-.708L13 12.293V7.5a.5.5 0 0 1 1 0v6z"/></svg>
 				</div>
-				<div class="leftContainer4 off4">
+				<div class="leftContainer off">
 					<div class="activeContent">
 						<p class="contribution">Contribution</p>
 						<div class="skills">
@@ -137,7 +137,7 @@
 							<a href="https://www.linkedin.com/in/julien-cartier-9aa734208" class="linkedinLink" target="_blank"><svg class="linkedinIcon" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg></a>
 						</div>
 					</div>
-					<div class="cancel4 center">
+					<div class="cancel center">
 						<svg class="cancelIcon" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/></svg>
 					</div>
 				</div>
