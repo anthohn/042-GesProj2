@@ -1,27 +1,26 @@
-<!--
-ETML
-Auteur      : Anthony Höhn
-Date        : 04.03.2021
-Description : Tous les titres likés de l'utilisateur (session)
--->
+<?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 04.03.2021
+* Description : All titles liked by the user (session)
+**/
 
-<?php $title = 'Oto - Titres Likés';
+$title = 'Oto - Titres Likés';
 require "template/header.php"; 
 
-// Si l'utilisateur est connecté
+// Check the user's privilege
 if(isLogged()): ?>
 
-	<!-- récupere l'id du user -->
+	<!-- get the user's id -->
 	<?php $idUser = ($_SESSION['idUser']);
 	$likedTitles = $db->getLikedtitles($idUser);?>
 
 
-	<!-- Titre de la page -->
+	<!-- Title of the page -->
 	<div class="alltitle">
 		<p>Titres likés</p>
 	</div>
-
-	<!-- Si le tableau est vide -> message erreur si non affiche les musique likées de l'utilisateur  -->
 	<?php if(empty($likedTitles)) : ?>
 		<div class="errorLoginContainer"><h1 class="errorNoSong">Vous ne possédez encore, aucun titre liké.</h1></div>
 	<?php else : ?>

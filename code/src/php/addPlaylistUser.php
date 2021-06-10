@@ -1,11 +1,13 @@
-<!--
-ETML
-Auteur      : Anthony Höhn
-Date        : 16.05.2021
-Description : Création de playlist (utilisateur)
--->
-<?php $title = 'Oto - Ajouter une playlist'; ?>
-<?php require "template/header.php"; 
+<?php
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 16.05.2021
+* Description : Playlist creation (user)
+**/
+
+$title = 'Oto - Ajouter une playlist'; 
+require "template/header.php"; 
 
 if(!isset($_SESSION['idUser']))
 {
@@ -16,12 +18,17 @@ else
     $idUser = $_SESSION['idUser'];
 }
 
-if(isLogged()): ?>
+// Check the user's privilege
+if(isLogged()): 
+?>
 
-    <?php $musics = $db->getAllTitle();
+<?php 
+    $musics = $db->getAllTitle();
 
+    // Check if the button is submited
     if(isset($_POST['btnSubmit'])) 
     {
+        // Check the forms content
         if(empty($_POST['playlistName']))
         {
             $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner le nom de la playlist !</h4></div>';
@@ -53,7 +60,7 @@ if(isLogged()): ?>
             }  
         }
     }
-    ?>
+?>
 
     <form action="addPlaylistUser.php" method="post" enctype="multipart/form-data">
         <div class="plalistCreaTitle">

@@ -1,16 +1,27 @@
 <?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn / Younes Sayeh / Killian Good / Julien Cartier
+* Date        : 04.03.2021
+* Description : All the titles of the database rescenced here thanks to a foreach which will search in the t_musique table
+**/
+
 $title = 'Oto - Connexion';
 require ('template/header.php');
 
+// Check if the button is submited
 if(isset($_POST["connexion"]))
 {
+    // Check the forms content
     if(!empty($_POST["login"]) && (!empty($_POST["psw"])))
     {	
         $users = $db->getUsers();
         foreach($users as $user)
         {
+            // Check the user login
             if($user['useLogin'] == $_POST['login'])
             {
+                // Verify the password
                 if(password_verify($_POST['psw'], $user['usePassword']))
                 {
                     $_SESSION['idUser'] = $user['idUser'];

@@ -1,4 +1,12 @@
-﻿<?php $title = 'Oto - À propos'; ?>
+﻿<?php 
+/**
+* ETML
+* Auteur      : Younes Sayeh / Julien Cartier
+* Date        : 01.02.2021
+* Description : about page
+**/
+
+$title = 'Oto - À propos'; ?>
 <?php require "template/header.php"; ?>
 
 <div class="mainAbout">

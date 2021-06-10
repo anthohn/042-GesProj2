@@ -1,13 +1,20 @@
-<?php require "template/header.php";
+<?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 04.03.2021
+* Description : delete an artist
+**/
+
+require "template/header.php";
 
 if(isLogged() && (isAdmin()))
 {     
-    // Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
+    // Check that the get is not fast, check if the get is numeric -> reject the html and php code (+ secure)
     if(!isset($_GET['idArtist']) OR !is_numeric($_GET['idArtist']))
     {
         header('Location:404.php');
     }
-    // Si tout est ok -> appelle les fonctions
     else
     {
         $idArtist = $_GET['idArtist'];

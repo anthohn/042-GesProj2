@@ -1,4 +1,10 @@
 <?php
+/**
+* ETML
+* Auteur      : Anthony Höhn / Younes Sayeh
+* Date        : 01.02.2021
+* Description : header
+**/
 session_start();
 require "lib/util.php";
 require "lib/db.class.php";
@@ -27,13 +33,6 @@ if(isset($_SESSION['idUser']))
 		<script src="../js/profileCard.js" defer></script>
 	</head>	
 	<body>
-		<!-- <div class="cookies">
-			<div class="container">
-				<div class="col-sm-12">
-					Nous utilisons des cookies pour nous aider à vous offrir la meilleure expérience sur notre site Web.<span class="mobile-hidden">If you continue without changing your settings, we'll assume that you are happy to receive all cookies on our website. However, if you would like to, you can change your cookie settings at any time.</span> <a href="/cookies">Find out more</a>. <a class="close-cookie-warning"><span>×</span></a></div>
-				</div>
-			</div>	
-		</div> -->
 		<div class="main" id="mainAbout">
 			<!-- Hamburger menu -->
 			<a href="#" class="toggleButton" id="toggleButtonID">

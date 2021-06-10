@@ -1,4 +1,11 @@
 <?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 04.03.2021
+* Description : create an account
+**/
+
 $title = 'Création compte';
 require ('template/header.php');
 
@@ -9,18 +16,17 @@ if(isset($_POST['forminscription']))
     $psw = $_POST['psw'];
     $psw2 = $_POST['psw2'];
 
-    // Vérifie que tous les champs ont été remplis 
+    // Check that all fields have been completed 
     if(!empty($_POST['login']) && !empty($_POST['psw']) && !empty($_POST['psw2']))
     {   
         $loginlength = strlen($login);
-        // condition pour refuser les mots de passes qui excede 255 caractères 
+        // condition to refuse passwords that exceed 255 characters
         if($loginlength <= 255)
         {
             if($psw == $psw2)
             {
-                // hash les mot de passe
+                // hash the password
                 $psw = password_hash($_POST['psw'], PASSWORD_DEFAULT);
-                // $psw2 = password_hash($_POST['psw2'], PASSWORD_DEFAULT);
                 $db->addUser($login, $psw);
                 $succes = '<div class="succesLoginContainer"><h4 class="succesLogin">Votre compte a été créé avec succes ! </h4></div>';
             }

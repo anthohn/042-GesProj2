@@ -1,10 +1,17 @@
 <?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 01.02.2021
+* Description : manage account page
+**/
+
 $title = 'Oto - Compte';
 require ('template/header.php');
 
 if(isLogged()): 
 
-//Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page de connexion
+// User disconnection by destroying his session then a redirection on the connection page
 if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout")
 {
 	session_unset();
@@ -12,7 +19,7 @@ if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "logout")
 	header("Location:connexion.php");
 }
 
-//Déconnexion de l'utilisateur en détruisant sa session puis une redirection sur la page de connexion
+// User disconnection by destroying his session then a redirection on the connection page
 if(isset($_GET['auth']) && !empty($_GET['auth']) && $_GET['auth'] == "deleteAccount") 
 {
     $idUser = $_SESSION['idUser'];

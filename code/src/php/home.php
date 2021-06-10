@@ -1,4 +1,12 @@
-﻿<?php $title = 'Oto - Accueil'; 
+﻿<?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn / Younes Sayeh
+* Date        : 01.02.2021
+* Description : home page
+**/
+
+$title = 'Oto - Accueil'; 
 require "template/header.php"; 
 
 $artists = $db->getAllArtists();
@@ -7,7 +15,7 @@ $musics = $db->getAllTitle();
 ?>
 
 <div class="title">
-	<p>Artistes écoutés récemment</p>
+	<p>Artistes</p>
 </div>	
 <div class="ACmainBlock">	
 	<?php foreach ( $artists as $artist): ?>		
@@ -22,7 +30,7 @@ $musics = $db->getAllTitle();
 </div>
 
 <div class="title">
-	<p>Écoutés récemment</p>
+	<p>Musiques</p>
 </div>
 
 <div class="ACmainBlock">	

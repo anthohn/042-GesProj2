@@ -1,17 +1,16 @@
-<!--
-ETML
-Auteur      : Anthony Höhn
-Date        : 16.05.2021
-Description : détail des playlist
--->
-
 <?php
-// Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 04.03.2021
+* Description : detail of a playlist
+**/
+
+// Check that the get is not fast, check if the get is numeric -> reject the html and php code (+ secure)
 if(!isset($_GET['idPlaylist']) OR !is_numeric($_GET['idPlaylist']))
 {
     header('Location:404.php');
 }
-// Si tout est ok -> appelle les fonctions
 else
 {
     $title = 'Oto - Détails playlist'; 

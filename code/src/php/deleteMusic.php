@@ -1,13 +1,21 @@
-<?php require "template/header.php";
+<?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 04.03.2021
+* Description : delete a music
+**/
 
+require "template/header.php";
+
+// Check the user's privilege
 if(isLogged() && (isAdmin()))
 {
-    // Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
+    // Check that the get is not fast, check if the get is numeric -> reject the html and php code (+ secure)
     if(!isset($_GET['idMusic']) OR !is_numeric($_GET['idMusic']))
     {
         header('Location:404.php');
     }
-    // Si tout est ok -> appelle les fonctions
     else
     {
         $idMusic = $_GET['idMusic'];

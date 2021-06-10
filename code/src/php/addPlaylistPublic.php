@@ -1,18 +1,26 @@
-<!--
-ETML
-Auteur      : Anthony Höhn
-Date        : 16.05.2021
-Description : Création de playlist public (admin)
--->
-<?php $title = 'Oto - Ajouter une playlist public'; ?>
-<?php require "template/header.php"; ?>
+<?php
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 01.02.2021
+* Description : add a public playlist
+**/
 
-<?php if(isLogged() && (isAdmin())): ?>
+$title = 'Oto - Ajouter une playlist public';
+require "template/header.php"; ?>
 
-    <?php $musics = $db->getAllTitle();
+<?php 
+    // Check the user's privilege
+    if(isLogged() && (isAdmin())): 
+?>
 
+<?php 
+    $musics = $db->getAllTitle();
+
+    // Check if the button is submited
     if(isset($_POST['btnSubmit'])) 
     {
+        // Check the forms content
         if(empty($_POST['playlistName']))
         {
             $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner le nom de la playlist !</h4></div>';
@@ -45,7 +53,7 @@ Description : Création de playlist public (admin)
             }  
         }
     }
-    ?>
+?>
 
     <form action="addPlaylistPublic.php" method="post" enctype="multipart/form-data">
         <div class="plalistCreaTitle">

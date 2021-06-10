@@ -1,10 +1,11 @@
-﻿<!--
-ETML
-Auteur      : Younes Sayeh
-Date        : 21.05.2021
-Description : Recherche dynamique 
--->
-<?php 
+﻿<?php 
+/**
+* ETML
+* Auteur      : Younes Sayeh / Anthony Höhn 
+* Date        : 21.05.2021
+* Description : searching page
+**/
+
 $title = 'Oto - Recherche';
 require "template/header.php";
 
@@ -17,6 +18,7 @@ if(isset($_SESSION['idUser']))
 	$userPlaylists = $db->getPlaylistsUser($idUser);
 }
 
+// Check if a research was done
 if(isset($_GET['search']) && !empty($_GET['search']))
 {
 	$search = htmlspecialchars($_GET['search']);
@@ -50,6 +52,7 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 
 	<div class="result">
 		<?php
+		// Display the research result, if there is one
 		if(isset($_GET['search']) && !empty($_GET['search']))
 		{
 			if(count($searchResults) > 0)
@@ -143,7 +146,6 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 							<p><?= $artist["artBirth"]; ?></p>
 							<p><?= $artist["couCountry"]; ?></p>
 						</div>
-						<!-- Si l'utilisateur est admin et connecté il a accès à cette fonctionnalité -->
 						<?php if(isLogged() && (isAdmin())): ?>
 							<a href="deleteArtist.php?idArtist=<?= $artist["idArtist"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer l\'artiste ? Toutes les musiques qui lui y sont associées seront par la même occasion supprimées.')"><img src="../../userContent/icon/trash.svg"></img></a>
 							<a href="editArtist.php?idArtist=<?= $artist["idArtist"]; ?>"><img src="../../userContent/icon/edit.svg"></img></a>

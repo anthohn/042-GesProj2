@@ -1,7 +1,13 @@
 <?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn / Younes Sayeh
+* Date        : 04.03.2021
+* Description : Utils document for function and const
+**/
 
 
-//Vérifie si l'utilisateur est connecté ou non
+// Checks whether the user is logged in or not
 function isLogged()
 {
     if(isset($_SESSION['username']))
@@ -11,7 +17,7 @@ function isLogged()
     return false;
 }
 
-//Vérifie si l'utilisateur est admin ou non
+// Check if the user is admin or not
 function isAdmin()
 {
     if(isLogged())
@@ -24,7 +30,7 @@ function isAdmin()
     return false;
 }
 
-// Fonction qui récupere l'heure est en fonction d'elle affiche bon matin, bon après-mid ou bonsoir
+// Function which retrieves the time according to it displays good morning, good afternoon or good evening
 function welcome()
 {
     if(date('H') < 12)
@@ -47,23 +53,23 @@ function welcome()
     }
 }
 
-//Déclaration constant chemin fichier
+// Constant declaration file path
 
-//nomfichier 
+// file name
 
-//emplacement logo artistes
+// location logo artists
 define("FILE_PATH_LOGO_ARTISTS", "../../userContent/img/artists/logo/");
 
-//emplacement cover musiques
+// location cover musics
 define("FILE_PATH_COVER_MUSICS", "../../userContent/img/music/");
 
-//emplacement cover playlists
+// location cover playlists
 define("FILE_PATH_COVER_PLAYLISTS", "../../userContent/img/playlists/cover/");
 
-//logo like vide
+//logo like empty
 define("SVG_LIKE", '<svg role="img" height="33" width="33" viewBox="0 0 16 16" class="like">  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/></svg>');
 
-//logo like plein
+//logo like full
 define("SVG_LIKE_FILL", '<svg role="img" height="33" width="33" viewBox="0 0 16 16" class="likeFill"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg>');
 
 //logo like List (responsive)

@@ -1,18 +1,25 @@
 <?php
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 01.02.2021
+* Description : add a music
+**/
 
-// Permet d'ajouter du contenu dans l'onglet
 $title = "Oto - Ajout d'une musique";
 
 require "template/header.php";
 
-// Vérifie si l'utilisateur est loggé ET admin
+// Check the user's privilege
 if(isLogged() && (isAdmin())):
-    // Récupere tous les artistes dans la variable '$artists'
+    // Get all the artists in the '$ artists' variable
     $artists = $db->getAllArtists(); 
     $types = $db->getAllType(); 
 
+    // Check if the button is submited
     if(isset($_POST['btnSubmit'])) 
     {
+        // Check the forms content
         if(empty($_POST['name']) || empty($_POST['duration']) || $_POST['artist'] == 0 || $_POST['type'] == 0)
         {
             $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner tous les champs !</h4></div>';

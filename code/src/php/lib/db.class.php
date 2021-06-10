@@ -90,7 +90,10 @@ class db{
         $req->closeCursor();
     }    
 
-    //fonction pour afficher tous les tites -> "alltitle.php"
+    /**
+     * Function to get all titles -> "alltitle.php"
+     * @param $idArtist
+     */
     public function getAllTitle(){
         $query = 'SELECT idArtist, idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType ORDER BY musName DESC';
         $reqExecuted = $this->querySimpleExecute($query);
@@ -99,7 +102,10 @@ class db{
         return $results;
     }
 
-    //fonction
+    /**
+     * Function to get one music from an artist
+     * @param $idArtist
+     */
     public function getMusic($idMusic){
         $query = 'SELECT idArtist, idMusic, musName, musDuration, artName, idType, typeName FROM t_music  JOIN t_artist ON idxArtist = idArtist JOIN t_type ON idxType = idType WHERE idMusic = :idMusic';
         $binds = array(
@@ -115,7 +121,10 @@ class db{
         return $results;
     }
 
-    //fonction pour afficher tous les artistes -> "allartists.php"
+    /**
+     * Function to get all artists -> "allartists.php"
+     * @param $idArtist
+     */
     public function getAllArtists(){
         $query = 'SELECT idArtist, artName, DATE_FORMAT(artBirth, "%d/%m/%Y") AS artBirth, couCountry FROM t_artist JOIN t_country ON idxCountry = idCountry';
         $reqExecuted = $this->querySimpleExecute($query);
@@ -125,7 +134,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get one artist
      * @param $idArtist
      */
     public function getArtist($idArtist){
@@ -144,7 +153,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get the link for each musics
      * @param $idMusic
      */
     public function getLinkEachMusics($idMusic){
@@ -163,7 +172,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to update the artist's informations
      * @param $idArtist
      * @param $name
      * @param $date
@@ -200,7 +209,7 @@ class db{
     } 
 
     /**
-     * Function 
+     * Function to update the music's informations
      * @param $idMusic
      * @param $name
      * @param $time
@@ -245,7 +254,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to delete one artist
      * @param $idArtist
      */
     public function deleteOneArtist($idArtist){
@@ -264,7 +273,8 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get the music for each artist
+     * @param $idArtist
      */
     public function getMusicEachArtist($idArtist){
         $query = 'SELECT idMusic, musName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, artName, typeName FROM t_music JOIN t_artist ON idxArtist = idArtist  JOIN t_type ON idxType = idType WHERE idArtist = :idArtist';
@@ -282,7 +292,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get the artist, music, playlist name compared to the user's research
      * @param $search
      */
     public function getSearchedArtistsMusicsPlaylists($search){
@@ -294,7 +304,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get all the title searched
      * @param $search
      */
     public function getAllTitleSearched($search){
@@ -306,7 +316,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get all the public playlist searched
      * @param $search
      */
     public function getAllPublicPlaylistSearched($search){
@@ -318,7 +328,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get all the private playlist searched
      * @param $search
      */
     public function getAllPlaylistSearchedUser($search){
@@ -330,7 +340,7 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to get all the artist searched
      * @param $search
      */
     public function getAllArtistSearched($search){
@@ -342,7 +352,7 @@ class db{
     }
 
     /**
-     * Function suppression d'une musique dans la bdd 
+     * Function to delete one music
      * @param $idMusic
      */
     public function deleteOneMusic($idMusic){
@@ -361,7 +371,7 @@ class db{
     }
 
     /**
-     * Function récupérer tous les genres de musique
+     * Function get all the kinds of music
      */
     public function getAllType(){
         $query = "SELECT idType, typeName FROM t_type";
@@ -372,7 +382,7 @@ class db{
     }
 
     /**
-     * Function récupere tous les pays
+     * Function get all the countries
      */   
     public function getAllCountry(){
         $query = "SELECT idCountry, couCountry FROM t_country";
@@ -383,7 +393,7 @@ class db{
     }
 
     /**
-     * Function récupere les titres likés d'un utilisateur 
+     * Function get all the user's liked title(s)
      * @param $idUser
      */
     public function getLikedtitles($idUser){
@@ -402,7 +412,7 @@ class db{
     }
 
     /**
-     * Function permet d'ajouter un titre dans sa liste de titre likés
+     * Function add a title to the liked music
      * @param $idMusic
      * @param $idUser
      */
@@ -427,7 +437,7 @@ class db{
     }
 
     /**
-     * Function Permet de supprimer un titre likés
+     * Function to delete a liked music
      * @param $idMusic
      * @param $idUser
      */
@@ -452,7 +462,7 @@ class db{
     }
 
     /**
-     * Function récupere les playlists (sans forcément que l'utilisateur soit connecté)
+     * Function retrieves playlists (without necessarily the user being logged in)
      */
     public function getPlaylists(){
         $query = 'SELECT idPlaylist, plaName, DATE_FORMAT(plaCreationDate, "%d/%m/%Y") AS plaCreationDate FROM t_playlist WHERE idxUser is NULL';
@@ -463,7 +473,7 @@ class db{
     }
 
     /**
-     * Function récupere les playlists d'un utilisateur
+     * Function get all the user's playlist(s)
      * @param $idUser
      */
     public function getPlaylistsUser($idUser){
@@ -482,8 +492,9 @@ class db{
     }
 
     /**
-     * Function récupere les playlists d'un utilisateur
+     * Function get all the user's playlist(s) searched
      * @param $idUser
+     * @param $search
      */
     public function getPlaylistsUserSearch($idUser, $search){
         $query = 'SELECT idPlaylist, plaName, DATE_FORMAT(plaCreationDate, "%d/%m/%Y") AS plaCreationDate FROM t_playlist JOIN t_user ON idxUser = idUser WHERE idUser = :idUser AND plaName LIKE "%'.$search.'%"';
@@ -501,7 +512,7 @@ class db{
     }
 
     /**
-     * Function récupere une playlist
+     * Function get one playlist
      * @param $idPlaylist
      */
     public function getPlaylist($idPlaylist){
@@ -520,9 +531,8 @@ class db{
     }
 
     /**
-     * Function permet de créer une playlist PUBLIC (accès admin)
+     * Function to add a public playlist (admin access)
      * @param $playlistName
-     * Tout fonctionne mais je n'arrive pas à binds le "now()"
      */
     public function addPublicPlaylist($playlistName) {
         $query = 'INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES (:plaName, now(), :idxUser)';
@@ -550,9 +560,8 @@ class db{
     }
 
     /**
-     * Function permet de créer une playlist personnel à un utilisateur
+     * Function to add a personnal user's playlist
      * @param $playlistName
-     * Tout fonctionne mais je n'arrive pas à binds le "now()"
      */
     public function addPersonnalPlaylist($playlistName, $idUser) {
         $query = 'INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES (:plaName, now(), :idxUser)';
@@ -580,15 +589,12 @@ class db{
     }
 
     /**
-     * Function 
+     * Function to add a music in a playlist
      * @param $newID
      * @param $checkedMusic
      */
     public function addMusicPlaylist($newID, $checkedMusic) {
         $query = 'INSERT INTO t_add (idxPlaylist, idxMusic) VALUES (:idxPlaylist, :idxMusic)';
-        // $test = implode($checkMusic);
-        // echo $test;
-        
         $binds = array(
             0 => array(
                 'field' => ':idxPlaylist',
@@ -663,7 +669,7 @@ class db{
     }
     
     /**
-     * Function Edit playlist name
+     * Function edit playlist name
      * @param $idPlaylist
      * @param $checkedMusic
      */
@@ -707,7 +713,7 @@ class db{
     }
 
     /**
-     * Function suppression d'une playlist
+     * Function to delete playlist
      * @param $idPlaylist
      */
     public function deleteMusicPlaylist($idPlaylist, $idMusic){
@@ -730,12 +736,8 @@ class db{
         return $results;
     }
 
-
-
-
-
     /**
-     * Function récupere les music contenu dans la playlist 
+     * Function get all the playlist's music(s)
      * @param $idPlaylist
      */
     public function getMusicsPlaylist($idPlaylist){
@@ -754,7 +756,7 @@ class db{
     }
 
     /**
-     * Function add artist in db
+     * Function add artist 
      * @param $name
      * @param $date
      * @param $country
@@ -790,7 +792,7 @@ class db{
     }
 
     /**
-     * Function add music in db
+     * Function add music
      * @param $name
      * @param $duration
      */
@@ -831,7 +833,7 @@ class db{
     }
 
     /**
-     * Function getUser from db
+     * Function get all the users
      */
     public function getUsers(){
         $query = "SELECT * FROM t_user";
@@ -842,7 +844,7 @@ class db{
     }
 
     /**
-     * Function add user in db
+     * Function add user
      * @param $login
      * @param $psw
      */
@@ -867,7 +869,7 @@ class db{
     }
 
     /**
-     * Function delete user from db
+     * Function delete user
      * @param $idUser
      */
     public function deleteUser($idUser){

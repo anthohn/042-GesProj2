@@ -1044,7 +1044,6 @@ footer{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
 }
 
 /*******************************************ARTISTES PERSO***********************************************/
@@ -1618,13 +1617,11 @@ svg.like:hover{
 }
 
 .btnOpenForm {
-	/* color: black; */
 	font-size: 15px;
 	background-color: transparent !important;
 }
 
 .btnOpenForm:hover {
-	/* color: var(--green-color); */
 	transition: all .3s ease-in-out;
 }
 
@@ -1639,6 +1636,10 @@ svg.like:hover{
 	width: 160px;
 }
 
+.open-button:hover {
+	background-color: var(--borderInput-color);
+}
+
 #myFormResult{
 	overflow-y: scroll;
 }
@@ -1649,36 +1650,46 @@ svg.like:hover{
 	border-radius: 20px;
 	height: 500px;
 	width: 800px;
-	background-color: gray;
+	background-color: var(--gray-color);
 	display: none;
 	position: fixed;
-	top: 20%;
+	top: 160px;
 	left: 33%;
 	border: 1px solid var(--darkGrey-color);
 	z-index: 9;
 }
 
-#playlistpopUp{
-	border-radius: 15px;
-	overflow-y: scroll;
+#playlistpopUp {
 	border-radius: 20px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    height: 20px;
+    height: 35px;
 }
 
-/* #btnSubmitPopUp{
+.btnSubmitPopupEdit {
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+}
 
-} */
+.btnSubmitPopupEdit button {
+	cursor: pointer;
+	font-size: 22px;
+	border-radius: 10px;
+	border: 1px solid var(--gray-color);
+	padding: 10px;
+}
+
+.btnSubmitPopupEdit button:hover {
+	border: 1px solid var(--lightPastel-color);
+}
 
 .addSongPopUp{
 	float: right;
 	margin: 20px 40px 0 20px;
 	border-radius: 50%;
-	/* height: 30px;
-	width: 30px; */
 	background-color: rgb(214, 214, 214);
 	padding: 12px 8px 2px 9px;	
 }
@@ -1783,24 +1794,10 @@ svg.like:hover{
 	margin: 0 9px 0 0;
 }
 
-/* #btncancel:hover {
-	background-color: var(--green-color);
-	transition: all .2s ease-in-out;
-	border-radius: 50%;
-	cursor: pointer;
-	background-color: var(--lightBlack-color);
-	border: none;
-	color: white;
-	padding: 5px 7px 3px 7px;
-	display: inline-block;
-	font-size: 16px;
-	margin: 0 9px 0 0;
-}
-
 #btncancel:hover {
 	background-color: var(--ligthBlackhover-color);
 	transition: all .2s ease-in-out;
-}  */
+} 
 
 .form-container .btn:hover, .open-button:hover {
 	opacity: 1;
@@ -1810,9 +1807,7 @@ svg.like:hover{
 	display: flex;
 }
 
-/***********************************************************************************************/
-
-/*Responsive Design*/
+/***************************************Responsive Design********************************************************/
 
 @media only screen and (max-width: 1300px)
 { 

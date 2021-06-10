@@ -1,4 +1,12 @@
-<?php $title = 'Oto - Erreur 404';
+<?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn / Younes Sayeh
+* Date        : 01.02.2021
+* Description : error 404 page
+**/
+
+$title = 'Oto - Erreur 404';
 require 'template/header.php'; ?>
 
 <div class="main404">

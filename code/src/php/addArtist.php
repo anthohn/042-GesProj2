@@ -1,13 +1,23 @@
 <?php 
-$title = "Oto - Ajout d'artiste";
+/**
+* ETML
+* Auteur      : Anthony Höhn / Younes Sayeh 
+* Date        : 01.02.2021
+* Description : add an artist page
+**/
 
+$title = "Oto - Ajout d'artiste";
 require "template/header.php";
+
+// Check the user's privilege
 if(isLogged() && (isAdmin())):
 
     $countries = $db->getAllCountry();
  
+    // Check if the button is submited
     if(isset($_POST['btnSubmit']))
     {
+        // Check the forms content
         if(empty($_POST['name']) || empty($_POST['date']) || $_POST['country'] == 0)
         {
             $error = '<div class="errorLoginContainer"><h4 class="errorLogin">Veuillez renseigner tous les champs !</h4></div>'; 

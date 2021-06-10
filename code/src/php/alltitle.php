@@ -1,11 +1,10 @@
-﻿<!--
-ETML
-Auteur      : Anthony Höhn
-Date        : 04.03.2021
-Description : Tous les titres de la base de données rescencé ici grace à un foreach qui va chercher dans la table t_musique
--->
-<?php
-
+﻿<?php
+/**
+* ETML
+* Auteur      : Anthony Höhn / Younes Sayeh / Killian Good / Julien Cartier
+* Date        : 04.03.2021
+* Description : All the titles of the database rescenced here thanks to a foreach which will search in the t_musique table
+**/
 
 $title = 'Oto - Titres';
 require "template/header.php";

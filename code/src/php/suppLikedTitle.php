@@ -1,4 +1,11 @@
 <?php
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 01.02.2021
+* Description : delete a liked music
+**/
+
 require "template/header.php";
 
 if(isLogged())

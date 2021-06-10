@@ -1,10 +1,12 @@
-﻿<!--
-ETML
-Auteur      : Anthony Höhn
-Date        : 16.05.2021
-Description : Toutes les playlists de l'utilisateur (session)
--->
-<?php $title = 'Oto - Playlists';
+﻿<?php 
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 16.05.2021
+* Description : All user playlists (session)
+**/
+
+$title = 'Oto - Playlists';
 require "template/header.php"; ?>
 
 <?php $playlists = $db->getPlaylists(); ?>

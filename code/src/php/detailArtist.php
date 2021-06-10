@@ -1,10 +1,16 @@
 <?php
-// Vérifie que le get n'est pas vite, vérifie si le get est bien numérqiue -> rejete le code html et php (+ sécurisé)
+/**
+* ETML
+* Auteur      : Anthony Höhn
+* Date        : 04.03.2021
+* Description : detail of an artist
+**/
+
+// Check that the get is not fast, check if the get is numeric -> reject the html and php code (+ secure)
 if(!isset($_GET['idArtist']) OR !is_numeric($_GET['idArtist']))
 {
     header('Location:404.php');
 }
-// Si tout est ok -> appelle les fonctions
 else
 {
     $title = 'Oto - Détails artiste';
@@ -16,8 +22,6 @@ else
 
 
 ?>
-
-<!-- <style>body{background-image: url('../../userContent/img/artists/background/<?= $artists[0]["idArtist"];?>.jpg');}</style> -->
 <div class="ARPtitle">
 	<img src="<?= FILE_PATH_LOGO_ARTISTS, $artists[0]["idArtist"];?>.jpg" alt="">
 	<p><?= $artists[0]["artName"]; ?></p>
