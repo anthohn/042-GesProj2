@@ -1644,7 +1644,6 @@ svg.like:hover{
 }
 
 .form-popup {
-
 	padding: 30px;
 	transition-duration: 0.5s;
 	border-radius: 20px;
@@ -1660,18 +1659,37 @@ svg.like:hover{
 }
 
 #playlistpopUp{
-	border-radius: 20px;
+	border-radius: 15px;
 	overflow-y: scroll;
 	border-radius: 20px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    height: 90px;
+    height: 20px;
+}
+
+/* #btnSubmitPopUp{
+
+} */
+
+.addSongPopUp{
+	float: right;
+	margin: 20px 40px 0 20px;
+	border-radius: 50%;
+	/* height: 30px;
+	width: 30px; */
+	background-color: rgb(214, 214, 214);
+	padding: 12px 8px 2px 9px;	
+}
+
+
+#listMusicPopUp{
+	margin-top: 500px;
 }
 
 .form-popup h1, .form-popup h3 {
-	color: var(--greyTitle-color);
+	color: var(--ligthBlackhover-color);
 }
 
 .comment {
@@ -1765,10 +1783,24 @@ svg.like:hover{
 	margin: 0 9px 0 0;
 }
 
-#btncancel:hover {
+/* #btncancel:hover {
 	background-color: var(--green-color);
 	transition: all .2s ease-in-out;
-} 
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: var(--lightBlack-color);
+	border: none;
+	color: white;
+	padding: 5px 7px 3px 7px;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0 9px 0 0;
+}
+
+#btncancel:hover {
+	background-color: var(--ligthBlackhover-color);
+	transition: all .2s ease-in-out;
+}  */
 
 .form-container .btn:hover, .open-button:hover {
 	opacity: 1;

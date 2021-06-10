@@ -19,7 +19,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON p_db_042main.* TO 'dbUser042'@'%';
 -- Structure de la table "t_country"
 --
 CREATE TABLE t_country (
-  idCountry INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idCountry INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   couCountry VARCHAR(50) NOT NULL
 );
 
@@ -41,7 +41,7 @@ INSERT INTO t_country (couCountry) VALUES
 -- Structure de la table "t_type"
 --
 CREATE TABLE t_type (
-  idType INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idType INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   typeName VARCHAR(255)
 );
 
@@ -58,10 +58,10 @@ INSERT INTO t_type (typeName) VALUES
 -- Structure de la table "t_artist"
 --
 CREATE TABLE t_artist (
-  idArtist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idArtist INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   artName VARCHAR(50) NOT NULL,
   artBirth DATE NOT NULL,
-  idxCountry INT NOT NULL,
+  idxCountry INT UNSIGNED NOT NULL,
   CONSTRAINT fk_t_artist_t_country_idCountry FOREIGN KEY (idxCountry) REFERENCES t_country(idCountry) 
 );
 
@@ -84,11 +84,11 @@ INSERT INTO t_artist (artName, artBirth, idxCountry) VALUES
 -- Structure de la table "t_music"
 --
 CREATE TABLE t_music (
-  idMusic INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
+  idMusic INT UNSIGNED NOT NULL  AUTO_INCREMENT PRIMARY KEY,
   musName VARCHAR(50) NOT NULL,
   musDuration TIME NOT NULL,
-  idxArtist INT NOT NULL,
-  idxType INT NOT NULL,
+  idxArtist INT UNSIGNED NOT NULL,
+  idxType INT UNSIGNED NOT NULL,
   CONSTRAINT fk_t_music_t_artist_idArtist FOREIGN KEY (idxArtist) REFERENCES t_artist(idArtist) ON DELETE CASCADE,
   CONSTRAINT fk_t_music_t_type_idType FOREIGN KEY (idxType) REFERENCES t_type(idType) ON DELETE CASCADE
 );
@@ -133,11 +133,11 @@ INSERT INTO t_music (musName, musDuration, idxArtist, idxType) VALUES
 -- TABLE DE LOGIN 
 --
 CREATE TABLE t_user(
-  idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idUser INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   useLogin varchar(50) NOT NULL,
   usePassword varchar(255) NOT NULL,
   useIsAdmin BOOLEAN NOT NULL DEFAULT 0,
-  useLikedTitle INT
+  useLikedTitle INT UNSIGNED
 );
 
 INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES 
@@ -151,10 +151,10 @@ INSERT INTO t_user (useLogin, usePassword, useIsAdmin) VALUES
 -- Structure de la table "t_playlist"
 --
 CREATE TABLE t_playlist (
-  idPlaylist INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idPlaylist INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plaName VARCHAR(255) NOT NULL,
   plaCreationDate DATE NOT NULL,
-  idxUser INT,
+  idxUser INT UNSIGNED,
   CONSTRAINT fk_t_playlist_t_user_idUser FOREIGN KEY (idxUser) REFERENCES t_user (idUser) ON DELETE CASCADE
 );
 
@@ -171,10 +171,11 @@ INSERT INTO t_playlist (plaName, plaCreationDate, idxUser) VALUES
 -- Structure de la table "t_add"
 --
 CREATE TABLE t_add (
-  idxPlaylist INT NOT NULL,
-  idxMusic INT NOT NULL,
+  idAdd INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idxPlaylist INT UNSIGNED NOT NULL,
+  idxMusic INT UNSIGNED NOT NULL,
   CONSTRAINT fk_t_add_t_musix_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
-  CONSTRAINT fk_t_add_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist) ON DELETE CASCADE
+  CONSTRAINT fkt_add_t_playlist_idPlaylist FOREIGN KEY (idxPlaylist) REFERENCES t_playlist(idPlaylist) ON DELETE CASCADE
 );
 
 -- 
@@ -200,11 +201,12 @@ INSERT INTO t_add (idxPlaylist, idxMusic) VALUES
 (3, 17),
 (3, 16),
 (3, 6);
+
 --
 -- Structure de la table "t_typeLink"
 --
 CREATE TABLE t_typeLink (
-  idTypeLink INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idTypeLink INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   typLiens VARCHAR(15) NOT NULL
 );
 -- 
@@ -220,8 +222,8 @@ INSERT INTO t_typeLink (typLiens) VALUES
 -- Structure de la table "t_link"
 --
 CREATE TABLE t_link (
-  idxMusic INT NOT NULL,
-  idxTypelink INT NOT NULL,
+  idxMusic INT UNSIGNED NOT NULL,
+  idxTypelink INT UNSIGNED NOT NULL,
   linLink VARCHAR(255),
   CONSTRAINT fk_t_link_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
   CONSTRAINT fk_t_link_t_typeLink_idTypeLink FOREIGN KEY (idxTypelink) REFERENCES t_typeLink(idTypeLink) ON DELETE CASCADE
@@ -323,9 +325,9 @@ INSERT INTO t_link (idxMusic, idxTypelink, linLink) VALUES
 (30,3,"https://youtu.be/34Na4j8AVgA");
 
 CREATE TABLE t_liked(
-  idLiked INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  idxMusic INT NOT NULL,
-  idxUser INT NOT NULL,
+  idLiked INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idxMusic INT UNSIGNED NOT NULL,
+  idxUser INT UNSIGNED NOT NULL,
   CONSTRAINT fk_t_liked_t_music_idMusic FOREIGN KEY (idxMusic) REFERENCES t_music(idMusic) ON DELETE CASCADE,
   CONSTRAINT fk_t_liked_t_user_idUser FOREIGN KEY (idxUser) REFERENCES t_user(idUser) ON DELETE CASCADE
 );
