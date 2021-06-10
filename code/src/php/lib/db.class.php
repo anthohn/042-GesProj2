@@ -613,7 +613,32 @@ class db{
     }
 
     /**
-     * Function 
+     * Function add music in an existant playlist
+     * @param $idPlaylist
+     * @param $checkedMusic
+     */
+    public function editMusicPlaylist($idPlaylist, $checkedMusic) {
+        $query = 'INSERT INTO t_add (idxPlaylist, idxMusic) VALUES (:idxPlaylist, :idxMusic)';
+        $binds = array(
+            0 => array(
+                'field' => ':idxPlaylist',
+                'value' => $idPlaylist,
+                'type' => PDO::PARAM_INT
+            ),
+            1 => array(
+                'field' => ':idxMusic',
+                'value' => $checkedMusic,
+                'type' => PDO::PARAM_INT
+            )                
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }
+
+    /**
+     * Function add musics in playlist
      * @param $idPlaylist
      * @param $checkedMusic
      */
@@ -635,10 +660,35 @@ class db{
         $results = $this->formatData($reqExecuted);
         $this->unsetData($reqExecuted);
         return $results;
-    } 
+    }
+    
+    /**
+     * Function Edit playlist name
+     * @param $idPlaylist
+     * @param $checkedMusic
+     */
+    public function updatePlaylistName($idPlaylist, $playlistName){
+        $query = 'UPDATE t_playlist SET plaName = :plaName WHERE idPlaylist = :idPlaylist';
+        $binds = array(
+            0 => array(
+                'field' => ':plaName',
+                'value' => $playlistName,
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array(
+                'field' => ':idPlaylist',
+                'value' => $idPlaylist,
+                'type' => PDO::PARAM_INT
+            )
+        );
+        $reqExecuted = $this->queryPrepareExecute($query, $binds);
+        $results = $this->formatData($reqExecuted);
+        $this->unsetData($reqExecuted);
+        return $results;
+    }  
 
     /**
-     * Function suppression d'une playlist
+     * Function deleting a playlist
      * @param $idPlaylist
      */
     public function deleteOnePlaylist($idPlaylist){
@@ -661,7 +711,7 @@ class db{
      * @param $idPlaylist
      */
     public function deleteMusicPlaylist($idPlaylist, $idMusic){
-        $query = 'DELETE FROM t_add WHERE idxPlaylist = :idxPlaylist AND idxMusic = :idxMusic';
+        $query = 'DELETE FROM t_add WHERE idxPlaylist = :idxPlaylist AND idAdd = :idAdd';
         $binds = array(
             0 => array(
                 'field' => ':idxPlaylist',
@@ -669,7 +719,7 @@ class db{
                 'type' => PDO::PARAM_INT
             ),
             1 => array(
-                'field' => ':idxMusic',
+                'field' => ':idAdd',
                 'value' => $idMusic,
                 'type' => PDO::PARAM_INT
             )
@@ -689,7 +739,7 @@ class db{
      * @param $idPlaylist
      */
     public function getMusicsPlaylist($idPlaylist){
-        $query = 'SELECT idPlaylist, idMusic, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, idArtist, artName FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist';
+        $query = 'SELECT idAdd, idPlaylist, idMusic, musName, typeName, DATE_FORMAT(musDuration, "%H:%i") AS musDuration, idArtist, artName FROM t_add JOIN t_music ON idxMusic = idMusic JOIN t_artist ON idxArtist = idArtist JOIN t_playlist ON idxPlaylist = idPlaylist JOIN t_type ON idxType = idType WHERE idPlaylist = :idPlaylist ORDER BY idAdd DESC';
         $binds = array(
             0 => array(
                 'field' => ':idPlaylist',
