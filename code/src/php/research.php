@@ -4,7 +4,8 @@ Auteur      : Younes Sayeh
 Date        : 21.05.2021
 Description : Recherche dynamique 
 -->
-<?php $title = 'Oto - Recherche';
+<?php 
+$title = 'Oto - Recherche';
 require "template/header.php";
 
 $musics = $db->getAllTitle();
@@ -164,10 +165,11 @@ if(isset($_GET['search']) && !empty($_GET['search']))
 				<p class="musDuration"><?= $music["musDuration"]; ?></p>
 				<p class="typeName">-</p>
 				<p class="typeName"><?= $music["typeName"]; ?></p>
+				<p class="typeName">-</p>
 				<?php if(isLogged() && (isAdmin())): ?>
 					<div class="testtest">
-						<a href="deleteMusic.php?idMusic=<?= $music["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img width="20px" src="../../userContent/icon/trash.svg"></img></a>
-						<a href="editMusic.php?idMusic=<?= $music["idMusic"]; ?>"><img class='justTesting' width="20px" src="../../userContent/icon/edit.svg"></img></a>
+						<a href="deleteMusic.php?idMusic=<?= $music["idMusic"]; ?>" onclick="return confirm('Êtes vous sûr de vouloir supprimer la musique ?')"><img class="adminIcon" width="20px" src="../../userContent/icon/trash.svg"></img></a>
+						<a href="editMusic.php?idMusic=<?= $music["idMusic"]; ?>"><img class="adminIcon" id="editTitleIcon" width="20px" src="../../userContent/icon/edit.svg"></img></a>
 					</div>
 				<?php endif; ?>
 				<div class="dropdown" style="float:right;">

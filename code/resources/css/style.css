@@ -791,7 +791,7 @@ footer{
 
 #playlistName{
 	width: 200px;
-  	padding: 7px 20px;
+  	padding: 7px;
   	margin: 0 0;
   	display: inline-block;
   	border: 1px solid #ccc;
@@ -801,6 +801,17 @@ footer{
 
 #addTitlePlaylist{
 	color: #ffffff;
+}
+
+.btnAdd {
+	display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin: 20px 0 0 0;
+}
+
+.btnAdd button {
+    margin: 20px 0 0 10px !important;
 }
 
 /********************************************Artistes*************************************************/
@@ -930,6 +941,14 @@ footer{
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+}
+
+.adminIcon {
+	margin: 7px 0 0 30px !important;
+}
+
+#editTitleIcon {
+	margin: 7px 0 0 20px !important;
 }
 
 .artName{
@@ -1158,7 +1177,7 @@ svg.like:hover{
 	z-index: 1;
 }
 
-.dropdown-content:hover {
+.dropdown-content a:hover {
 	background-color: var(--lightPastel-color);
 	transition: all .2s ease-in-out;
 }
@@ -1339,9 +1358,61 @@ svg.like:hover{
 	font-size: 18px;
 	border-radius: 10px;
 	border: 1px solid var(--darkGrey-color);
-	width: 170px;
+	width: 185px;
 	margin: 10px 0 0 50px;
 	padding: 7px;
+}
+
+#name {
+	width: 165px;
+	margin: 10px 0 0 60px;
+}
+
+#country {
+	margin: 10px 0 0 0px;
+}
+
+.nameArtistEdit {
+	width: 170px !important;
+	margin: 10px 0 0 50px !important;
+}
+
+.btnEdit {
+	display: flex;
+	justify-content: center;
+	flex-direction: row-reverse;
+	margin: 20px 0 0 0;
+}
+
+.btnEditArtist {
+	margin: 50px 0 0 0;
+}
+
+.return a img {
+	margin: 20px 10px 0 0;
+    width: 40px;
+    height: 40px;
+}
+
+.return a img:hover {
+	transition: all .7s ease-in-out;
+	transform: rotate(-360deg);
+}/**/
+
+#btnSubmit {
+	margin: 20px 0 0 0;
+    font-size: 20px;
+    border: none;
+    padding: 5px 10px;
+    color: #ffffff;
+    background-color: var(--backSucces-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btnSubmit:hover {
+	background-color: #0bc251;
+	transition: all .2s ease-in-out;
 }
 
 /*******************************************ABOUT***********************************************/
@@ -1650,66 +1721,74 @@ svg.like:hover{
 }
 
 .commentPopUpTitle h3 {
-margin: 20px 0 10px 0;
+	margin: 20px 0 10px 0;
 }
 
 .form-popup h1{
-margin: 0 0 0 12px;
-width: 100%;
+	margin: 0 0 0 12px;
+	width: 100%;
 }
 
 .form-container {
-width: 100%;
+	width: 100%;
 }
 
 .form-container input[type=text], .form-container input[type=password] {
-width: 100%;
-padding: 15px;
-margin: 5px 0 22px 0;
-border: none;
-background: #f1f1f1;
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
 }
 
 .form-container .btn {
-background-color: #04AA6D;
-color: white;
-padding: 16px 20px;
-border: none;
-cursor: pointer;
-width: 20px;
-margin-bottom:10px;
-opacity: 0.8;
-bottom: 0;
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 20px;
+	margin-bottom:10px;
+	opacity: 0.8;
+	bottom: 0;
 }
 
 #btncancel {
-border-radius: 50%;
-cursor: pointer;
-background-color: var(--lightGreen-color);
-border: none;
-color: white;
-padding: 5px 7px 3px 7px;
-display: inline-block;
-font-size: 16px;
-margin: 0 9px 0 0;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: var(--lightGreen-color);
+	border: none;
+	color: white;
+	padding: 5px 7px 3px 7px;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0 9px 0 0;
 }
 
 #btncancel:hover {
-background-color: var(--green-color);
-transition: all .2s ease-in-out;
+	background-color: var(--green-color);
+	transition: all .2s ease-in-out;
 } 
 
 .form-container .btn:hover, .open-button:hover {
-opacity: 1;
+	opacity: 1;
 }
 
 .tileButton {
-display: flex;
+	display: flex;
 }
 
 /***********************************************************************************************/
 
 /*Responsive Design*/
+
+@media only screen and (max-width: 1300px)
+{ 
+	/*Search and Titles*/
+	.typeName {
+		display: none;
+	}
+}
 
 @media only screen and (max-width: 1150px)
 {
@@ -1817,6 +1896,7 @@ display: flex;
 	.notlog {
 		margin: 15px 0 0 0;
 		display: flex;
+		justify-content: center;
 	}
 
 	.notlog a {
@@ -1874,15 +1954,8 @@ display: flex;
 	.aboutSocials {
 		max-width: 60%;
 	}
-}
 
-
-
-
-@media only screen and (max-width: 925px)
-{ 
-	/*Search and Titles*/
-	.typeName {
+	.musDuration {
 		display: none;
 	}
 }
@@ -1890,7 +1963,8 @@ display: flex;
 @media only screen and (max-width: 735px)
 { 
 	/*Search and Titles*/
-	.musDuration {
+
+	.artName {
 		display: none;
 	}
 }
@@ -1898,9 +1972,6 @@ display: flex;
 @media only screen and (max-width: 680px)
 { 
 	/*Search and Titles*/
-	.artName {
-		display: none;
-	}
 
 	#heartBtnList {
 		display: block;
@@ -1921,6 +1992,7 @@ display: flex;
 	}
 
 	/*Playlists*/
+
 	.PLblock1{
 		margin: 50px 19px;
 	}

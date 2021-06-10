@@ -37,7 +37,7 @@ if(isLogged() && (isAdmin())):
                 <tr>
                     <td>
                         <label for="name">Nom :</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" class="nameArtistEdit" id="name" name="name">
                     </td>
                 </tr>
                 <tr>
@@ -60,16 +60,18 @@ if(isLogged() && (isAdmin())):
                 </tr>
                 <tr>
                     <td>
-                        <label for="img">image :</label>
-                        <input type="file" name="printscreen" id="printscreen" />
+                        <label for="img">Image :</label>
+                        <input type="file" name="printscreen" id="printscreen" accept=".jpg"/>
                     </td>
                 </tr>
             </table>
 
-            <button type="submit" name="btnSubmit">Ajouter</button>
-            <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>
+            <div class="btnAdd">
+                <button type="submit" name="btnSubmit">Ajouter</button>
+                <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>
+            </div>
 
-            <div class="test">
+            <div class="return">
                 <a href="allartists.php"><img width="50px" src="../../userContent/icon/backArrow.svg"></img></a>
             </div>
         </form>

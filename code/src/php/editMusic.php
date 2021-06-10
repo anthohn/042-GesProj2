@@ -80,11 +80,13 @@ if(isLogged() && (isAdmin())):
                     </select>
                 </td>
                 </tr>
-            </table>    
-            <button type="submit" name="btnSubmit">Modifier</button>
-            <div class="test">
-                <a href="allTitle.php"><img width="50px" src="../../userContent/icon/backArrow.svg"></img></a>
-            </div>
+            </table>   
+            <div class="btnEdit">
+                <button type="submit" name="btnSubmit">Modifier</button>
+                <div class="return">
+                    <a href="allTitle.php"><img width="50px" src="../../userContent/icon/backArrow.svg"></img></a>
+                </div>
+            </div> 
         <?php endforeach; ?>      
         </form>
 

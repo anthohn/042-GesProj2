@@ -78,13 +78,13 @@ if(isLogged() && (isAdmin())):
                 <tr>
                     <td>
                         <label for="img">Cover :</label>
-                        <input type="file" name="printscreen" id="printscreen"/>
+                        <input type="file" name="printscreen" id="printscreen" accept=".jpg"/>
                     </td>
                 </tr>
             </table>    
             <button type="submit" name="btnSubmit">Ajouter</button>
             <button type="reset" id="btnDelete" name="btnDelete">Effacer</button>  
-            <div class="test">
+            <div class="return">
                 <a href="allTitle.php"><img width="50px" src="../../userContent/icon/backArrow.svg"></img></a>
             </div>        
         </form>

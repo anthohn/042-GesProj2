@@ -48,7 +48,7 @@ if(isLogged() && (isAdmin())):
                 <tr>               
                     <td>
                         <label for="name">Nom :</label>
-                        <input type="text" id="name" name="name" value='<?= $artist["artName"] ?>'>
+                        <input type="text" class="nameArtistEdit" id="name" name="name" value='<?= $artist["artName"] ?>'>
                     </td>    
                 </tr>
                 <tr>
@@ -70,9 +70,11 @@ if(isLogged() && (isAdmin())):
                     </td>
                 </tr>
             </table>    
-            <button type="submit" name="btnSubmit">Modifier</button>
-            <div class="test">
-                <a href="allArtists.php"><img width="50px" src="../../userContent/icon/backArrow.svg"></img></a>
+            <div class="btnEdit btnEditArtist">
+                <button type="submit" name="btnSubmit">Modifier</button>
+                <div class="return">
+                    <a href="allArtists.php"><img width="50px" src="../../userContent/icon/backArrow.svg"></img></a>
+                </div>
             </div>
         <?php endforeach; ?>      
         </form>

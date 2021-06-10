@@ -63,7 +63,7 @@ if(isLogged()): ?>
             <label for="playlistName">Nom de la playlist:</label>
             <input type="text" id="playlistName" name="playlistName"><br>
             <label for="img">Cover :</label>
-            <input type="file" id="printscreen" name="printscreen"/>
+            <input type="file" id="printscreen" name="printscreen" accept=".jpg"/>
             <input type="submit" id="btnSubmit" name="btnSubmit" value="Ajouter" /> 
         </div>
         <?php if(isset($error))
